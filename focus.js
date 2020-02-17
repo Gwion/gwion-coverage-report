@@ -1,4 +1,3 @@
-<script>
 function focusNext(index, elems) {
   index = ((index + 1) % elems.length);
   elems[index].scrollIntoView(true);
@@ -33,4 +32,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
     console.log(e.keyCode);
   });
 });
-</script>
