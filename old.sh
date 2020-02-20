@@ -5,4 +5,5 @@ then
     for report in html/$1/*.txt
     do cp $report $(basename $report).old
     done
+else mkdir html/$1
 fi  
