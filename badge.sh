@@ -1,12 +1,12 @@
-# $1: coverage percentage
-# $2: target directory
-if [ $(python -c "print( $1 >= 90 )") = True ]
+NUM="$(cat coverage_num.txt)"
+
+if [ $(python -c "print( $NUM >= 90 )") = True ]
 then COLOR=green
-elif [ $(python -c "print( $1 >= 75 )") = True ]
+elif [ $(python -c "print( $NUM >= 75 )") = True ]
 then COLOR=yellow
 else COLOR=red
 fi
 
 while true
-do wget "https://badgen.net/badge/coverage/$1/$COLOR" -O "$2/badge.svg" && break
+do wget "https://badgen.net/badge/coverage/$NUM/$COLOR" -O "badge.svg" && break
 done
