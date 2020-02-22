@@ -1,6 +1,6 @@
 #!/bin/sh
 
-branch="test"
+branch="$1"
 url="https://github.com/fennecdjay/gwion-coverage-report"
 
 header() {
