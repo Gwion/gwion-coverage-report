@@ -18,7 +18,7 @@ total() {
   paste "$1" "$2" |
   grep TOTAL |
   sed 's/%/ /' |
-  awk -v branch="$branch" '{ if($4 >= $8) ok="+1"; else ok="-1"; if($4 != $8)print "TOTAL " $4 - $8 "% " ":"ok":"; else print "coverage stays the same at "$4" %};'
+  awk -v branch="$branch" '{ if($4 >= $8) ok="+1"; else ok="-1"; if($4 != $8)print "TOTAL " $4 - $8 "% " ":"ok":"; else print "coverage stays the same at "$4" %"};'
   echo ""
 }
 
