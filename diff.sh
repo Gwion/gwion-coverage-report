@@ -18,7 +18,7 @@ total() {
   paste "$1" "$2" |
   grep TOTAL |
   sed 's/100%/100 /' |
-  awk -v branch="$branch" '{ if($4 >= $8) ok="+1"; else ok="-1"; print "TOTAL " $4 - $8 "% " ":ok:"}'
+  awk -v branch="$branch" '{ if($4 >= $8) ok="+1"; else ok="-1"; print "TOTAL " $4 - $8 "% " ":"ok":"}'
   echo ""
 }
 
