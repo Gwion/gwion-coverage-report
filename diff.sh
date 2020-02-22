@@ -42,10 +42,10 @@ report() {
   old="$(get_old $1)"
   header "lines"
   total "$new" "$old"
-  echo "<summary>"
+  echo "<details>"
   table
   diff "$new" "$old"
-  echo "</summary>"
+  echo "</details>"
   echo ""
 }
 
