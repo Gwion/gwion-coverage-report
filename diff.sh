@@ -2,7 +2,7 @@
 set -e
 
 branch="$1"
-url="https://github.com/fennecdjay/gwion-coverage-report"
+url="https://fennecdjay.github.io/gwion-coverage-report"
 
 header() {
   echo "## $1 coverage"
