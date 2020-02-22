@@ -53,7 +53,7 @@ run() {
   echo "Summary of coverage changes"
   echo ""
 
-  report "line"
+  report "lines"
   report "branches"
 }
 
