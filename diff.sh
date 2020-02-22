@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 branch="$1"
 url="https://github.com/fennecdjay/gwion-coverage-report"
@@ -39,7 +40,7 @@ get_old() {
 report() {
   new="html/$branch/${1}.txt"
   old="$(get_old $1)"
-  header "Line"
+  header "lines"
   total "$new" "$old"
   table
   diff "$new" "$old"
