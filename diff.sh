@@ -23,7 +23,7 @@ total() {
 }
 
 diff() {
-  file=$(sed 's/\//_/g' <<< "$1")
+  file=$(sed 's/\//_/g' "$1")
   paste "$1" "$2" |
   tail +6 |
   grep -v "\-\-" |
