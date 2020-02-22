@@ -28,7 +28,7 @@ diff() {
   grep -v "\-\-" |
   head -n-1 |
   sed 's/%/ /' |
-  awk -v url="$url" -v branch="$branch" '{ if($5 == $1) old = $8; else old = $9; ret=$4 -$4; file=$1; gsub("/", "_", file); ok=0; if($4 >= old) ok="+1"; else ok="-1"; if(ok != 0)print "|" "["$1"]("url"/"branch"/index."file".html)|"ret"%|" ":"ok":|"}'
+  awk -v url="$url" -v branch="$branch" '{ if($5 == $1) old = $8; else old = $9; ret=$4 -$4; file=$1; gsub("/", "_", file); ok="no change"; if($4 >= old) ok="+1"; else ok="-1"; if(ok != "no change")print "|" "["$1"]("url"/"branch"/index."file".html)|"ret"%|" ":"ok":|"}'
 }
 
 get_old() {
