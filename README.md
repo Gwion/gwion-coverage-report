@@ -8,7 +8,7 @@ File                                       Lines    Exec  Cover   Missing
 ------------------------------------------------------------------------------
 src/arg.c                                    130     101    77%   15-19,130-136,138-139,148-153,155-157,163-168
 src/compile.c                                 79      78    98%   106
-src/emit/emit.c                             1528    1527    99%   1988
+src/emit/emit.c                             1529    1528    99%   1990
 src/emit/emitter.c                            30      30   100%   
 src/emit/escape.c                             52      52   100%   
 src/emit/memoize.c                            34      34   100%   
@@ -36,10 +36,10 @@ src/lib/complex.c                             93      93   100%
 src/lib/engine.c                             120     120   100%   
 src/lib/event.c                               48      48   100%   
 src/lib/func.c                               238     237    99%   92
-src/lib/gack.c                                46      45    97%   50
+src/lib/gack.c                                16      16   100%   
 src/lib/instr.c                               79      79   100%   
 src/lib/modules.c                            220     219    99%   252
-src/lib/object.c                             187     186    99%   135
+src/lib/object.c                             187     186    99%   134
 src/lib/opfunc.c                              67      67   100%   
 src/lib/prim.c                               256     256   100%   
 src/lib/ptr.c                                 82      81    98%   70
@@ -48,7 +48,7 @@ src/lib/string.c                             155     155   100%
 src/lib/tuple.c                              285     283    99%   158,162
 src/lib/ugen.c                               244     244   100%   
 src/lib/vararg.c                              87      87   100%   
-src/lib/vec.c                                244     244   100%   
+src/lib/vec.c                                248     248   100%   
 src/main.c                                    14      14   100%   
 src/parse/check.c                           1017    1009    99%   75,97,166,547,611,781,869,1088
 src/parse/did_you_mean.c                      42      42   100%   
@@ -68,13 +68,13 @@ src/plug.c                                   113     112    99%   206
 src/soundinfo.c                               11      11   100%   
 src/vm/driver.c                               32      32   100%   
 src/vm/shreduler.c                            85      85   100%   
-src/vm/vm.c                                  566     563    99%   92,670-671
+src/vm/vm.c                                  564     561    99%   92,670-671
 src/vm/vm_code.c                              48      48   100%   
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                       9581    9505    99%
+TOTAL                                       9554    9479    99%
 ------------------------------------------------------------------------------
-lines: 99.2% (9505 out of 9581)
-branches: 84.1% (4316 out of 5133)
+lines: 99.2% (9479 out of 9554)
+branches: 84.1% (4313 out of 5127)
 ```
