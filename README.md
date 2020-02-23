@@ -18,7 +18,7 @@ src/env/env_utils.c                           71      71   100%
 src/env/nspc.c                                50      50   100%   
 src/env/type.c                               139     137    98%   140,144
 src/env/value.c                               25      25   100%   
-src/gwion.c                                  137     136    99%   83
+src/gwion.c                                  138     137    99%   85
 src/gwiondata.c                               35      35   100%   
 src/import/cdef.c                             65      65   100%   
 src/import/checker.c                         208     199    95%   127,129,134,145,148,223,256,261,298
@@ -64,7 +64,7 @@ src/parse/traverse.c                          42      41    97%   63
 src/parse/type_decl.c                         51      50    98%   32
 src/parse/type_utils.c                        18      18   100%   
 src/pass.c                                    34      34   100%   
-src/plug.c                                   113     112    99%   206
+src/plug.c                                   113     113   100%   
 src/soundinfo.c                               11      11   100%   
 src/vm/driver.c                               32      32   100%   
 src/vm/shreduler.c                            85      85   100%   
@@ -73,8 +73,8 @@ src/vm/vm_code.c                              48      48   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                       9600    9524    99%
+TOTAL                                       9601    9526    99%
 ------------------------------------------------------------------------------
-lines: 99.2% (9524 out of 9600)
-branches: 84.1% (4322 out of 5141)
+lines: 99.2% (9526 out of 9601)
+branches: 84.1% (4323 out of 5141)
 ```
