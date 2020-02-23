@@ -43,7 +43,7 @@ src/lib/object.c                             187     186    99%   135
 src/lib/opfunc.c                              67      67   100%   
 src/lib/prim.c                               256     256   100%   
 src/lib/ptr.c                                 82      81    98%   70
-src/lib/shred.c                              234     230    98%   181-183,238
+src/lib/shred.c                              234     233    99%   238
 src/lib/string.c                             155     155   100%   
 src/lib/tuple.c                              285     283    99%   158,162
 src/lib/ugen.c                               244     244   100%   
@@ -68,13 +68,13 @@ src/plug.c                                   113     112    99%   206
 src/soundinfo.c                               11      11   100%   
 src/vm/driver.c                               32      32   100%   
 src/vm/shreduler.c                            85      85   100%   
-src/vm/vm.c                                  569     565    99%   92,670-671,858
+src/vm/vm.c                                  569     568    99%   858
 src/vm/vm_code.c                              48      48   100%   
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                       9599    9507    99%
+TOTAL                                       9599    9513    99%
 ------------------------------------------------------------------------------
-lines: 99.0% (9507 out of 9599)
-branches: 84.0% (4318 out of 5141)
+lines: 99.1% (9513 out of 9599)
+branches: 84.1% (4325 out of 5141)
 ```
