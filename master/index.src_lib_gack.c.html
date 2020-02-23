@@ -1,5 +1,5 @@
 
-<script type="text/javascript" src="focus.js"></script><html>
+<script type="text/javascript" src="../focus.js"></script><html>
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -269,18 +269,18 @@
             <td class="headerValue">src/lib/gack.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">16</td>
-            <td class="headerTableEntry">16</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
+            <td class="headerTableEntry">45</td>
+            <td class="headerTableEntry">46</td>
+            <td class="headerTableEntry" style="background-color:LightGreen">97.8 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-02-23 13:42:52</td>
+            <td class="headerValue">2020-02-23 17:05:58</td>
             <td></td>
             <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">5</td>
-            <td class="headerTableEntry">6</td>
-            <td class="headerTableEntry" style="background-color:#FFFF55">83.3 %</td>
+            <td class="headerTableEntry">13</td>
+            <td class="headerTableEntry">16</td>
+            <td class="headerTableEntry" style="background-color:#FFFF55">81.2 %</td>
           </tr>
         </table>
       </td>
@@ -317,7 +317,7 @@
     <td align="right" class="lineno"><pre>3</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include &lt;complex.h></pre></td>
+    <td align="left" class="src "><pre>#include &lt;stdarg.h></pre></td>
     </tr>
 
     <tr>
@@ -400,145 +400,425 @@
     <tr>
     <td align="right" class="lineno"><pre>15</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1618</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN void gack(const VM_Shred shred, const Instr instr) {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN2(1) static int fmtlen(const char *fmt, va_list args) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>16</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1618</pre></td>
-    <td align="left" class="src coveredLine"><pre>  Type base = (Type)instr->m_val, t = base;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  va_list tmpa;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>17</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  do {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>  va_copy(tmpa, args);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>18</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1618 times">&check;</span><span class="takenBranch" title="Branch 1 taken 306 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1924</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if(t->e->gack) {</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const int size = vsnprintf(NULL, 0, fmt, tmpa);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>19</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1616 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1618</pre></td>
-    <td align="left" class="src coveredLine"><pre>      if(GET_FLAG(t->e->gack, builtin))</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>  va_end(tmpa);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>20</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1616</pre></td>
-    <td align="left" class="src coveredLine"><pre>        ((f_gack)t->e->gack->native_func)(base, (shred->reg - t->size), shred);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return size;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>21</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>      else {</pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>22</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>        shred->mem += instr->m_val2;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>23</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>        *(m_uint*)(shred->mem+ SZ_INT) = instr->m_val2 + SZ_INT;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN2(2) static int gw_vasprintf(MemPool mp, char **str, const char *fmt, va_list args) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>        *(VM_Code*)(shred->mem+ SZ_INT*2) = shred->code;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>  char *base = *str;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>25</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>        *(m_uint*)(shred->mem+ SZ_INT*3) = shred->pc;</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 393 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1237 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const size_t base_len = base ? strlen(base) : 0;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>26</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>        *(m_uint*)(shred->mem+ SZ_INT*4) = SZ_INT;</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 1630 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>  DECL_BB(const int, size, = fmtlen(fmt, args))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>27</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>        shred->mem += SZ_INT*5;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>  char *ret = mp_malloc2(mp, base_len + size + 1);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>28</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>        *(M_Object*)(shred->mem)= *(M_Object*)(shred->reg - SZ_INT);</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 393 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1237 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(base)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>29</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>        shred->code = t->e->gack;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>393</pre></td>
+    <td align="left" class="src coveredLine"><pre>    strcpy(ret, base);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>30</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>        shred->pc = 0;</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 1630 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>  DECL_BB(const int, final_len, = vsprintf(ret + base_len, fmt, args))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>31</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>      }</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 393 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1237 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(base)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>32</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1618</pre></td>
-    <td align="left" class="src coveredLine"><pre>      return;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>393</pre></td>
+    <td align="left" class="src coveredLine"><pre>    mp_free2(mp, strlen(base), base);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>33</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>  *str = ret;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>34</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 306 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>306</pre></td>
-    <td align="left" class="src coveredLine"><pre>  } while((t = t->e->parent));</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return final_len;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>35</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>36</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>37</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN2(2) int gw_asprintf(MemPool mp, char **str, const char *fmt, ...) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>38</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  va_list args;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>39</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>  va_start(args, fmt);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>40</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const int ret = gw_vasprintf(mp, str, fmt, args);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>41</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>  va_end(args);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>42</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>43</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>44</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>45</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>__attribute__((returns_nonnull))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>46</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1938</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static inline VM_Code get_gack(Type t) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>47</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1632 times">&check;</span><span class="takenBranch" title="Branch 1 taken 306 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1938</pre></td>
+    <td align="left" class="src coveredLine"><pre>  do if(t->e->gack)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>48</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1632</pre></td>
+    <td align="left" class="src coveredLine"><pre>    return t->e->gack;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>49</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 306 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>306</pre></td>
+    <td align="left" class="src coveredLine"><pre>  while((t = t->e->parent));</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>50</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  return NULL; // unreachable</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>51</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>52</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>53</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static void prepare_call(const VM_Shred shred, m_uint offset) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>54</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  shred->mem += offset;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>55</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  *(m_uint*)(shred->mem+ SZ_INT) = offset + SZ_INT;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>56</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  *(VM_Code*)(shred->mem+ SZ_INT*2) = shred->code;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>57</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  *(m_uint*)(shred->mem+ SZ_INT*3) = shred->pc;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>58</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  *(m_uint*)(shred->mem+ SZ_INT*4) = SZ_INT;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>59</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  shred->mem += SZ_INT*5;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>60</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  *(M_Object*)(shred->mem)= *(M_Object*)(shred->reg - SZ_INT);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>61</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  shred->pc = 0;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>62</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>63</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>64</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1632</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN void gack(const VM_Shred shred, const Instr instr) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>65</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1632</pre></td>
+    <td align="left" class="src coveredLine"><pre>  Type t = (Type)instr->m_val;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>66</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1632</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const VM_Code code = get_gack(t);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>67</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1630 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1632</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(GET_FLAG(code, builtin)) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>68</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>    ((f_gack)code->native_func)(t, (shred->reg - t->size), shred);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>69</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1630</pre></td>
+    <td align="left" class="src coveredLine"><pre>    POP_REG(shred, t->size);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>70</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  } else {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>71</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>    prepare_call(shred, instr->m_val2);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>72</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>    shred->code = code;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>73</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>74</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1632</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>75</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
