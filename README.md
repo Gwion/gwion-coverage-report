@@ -36,7 +36,7 @@ src/lib/complex.c                             93      93   100%
 src/lib/engine.c                             120     120   100%   
 src/lib/event.c                               48      48   100%   
 src/lib/func.c                               238     237    99%   92
-src/lib/gack.c                                46      45    97%   50
+src/lib/gack.c                                47      46    97%   50
 src/lib/instr.c                               79      79   100%   
 src/lib/modules.c                            220     219    99%   252
 src/lib/object.c                             187     186    99%   135
@@ -73,8 +73,8 @@ src/vm/vm_code.c                              48      48   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                       9599    9523    99%
+TOTAL                                       9600    9524    99%
 ------------------------------------------------------------------------------
-lines: 99.2% (9523 out of 9599)
+lines: 99.2% (9524 out of 9600)
 branches: 84.1% (4322 out of 5141)
 ```
