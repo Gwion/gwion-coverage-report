@@ -8,7 +8,7 @@ File                                       Lines    Exec  Cover   Missing
 ------------------------------------------------------------------------------
 src/arg.c                                    130     101    77%   15-19,130-136,138-139,148-153,155-157,163-168
 src/compile.c                                 79      78    98%   106
-src/emit/emit.c                             1536    1535    99%   2000
+src/emit/emit.c                             1540    1539    99%   2005
 src/emit/emitter.c                            30      30   100%   
 src/emit/escape.c                             52      52   100%   
 src/emit/memoize.c                            34      34   100%   
@@ -36,7 +36,7 @@ src/lib/complex.c                             93      93   100%
 src/lib/engine.c                             120     120   100%   
 src/lib/event.c                               48      48   100%   
 src/lib/func.c                               238     237    99%   92
-src/lib/gack.c                                51      50    98%   50
+src/lib/gack.c                                47      46    97%   50
 src/lib/instr.c                               79      79   100%   
 src/lib/modules.c                            220     219    99%   252
 src/lib/object.c                             187     186    99%   135
@@ -68,13 +68,13 @@ src/plug.c                                   113     113   100%
 src/soundinfo.c                               11      11   100%   
 src/vm/driver.c                               32      32   100%   
 src/vm/shreduler.c                            85      85   100%   
-src/vm/vm.c                                  569     566    99%   92,670-671
+src/vm/vm.c                                  574     571    99%   92,670-671
 src/vm/vm_code.c                              48      48   100%   
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                       9605    9530    99%
+TOTAL                                       9610    9535    99%
 ------------------------------------------------------------------------------
-lines: 99.2% (9530 out of 9605)
-branches: 84.1% (4329 out of 5147)
+lines: 99.2% (9535 out of 9610)
+branches: 84.1% (4333 out of 5151)
 ```
