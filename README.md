@@ -36,14 +36,14 @@ src/lib/complex.c                             93      93   100%
 src/lib/engine.c                             120     120   100%   
 src/lib/event.c                               48      48   100%   
 src/lib/func.c                               238     237    99%   92
-src/lib/gack.c                                47      46    97%   50
+src/lib/gack.c                                49      48    98%   50
 src/lib/instr.c                               79      79   100%   
 src/lib/modules.c                            220     219    99%   252
 src/lib/object.c                             187     186    99%   135
 src/lib/opfunc.c                              67      67   100%   
 src/lib/prim.c                               256     256   100%   
 src/lib/ptr.c                                 82      81    98%   70
-src/lib/shred.c                              234     233    99%   238
+src/lib/shred.c                              234     230    98%   181-183,238
 src/lib/string.c                             155     155   100%   
 src/lib/tuple.c                              285     283    99%   158,162
 src/lib/ugen.c                               244     244   100%   
@@ -73,8 +73,8 @@ src/vm/vm_code.c                              48      48   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                       9610    9535    99%
+TOTAL                                       9612    9534    99%
 ------------------------------------------------------------------------------
-lines: 99.2% (9535 out of 9610)
-branches: 84.1% (4333 out of 5151)
+lines: 99.2% (9534 out of 9612)
+branches: 84.1% (4333 out of 5153)
 ```
