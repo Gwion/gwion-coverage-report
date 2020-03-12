@@ -269,18 +269,18 @@
             <td class="headerValue">src/lib/string.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">119</td>
-            <td class="headerTableEntry">119</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
+            <td class="headerTableEntry">66</td>
+            <td class="headerTableEntry">67</td>
+            <td class="headerTableEntry" style="background-color:LightGreen">98.5 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-03-12 18:33:03</td>
+            <td class="headerValue">2020-03-12 19:20:42</td>
             <td></td>
             <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">55</td>
-            <td class="headerTableEntry">94</td>
-            <td class="headerTableEntry" style="background-color:LightPink">58.5 %</td>
+            <td class="headerTableEntry">24</td>
+            <td class="headerTableEntry">48</td>
+            <td class="headerTableEntry" style="background-color:LightPink">50.0 %</td>
           </tr>
         </table>
       </td>
@@ -421,35 +421,35 @@
     <tr>
     <td align="right" class="lineno"><pre>18</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static void push_string(const VM_Shred shred, const M_Object obj, const m_str c) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>19</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
     <td align="left" class="src coveredLine"><pre>  STRING(obj) = s_name(insert_symbol(shred->info->vm->gwion->st, c));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>20</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(M_Object*)REG(-SZ_INT) = (M_Object)obj;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>21</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
     <td align="left" class="src coveredLine"><pre>  _release(obj, shred);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>22</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -463,1461 +463,614 @@
     <tr>
     <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static void push_new_string(const VM_Shred shred, const m_str c) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>25</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const M_Object obj = new_string(shred->info->mp, shred, c);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>26</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
-    <td align="left" class="src coveredLine"><pre>  *(M_Object*)REG(-SZ_INT) = (M_Object)obj;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>27</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>28</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>29</pre></td>
-    <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#define describe_string_logical(name, action)    \</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>30</pre></td>
+    <td align="right" class="lineno"><pre>25</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>static INSTR(String_##name) {\</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>31</pre></td>
+    <td align="right" class="lineno"><pre>26</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  POP_REG(shred, SZ_INT);                        \</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>32</pre></td>
+    <td align="right" class="lineno"><pre>27</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  const M_Object lhs = *(M_Object*)REG(-SZ_INT); \</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>33</pre></td>
+    <td align="right" class="lineno"><pre>28</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  const M_Object rhs = *(M_Object*)REG(0);       \</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>34</pre></td>
+    <td align="right" class="lineno"><pre>29</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  *(m_int*)REG(-SZ_INT) = action;                \</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>35</pre></td>
+    <td align="right" class="lineno"><pre>30</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  release(lhs, shred);                           \</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>36</pre></td>
+    <td align="right" class="lineno"><pre>31</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  release(rhs, shred);                           \</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>37</pre></td>
+    <td align="right" class="lineno"><pre>32</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>38</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 5 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 5 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 4 taken 2 times">&check;</span><span class="takenBranch" title="Branch 5 taken 3 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><span class="takenBranch" title="Branch 7 taken 2 times">&check;</span><br/><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><span class="notTakenBranch" title="Branch 9 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="right" class="lineno"><pre>33</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 3 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="takenBranch" title="Branch 5 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><span class="takenBranch" title="Branch 7 taken 1 times">&check;</span><br/><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><span class="notTakenBranch" title="Branch 9 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
     <td align="left" class="src coveredLine"><pre>describe_string_logical(eq, (lhs &amp;&amp; rhs &amp;&amp; !strcmp(STRING(lhs), STRING(rhs))) || (!lhs &amp;&amp; !rhs))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>39</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><span class="takenBranch" title="Branch 6 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 9 not taken">&cross;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="takenBranch" title="Branch 11 taken 1 times">&check;</span><br/><span class="notTakenBranch" title="Branch 12 not taken">&cross;</span><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>describe_string_logical(neq, (lhs &amp;&amp; rhs &amp;&amp; strcmp(STRING(lhs), STRING(rhs))) ||</pre></td>
+    <td align="right" class="lineno"><pre>34</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>describe_string_logical(neq, (lhs &amp;&amp; rhs &amp;&amp; strcmp(STRING(lhs), STRING(rhs))) ||</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>40</pre></td>
+    <td align="right" class="lineno"><pre>35</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    (lhs &amp;&amp; !rhs) || (!lhs &amp;&amp; rhs))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>41</pre></td>
+    <td align="right" class="lineno"><pre>36</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>42</pre></td>
+    <td align="right" class="lineno"><pre>37</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#define describe_string_assign(name, type, offset, opt, len, format, ...) \</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>static INSTR(String_Assign) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>38</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>  POP_REG(shred, SZ_INT);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>39</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const M_Object lhs = *(M_Object*)REG(-SZ_INT);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>40</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const M_Object rhs = *(M_Object*)REG(0);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>41</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>  release(lhs, shred);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>42</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 5 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>  push_string(shred, rhs, lhs ? STRING(lhs) : "");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>43</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>static INSTR(name##String_Assign) {\</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>44</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  POP_REG(shred, offset);                                            \</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>45</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  const type lhs = *(type*)REG(-SZ_INT);                             \</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="left" class="src coveredLine"><pre>static CTOR(string_ctor) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>46</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  const M_Object rhs = *(M_Object*)REG(offset - SZ_INT);             \</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="left" class="src coveredLine"><pre>  STRING(o) = "";</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>47</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  opt;                                                               \</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>48</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  if(!rhs)                                                           \</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>49</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    Except(shred, "NullStringException.");                           \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>50</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  char str[(len)];                                                   \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>51</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  sprintf(str, format, __VA_ARGS__);                                 \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>52</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  push_string(shred, rhs, str);                                     \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>53</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>54</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>55</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>static INSTR(String_Assign) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>56</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>  POP_REG(shred, SZ_INT);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>57</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const M_Object lhs = *(M_Object*)REG(-SZ_INT);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>58</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const M_Object rhs = *(M_Object*)REG(0);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>59</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>  release(lhs, shred);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>60</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 7 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(!rhs)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>61</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>    Except(shred, "NullStringException.");</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>62</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 7 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
-    <td align="left" class="src coveredLine"><pre>  push_string(shred, rhs, lhs ? STRING(lhs) : "");</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>63</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>64</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>65</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>describe_string_assign(Int_, m_int, SZ_INT,,</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>66</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  num_digit((m_uint)labs(lhs)) + 1,</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>67</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  "%" INT_F "", lhs)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>68</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>describe_string_assign(Float_, m_float, SZ_FLOAT,,</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>69</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  num_digit((m_uint)lhs) + 6,</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>70</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  "%.4f", lhs)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>71</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 3 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>describe_string_assign(Object_, M_Object, SZ_INT, release(lhs, shred),</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>72</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  16,</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>73</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  "%p", (void*)lhs)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>74</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>75</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>static INSTR(String_String) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>76</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>  POP_REG(shred, SZ_INT);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>77</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const M_Object lhs = *(M_Object*)REG(-SZ_INT);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>78</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const M_Object rhs = *(M_Object*)REG(0);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>79</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 3 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>  char str[(lhs ? strlen(STRING(lhs)) : 0) + (rhs ? strlen(STRING(rhs)) : 0) + 1];</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>80</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 3 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>  sprintf(str, "%s%s", lhs ? STRING(lhs) : "", rhs ? STRING(rhs) : "");</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>81</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>  push_new_string(shred, str);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>82</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>  release(rhs, shred);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>83</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>  release(lhs, shred);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>84</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>85</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>86</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#define describe_string(name, type, offset, len, opt, format, ...) \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>87</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>static INSTR(name##_String) {\</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>88</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  POP_REG(shred, offset); \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>89</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  const type lhs = *(type*)REG(-SZ_INT);\</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>90</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  const M_Object rhs = *(M_Object*)REG(offset-SZ_INT);\</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>91</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  if(!rhs)                                          \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>92</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    Except(shred, "NullPtrException");              \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>93</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  char str[(len)];\</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>94</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  sprintf(str, format, __VA_ARGS__);\</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>95</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  push_new_string(shred, str);\</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>96</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  opt; \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>97</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  release(rhs, shred);\</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>98</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>99</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 6 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>describe_string(Int, m_int, SZ_INT,</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>100</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  num_digit((m_uint)lhs) + (rhs ? strlen(STRING(rhs)) : 0) + 1,,</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>101</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  "%" INT_F "%s", lhs, rhs ? STRING(rhs) : "")</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>102</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 6 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>describe_string(Float, m_float, SZ_FLOAT,</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>103</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  (num_digit((m_uint)lhs) + 5 + (rhs ? strlen(STRING(rhs)) : 0) + 1),,</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>104</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  "%.4f%s", lhs, rhs ? STRING(rhs) : "")</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>105</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span><span class="takenBranch" title="Branch 3 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 5 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>describe_string(Object, M_Object, SZ_INT,</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>106</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  17 + (rhs ? strlen(STRING(rhs)) : 0), /*release(lhs, shred)*/,</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>107</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  "%p%s", (void*)lhs, rhs ? STRING(rhs) : "")</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>108</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>109</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>110</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#define describe_string_plus(_name, offset, type, opt, len, format, ...) \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>111</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>static INSTR(_name##String_Plus) {                       \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>112</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  POP_REG(shred, offset);                                \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>113</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  const type lhs = *(type*)REG(-SZ_INT);                 \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>114</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  const M_Object rhs = *(M_Object*)REG(offset - SZ_INT); \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>115</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  opt;                                                   \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>116</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  if(!rhs)                                               \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>117</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    Except(shred, "NullPtrException");                   \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>118</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  char c[strlen(STRING(rhs)) + (len) + 1];               \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>119</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  sprintf(c, "%s"format, STRING(rhs), __VA_ARGS__);      \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>120</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  push_string(shred, rhs, c);                            \</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>121</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>122</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 6 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>describe_string_plus(,SZ_INT, M_Object, release(lhs, shred),</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>123</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  lhs ? strlen(STRING(lhs)) : 0, "%s", lhs ? STRING(lhs) : "")</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>124</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>describe_string_plus(Int_, SZ_INT, m_int,,</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>125</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  num_digit((m_uint)lhs), "%"INT_F, lhs)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>126</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>describe_string_plus(Float_, SZ_FLOAT, m_float,,</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>127</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  num_digit((m_uint)lhs) + 6, "%.4f", lhs)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>128</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 2 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>describe_string_plus(Object_, SZ_INT, M_Object, release(lhs, shred),</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>129</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  16, "%p", (void*)lhs)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>130</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>131</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>static CTOR(string_ctor) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>132</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>  STRING(o) = "";</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>133</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>134</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>135</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>58</pre></td>
     <td align="left" class="src coveredLine"><pre>ID_CHECK(check_funcpp) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>136</pre></td>
+    <td align="right" class="lineno"><pre>50</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>58</pre></td>
     <td align="left" class="src coveredLine"><pre>  ((Exp_Primary*)prim)->prim_type = ae_prim_str;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>137</pre></td>
+    <td align="right" class="lineno"><pre>51</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 49 times">&check;</span><span class="takenBranch" title="Branch 1 taken 9 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>67</pre></td>
     <td align="left" class="src coveredLine"><pre>  ((Exp_Primary*)prim)->d.str = env->func ? env->func->name : env->class_def ?</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>138</pre></td>
+    <td align="right" class="lineno"><pre>52</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3 times">&check;</span><span class="takenBranch" title="Branch 1 taken 6 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>9</pre></td>
     <td align="left" class="src coveredLine"><pre>    env->class_def->name : env->name;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>139</pre></td>
+    <td align="right" class="lineno"><pre>53</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>58</pre></td>
     <td align="left" class="src coveredLine"><pre>  ((Exp_Primary*)prim)->value = global_string(env, prim->d.str);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>140</pre></td>
+    <td align="right" class="lineno"><pre>54</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>58</pre></td>
     <td align="left" class="src coveredLine"><pre>  return prim->value->type;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>141</pre></td>
+    <td align="right" class="lineno"><pre>55</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>142</pre></td>
+    <td align="right" class="lineno"><pre>56</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>143</pre></td>
+    <td align="right" class="lineno"><pre>57</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>421</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>406</pre></td>
     <td align="left" class="src coveredLine"><pre>static GACK(gack_string) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>144</pre></td>
+    <td align="right" class="lineno"><pre>58</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>421</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>406</pre></td>
     <td align="left" class="src coveredLine"><pre>  const M_Object obj = *(M_Object*)VALUE;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>145</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 418 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>421</pre></td>
+    <td align="right" class="lineno"><pre>59</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 402 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>406</pre></td>
     <td align="left" class="src coveredLine"><pre>  INTERP_PRINTF("%s", obj ? STRING(obj) : "(null string)");</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>146</pre></td>
+    <td align="right" class="lineno"><pre>60</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>421</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>406</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>147</pre></td>
+    <td align="right" class="lineno"><pre>61</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>148</pre></td>
+    <td align="right" class="lineno"><pre>62</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>5</pre></td>
     <td align="left" class="src coveredLine"><pre>static inline m_bool bounds(const m_str str, const m_int i) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>149</pre></td>
+    <td align="right" class="lineno"><pre>63</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>5</pre></td>
     <td align="left" class="src coveredLine"><pre>  CHECK_BB(i)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>150</pre></td>
+    <td align="right" class="lineno"><pre>64</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>4</pre></td>
     <td align="left" class="src coveredLine"><pre>  return (m_uint)i &lt; strlen(str) ? GW_OK : GW_ERROR;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>151</pre></td>
+    <td align="right" class="lineno"><pre>65</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>152</pre></td>
+    <td align="right" class="lineno"><pre>66</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>153</pre></td>
+    <td align="right" class="lineno"><pre>67</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
     <td align="left" class="src coveredLine"><pre>static INSTR(StringSlice) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>154</pre></td>
+    <td align="right" class="lineno"><pre>68</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
     <td align="left" class="src coveredLine"><pre>  shred->reg -= SZ_INT *2;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>155</pre></td>
+    <td align="right" class="lineno"><pre>69</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
     <td align="left" class="src coveredLine"><pre>  const M_Object obj = *(M_Object*)REG(-SZ_INT);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>156</pre></td>
+    <td align="right" class="lineno"><pre>70</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
     <td align="left" class="src coveredLine"><pre>  m_str str = STRING(obj);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>157</pre></td>
+    <td align="right" class="lineno"><pre>71</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
     <td align="left" class="src coveredLine"><pre>  const m_int start = *(m_uint*)REG(0);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>158</pre></td>
+    <td align="right" class="lineno"><pre>72</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
     <td align="left" class="src coveredLine"><pre>  const size_t strsz = strlen(str);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>159</pre></td>
+    <td align="right" class="lineno"><pre>73</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
     <td align="left" class="src coveredLine"><pre>  m_int end   = *(m_uint*)REG(SZ_INT);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>160</pre></td>
+    <td align="right" class="lineno"><pre>74</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(end &lt; 0)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>161</pre></td>
+    <td align="right" class="lineno"><pre>75</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>    end = strsz + end;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>162</pre></td>
+    <td align="right" class="lineno"><pre>76</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 2 times">&check;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(bounds(str, start) &lt; 0 || bounds(str, end) &lt; 0)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>163</pre></td>
+    <td align="right" class="lineno"><pre>77</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    Except(shred, "OutOfBoundsStringSlice");</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>164</pre></td>
+    <td align="right" class="lineno"><pre>78</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  const m_int op    = start &lt; end ? 1 : -1;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>165</pre></td>
+    <td align="right" class="lineno"><pre>79</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  const m_uint sz    = op > 0 ? end - start : start - end;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>166</pre></td>
+    <td align="right" class="lineno"><pre>80</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  char c[sz + 1];</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>167</pre></td>
+    <td align="right" class="lineno"><pre>81</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 9 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>11</pre></td>
     <td align="left" class="src coveredLine"><pre>  for(m_int i = start, j = 0; i != end; i += op, ++j)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>168</pre></td>
+    <td align="right" class="lineno"><pre>82</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>9</pre></td>
     <td align="left" class="src coveredLine"><pre>    c[j] = str[i];</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>169</pre></td>
+    <td align="right" class="lineno"><pre>83</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  c[sz] = '\0';</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>170</pre></td>
+    <td align="right" class="lineno"><pre>84</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(M_Object*)REG(-SZ_INT) = new_string(shred->info->vm->gwion->mp, shred, c);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>171</pre></td>
+    <td align="right" class="lineno"><pre>85</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>172</pre></td>
+    <td align="right" class="lineno"><pre>86</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>173</pre></td>
+    <td align="right" class="lineno"><pre>87</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
     <td align="left" class="src coveredLine"><pre>GWION_IMPORT(string) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>174</pre></td>
+    <td align="right" class="lineno"><pre>88</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Type t_string = gwi_class_ini(gwi, "string", NULL);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>175</pre></td>
+    <td align="right" class="lineno"><pre>89</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
     <td align="left" class="src coveredLine"><pre>  gwi_class_xtor(gwi, string_ctor, NULL);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>176</pre></td>
+    <td align="right" class="lineno"><pre>90</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
     <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_gack(gwi, t_string, gack_string))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>177</pre></td>
+    <td align="right" class="lineno"><pre>91</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
     <td align="left" class="src coveredLine"><pre>  gwi->gwion->type[et_string] = t_string; // use func</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>178</pre></td>
+    <td align="right" class="lineno"><pre>92</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>179</pre></td>
+    <td align="right" class="lineno"><pre>93</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
     <td align="left" class="src coveredLine"><pre>  gwi_item_ini(gwi, "@internal", "@data");</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>180</pre></td>
+    <td align="right" class="lineno"><pre>94</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
     <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_item_end(gwi,   ae_flag_const, NULL))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>181</pre></td>
+    <td align="right" class="lineno"><pre>95</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
     <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_class_end(gwi))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>182</pre></td>
+    <td align="right" class="lineno"><pre>96</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>183</pre></td>
+    <td align="right" class="lineno"><pre>97</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "string",  "string", "string"))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "string",  "nonnull string", "string"))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>184</pre></td>
+    <td align="right" class="lineno"><pre>98</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
     <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_const_rhs))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>185</pre></td>
+    <td align="right" class="lineno"><pre>99</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
     <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "=>",      String_Assign))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>186</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "+",       String_String))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>187</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_const_rhs))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>188</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "+=>", String_Plus))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>189</pre></td>
+    <td align="right" class="lineno"><pre>100</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>190</pre></td>
+    <td align="right" class="lineno"><pre>101</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
     <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "string",  "string", "int"))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>191</pre></td>
+    <td align="right" class="lineno"><pre>102</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
     <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "==",       String_eq))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>192</pre></td>
+    <td align="right" class="lineno"><pre>103</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
     <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "!=",       String_neq))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>193</pre></td>
+    <td align="right" class="lineno"><pre>104</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>194</pre></td>
+    <td align="right" class="lineno"><pre>105</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "int",     "string", "string"))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>195</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_const_rhs))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>196</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "=>",      Int_String_Assign))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>197</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "+",       Int_String))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>198</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_const_rhs))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>199</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "+=>", Int_String_Plus))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>200</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>201</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "float",   "string", "string"))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>202</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_const_rhs))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>203</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "=>",      Float_String_Assign))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>204</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "+",       Float_String))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>205</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_const_rhs))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>206</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "+=>", Float_String_Plus))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>207</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>208</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "Object",  "string", "string"))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>209</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_const_rhs))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>210</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "=>",      Object_String_Assign))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>211</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "+",       Object_String))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>212</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_const_rhs))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>213</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "+=>", Object_String_Plus))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>214</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>215</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "@null",   "string", "string"))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>216</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_const_rhs))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>217</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "=>",      Object_String_Assign))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>218</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "+",       Object_String))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>219</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_const_rhs))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>220</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "+=>", Object_String_Plus))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>221</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>222</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
     <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "string", "int", "string"))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>223</pre></td>
+    <td align="right" class="lineno"><pre>106</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
     <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@slice", StringSlice))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>224</pre></td>
+    <td align="right" class="lineno"><pre>107</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>225</pre></td>
+    <td align="right" class="lineno"><pre>108</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>//  gwi_item_ini(gwi, "string", "__func__");</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>226</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>//  gwi_item_end(gwi, ae_flag_const, NULL);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>227</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>//  gwi_reserve(gwi, "__func__");</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>228</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>229</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
     <td align="left" class="src coveredLine"><pre>  struct SpecialId_ spid = { .ck=check_funcpp, .exec=RegPushMe, .is_const=1 };</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>230</pre></td>
+    <td align="right" class="lineno"><pre>109</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
     <td align="left" class="src coveredLine"><pre>  gwi_specialid(gwi, "__func__", &amp;spid);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>231</pre></td>
+    <td align="right" class="lineno"><pre>110</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>696</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>697</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>232</pre></td>
+    <td align="right" class="lineno"><pre>111</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
