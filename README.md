@@ -32,7 +32,7 @@ src/import/special.c                          28      28   100%
 src/import/tdef.c                             26      25    96%   24
 src/import/type.c                             23      23   100%   
 src/import/udef.c                             60      60   100%   
-src/lib/array.c                              316     267    84%   74-78,80,88-95,99-104,106-107,109,120-121,124-125,160,163-168,282-289,297-303
+src/lib/array.c                              319     290    90%   74-78,80,103,160,163-168,282-289,297-303
 src/lib/engine.c                             119     119   100%   
 src/lib/event.c                               48      48   100%   
 src/lib/func.c                               238     237    99%   92
@@ -55,7 +55,7 @@ src/parse/did_you_mean.c                      42      42   100%
 src/parse/func.c                              23      23   100%   
 src/parse/operator.c                         188     186    98%   210,291
 src/parse/scan0.c                            299     297    99%   139,215
-src/parse/scan1.c                            357     353    98%   52,109,119,420
+src/parse/scan1.c                            359     355    98%   52,109,119,423
 src/parse/scan2.c                            395     395   100%   
 src/parse/scanx.c                             46      46   100%   
 src/parse/stage.c                              9       9   100%   
@@ -73,8 +73,8 @@ src/vm/vm_code.c                              48      48   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                       8886    8673    97%
+TOTAL                                       8891    8698    97%
 ------------------------------------------------------------------------------
-lines: 97.6% (8673 out of 8886)
-branches: 82.9% (4055 out of 4893)
+lines: 97.8% (8698 out of 8891)
+branches: 83.0% (4061 out of 4895)
 ```
