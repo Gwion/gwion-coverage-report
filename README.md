@@ -32,7 +32,7 @@ src/import/special.c                          28      28   100%
 src/import/tdef.c                             26      25    96%   24
 src/import/type.c                             23      23   100%   
 src/import/udef.c                             60      60   100%   
-src/lib/array.c                              319     290    90%   74-78,80,103,160,163-168,282-289,297-303
+src/lib/array.c                              320     304    95%   103,282-289,297-303
 src/lib/engine.c                             119     119   100%   
 src/lib/event.c                               48      48   100%   
 src/lib/func.c                               238     237    99%   92
@@ -45,7 +45,7 @@ src/lib/opfunc.c                              67      67   100%
 src/lib/prim.c                               220     220   100%   
 src/lib/prim_values.c                         30      30   100%   
 src/lib/ptr.c                                 93      92    98%   69
-src/lib/shred.c                              221     220    99%   231
+src/lib/shred.c                              221     217    98%   180-182,231
 src/lib/string.c                              67      66    98%   34
 src/lib/ugen.c                               234     234   100%   
 src/lib/vararg.c                             125     124    99%   48
@@ -68,13 +68,13 @@ src/plug.c                                   113     113   100%
 src/soundinfo.c                               11      11   100%   
 src/vm/driver.c                               32      32   100%   
 src/vm/shreduler.c                            85      85   100%   
-src/vm/vm.c                                  565     525    92%   92,376,378-381,394-398,415,417-420,459,461-464,596-599,662-663,704-707,795,798-799,801-802,814,818-820
+src/vm/vm.c                                  565     529    93%   92,376,378-381,394-398,415,417-420,459,461-464,596-599,662-663,795,798-799,801-802,814,818-820
 src/vm/vm_code.c                              48      48   100%   
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                       8835    8664    98%
+TOTAL                                       8836    8679    98%
 ------------------------------------------------------------------------------
-lines: 98.1% (8664 out of 8835)
+lines: 98.2% (8679 out of 8836)
 branches: 83.2% (4033 out of 4849)
 ```
