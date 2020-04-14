@@ -45,7 +45,7 @@ src/lib/opfunc.c                              64      60    93%   13-16
 src/lib/prim.c                               224     224   100%   
 src/lib/prim_values.c                         30      30   100%   
 src/lib/ptr.c                                 99      98    99%   77
-src/lib/shred.c                              224     218    97%   180-182,225-226,235
+src/lib/shred.c                              224     221    98%   225-226,235
 src/lib/string.c                              67      66    98%   34
 src/lib/ugen.c                               234     234   100%   
 src/lib/vararg.c                             124     123    99%   47
@@ -73,8 +73,8 @@ src/vm/vm_code.c                              48      48   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                       9152    8995    98%
+TOTAL                                       9152    8998    98%
 ------------------------------------------------------------------------------
-lines: 98.3% (8995 out of 9152)
-branches: 83.7% (4249 out of 5079)
+lines: 98.3% (8998 out of 9152)
+branches: 83.7% (4249 out of 5075)
 ```
