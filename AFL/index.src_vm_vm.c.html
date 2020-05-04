@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-05-04 21:36:05</td>
+            <td class="headerValue">2020-05-04 22:18:10</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">90</td>
@@ -428,35 +428,35 @@
     <tr>
     <td align="right" class="lineno"><pre>19</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>static inline uint64_t splitmix64_stateless(uint64_t index) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>20</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>  uint64_t z = (index + UINT64_C(0x9E3779B97F4A7C15));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>21</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>  z = (z ^ (z >> 30)) * UINT64_C(0xBF58476D1CE4E5B9);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>22</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>  z = (z ^ (z >> 27)) * UINT64_C(0x94D049BB133111EB);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>23</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>  return z ^ (z >> 31);</pre></td>
     </tr>
 
@@ -477,14 +477,14 @@
     <tr>
     <td align="right" class="lineno"><pre>26</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>90</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>93</pre></td>
     <td align="left" class="src coveredLine"><pre>static inline uint32_t rotl(const uint32_t x, int k) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>27</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>90</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>93</pre></td>
     <td align="left" class="src coveredLine"><pre>  return (x &lt;&lt; k) | (x >> (32 -k));</pre></td>
     </tr>
 
@@ -505,28 +505,28 @@
     <tr>
     <td align="right" class="lineno"><pre>30</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>void gw_seed(uint32_t rnd[2], const uint64_t s) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>31</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>  uint64_t seed = splitmix64_stateless(s);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>32</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>  memcpy(rnd, &amp;seed, sizeof(uint64_t));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>33</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -547,49 +547,49 @@
     <tr>
     <td align="right" class="lineno"><pre>36</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>31</pre></td>
     <td align="left" class="src coveredLine"><pre>uint32_t gw_rand(uint32_t s[2]) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>37</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>31</pre></td>
     <td align="left" class="src coveredLine"><pre>  const uint32_t s0 = s[0];</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>38</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>31</pre></td>
     <td align="left" class="src coveredLine"><pre>  const uint32_t s1 = s[1] ^ s0;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>39</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>31</pre></td>
     <td align="left" class="src coveredLine"><pre>  const uint32_t ret = rotl(s0 * 0x9E3779BB, 5) * 5;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>40</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>31</pre></td>
     <td align="left" class="src coveredLine"><pre>  s[0] = rotl(s0, 26) ^ s1 ^ (s1 &lt;&lt; 9);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>41</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>31</pre></td>
     <td align="left" class="src coveredLine"><pre>  s[1] = rotl(s1, 13);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>42</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>31</pre></td>
     <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
     </tr>
 
@@ -680,63 +680,63 @@
     <tr>
     <td align="right" class="lineno"><pre>55</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>716</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN void free_vm(VM* vm) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>56</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>716</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_release(&amp;vm->shreduler->shreds);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>57</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>716</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_release(&amp;vm->ugen);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>58</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 716 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>716</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 730 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(vm->bbq)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>59</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>716</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
     <td align="left" class="src coveredLine"><pre>    free_driver(vm->bbq, vm);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>60</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>716</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
     <td align="left" class="src coveredLine"><pre>  MUTEX_CLEANUP(vm->shreduler->mutex);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>61</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>716</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
     <td align="left" class="src coveredLine"><pre>  mp_free(vm->gwion->mp, Shreduler, vm->shreduler);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>62</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>716</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
     <td align="left" class="src coveredLine"><pre>  mp_free(vm->gwion->mp, VM, vm);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>63</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>716</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -750,35 +750,35 @@
     <tr>
     <td align="right" class="lineno"><pre>65</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>461</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>470</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN void vm_add_shred(const VM* vm, const VM_Shred shred) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>66</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>461</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>470</pre></td>
     <td align="left" class="src coveredLine"><pre>  shred->info->vm = (VM*)vm;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>67</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>461</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>470</pre></td>
     <td align="left" class="src coveredLine"><pre>  shred->info->me = new_shred(shred, 1);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>68</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>461</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>470</pre></td>
     <td align="left" class="src coveredLine"><pre>  shreduler_add(vm->shreduler, shred);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>69</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>461</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>470</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -792,35 +792,35 @@
     <tr>
     <td align="right" class="lineno"><pre>71</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN void vm_ini_shred(const VM* vm, const VM_Shred shred) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>72</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
     <td align="left" class="src coveredLine"><pre>  shred->info->vm = (VM*)vm;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>73</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
     <td align="left" class="src coveredLine"><pre>  shred->info->me = new_shred(shred, 1);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>74</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
     <td align="left" class="src coveredLine"><pre>  shreduler_ini(vm->shreduler, shred);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>75</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -974,14 +974,14 @@
     <tr>
     <td align="right" class="lineno"><pre>97</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1597170</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1670164</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static inline void vm_ugen_init(const VM* vm) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>98</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1597170</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1670164</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Vector v = (Vector)&amp;vm->ugen;</pre></td>
     </tr>
 
@@ -994,36 +994,36 @@
 
     <tr>
     <td align="right" class="lineno"><pre>100</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 5271535 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1597170 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>8465875</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 5490517 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1670164 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>8830845</pre></td>
     <td align="left" class="src coveredLine"><pre>  for(m_uint i = vector_size(v) + 1; --i;) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>101</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>5271535</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5490517</pre></td>
     <td align="left" class="src coveredLine"><pre>    const UGen u = (UGen)vector_at(v, i - 1);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>102</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>5271535</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5490517</pre></td>
     <td align="left" class="src coveredLine"><pre>    u->done = 0;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>103</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3194341 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2077194 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>5271535</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3340329 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2150188 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5490517</pre></td>
     <td align="left" class="src coveredLine"><pre>    if(u->multi) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>104</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3194341</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>3340329</pre></td>
     <td align="left" class="src coveredLine"><pre>      struct ugen_multi_* m = u->connect.multi;</pre></td>
     </tr>
 
@@ -1036,15 +1036,15 @@
 
     <tr>
     <td align="right" class="lineno"><pre>106</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6388682 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3194341 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>12777364</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6680658 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3340329 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>13361316</pre></td>
     <td align="left" class="src coveredLine"><pre>      for(m_uint j = m->n_chan + 1; --j;)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>107</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6388682</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>6680658</pre></td>
     <td align="left" class="src coveredLine"><pre>        UGEN(m->channel[j - 1])->done = 0;</pre></td>
     </tr>
 
@@ -1065,21 +1065,21 @@
     <tr>
     <td align="right" class="lineno"><pre>110</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1597170</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1670164</pre></td>
     <td align="left" class="src coveredLine"><pre>  const UGen hole = (UGen)vector_at(v, 0);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>111</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1597170</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1670164</pre></td>
     <td align="left" class="src coveredLine"><pre>  hole->compute(hole);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>112</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1597169</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1670163</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -1156,14 +1156,14 @@
     <tr>
     <td align="right" class="lineno"><pre>123</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2914</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2921</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static inline m_bool overflow_(const m_bit* mem, const VM_Shred c) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>124</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2914</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2921</pre></td>
     <td align="left" class="src coveredLine"><pre>  return mem >  (((m_bit*)c + sizeof(struct VM_Shred_) + SIZEOF_REG) + (SIZEOF_MEM) - (MEM_STEP*16));</pre></td>
     </tr>
 
@@ -2297,7 +2297,7 @@
     <tr>
     <td align="right" class="lineno"><pre>286</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1597174</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1670168</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN void vm_run(const VM* vm) { // lgtm [cpp/use-of-goto]</pre></td>
     </tr>
 
@@ -2654,7 +2654,7 @@
     <tr>
     <td align="right" class="lineno"><pre>337</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1597174</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1670168</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Shreduler s = vm->shreduler;</pre></td>
     </tr>
 
@@ -2681,43 +2681,43 @@
 
     <tr>
     <td align="right" class="lineno"><pre>341</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 593 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1597174 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>3194941</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 602 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1670168 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>3340938</pre></td>
     <td align="left" class="src coveredLine"><pre>  while((shred = shreduler_get(s))) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>342</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>593</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>602</pre></td>
     <td align="left" class="src coveredLine"><pre>    register VM_Code code = shred->code;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>343</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>593</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>602</pre></td>
     <td align="left" class="src coveredLine"><pre>    register m_bit* bytecode = code->bytecode;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>344</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>593</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>602</pre></td>
     <td align="left" class="src coveredLine"><pre>    register m_bit* byte = bytecode + shred->pc * BYTECODE_SZ;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>345</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>593</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>602</pre></td>
     <td align="left" class="src coveredLine"><pre>    register m_bit* reg = shred->reg;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>346</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>593</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>602</pre></td>
     <td align="left" class="src coveredLine"><pre>    register m_bit* mem = shred->mem;</pre></td>
     </tr>
 
@@ -2773,7 +2773,7 @@
     <tr>
     <td align="right" class="lineno"><pre>354</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>593</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>602</pre></td>
     <td align="left" class="src coveredLine"><pre>  MUTEX_LOCK(s->mutex);</pre></td>
     </tr>
 
@@ -2787,84 +2787,84 @@
     <tr>
     <td align="right" class="lineno"><pre>356</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>593</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>602</pre></td>
     <td align="left" class="src coveredLine"><pre>    SDISPATCH();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>357</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4515</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4547</pre></td>
     <td align="left" class="src coveredLine"><pre>regsetimm:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>358</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4515</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4547</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(m_uint*)(reg + (m_int)VAL2) = VAL;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>359</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4515</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4547</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>360</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2795</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2835</pre></td>
     <td align="left" class="src coveredLine"><pre>regpushimm:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>361</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2795</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2835</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(m_uint*)reg = VAL;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>362</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2795</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2835</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg += SZ_INT;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>363</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2795</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2835</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>364</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>483</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>485</pre></td>
     <td align="left" class="src coveredLine"><pre>regpushfloat:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>365</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>483</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>485</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(m_float*)reg = FVAL;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>366</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>483</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>485</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg += SZ_FLOAT;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>367</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>483</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>485</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH();</pre></td>
     </tr>
 
@@ -3032,28 +3032,28 @@
     <tr>
     <td align="right" class="lineno"><pre>391</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1527</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1530</pre></td>
     <td align="left" class="src coveredLine"><pre>regpushmemaddr:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>392</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1527</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1530</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(m_bit**)reg = &amp;*(m_bit*)(mem + (m_int)VAL);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>393</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1527</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1530</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg += SZ_INT;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>394</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1527</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1530</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH()</pre></td>
     </tr>
 
@@ -3116,28 +3116,28 @@
     <tr>
     <td align="right" class="lineno"><pre>403</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2787</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2790</pre></td>
     <td align="left" class="src coveredLine"><pre>baseint:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>404</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2787</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2790</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(m_uint*)reg = *(m_uint*)(shred->base + VAL);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>405</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2787</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2790</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg += SZ_INT;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>406</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2787</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2790</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH();</pre></td>
     </tr>
 
@@ -3242,42 +3242,42 @@
     <tr>
     <td align="right" class="lineno"><pre>421</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>172</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>176</pre></td>
     <td align="left" class="src coveredLine"><pre>regtoreg:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>422</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>172</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>176</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(m_uint*)(reg + (m_int)VAL) = *(m_uint*)(reg + (m_int)VAL2);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>423</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>172</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>176</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH()</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>424</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
     <td align="left" class="src coveredLine"><pre>regtoregaddr:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>425</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(m_uint**)(reg + (m_int)VAL) = &amp;*(m_uint*)(reg + (m_int)VAL2);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>426</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH()</pre></td>
     </tr>
 
@@ -3347,21 +3347,21 @@
     <tr>
     <td align="right" class="lineno"><pre>436</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>290</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>291</pre></td>
     <td align="left" class="src coveredLine"><pre>memsetimm:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>437</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>290</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>291</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(m_uint*)(mem+VAL) = VAL2;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>438</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>290</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>291</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH();</pre></td>
     </tr>
 
@@ -3396,35 +3396,35 @@
     <tr>
     <td align="right" class="lineno"><pre>443</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>31</pre></td>
     <td align="left" class="src coveredLine"><pre>regpushmaybe:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>444</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>31</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(m_uint*)reg = gw_rand((uint32_t*)vm->rand) > (UINT32_MAX / 2);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>445</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>31</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg += SZ_INT;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>446</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>31</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>447</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>548</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>551</pre></td>
     <td align="left" class="src coveredLine"><pre>funcreturn:</pre></td>
     </tr>
 
@@ -3438,28 +3438,28 @@
     <tr>
     <td align="right" class="lineno"><pre>449</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>548</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>551</pre></td>
     <td align="left" class="src coveredLine"><pre>  register const m_uint pc = *(m_uint*)(mem-SZ_INT*2);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>450</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>548</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>551</pre></td>
     <td align="left" class="src coveredLine"><pre>  bytecode = (code = *(VM_Code*)(mem-SZ_INT*3))->bytecode;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>451</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>548</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>551</pre></td>
     <td align="left" class="src coveredLine"><pre>  mem -= (*(m_uint*)(mem-SZ_INT*4) + SZ_INT*4);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>452</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>548</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>551</pre></td>
     <td align="left" class="src coveredLine"><pre>  PC_DISPATCH(pc);</pre></td>
     </tr>
 
@@ -3480,7 +3480,7 @@
     <tr>
     <td align="right" class="lineno"><pre>455</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3577</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>3580</pre></td>
     <td align="left" class="src coveredLine"><pre>  PC_DISPATCH(VAL);</pre></td>
     </tr>
 
@@ -3515,35 +3515,35 @@
     <tr>
     <td align="right" class="lineno"><pre>460</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>89</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>90</pre></td>
     <td align="left" class="src coveredLine"><pre>allocfloat:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>461</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>89</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>90</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(m_float*)reg = *(m_float*)(mem+VAL) = 0;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>462</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>89</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>90</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg += SZ_FLOAT;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>463</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>89</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>90</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH()</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>464</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
     <td align="left" class="src coveredLine"><pre>allocother:</pre></td>
     </tr>
 
@@ -3556,29 +3556,29 @@
 
     <tr>
     <td align="right" class="lineno"><pre>466</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
     <td align="left" class="src coveredLine"><pre>  for(m_uint i = 0; i &lt;= VAL; i += SZ_INT)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>467</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
     <td align="left" class="src coveredLine"><pre>    *(m_uint*)(reg+i) = (*(m_uint*)(mem+VAL+i) = 0);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>468</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg += VAL2;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>469</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH()</pre></td>
     </tr>
 
@@ -3676,7 +3676,7 @@
     <tr>
     <td align="right" class="lineno"><pre>483</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>89</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>88</pre></td>
     <td align="left" class="src coveredLine"><pre>intlt:   INT_LOGICAL(&lt;)</pre></td>
     </tr>
 
@@ -3732,21 +3732,21 @@
     <tr>
     <td align="right" class="lineno"><pre>491</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>21</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
     <td align="left" class="src coveredLine"><pre>intnegate:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>492</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>21</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(m_int*)(reg - SZ_INT) *= -1;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>493</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>21</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH()</pre></td>
     </tr>
 
@@ -3774,28 +3774,28 @@
     <tr>
     <td align="right" class="lineno"><pre>497</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>106</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>109</pre></td>
     <td align="left" class="src coveredLine"><pre>intrassign:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>498</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>106</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>109</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg -= SZ_INT;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>499</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>106</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>109</pre></td>
     <td align="left" class="src coveredLine"><pre>  **(m_int**)reg = *(m_int*)(reg-SZ_INT);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>500</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>106</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>109</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH()</pre></td>
     </tr>
 
@@ -3928,7 +3928,7 @@
     <tr>
     <td align="right" class="lineno"><pre>519</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>43</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>42</pre></td>
     <td align="left" class="src coveredLine"><pre>postdec: INT_POST(--)</pre></td>
     </tr>
 
@@ -4397,35 +4397,35 @@
     <tr>
     <td align="right" class="lineno"><pre>586</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
     <td align="left" class="src coveredLine"><pre>firassign:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>587</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg -=SZ_FLOAT;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>588</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(m_int*)(reg-SZ_INT) = **(m_int**)(reg + SZ_FLOAT-SZ_INT) =</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>589</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
     <td align="left" class="src coveredLine"><pre>    (m_int)*(m_float*)(reg-SZ_INT);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>590</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH()</pre></td>
     </tr>
 
@@ -4572,7 +4572,7 @@
     <tr>
     <td align="right" class="lineno"><pre>611</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2914</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2921</pre></td>
     <td align="left" class="src coveredLine"><pre>setcode:</pre></td>
     </tr>
 
@@ -4586,63 +4586,63 @@
     <tr>
     <td align="right" class="lineno"><pre>613</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2914</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2921</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg -= SZ_INT;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>614</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2914</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2921</pre></td>
     <td align="left" class="src coveredLine"><pre>  a.code = *(VM_Code*)reg;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>615</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2589 times">&check;</span><span class="takenBranch" title="Branch 1 taken 325 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>2914</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2592 times">&check;</span><span class="takenBranch" title="Branch 1 taken 329 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>2921</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(!GET_FLAG((VM_Code)a.code, builtin)) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>616</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2589</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2592</pre></td>
     <td align="left" class="src coveredLine"><pre>    register const m_uint push = *(m_uint*)(reg + SZ_INT) + *(m_uint*)(mem-SZ_INT);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>617</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2589</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2592</pre></td>
     <td align="left" class="src coveredLine"><pre>    mem += push;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>618</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2589</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2592</pre></td>
     <td align="left" class="src coveredLine"><pre>    *(m_uint*)  mem = push;mem += SZ_INT;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>619</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2589</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2592</pre></td>
     <td align="left" class="src coveredLine"><pre>    *(VM_Code*) mem = code; mem += SZ_INT;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>620</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2589</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2592</pre></td>
     <td align="left" class="src coveredLine"><pre>    *(m_uint*)  mem = PC + VAL2; mem += SZ_INT;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>621</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2589</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2592</pre></td>
     <td align="left" class="src coveredLine"><pre>    *(m_uint*) mem = a.code->stack_depth; mem += SZ_INT;</pre></td>
     </tr>
 
@@ -4663,7 +4663,7 @@
     <tr>
     <td align="right" class="lineno"><pre>624</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>325</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>329</pre></td>
     <td align="left" class="src coveredLine"><pre>    mem += *(m_uint*)(reg + SZ_INT);</pre></td>
     </tr>
 
@@ -4691,63 +4691,63 @@
     <tr>
     <td align="right" class="lineno"><pre>628</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8067</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>8108</pre></td>
     <td align="left" class="src coveredLine"><pre>regpop:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>629</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8067</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>8108</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg -= VAL;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>630</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8067</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>8108</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>631</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>245</pre></td>
     <td align="left" class="src coveredLine"><pre>regpush:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>632</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>245</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg += VAL;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>633</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>245</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>634</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>831</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>835</pre></td>
     <td align="left" class="src coveredLine"><pre>regtomem:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>635</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>831</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>835</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(m_uint*)(mem+VAL) = *(m_uint*)(reg+(m_int)VAL2);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>636</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>831</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>835</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH()</pre></td>
     </tr>
 
@@ -4775,14 +4775,14 @@
     <tr>
     <td align="right" class="lineno"><pre>640</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2914</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2921</pre></td>
     <td align="left" class="src coveredLine"><pre>overflow:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>641</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 2 taken 2913 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>2914</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 2 taken 2920 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>2921</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(overflow_(mem, shred)) {</pre></td>
     </tr>
 
@@ -4824,7 +4824,7 @@
     <tr>
     <td align="right" class="lineno"><pre>647</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2913</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2920</pre></td>
     <td align="left" class="src coveredLine"><pre>  goto *dispatch[next];</pre></td>
     </tr>
 
@@ -4838,7 +4838,7 @@
     <tr>
     <td align="right" class="lineno"><pre>649</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2588</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2591</pre></td>
     <td align="left" class="src coveredLine"><pre>funcusrend:</pre></td>
     </tr>
 
@@ -4852,7 +4852,7 @@
     <tr>
     <td align="right" class="lineno"><pre>651</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2588</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2591</pre></td>
     <td align="left" class="src coveredLine"><pre>  byte = bytecode = (code = a.code)->bytecode;</pre></td>
     </tr>
 
@@ -4866,21 +4866,21 @@
     <tr>
     <td align="right" class="lineno"><pre>653</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2588</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2591</pre></td>
     <td align="left" class="src coveredLine"><pre>  SDISPATCH();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>654</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>325</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>329</pre></td>
     <td align="left" class="src coveredLine"><pre>funcmemberend:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>655</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>325</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>329</pre></td>
     <td align="left" class="src coveredLine"><pre>  VM_OUT</pre></td>
     </tr>
 
@@ -4894,42 +4894,42 @@
     <tr>
     <td align="right" class="lineno"><pre>657</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>325</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>329</pre></td>
     <td align="left" class="src coveredLine"><pre>    register const m_uint val = VAL;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>658</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>325</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>329</pre></td>
     <td align="left" class="src coveredLine"><pre>    register const m_uint val2 = VAL2;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>659</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>325</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>329</pre></td>
     <td align="left" class="src coveredLine"><pre>    ((f_mfun)a.code->native_func)((*(M_Object*)mem), reg, shred);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>660</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>325</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>329</pre></td>
     <td align="left" class="src coveredLine"><pre>    reg += val;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>661</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>325</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>329</pre></td>
     <td align="left" class="src coveredLine"><pre>    shred->mem = (mem -= val2);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>662</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 298 times">&check;</span><span class="takenBranch" title="Branch 1 taken 27 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>325</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 302 times">&check;</span><span class="takenBranch" title="Branch 1 taken 27 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>329</pre></td>
     <td align="left" class="src coveredLine"><pre>    if(!s->curr)break;</pre></td>
     </tr>
 
@@ -4943,7 +4943,7 @@
     <tr>
     <td align="right" class="lineno"><pre>664</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>298</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>302</pre></td>
     <td align="left" class="src coveredLine"><pre>  PC_DISPATCH(shred->pc)</pre></td>
     </tr>
 
@@ -5160,21 +5160,21 @@
     <tr>
     <td align="right" class="lineno"><pre>695</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1618</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1615</pre></td>
     <td align="left" class="src coveredLine"><pre>brancheqint:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>696</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1618</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1615</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg -= SZ_INT;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>697</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1351 times">&check;</span><span class="takenBranch" title="Branch 1 taken 267 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1618</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1346 times">&check;</span><span class="takenBranch" title="Branch 1 taken 269 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1615</pre></td>
     <td align="left" class="src coveredLine"><pre>  BRANCH_DISPATCH(!*(m_uint*)reg);</pre></td>
     </tr>
 
@@ -5194,7 +5194,7 @@
 
     <tr>
     <td align="right" class="lineno"><pre>700</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 20 times">&check;</span><span class="takenBranch" title="Branch 1 taken 15 times">&check;</span></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 21 times">&check;</span><span class="takenBranch" title="Branch 1 taken 14 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>35</pre></td>
     <td align="left" class="src coveredLine"><pre>  BRANCH_DISPATCH(*(m_uint*)reg);</pre></td>
     </tr>
@@ -5538,42 +5538,42 @@
     <tr>
     <td align="right" class="lineno"><pre>749</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1798</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1802</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(M_Object*)reg = new_object(vm->gwion->mp, shred, (Type)VAL2);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>750</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1798</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1802</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg += SZ_INT;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>751</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1798</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1802</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH()</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>752</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>575</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>578</pre></td>
     <td align="left" class="src coveredLine"><pre>addref:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>753</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>575</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>578</pre></td>
     <td align="left" class="src coveredLine"><pre>  a.obj = *((M_Object*)(reg+(m_int)VAL) + (m_int)VAL2);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>754</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>575</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>578</pre></td>
     <td align="left" class="src coveredLine"><pre>  goto addrefcommon;</pre></td>
     </tr>
 
@@ -5594,28 +5594,28 @@
     <tr>
     <td align="right" class="lineno"><pre>757</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>603</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>606</pre></td>
     <td align="left" class="src coveredLine"><pre>addrefcommon:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>758</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 571 times">&check;</span><span class="takenBranch" title="Branch 1 taken 32 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>603</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 574 times">&check;</span><span class="takenBranch" title="Branch 1 taken 32 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>606</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(a.obj)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>759</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>571</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>574</pre></td>
     <td align="left" class="src coveredLine"><pre>    ++a.obj->ref;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>760</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>603</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>606</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH()</pre></td>
     </tr>
 
@@ -5664,14 +5664,14 @@
     <tr>
     <td align="right" class="lineno"><pre>767</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>213</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>219</pre></td>
     <td align="left" class="src coveredLine"><pre>assign:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>768</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>213</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>219</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg -= SZ_INT;</pre></td>
     </tr>
 
@@ -5699,35 +5699,35 @@
     <tr>
     <td align="right" class="lineno"><pre>772</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>213</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>219</pre></td>
     <td align="left" class="src coveredLine"><pre>  **(M_Object**)reg = *(M_Object*)(reg-SZ_INT);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>773</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>213</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>219</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH()</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>774</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>218</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>221</pre></td>
     <td align="left" class="src coveredLine"><pre>remref:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>775</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>218</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>221</pre></td>
     <td align="left" class="src coveredLine"><pre>  release(*(M_Object*)(mem + VAL), shred);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>776</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>218</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>221</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH()</pre></td>
     </tr>
 
@@ -5755,7 +5755,7 @@
     <tr>
     <td align="right" class="lineno"><pre>780</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>827</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>833</pre></td>
     <td align="left" class="src coveredLine"><pre>except:</pre></td>
     </tr>
 
@@ -5796,29 +5796,29 @@
 
     <tr>
     <td align="right" class="lineno"><pre>786</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 21 times">&check;</span><span class="takenBranch" title="Branch 1 taken 806 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>827</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 22 times">&check;</span><span class="takenBranch" title="Branch 1 taken 811 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>833</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(!(a.obj  = *(M_Object*)(reg-SZ_INT-VAL))) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>787</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>21</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>22</pre></td>
     <td align="left" class="src coveredLine"><pre>    shred->pc = PC;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>788</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>21</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>22</pre></td>
     <td align="left" class="src coveredLine"><pre>    exception(shred, "NullPtrException");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>789</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>21</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>22</pre></td>
     <td align="left" class="src coveredLine"><pre>    continue;</pre></td>
     </tr>
 
@@ -5832,63 +5832,63 @@
     <tr>
     <td align="right" class="lineno"><pre>791</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>806</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>811</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>792</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>38</pre></td>
     <td align="left" class="src coveredLine"><pre>allocmemberaddr:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>793</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>38</pre></td>
     <td align="left" class="src coveredLine"><pre>  a.obj = *(M_Object*)mem;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>794</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>38</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(m_bit**)reg = a.obj->data + VAL;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>795</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>38</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg += SZ_INT;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>796</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>38</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH()</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>797</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>131</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>136</pre></td>
     <td align="left" class="src coveredLine"><pre>dotmember:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>798</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>131</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>136</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(m_uint*)(reg-SZ_INT) = *(m_uint*)(a.obj->data + VAL);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>799</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>131</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>136</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH()</pre></td>
     </tr>
 
@@ -6000,28 +6000,28 @@
     <tr>
     <td align="right" class="lineno"><pre>815</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>40</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>50</pre></td>
     <td align="left" class="src coveredLine"><pre>staticint:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>816</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>40</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>50</pre></td>
     <td align="left" class="src coveredLine"><pre>  *(m_uint*)reg = *(m_uint*)VAL;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>817</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>40</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>50</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg += SZ_INT;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>818</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>40</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>50</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH()</pre></td>
     </tr>
 
@@ -6056,7 +6056,7 @@
     <tr>
     <td align="right" class="lineno"><pre>823</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>staticother:</pre></td>
     </tr>
 
@@ -6084,21 +6084,21 @@
     <tr>
     <td align="right" class="lineno"><pre>827</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  memcpy(reg, (m_bit*)VAL, VAL2);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>828</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg += VAL2;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>829</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH()</pre></td>
     </tr>
 
@@ -6217,21 +6217,21 @@
     <tr>
     <td align="right" class="lineno"><pre>846</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>62</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>63</pre></td>
     <td align="left" class="src coveredLine"><pre>gcadd:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>847</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>62</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>63</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_add(&amp;shred->gc, *(vtype*)(reg-SZ_INT));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>848</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>62</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>63</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH();</pre></td>
     </tr>
 
@@ -6266,7 +6266,7 @@
     <tr>
     <td align="right" class="lineno"><pre>853</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>600</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>607</pre></td>
     <td align="left" class="src coveredLine"><pre>gacktype:</pre></td>
     </tr>
 
@@ -6280,28 +6280,28 @@
     <tr>
     <td align="right" class="lineno"><pre>855</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>600</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>607</pre></td>
     <td align="left" class="src coveredLine"><pre>  const M_Object o = *(M_Object*)(reg - SZ_INT);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>856</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 579 times">&check;</span><span class="takenBranch" title="Branch 1 taken 21 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>600</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 585 times">&check;</span><span class="takenBranch" title="Branch 1 taken 22 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>607</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(o)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>857</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>579</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>585</pre></td>
     <td align="left" class="src coveredLine"><pre>    *(Type*)reg = o->type_ref;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>858</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>600</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>607</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH()</pre></td>
     </tr>
 
@@ -6315,7 +6315,7 @@
     <tr>
     <td align="right" class="lineno"><pre>860</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1058</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1079</pre></td>
     <td align="left" class="src coveredLine"><pre>gackend:</pre></td>
     </tr>
 
@@ -6329,21 +6329,21 @@
     <tr>
     <td align="right" class="lineno"><pre>862</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1058</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1079</pre></td>
     <td align="left" class="src coveredLine"><pre>  m_str str = *(m_str*)(reg - SZ_INT);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>863</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1053 times">&check;</span><span class="takenBranch" title="Branch 1 taken 5 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1058</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1074 times">&check;</span><span class="takenBranch" title="Branch 1 taken 5 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1079</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(!VAL)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>864</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1053</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1074</pre></td>
     <td align="left" class="src coveredLine"><pre>    gw_out("%s\n", str);</pre></td>
     </tr>
 
@@ -6364,14 +6364,14 @@
     <tr>
     <td align="right" class="lineno"><pre>867</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1058</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1079</pre></td>
     <td align="left" class="src coveredLine"><pre>  mp_free2(vm->gwion->mp, strlen(str), str);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>868</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1058</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1079</pre></td>
     <td align="left" class="src coveredLine"><pre>  DISPATCH();</pre></td>
     </tr>
 
@@ -6385,28 +6385,28 @@
     <tr>
     <td align="right" class="lineno"><pre>870</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1405</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1428</pre></td>
     <td align="left" class="src coveredLine"><pre>gack:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>871</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1405</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1428</pre></td>
     <td align="left" class="src coveredLine"><pre>  VM_OUT</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>872</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1405</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1428</pre></td>
     <td align="left" class="src coveredLine"><pre>  gack(shred, (Instr)VAL);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>873</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1405</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1428</pre></td>
     <td align="left" class="src coveredLine"><pre>  goto in;</pre></td>
     </tr>
 
@@ -6427,35 +6427,35 @@
     <tr>
     <td align="right" class="lineno"><pre>876</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3261</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>3263</pre></td>
     <td align="left" class="src coveredLine"><pre>other:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>877</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3261</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>3263</pre></td>
     <td align="left" class="src coveredLine"><pre>  VM_OUT</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>878</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3261</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>3263</pre></td>
     <td align="left" class="src coveredLine"><pre>  ((f_instr)VAL2)(shred, (Instr)VAL);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>879</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4666</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4691</pre></td>
     <td align="left" class="src coveredLine"><pre>in:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>880</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4644 times">&check;</span><span class="takenBranch" title="Branch 1 taken 22 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>4666</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4669 times">&check;</span><span class="takenBranch" title="Branch 1 taken 22 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>4691</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(!s->curr)</pre></td>
     </tr>
 
@@ -6469,63 +6469,63 @@
     <tr>
     <td align="right" class="lineno"><pre>882</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4644</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4669</pre></td>
     <td align="left" class="src coveredLine"><pre>  bytecode = (code = shred->code)->bytecode;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>883</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4644</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4669</pre></td>
     <td align="left" class="src coveredLine"><pre>  reg = shred->reg;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>884</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4644</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4669</pre></td>
     <td align="left" class="src coveredLine"><pre>  mem = shred->mem;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>885</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4644</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4669</pre></td>
     <td align="left" class="src coveredLine"><pre>  PC_DISPATCH(shred->pc)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>886</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>392</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>400</pre></td>
     <td align="left" class="src coveredLine"><pre>eoc:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>887</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>392</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>400</pre></td>
     <td align="left" class="src coveredLine"><pre>  VM_OUT</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>888</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>392</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>400</pre></td>
     <td align="left" class="src coveredLine"><pre>  vm_shred_exit(shred);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>889</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 418 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>418</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 427 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>427</pre></td>
     <td align="left" class="src coveredLine"><pre>    } while(s->curr);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>890</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>593</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>602</pre></td>
     <td align="left" class="src coveredLine"><pre>  MUTEX_UNLOCK(s->mutex);</pre></td>
     </tr>
 
@@ -6539,7 +6539,7 @@
     <tr>
     <td align="right" class="lineno"><pre>892</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1597174</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1670168</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -6553,28 +6553,28 @@
     <tr>
     <td align="right" class="lineno"><pre>894</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1597170</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1670164</pre></td>
     <td align="left" class="src coveredLine"><pre>static void vm_run_audio(const VM *vm) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>895</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1597170</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1670164</pre></td>
     <td align="left" class="src coveredLine"><pre>  vm_run(vm);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>896</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1597170</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1670164</pre></td>
     <td align="left" class="src coveredLine"><pre>  vm_ugen_init(vm);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>897</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1597169</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1670163</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -6588,63 +6588,63 @@
     <tr>
     <td align="right" class="lineno"><pre>899</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>VM* new_vm(MemPool p, const m_bool audio) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>900</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>  VM* vm = (VM*)mp_calloc(p, VM);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>901</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_init(&amp;vm->ugen);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>902</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>  vm->bbq = new_driver(p);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>903</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 717 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 731 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>  vm->bbq->run = audio ? vm_run_audio : vm_run;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>904</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>  vm->shreduler  = (Shreduler)mp_calloc(p, Shreduler);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>905</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_init(&amp;vm->shreduler->shreds);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>906</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>  MUTEX_SETUP(vm->shreduler->mutex);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>907</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>  vm->shreduler->bbq = vm->bbq;</pre></td>
     </tr>
 
@@ -6658,7 +6658,7 @@
     <tr>
     <td align="right" class="lineno"><pre>909</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>  gw_seed(vm->rand, (uint64_t)time(NULL));</pre></td>
     </tr>
 
@@ -6686,7 +6686,7 @@
     <tr>
     <td align="right" class="lineno"><pre>913</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
     <td align="left" class="src coveredLine"><pre>  return vm;</pre></td>
     </tr>
 
