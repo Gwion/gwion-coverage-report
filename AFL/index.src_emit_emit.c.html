@@ -275,11 +275,11 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-05-04 21:23:57</td>
+            <td class="headerValue">2020-05-04 21:36:05</td>
             <td></td>
             <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">686</td>
-            <td class="headerTableEntry">866</td>
+            <td class="headerTableEntry">684</td>
+            <td class="headerTableEntry">864</td>
             <td class="headerTableEntry" style="background-color:#FFFF55">79.2 %</td>
           </tr>
         </table>
@@ -3753,21 +3753,21 @@
     <tr>
     <td align="right" class="lineno"><pre>494</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>22</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static void interp_multi(const Emitter emit, Var_Decl_List list) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>495</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>22</pre></td>
     <td align="left" class="src coveredLine"><pre>  m_uint offset = 0;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>496</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 19 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>38</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 22 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>44</pre></td>
     <td align="left" class="src coveredLine"><pre>  while(list->next) {</pre></td>
     </tr>
 
@@ -3775,7 +3775,7 @@
     <td align="right" class="lineno"><pre>497</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    offset += SZ_INT;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    offset += list->self->value->type->size;</pre></td>
     </tr>
 
     <tr>
@@ -3794,8 +3794,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>500</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 19 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 22 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>22</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(offset)</pre></td>
     </tr>
 
@@ -3809,7 +3809,7 @@
     <tr>
     <td align="right" class="lineno"><pre>502</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>22</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -3899,30 +3899,30 @@
 
     <tr>
     <td align="right" class="lineno"><pre>515</pre></td>
-    <td align="right" class="linebranch"></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 22 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1051 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>1073</pre></td>
-    <td align="left" class="src coveredLine"><pre>    const m_bool isobj = isa(e->info->type, emit->gwion->type[et_object]) > 0;</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if(e->exp_type == ae_exp_decl) // why only objects?</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>516</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 456 times">&check;</span><span class="takenBranch" title="Branch 1 taken 617 times">&check;</span><span class="takenBranch" title="Branch 2 taken 19 times">&check;</span><span class="takenBranch" title="Branch 3 taken 437 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>1073</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if(isobj &amp;&amp; e->exp_type == ae_exp_decl) // why only objects?</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>22</pre></td>
+    <td align="left" class="src coveredLine"><pre>      interp_multi(emit, e->d.exp_decl.list);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>517</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
-    <td align="left" class="src coveredLine"><pre>      interp_multi(emit, e->d.exp_decl.list);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1073</pre></td>
+    <td align="left" class="src coveredLine"><pre>    regseti(emit, (m_uint)e->info->type);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>518</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1073</pre></td>
-    <td align="left" class="src coveredLine"><pre>    regseti(emit, (m_uint)e->info->type);</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const m_bool isobj = isa(e->info->type, emit->gwion->type[et_object]) > 0;</pre></td>
     </tr>
 
     <tr>
