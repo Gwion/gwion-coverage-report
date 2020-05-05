@@ -1,804 +1,648 @@
-
+<!DOCTYPE html>
 <script type="text/javascript" src="../focus.js"></script><html>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <title>Gwion coverage report</title>
-  <style media="screen" type="text/css">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Gwion coverage report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="index.css">
+  </head>
 
-    body
-    {
-      color: #000000;
-      background-color: #FFFFFF;
-    }
+  <body>
+    <h1>GCC Code Coverage Report</h1>
 
-    /* Link formats: use maroon w/underlines */
-    a:link
-    {
-      color: navy;
-      text-decoration: underline;
-    }
-    a:visited
-    {
-      color: maroon;
-      text-decoration: underline;
-    }
-    a:active
-    {
-      color: navy;
-      text-decoration: underline;
-    }
+    <hr/>
 
-    /*** TD formats ***/
-    td
-    {
-      font-family: sans-serif;
-    }
-    td.title
-    {
-      text-align: center;
-      padding-bottom: 10px;
-      font-size: 20pt;
-      font-weight: bold;
-    }
+    <div class="summary">
+<table class="legend">
+  <tr>
+    <th scope="row">Directory:</th>
+    <td>src/</td>
+  </tr>
+  <tr>
+    <th scope="row">File:</th>
+    <td>src/lib/event.c</td>
+  </tr>
+  <tr>
+    <th scope="row">Date:</th>
+    <td>2020-05-05 22:30:02</td>
+  </tr>
+</table>
+<table class="coverage">
+  <tr>
+    <th></th>
+    <th scope="col">Exec</th>
+    <th scope="col">Total</th>
+    <th scope="col">Coverage</th>
+  </tr>
+  <tr>
+    <th scope="row">Lines:</th>
+    <td>47</td>
+    <td>47</td>
+    <td class="coverage-high">100.0%</td>
+  </tr>
+  <tr>
+    <th scope="row">Branches:</th>
+    <td>3</td>
+    <td>4</td>
+    <td class="coverage-medium">75.0%</td>
+  </tr>
+</table>
+    </div>
 
-    /* TD Header Information */
-    td.headerName
-    {
-      text-align: right;
-      color: black;
-      padding-right: 6px;
-      font-weight: bold;
-      vertical-align: top;
-      white-space: nowrap;
-    }
-    td.headerValue
-    {
-      text-align: left;
-      color: blue;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-    td.headerTableEntry
-    {
-      text-align: right;
-      color: black;
-      font-weight: bold;
-      white-space: nowrap;
-      padding-left: 12px;
-      padding-right: 4px;
-      background-color: LightBlue;
-    }
-    td.headerValueLeg
-    {
-      text-align: left;
-      color: black;
-      font-size: 80%;
-      white-space: nowrap;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-top: 2px;
-    }
+    <hr/>
 
-    /* Color of horizontal ruler */
-    td.hr
-    {
-      background-color: navy;
-      height:3px;
-    }
-    /* Footer format */
-    td.footer
-    {
-      text-align: center;
-      padding-top: 3px;
-      font-family: sans-serif;
-    }
-
-    /* Coverage Table */
-
-    td.coverTableHead
-    {
-      text-align: center;
-      color: white;
-      background-color: SteelBlue;
-      font-family: sans-serif;
-      font-size: 120%;
-      white-space: nowrap;
-      padding-left: 4px;
-      padding-right: 4px;
-    }
-    td.coverFile
-    {
-      text-align: left;
-      padding-left: 10px;
-      padding-right: 20px;
-      color: black;
-      background-color: LightBlue;
-      font-family: monospace;
-      font-weight: bold;
-      font-size: 110%;
-    }
-    td.coverBar
-    {
-      padding-left: 10px;
-      padding-right: 10px;
-      background-color: LightBlue;
-    }
-    td.coverBarOutline
-    {
-      background-color: white;
-    }
-    td.coverValue
-    {
-      padding-top: 2px;
-      text-align: right;
-      padding-left: 10px;
-      padding-right: 10px;
-      font-family: sans-serif;
-      white-space: nowrap;
-      font-weight: bold;
-    }
-
-    /* Link Details */
-    a.detail:link
-    {
-      color: #B8D0FF;
-      font-size:80%;
-    }
-    a.detail:visited
-    {
-      color: #B8D0FF;
-      font-size:80%;
-    }
-    a.detail:active
-    {
-      color: #FFFFFF;
-      font-size:80%;
-    }
-
-    .graphcont{
-        color:#000;
-        font-weight:700;
-        float:left
-    }
-
-    .graph{
-        float:left;
-        background-color: white;
-        position:relative;
-        width:280px;
-        padding:0
-    }
-
-    .graph .bar{
-        display:block;
-        position:relative;
-        border:black 1px solid;
-        text-align:center;
-        color:#fff;
-        height:10px;
-        font-family:Arial,Helvetica,sans-serif;
-        font-size:12px;
-        line-height:1.9em
-    }
-
-    .graph .bar span{
-        position:absolute;
-        left:1em
-    }
-
-    td.coveredLine,
-    span.coveredLine
-    {
-        background-color: LightGreen!important;
-    }
-
-    td.uncoveredLine,
-    span.uncoveredLine
-    {
-        background-color: LightPink!important;
-    }
-
-    .linebranch, .linecount
-    {
-        border-right: 1px gray solid;
-        background-color: lightgray;
-    }
-
-    span.takenBranch
-    {
-        color: Green!important;
-        cursor: help;
-    }
-
-    span.notTakenBranch
-    {
-        color: Red!important;
-        cursor: help;
-    }
-
-    .src
-    {
-        padding-left: 12px;
-    }
-
-    .srcHeader,
-    span.takenBranch,
-    span.notTakenBranch
-    {
-        font-family: monospace;
-        font-weight: bold;
-    }
-
-    pre
-    {
-        height : 15px;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .lineno
-    {
-        background-color: #EFE383;
-        border-right: 1px solid #BBB15F;
-    }
-
-  </style>
-</head>
-
-<body>
-
-  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-    <tr><td class="title">GCC Code Coverage Report</td></tr>
-    <tr><td class="hr"></td></tr>
-
+<div class="file-source">
+  <table>
     <tr>
-      <td width="100%">
-        <table cellpadding="1" border="0" width="100%">
-          <tr>
-            <td width="10%" class="headerName">Directory:</td>
-            <td width="35%" class="headerValue">src/</td>
-            <td width="5%"></td>
-            <td width="15%"></td>
-            <td width="10%" class="headerValue" style="text-align:right;">Exec</td>
-            <td width="10%" class="headerValue" style="text-align:right;">Total</td>
-            <td width="15%" class="headerValue" style="text-align:right;">Coverage</td>
-          </tr>
-          <tr>
-            <td class="headerName">File:</td>
-            <td class="headerValue">src/lib/event.c</td>
-            <td></td>
-            <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">47</td>
-            <td class="headerTableEntry">47</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
-          </tr>
-          <tr>
-            <td class="headerName">Date:</td>
-            <td class="headerValue">2020-05-05 21:15:27</td>
-            <td></td>
-            <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">3</td>
-            <td class="headerTableEntry">4</td>
-            <td class="headerTableEntry" style="background-color:#FFFF55">75.0 %</td>
-          </tr>
-        </table>
+      <td align="right" class="srcHeader">Line</td>
+      <td align="right" class="srcHeader">Branch</td>
+      <td align="right" class="srcHeader">Exec</td>
+      <td align="left" class="srcHeader src">Source</td>
+    </tr>
+
+
+    <tr class="source-line">
+      <td class="lineno">1</td>
+      <td class="linebranch">
       </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;gwion_util.h&#34;</td>
     </tr>
 
-    <tr><td class="hr"></td></tr>
+    <tr class="source-line">
+      <td class="lineno">2</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;gwion_ast.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">3</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;gwion_env.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">4</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;vm.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">5</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;gwion.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">6</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;instr.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">7</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;object.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">8</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;operator.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">9</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;import.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">10</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;gwi.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">11</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">12</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine">static CTOR(event_ctor) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">13</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine">  EV_SHREDS(o) = new_vector(shred-&gt;info-&gt;mp);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">14</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">15</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">16</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine">static DTOR(event_dtor) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">17</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine">  free_vector(shred-&gt;info-&gt;mp, EV_SHREDS(o));</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">18</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">19</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">20</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">5</td>
+      <td class="src coveredLine">static OP_CHECK(opck_eventwait) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">21</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">5</td>
+      <td class="src coveredLine">  return env-&gt;gwion-&gt;type[et_int];</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">22</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">23</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">24</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">static INSTR(EventWait) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">25</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  POP_REG(shred, SZ_FLOAT);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">26</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  const M_Object event = *(M_Object*)REG(-SZ_INT);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">27</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  shreduler_remove(shred-&gt;tick-&gt;shreduler, shred, 0);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">28</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  const Vector v = EV_SHREDS(event);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">29</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  vector_add(v, (vtype)shred);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">30</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  *(m_int*)REG(-SZ_INT) = 1;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">31</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  _release(event, shred);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">32</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">33</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">34</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">static MFUN(event_signal) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">35</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">  const Vector v = EV_SHREDS(o);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">36</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">  const VM_Shred sh = (VM_Shred)vector_front(v);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">37</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 1 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">  if(sh) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">38</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">    shredule(sh-&gt;tick-&gt;shreduler, sh, GWION_EPSILON);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">39</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">    vector_rem(v, 0);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">40</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">  }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">41</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">42</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">43</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">3</td>
+      <td class="src coveredLine">ANN void broadcast(const M_Object o) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">44</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 1 taken 2 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 3 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">5</td>
+      <td class="src coveredLine">  for(m_uint i = 0; i &lt; vector_size(EV_SHREDS(o)); i++) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">45</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine">    const VM_Shred sh = (VM_Shred)vector_at(EV_SHREDS(o), i);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">46</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine">    shredule(sh-&gt;tick-&gt;shreduler, sh, GWION_EPSILON);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">47</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">  }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">48</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">3</td>
+      <td class="src coveredLine">  vector_clear(EV_SHREDS(o));</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">49</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">3</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">50</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">51</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">3</td>
+      <td class="src coveredLine">static MFUN(event_broadcast) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">52</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">3</td>
+      <td class="src coveredLine">  broadcast(o);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">53</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">3</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">54</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">55</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">728</td>
+      <td class="src coveredLine">GWION_IMPORT(event) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">56</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">728</td>
+      <td class="src coveredLine">  const Type t_event = gwi_class_ini(gwi, &#34;Event&#34;, &#34;Object&#34;);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">57</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">728</td>
+      <td class="src coveredLine">  gwi_class_xtor(gwi, event_ctor, event_dtor);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">58</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">728</td>
+      <td class="src coveredLine">  gwi-&gt;gwion-&gt;type[et_event] = t_event; // use func</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">59</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">60</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">728</td>
+      <td class="src coveredLine">  GWI_BB(gwi_item_ini(gwi, &#34;@internal&#34;, &#34;@shreds&#34;))</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">61</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">728</td>
+      <td class="src coveredLine">  GWI_BB(gwi_item_end(gwi, ae_flag_member, NULL))</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">62</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">728</td>
+      <td class="src coveredLine">  GWI_BB(gwi_func_ini(gwi, &#34;void&#34;, &#34;signal&#34;))</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">63</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">728</td>
+      <td class="src coveredLine">  GWI_BB(gwi_func_end(gwi, event_signal, ae_flag_none))</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">64</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">728</td>
+      <td class="src coveredLine">  GWI_BB(gwi_func_ini(gwi, &#34;void&#34;, &#34;broadcast&#34;))</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">65</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">728</td>
+      <td class="src coveredLine">  GWI_BB(gwi_func_end(gwi, event_broadcast, ae_flag_none))</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">66</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">728</td>
+      <td class="src coveredLine">  GWI_BB(gwi_class_end(gwi))</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">67</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">728</td>
+      <td class="src coveredLine">  GWI_BB(gwi_oper_ini(gwi, &#34;nonnull Event&#34;, &#34;@now&#34;, &#34;int&#34;))</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">68</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">728</td>
+      <td class="src coveredLine">  _CHECK_OP(&#34;=&gt;&#34;, eventwait, EventWait)</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">69</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">728</td>
+      <td class="src coveredLine">  return GW_OK;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">70</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">}</td>
+    </tr>
+
   </table>
+</div>
 
-  <br>
-  <table cellspacing="0" cellpadding="1">
-    <tr>
-      <td width="5%" align="right" class="srcHeader">Line</td>
-      <td width="5%" align="right" class="srcHeader">Branch</td>
-      <td width="5%" align="right" class="srcHeader">Exec</td>
-      <td width="75%" align="left" class="srcHeader src">Source</td>
-    </tr>
+    <hr/>
 
-
-    <tr>
-    <td align="right" class="lineno"><pre>1</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "gwion_util.h"</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>2</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "gwion_ast.h"</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>3</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "gwion_env.h"</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>4</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "vm.h"</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>5</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "gwion.h"</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>6</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "instr.h"</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>7</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "object.h"</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>8</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "operator.h"</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>9</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "import.h"</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>10</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "gwi.h"</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>11</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>12</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>static CTOR(event_ctor) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>13</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>  EV_SHREDS(o) = new_vector(shred->info->mp);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>14</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>15</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>16</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>static DTOR(event_dtor) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>17</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>  free_vector(shred->info->mp, EV_SHREDS(o));</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>18</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>19</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>20</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
-    <td align="left" class="src coveredLine"><pre>static OP_CHECK(opck_eventwait) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>21</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return env->gwion->type[et_int];</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>22</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>23</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>24</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>static INSTR(EventWait) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>25</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>  POP_REG(shred, SZ_FLOAT);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>26</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const M_Object event = *(M_Object*)REG(-SZ_INT);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>27</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>  shreduler_remove(shred->tick->shreduler, shred, 0);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>28</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Vector v = EV_SHREDS(event);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>29</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>  vector_add(v, (vtype)shred);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>30</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>  *(m_int*)REG(-SZ_INT) = 1;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>31</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>  _release(event, shred);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>32</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>33</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>34</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>static MFUN(event_signal) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>35</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Vector v = EV_SHREDS(o);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>36</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const VM_Shred sh = (VM_Shred)vector_front(v);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>37</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(sh) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>38</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>    shredule(sh->tick->shreduler, sh, GWION_EPSILON);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>39</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>    vector_rem(v, 0);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>40</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>41</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>42</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>43</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN void broadcast(const M_Object o) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>44</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span><span class="takenBranch" title="Branch 2 taken 3 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
-    <td align="left" class="src coveredLine"><pre>  for(m_uint i = 0; i &lt; vector_size(EV_SHREDS(o)); i++) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>45</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>    const VM_Shred sh = (VM_Shred)vector_at(EV_SHREDS(o), i);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>46</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>    shredule(sh->tick->shreduler, sh, GWION_EPSILON);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>47</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>48</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>  vector_clear(EV_SHREDS(o));</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>49</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>50</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>51</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>static MFUN(event_broadcast) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>52</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>  broadcast(o);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>53</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>54</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>55</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
-    <td align="left" class="src coveredLine"><pre>GWION_IMPORT(event) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>56</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Type t_event = gwi_class_ini(gwi, "Event", "Object");</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>57</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
-    <td align="left" class="src coveredLine"><pre>  gwi_class_xtor(gwi, event_ctor, event_dtor);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>58</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
-    <td align="left" class="src coveredLine"><pre>  gwi->gwion->type[et_event] = t_event; // use func</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>59</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>60</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_item_ini(gwi, "@internal", "@shreds"))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>61</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_item_end(gwi, ae_flag_member, NULL))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>62</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_func_ini(gwi, "void", "signal"))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>63</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_func_end(gwi, event_signal, ae_flag_none))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>64</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_func_ini(gwi, "void", "broadcast"))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>65</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_func_end(gwi, event_broadcast, ae_flag_none))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>66</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_class_end(gwi))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>67</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "nonnull Event", "@now", "int"))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>68</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
-    <td align="left" class="src coveredLine"><pre>  _CHECK_OP("=>", eventwait, EventWait)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>69</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>70</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-  </table>
-  <br>
-
-  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-    <tr><td class="hr"><td></tr>
-    <tr><td class="footer">Generated by: <a href="http://gcovr.com">GCOVR (Version 4.2)</a></td></tr>
-  </table>
-  <br>
-
-</body>
-
+    <footer>
+      Generated by: <a href="http://gcovr.com">GCOVR (Version 4.2)</a>
+    </footer>
+  </body>
 </html>
-

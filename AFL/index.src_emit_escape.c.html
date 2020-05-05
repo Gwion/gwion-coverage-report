@@ -1,853 +1,778 @@
-
+<!DOCTYPE html>
 <script type="text/javascript" src="../focus.js"></script><html>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <title>Gwion coverage report</title>
-  <style media="screen" type="text/css">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Gwion coverage report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="index.css">
+  </head>
 
-    body
-    {
-      color: #000000;
-      background-color: #FFFFFF;
-    }
+  <body>
+    <h1>GCC Code Coverage Report</h1>
 
-    /* Link formats: use maroon w/underlines */
-    a:link
-    {
-      color: navy;
-      text-decoration: underline;
-    }
-    a:visited
-    {
-      color: maroon;
-      text-decoration: underline;
-    }
-    a:active
-    {
-      color: navy;
-      text-decoration: underline;
-    }
+    <hr/>
 
-    /*** TD formats ***/
-    td
-    {
-      font-family: sans-serif;
-    }
-    td.title
-    {
-      text-align: center;
-      padding-bottom: 10px;
-      font-size: 20pt;
-      font-weight: bold;
-    }
+    <div class="summary">
+<table class="legend">
+  <tr>
+    <th scope="row">Directory:</th>
+    <td>src/</td>
+  </tr>
+  <tr>
+    <th scope="row">File:</th>
+    <td>src/emit/escape.c</td>
+  </tr>
+  <tr>
+    <th scope="row">Date:</th>
+    <td>2020-05-05 22:30:02</td>
+  </tr>
+</table>
+<table class="coverage">
+  <tr>
+    <th></th>
+    <th scope="col">Exec</th>
+    <th scope="col">Total</th>
+    <th scope="col">Coverage</th>
+  </tr>
+  <tr>
+    <th scope="row">Lines:</th>
+    <td>52</td>
+    <td>52</td>
+    <td class="coverage-high">100.0%</td>
+  </tr>
+  <tr>
+    <th scope="row">Branches:</th>
+    <td>29</td>
+    <td>38</td>
+    <td class="coverage-medium">76.3%</td>
+  </tr>
+</table>
+    </div>
 
-    /* TD Header Information */
-    td.headerName
-    {
-      text-align: right;
-      color: black;
-      padding-right: 6px;
-      font-weight: bold;
-      vertical-align: top;
-      white-space: nowrap;
-    }
-    td.headerValue
-    {
-      text-align: left;
-      color: blue;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-    td.headerTableEntry
-    {
-      text-align: right;
-      color: black;
-      font-weight: bold;
-      white-space: nowrap;
-      padding-left: 12px;
-      padding-right: 4px;
-      background-color: LightBlue;
-    }
-    td.headerValueLeg
-    {
-      text-align: left;
-      color: black;
-      font-size: 80%;
-      white-space: nowrap;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-top: 2px;
-    }
+    <hr/>
 
-    /* Color of horizontal ruler */
-    td.hr
-    {
-      background-color: navy;
-      height:3px;
-    }
-    /* Footer format */
-    td.footer
-    {
-      text-align: center;
-      padding-top: 3px;
-      font-family: sans-serif;
-    }
-
-    /* Coverage Table */
-
-    td.coverTableHead
-    {
-      text-align: center;
-      color: white;
-      background-color: SteelBlue;
-      font-family: sans-serif;
-      font-size: 120%;
-      white-space: nowrap;
-      padding-left: 4px;
-      padding-right: 4px;
-    }
-    td.coverFile
-    {
-      text-align: left;
-      padding-left: 10px;
-      padding-right: 20px;
-      color: black;
-      background-color: LightBlue;
-      font-family: monospace;
-      font-weight: bold;
-      font-size: 110%;
-    }
-    td.coverBar
-    {
-      padding-left: 10px;
-      padding-right: 10px;
-      background-color: LightBlue;
-    }
-    td.coverBarOutline
-    {
-      background-color: white;
-    }
-    td.coverValue
-    {
-      padding-top: 2px;
-      text-align: right;
-      padding-left: 10px;
-      padding-right: 10px;
-      font-family: sans-serif;
-      white-space: nowrap;
-      font-weight: bold;
-    }
-
-    /* Link Details */
-    a.detail:link
-    {
-      color: #B8D0FF;
-      font-size:80%;
-    }
-    a.detail:visited
-    {
-      color: #B8D0FF;
-      font-size:80%;
-    }
-    a.detail:active
-    {
-      color: #FFFFFF;
-      font-size:80%;
-    }
-
-    .graphcont{
-        color:#000;
-        font-weight:700;
-        float:left
-    }
-
-    .graph{
-        float:left;
-        background-color: white;
-        position:relative;
-        width:280px;
-        padding:0
-    }
-
-    .graph .bar{
-        display:block;
-        position:relative;
-        border:black 1px solid;
-        text-align:center;
-        color:#fff;
-        height:10px;
-        font-family:Arial,Helvetica,sans-serif;
-        font-size:12px;
-        line-height:1.9em
-    }
-
-    .graph .bar span{
-        position:absolute;
-        left:1em
-    }
-
-    td.coveredLine,
-    span.coveredLine
-    {
-        background-color: LightGreen!important;
-    }
-
-    td.uncoveredLine,
-    span.uncoveredLine
-    {
-        background-color: LightPink!important;
-    }
-
-    .linebranch, .linecount
-    {
-        border-right: 1px gray solid;
-        background-color: lightgray;
-    }
-
-    span.takenBranch
-    {
-        color: Green!important;
-        cursor: help;
-    }
-
-    span.notTakenBranch
-    {
-        color: Red!important;
-        cursor: help;
-    }
-
-    .src
-    {
-        padding-left: 12px;
-    }
-
-    .srcHeader,
-    span.takenBranch,
-    span.notTakenBranch
-    {
-        font-family: monospace;
-        font-weight: bold;
-    }
-
-    pre
-    {
-        height : 15px;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .lineno
-    {
-        background-color: #EFE383;
-        border-right: 1px solid #BBB15F;
-    }
-
-  </style>
-</head>
-
-<body>
-
-  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-    <tr><td class="title">GCC Code Coverage Report</td></tr>
-    <tr><td class="hr"></td></tr>
-
+<div class="file-source">
+  <table>
     <tr>
-      <td width="100%">
-        <table cellpadding="1" border="0" width="100%">
-          <tr>
-            <td width="10%" class="headerName">Directory:</td>
-            <td width="35%" class="headerValue">src/</td>
-            <td width="5%"></td>
-            <td width="15%"></td>
-            <td width="10%" class="headerValue" style="text-align:right;">Exec</td>
-            <td width="10%" class="headerValue" style="text-align:right;">Total</td>
-            <td width="15%" class="headerValue" style="text-align:right;">Coverage</td>
-          </tr>
-          <tr>
-            <td class="headerName">File:</td>
-            <td class="headerValue">src/emit/escape.c</td>
-            <td></td>
-            <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">52</td>
-            <td class="headerTableEntry">52</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
-          </tr>
-          <tr>
-            <td class="headerName">Date:</td>
-            <td class="headerValue">2020-05-05 21:15:27</td>
-            <td></td>
-            <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">29</td>
-            <td class="headerTableEntry">38</td>
-            <td class="headerTableEntry" style="background-color:#FFFF55">76.3 %</td>
-          </tr>
-        </table>
+      <td align="right" class="srcHeader">Line</td>
+      <td align="right" class="srcHeader">Branch</td>
+      <td align="right" class="srcHeader">Exec</td>
+      <td align="left" class="srcHeader src">Source</td>
+    </tr>
+
+
+    <tr class="source-line">
+      <td class="lineno">1</td>
+      <td class="linebranch">
       </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;gwion_util.h&#34;</td>
     </tr>
 
-    <tr><td class="hr"></td></tr>
+    <tr class="source-line">
+      <td class="lineno">2</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;gwion_ast.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">3</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;gwion_env.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">4</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;vm.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">5</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;instr.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">6</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;emit.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">7</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;escape.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">8</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">9</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">731</td>
+      <td class="src coveredLine">char* escape_table(MemPool p) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">10</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">731</td>
+      <td class="src coveredLine">  char *escape = (char*)mp_calloc2(p, 256);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">11</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">731</td>
+      <td class="src coveredLine">  escape[&#39;0&#39;] = &#39;0&#39;;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">12</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">731</td>
+      <td class="src coveredLine">  escape[&#39;\&#39;&#39;] = &#39;\&#39;&#39;;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">13</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">731</td>
+      <td class="src coveredLine">  escape[&#39;&#34;&#39;] = &#39;&#34;&#39;;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">14</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">731</td>
+      <td class="src coveredLine">  escape[&#39;\\&#39;] = &#39;\\&#39;;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">15</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">731</td>
+      <td class="src coveredLine">  escape[&#39;a&#39;] = (char)7; // audible bell</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">16</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">731</td>
+      <td class="src coveredLine">  escape[&#39;b&#39;] = (char)8; // back space</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">17</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">731</td>
+      <td class="src coveredLine">  escape[&#39;f&#39;] = (char)12; // form feed</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">18</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">731</td>
+      <td class="src coveredLine">  escape[&#39;n&#39;] = (char)10; // new line</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">19</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">731</td>
+      <td class="src coveredLine">  escape[&#39;r&#39;] = (char)13; // carriage return</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">20</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">731</td>
+      <td class="src coveredLine">  escape[&#39;t&#39;] = (char)9; // horizontal tab</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">21</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">731</td>
+      <td class="src coveredLine">  escape[&#39;v&#39;] = (char)11; // vertical tab</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">22</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">731</td>
+      <td class="src coveredLine">  return escape;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">23</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">24</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">25</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">21</td>
+      <td class="src coveredLine">static int get_escape(const Emitter emit, const char c, const loc_t pos) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">26</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 1 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">21</td>
+      <td class="src coveredLine">  if(emit-&gt;info-&gt;escape[(int)c])</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">27</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">20</td>
+      <td class="src coveredLine">    return emit-&gt;info-&gt;escape[(int)c];</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">28</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">  env_err(emit-&gt;env, pos, _(&#34;unrecognized escape sequence &#39;\\%c&#39;&#34;), c);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">29</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">  return GW_ERROR;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">30</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">31</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">32</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">269</td>
+      <td class="src coveredLine">m_bool escape_str(const Emitter emit, const m_str base, const loc_t pos) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">33</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">269</td>
+      <td class="src coveredLine">  unsigned char* str_lit = (unsigned char*)base;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">34</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">269</td>
+      <td class="src coveredLine">  m_str str = base;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">35</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 2669 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 267 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">3205</td>
+      <td class="src coveredLine">  while(*str_lit) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">36</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 17 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 2652 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">2669</td>
+      <td class="src coveredLine">    if(*str_lit == &#39;\\&#39;)  {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">37</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">17</td>
+      <td class="src coveredLine">      ++str_lit;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">38</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">17</td>
+      <td class="src coveredLine">      const unsigned char c = *(str_lit);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">39</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">17</td>
+      <td class="src coveredLine">      const unsigned char c2 = *(str_lit+1);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">40</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">4/4</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 16 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 1 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 5 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 11 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">17</td>
+      <td class="src coveredLine">      if(c &gt;= &#39;0&#39; &amp;&amp; c &lt;= &#39;7&#39;) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">41</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">4/6</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 5 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+          <div class="takenBranch">&check; Branch 2 taken 5 times.</div>
+          <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
+          <div class="takenBranch">&check; Branch 4 taken 2 times.</div>
+          <div class="takenBranch">&check; Branch 5 taken 3 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">9</td>
+      <td class="src coveredLine">        if(c == &#39;0&#39; &amp;&amp; (c2 &lt; &#39;0&#39; || c2 &gt; &#39;7&#39;))</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">42</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine">          *str++ = &#39;\0&#39;;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">43</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">        else {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">44</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">3</td>
+      <td class="src coveredLine">          const unsigned char c3 = *(str_lit+2);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">45</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">5/8</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 3 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+          <div class="takenBranch">&check; Branch 2 taken 3 times.</div>
+          <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
+          <div class="takenBranch">&check; Branch 4 taken 3 times.</div>
+          <div class="notTakenBranch">&cross; Branch 5 not taken.</div>
+          <div class="takenBranch">&check; Branch 6 taken 2 times.</div>
+          <div class="takenBranch">&check; Branch 7 taken 1 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">3</td>
+      <td class="src coveredLine">          if(c2 &gt;= &#39;0&#39; &amp;&amp; c2 &lt;= &#39;7&#39; &amp;&amp; c3 &gt;= &#39;0&#39; &amp;&amp; c3 &lt;= &#39;7&#39;) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">46</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine">            *str++ = (char)((c-&#39;0&#39;) * 64 + (c2-&#39;0&#39;) * 8 + (c3-&#39;0&#39;));</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">47</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine">            str_lit += 2;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">48</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">          } else {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">49</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">            env_err(emit-&gt;env, pos, _(&#34;malformed octal escape sequence &#39;\\%c%c%c&#39;&#34;), c, c2, c3);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">50</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">            return GW_ERROR;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">51</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">          }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">52</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">        }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">53</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 2 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 10 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+      <td class="src coveredLine">      } else if(c == &#39;x&#39;) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">54</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine">        ++str_lit;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">55</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine">        const unsigned char c1 = *(str_lit);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">56</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine">        const unsigned char c3 = *(str_lit+1);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">57</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">5/8</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 2 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+          <div class="takenBranch">&check; Branch 2 taken 1 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 1 times.</div>
+          <div class="takenBranch">&check; Branch 4 taken 1 times.</div>
+          <div class="notTakenBranch">&cross; Branch 5 not taken.</div>
+          <div class="takenBranch">&check; Branch 6 taken 1 times.</div>
+          <div class="notTakenBranch">&cross; Branch 7 not taken.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine">        if(c1 &gt;= &#39;0&#39; &amp;&amp; c1 &lt;= &#39;F&#39; &amp;&amp; c3 &gt;= &#39;0&#39; &amp;&amp; c3 &lt;= &#39;F&#39;) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">58</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">          *str++ = (char)((c1-&#39;0&#39;) * 16 + (c3-&#39;0&#39;));</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">59</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">          ++str_lit;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">60</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">        } else {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">61</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">          env_err(emit-&gt;env, pos, _(&#34;malformed hex escape sequence &#39;\\%c%c&#39;&#34;), c1, c3);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">62</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">          return GW_ERROR;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">63</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">        }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">64</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      } else</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">65</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+          <div class="takenBranch">&check; Branch 2 taken 10 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">10</td>
+      <td class="src coveredLine">        CHECK_BB((*str++ = (char)get_escape(emit, (char)c, pos)))</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">66</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">    }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">67</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">    else</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">68</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2652</td>
+      <td class="src coveredLine">        *str++ = (char)*str_lit;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">69</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2667</td>
+      <td class="src coveredLine">    ++str_lit;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">70</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">  }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">71</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">267</td>
+      <td class="src coveredLine">  *str = &#39;\0&#39;;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">72</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">267</td>
+      <td class="src coveredLine">  return GW_OK;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">73</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">74</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">75</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">15</td>
+      <td class="src coveredLine">ANN m_int str2char(const Emitter emit, const m_str c, const loc_t pos) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">76</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 4 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 11 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">15</td>
+      <td class="src coveredLine">  return c[0] != &#39;\\&#39; ? c[0] : get_escape(emit, c[1], pos);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">77</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">}</td>
+    </tr>
+
   </table>
+</div>
 
-  <br>
-  <table cellspacing="0" cellpadding="1">
-    <tr>
-      <td width="5%" align="right" class="srcHeader">Line</td>
-      <td width="5%" align="right" class="srcHeader">Branch</td>
-      <td width="5%" align="right" class="srcHeader">Exec</td>
-      <td width="75%" align="left" class="srcHeader src">Source</td>
-    </tr>
+    <hr/>
 
-
-    <tr>
-    <td align="right" class="lineno"><pre>1</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "gwion_util.h"</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>2</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "gwion_ast.h"</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>3</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "gwion_env.h"</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>4</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "vm.h"</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>5</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "instr.h"</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>6</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "emit.h"</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>7</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "escape.h"</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>8</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>9</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
-    <td align="left" class="src coveredLine"><pre>char* escape_table(MemPool p) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>10</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
-    <td align="left" class="src coveredLine"><pre>  char *escape = (char*)mp_calloc2(p, 256);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>11</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
-    <td align="left" class="src coveredLine"><pre>  escape['0'] = '0';</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>12</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
-    <td align="left" class="src coveredLine"><pre>  escape['\''] = '\'';</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>13</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
-    <td align="left" class="src coveredLine"><pre>  escape['"'] = '"';</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>14</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
-    <td align="left" class="src coveredLine"><pre>  escape['\\'] = '\\';</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>15</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
-    <td align="left" class="src coveredLine"><pre>  escape['a'] = (char)7; // audible bell</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>16</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
-    <td align="left" class="src coveredLine"><pre>  escape['b'] = (char)8; // back space</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>17</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
-    <td align="left" class="src coveredLine"><pre>  escape['f'] = (char)12; // form feed</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>18</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
-    <td align="left" class="src coveredLine"><pre>  escape['n'] = (char)10; // new line</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>19</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
-    <td align="left" class="src coveredLine"><pre>  escape['r'] = (char)13; // carriage return</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>20</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
-    <td align="left" class="src coveredLine"><pre>  escape['t'] = (char)9; // horizontal tab</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>21</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
-    <td align="left" class="src coveredLine"><pre>  escape['v'] = (char)11; // vertical tab</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>22</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return escape;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>23</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>24</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>25</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>21</pre></td>
-    <td align="left" class="src coveredLine"><pre>static int get_escape(const Emitter emit, const char c, const loc_t pos) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>26</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 20 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>21</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(emit->info->escape[(int)c])</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>27</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>20</pre></td>
-    <td align="left" class="src coveredLine"><pre>    return emit->info->escape[(int)c];</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>28</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  env_err(emit->env, pos, _("unrecognized escape sequence '\\%c'"), c);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>29</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return GW_ERROR;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>30</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>31</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>32</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>269</pre></td>
-    <td align="left" class="src coveredLine"><pre>m_bool escape_str(const Emitter emit, const m_str base, const loc_t pos) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>33</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>269</pre></td>
-    <td align="left" class="src coveredLine"><pre>  unsigned char* str_lit = (unsigned char*)base;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>34</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>269</pre></td>
-    <td align="left" class="src coveredLine"><pre>  m_str str = base;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>35</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2669 times">&check;</span><span class="takenBranch" title="Branch 1 taken 267 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>3205</pre></td>
-    <td align="left" class="src coveredLine"><pre>  while(*str_lit) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>36</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 17 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2652 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>2669</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if(*str_lit == '\\')  {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>37</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17</pre></td>
-    <td align="left" class="src coveredLine"><pre>      ++str_lit;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>38</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17</pre></td>
-    <td align="left" class="src coveredLine"><pre>      const unsigned char c = *(str_lit);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>39</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17</pre></td>
-    <td align="left" class="src coveredLine"><pre>      const unsigned char c2 = *(str_lit+1);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>40</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 16 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 2 taken 5 times">&check;</span><span class="takenBranch" title="Branch 3 taken 11 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>17</pre></td>
-    <td align="left" class="src coveredLine"><pre>      if(c >= '0' &amp;&amp; c &lt;= '7') {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>41</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 5 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 5 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 4 taken 2 times">&check;</span><span class="takenBranch" title="Branch 5 taken 3 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
-    <td align="left" class="src coveredLine"><pre>        if(c == '0' &amp;&amp; (c2 &lt; '0' || c2 > '7'))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>42</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>          *str++ = '\0';</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>43</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        else {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>44</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>          const unsigned char c3 = *(str_lit+2);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>45</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 3 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 4 taken 3 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><span class="takenBranch" title="Branch 6 taken 2 times">&check;</span><span class="takenBranch" title="Branch 7 taken 1 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>          if(c2 >= '0' &amp;&amp; c2 &lt;= '7' &amp;&amp; c3 >= '0' &amp;&amp; c3 &lt;= '7') {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>46</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>            *str++ = (char)((c-'0') * 64 + (c2-'0') * 8 + (c3-'0'));</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>47</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>            str_lit += 2;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>48</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>          } else {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>49</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>            env_err(emit->env, pos, _("malformed octal escape sequence '\\%c%c%c'"), c, c2, c3);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>50</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>            return GW_ERROR;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>51</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>          }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>52</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>53</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="takenBranch" title="Branch 1 taken 10 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
-    <td align="left" class="src coveredLine"><pre>      } else if(c == 'x') {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>54</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>        ++str_lit;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>55</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>        const unsigned char c1 = *(str_lit);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>56</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>        const unsigned char c3 = *(str_lit+1);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>57</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="takenBranch" title="Branch 3 taken 1 times">&check;</span><br/><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><span class="takenBranch" title="Branch 6 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>        if(c1 >= '0' &amp;&amp; c1 &lt;= 'F' &amp;&amp; c3 >= '0' &amp;&amp; c3 &lt;= 'F') {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>58</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>          *str++ = (char)((c1-'0') * 16 + (c3-'0'));</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>59</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>          ++str_lit;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>60</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        } else {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>61</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>          env_err(emit->env, pos, _("malformed hex escape sequence '\\%c%c'"), c1, c3);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>62</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>          return GW_ERROR;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>63</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>64</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>      } else</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>65</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 10 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>10</pre></td>
-    <td align="left" class="src coveredLine"><pre>        CHECK_BB((*str++ = (char)get_escape(emit, (char)c, pos)))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>66</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>67</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    else</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>68</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2652</pre></td>
-    <td align="left" class="src coveredLine"><pre>        *str++ = (char)*str_lit;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>69</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2667</pre></td>
-    <td align="left" class="src coveredLine"><pre>    ++str_lit;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>70</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>71</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>267</pre></td>
-    <td align="left" class="src coveredLine"><pre>  *str = '\0';</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>72</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>267</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>73</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>74</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>75</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>15</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN m_int str2char(const Emitter emit, const m_str c, const loc_t pos) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>76</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4 times">&check;</span><span class="takenBranch" title="Branch 1 taken 11 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>15</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return c[0] != '\\' ? c[0] : get_escape(emit, c[1], pos);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>77</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-  </table>
-  <br>
-
-  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-    <tr><td class="hr"><td></tr>
-    <tr><td class="footer">Generated by: <a href="http://gcovr.com">GCOVR (Version 4.2)</a></td></tr>
-  </table>
-  <br>
-
-</body>
-
+    <footer>
+      Generated by: <a href="http://gcovr.com">GCOVR (Version 4.2)</a>
+    </footer>
+  </body>
 </html>
-
