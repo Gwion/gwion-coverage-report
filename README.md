@@ -17,7 +17,7 @@ src/env/env.c                                 84      84   100%
 src/env/env_utils.c                           70      70   100%   
 src/env/envset.c                              37      32    86%   16,22,24,34,43
 src/env/nspc.c                                62      61    98%   34
-src/env/tupleform.c                           25      25   100%   
+src/env/tupleform.c                           28      28   100%   
 src/env/type.c                               132     124    93%   128,132,152-153,158-161
 src/env/value.c                               25      24    96%   14
 src/gwion.c                                  136     110    80%   52-63,85,107-111,114-117,119-120,125,127
@@ -55,7 +55,7 @@ src/parse/check.c                            977     960    98%   75,94,168,509,
 src/parse/did_you_mean.c                      42      42   100%   
 src/parse/func.c                              23      23   100%   
 src/parse/operator.c                         216     213    98%   266,324,333
-src/parse/scan0.c                            302     299    99%   141,219,255
+src/parse/scan0.c                            303     300    99%   141,220,256
 src/parse/scan1.c                            372     364    97%   37,103,297-298,307,315,432,512
 src/parse/scan2.c                            416     416   100%   
 src/parse/scanx.c                             46      46   100%   
@@ -74,8 +74,8 @@ src/vm/vm_code.c                              48      48   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                       9263    8884    95%
+TOTAL                                       9267    8888    95%
 ------------------------------------------------------------------------------
-lines: 95.9% (8884 out of 9263)
-branches: 81.6% (4190 out of 5135)
+lines: 95.9% (8888 out of 9267)
+branches: 81.6% (4194 out of 5139)
 ```
