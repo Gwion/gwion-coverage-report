@@ -8,14 +8,14 @@ File                                       Lines    Exec  Cover   Missing
 ------------------------------------------------------------------------------
 src/arg.c                                    130     101    77%   15-19,130-136,138-139,148-153,155-157,163-168
 src/compile.c                                 86      83    96%   90-91,127
-src/emit/emit.c                             1504    1472    97%   87,412-413,497-498,501,645-646,651,750-752,756-759,761,852,893,1222,1244,1246-1253,1271,1917,2026
+src/emit/emit.c                             1501    1472    98%   87,412-413,497-498,501,645-646,651,750-752,756-759,761,1241,1243-1250,1268,1914,2023
 src/emit/emitter.c                            28      28   100%   
 src/emit/escape.c                             52      52   100%   
 src/emit/memoize.c                            34      34   100%   
 src/env/context.c                             26      26   100%   
 src/env/env.c                                 84      84   100%   
 src/env/env_utils.c                           70      70   100%   
-src/env/envset.c                              37      32    86%   16,22,24,34,43
+src/env/envset.c                              41      37    90%   16,22,24,50
 src/env/nspc.c                                62      61    98%   34
 src/env/tupleform.c                           38      38   100%   
 src/env/type.c                               131     123    93%   127,131,151-152,157-160
@@ -41,7 +41,7 @@ src/lib/gack.c                                50      47    94%   32-33,54
 src/lib/instr.c                               79      79   100%   
 src/lib/modules.c                            220     219    99%   252
 src/lib/object.c                              91      89    97%   116-117
-src/lib/object_op.c                          331     326    98%   57,379,411,414-415
+src/lib/object_op.c                          331     327    98%   57,382,416-417
 src/lib/opfunc.c                              64      60    93%   13-16
 src/lib/prim.c                               224     224   100%   
 src/lib/prim_values.c                         30      30   100%   
@@ -51,7 +51,7 @@ src/lib/string.c                             440     170    38%   34,87-88,91-97
 src/lib/ugen.c                               234     234   100%   
 src/lib/vararg.c                             126     125    99%   47
 src/main.c                                    14      14   100%   
-src/parse/check.c                            974     954    97%   75,94,508,560,574,667,742-746,753,843,865,1043,1090-1091,1093-1094,1145
+src/parse/check.c                            972     950    97%   75,94,507,545-546,559,573,665,740-744,751,841,863,1041,1088-1089,1091-1092,1143
 src/parse/did_you_mean.c                      42      42   100%   
 src/parse/func.c                              23      23   100%   
 src/parse/operator.c                         216     213    98%   266,324,333
@@ -60,9 +60,9 @@ src/parse/scan1.c                            388     380    97%   16,61,130,324-
 src/parse/scan2.c                            414     414   100%   
 src/parse/scanx.c                             46      46   100%   
 src/parse/stage.c                             14      14   100%   
-src/parse/template.c                          89      85    95%   28,37,67,98
+src/parse/template.c                          89      87    97%   37,67
 src/parse/traverse.c                          43      42    97%   67
-src/parse/type_decl.c                         49      48    98%   33
+src/parse/type_decl.c                         49      49   100%   
 src/parse/type_utils.c                        17       4    23%   14-18,21-22,24-29
 src/pass.c                                    34      34   100%   
 src/plug.c                                   113     113   100%   
@@ -74,8 +74,8 @@ src/vm/vm_code.c                              48      48   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                       9695    9185    94%
+TOTAL                                       9694    9190    94%
 ------------------------------------------------------------------------------
-lines: 94.7% (9185 out of 9695)
-branches: 80.4% (4255 out of 5289)
+lines: 94.8% (9190 out of 9694)
+branches: 80.5% (4262 out of 5293)
 ```
