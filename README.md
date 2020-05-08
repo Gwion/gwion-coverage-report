@@ -62,7 +62,7 @@ src/parse/scanx.c                             46      46   100%
 src/parse/stage.c                             14      14   100%   
 src/parse/template.c                          89      87    97%   37,67
 src/parse/traverse.c                          43      42    97%   67
-src/parse/type_decl.c                         49      49   100%   
+src/parse/type_decl.c                         49      48    98%   40
 src/parse/type_utils.c                        17       4    23%   14-18,21-22,24-29
 src/pass.c                                    34      34   100%   
 src/plug.c                                   113     113   100%   
@@ -74,8 +74,8 @@ src/vm/vm_code.c                              48      48   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                       9694    9190    94%
+TOTAL                                       9694    9189    94%
 ------------------------------------------------------------------------------
-lines: 94.8% (9190 out of 9694)
-branches: 80.5% (4262 out of 5293)
+lines: 94.8% (9189 out of 9694)
+branches: 80.5% (4261 out of 5293)
 ```
