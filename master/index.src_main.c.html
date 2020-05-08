@@ -25,7 +25,7 @@
   </tr>
   <tr>
     <th scope="row">Date:</th>
-    <td>2020-05-08 12:11:16</td>
+    <td>2020-05-08 18:49:38</td>
   </tr>
 </table>
 <table class="coverage">
@@ -219,7 +219,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#define BUFSIZE 256</td>
+      <td class="src ">#define BUFSIZE 128</td>
     </tr>
 
     <tr class="source-line">
@@ -243,7 +243,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">  char buf[BUFSIZE];</td>
+      <td class="src ">  __AFL_INIT();</td>
     </tr>
 
     <tr class="source-line">
@@ -251,7 +251,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">  struct GwText_ text = { .mp=gwion-&gt;mp };</td>
+      <td class="src ">  char buf[BUFSIZE];</td>
     </tr>
 
     <tr class="source-line">
@@ -259,7 +259,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">  while (__AFL_LOOP(128)) {</td>
+      <td class="src ">  struct GwText_ text = { .mp=gwion-&gt;mp };</td>
     </tr>
 
     <tr class="source-line">
@@ -267,7 +267,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">    ssize_t sz;</td>
+      <td class="src ">  while (__AFL_LOOP(256)) {</td>
     </tr>
 
     <tr class="source-line">
@@ -275,7 +275,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">    memset(buf, 0, BUFSIZE);</td>
+      <td class="src ">    ssize_t sz;</td>
     </tr>
 
     <tr class="source-line">
@@ -283,7 +283,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">    while((sz = read(0, buf, BUFSIZE)) &gt; 0) {</td>
+      <td class="src ">    memset(buf, 0, BUFSIZE);</td>
     </tr>
 
     <tr class="source-line">
@@ -291,7 +291,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">      buf[sz] = &#39;\0&#39;;</td>
+      <td class="src ">    while((sz = read(0, buf, BUFSIZE)) &gt; 0) {</td>
     </tr>
 
     <tr class="source-line">
@@ -299,7 +299,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">      text_add(&amp;text, buf);</td>
+      <td class="src ">      buf[sz] = &#39;\0&#39;;</td>
     </tr>
 
     <tr class="source-line">
@@ -307,7 +307,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">    }</td>
+      <td class="src ">      text_add(&amp;text, buf);</td>
     </tr>
 
     <tr class="source-line">
@@ -315,7 +315,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">    if(compile_string(gwion, &#34;afl&#34;, text.str)) {</td>
+      <td class="src ">    }</td>
     </tr>
 
     <tr class="source-line">
@@ -323,7 +323,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">      push_global(gwion, &#34;[afl]&#34;);</td>
+      <td class="src ">    if(compile_string(gwion, &#34;afl&#34;, text.str)) {</td>
     </tr>
 
     <tr class="source-line">
@@ -331,7 +331,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">      gwion_run(gwion);</td>
+      <td class="src ">      push_global(gwion, &#34;[afl]&#34;);</td>
     </tr>
 
     <tr class="source-line">
@@ -339,7 +339,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">      pop_global(gwion);</td>
+      <td class="src ">      gwion_run(gwion);</td>
     </tr>
 
     <tr class="source-line">
@@ -347,7 +347,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">    }</td>
+      <td class="src ">      pop_global(gwion);</td>
     </tr>
 
     <tr class="source-line">
@@ -355,7 +355,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">    text_reset(&amp;text);</td>
+      <td class="src ">   }</td>
     </tr>
 
     <tr class="source-line">
@@ -363,7 +363,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">  }</td>
+      <td class="src ">    text_reset(&amp;text);</td>
     </tr>
 
     <tr class="source-line">
@@ -371,7 +371,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">  text_release(&amp;text);</td>
+      <td class="src ">  }</td>
     </tr>
 
     <tr class="source-line">
@@ -379,7 +379,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">}</td>
+      <td class="src ">  text_release(&amp;text);</td>
     </tr>
 
     <tr class="source-line">
@@ -387,7 +387,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#define gwion_run(a) afl_run(a)</td>
+      <td class="src ">}</td>
     </tr>
 
     <tr class="source-line">
@@ -395,7 +395,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#endif</td>
+      <td class="src ">#define gwion_run(a) { afl_run(a); return; }</td>
     </tr>
 
     <tr class="source-line">
@@ -403,15 +403,15 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src ">#endif</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">44</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">int main(int argc, char** argv) {</td>
+      <td class="linecount "></td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
@@ -419,7 +419,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  Arg arg = { .arg={.argc=argc, .argv=argv}, .loop=-1 };</td>
+      <td class="src coveredLine">int main(int argc, char** argv) {</td>
     </tr>
 
     <tr class="source-line">
@@ -427,7 +427,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  signal(SIGINT, sig);</td>
+      <td class="src coveredLine">  Arg arg = { .arg={.argc=argc, .argv=argv}, .loop=-1 };</td>
     </tr>
 
     <tr class="source-line">
@@ -435,7 +435,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  signal(SIGTERM, sig);</td>
+      <td class="src coveredLine">  signal(SIGINT, sig);</td>
     </tr>
 
     <tr class="source-line">
@@ -443,7 +443,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  struct Gwion_ gwion = {};</td>
+      <td class="src coveredLine">  signal(SIGTERM, sig);</td>
     </tr>
 
     <tr class="source-line">
@@ -451,7 +451,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  const m_bool ini = gwion_ini(&amp;gwion, &amp;arg);</td>
+      <td class="src coveredLine">  struct Gwion_ gwion = {};</td>
     </tr>
 
     <tr class="source-line">
@@ -459,11 +459,19 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  arg_release(&amp;arg);</td>
+      <td class="src coveredLine">  const m_bool ini = gwion_ini(&amp;gwion, &amp;arg);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">51</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">735</td>
+      <td class="src coveredLine">  arg_release(&amp;arg);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">52</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -478,7 +486,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">52</td>
+      <td class="lineno">53</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">732</td>
@@ -486,7 +494,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">53</td>
+      <td class="lineno">54</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">734</td>
@@ -494,7 +502,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">54</td>
+      <td class="lineno">55</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">734</td>
@@ -502,7 +510,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">55</td>
+      <td class="lineno">56</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
