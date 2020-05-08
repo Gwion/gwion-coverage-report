@@ -25,7 +25,7 @@
   </tr>
   <tr>
     <th scope="row">Date:</th>
-    <td>2020-05-07 19:52:45</td>
+    <td>2020-05-08 10:10:27</td>
   </tr>
 </table>
 <table class="coverage">
@@ -37,15 +37,15 @@
   </tr>
   <tr>
     <th scope="row">Lines:</th>
-    <td>322</td>
     <td>326</td>
-    <td class="coverage-high">98.8%</td>
+    <td>331</td>
+    <td class="coverage-high">98.5%</td>
   </tr>
   <tr>
     <th scope="row">Branches:</th>
-    <td>159</td>
-    <td>186</td>
-    <td class="coverage-medium">85.5%</td>
+    <td>161</td>
+    <td>190</td>
+    <td class="coverage-medium">84.7%</td>
   </tr>
 </table>
     </div>
@@ -3634,7 +3634,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">39</td>
-      <td class="src coveredLine">ANN static m_bool scan0_cdef(const Env env, const Type t, const Class_Def a) {</td>
+      <td class="src coveredLine">ANN static m_bool _scan_class(const Env env, const Type t, const Class_Def a) {</td>
     </tr>
 
     <tr class="source-line">
@@ -3818,82 +3818,128 @@
       <td class="lineno">404</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">39</td>
-      <td class="src coveredLine">  a-&gt;base.tmpl = mk_tmpl(env, t-&gt;e-&gt;def-&gt;base.tmpl, td-&gt;types);</td>
+      <td class="linecount coveredLine">78</td>
+      <td class="src coveredLine">  struct EnvSet es = { .env=env, .data=env, .func=(_exp_func)scan0_cdef,</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">405</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-          <div class="takenBranch">&check; Branch 2 taken 39 times.</div>
-        </div>
-        </details>
       </td>
       <td class="linecount coveredLine">39</td>
-      <td class="src coveredLine">  if(scan0_cdef(env, t, a) &lt; 0) {</td>
+      <td class="src coveredLine">    .scope=env-&gt;scope-&gt;depth, .flag=ae_flag_scan0 };</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">406</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 1 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 38 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount uncoveredLine"></td>
-      <td class="src uncoveredLine">    free_tmpl(env-&gt;gwion-&gt;mp, a-&gt;base.tmpl);</td>
+      <td class="linecount coveredLine">39</td>
+      <td class="src coveredLine">  if(t-&gt;e-&gt;owner_class)</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">407</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+          <div class="takenBranch">&check; Branch 2 taken 1 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount uncoveredLine"></td>
-      <td class="src uncoveredLine">    return NULL;</td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">    CHECK_BO(envset_push(&amp;es, t-&gt;e-&gt;owner_class))</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">408</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">  }</td>
+      <td class="linecount coveredLine">39</td>
+      <td class="src coveredLine">  a-&gt;base.tmpl = mk_tmpl(env, t-&gt;e-&gt;def-&gt;base.tmpl, td-&gt;types);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">409</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 15 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 24 times.</div>
-        </div>
-        </details>
       </td>
       <td class="linecount coveredLine">39</td>
-      <td class="src coveredLine">  if(GET_FLAG(t, builtin))</td>
+      <td class="src coveredLine">  const m_bool ret = _scan_class(env, t, a);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">410</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="notTakenBranch">&cross; Branch 0 not taken.</div>
+          <div class="takenBranch">&check; Branch 1 taken 39 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">15</td>
-      <td class="src coveredLine">    SET_FLAG(a-&gt;base.type, builtin);</td>
+      <td class="linecount coveredLine">39</td>
+      <td class="src coveredLine">  if(es.run)</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">411</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">39</td>
-      <td class="src coveredLine">  return a-&gt;base.type;</td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">    envset_pop(&amp;es, t-&gt;e-&gt;owner_class);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">412</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 39 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">39</td>
+      <td class="src coveredLine">  if(ret &gt; 0)</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">413</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">39</td>
+      <td class="src coveredLine">    return a-&gt;base.type;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">414</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">  free_class_def(env-&gt;gwion-&gt;mp, a);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">415</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">  return NULL;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">416</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -3901,7 +3947,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">413</td>
+      <td class="lineno">417</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -3909,7 +3955,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">414</td>
+      <td class="lineno">418</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">320</td>
@@ -3917,7 +3963,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">415</td>
+      <td class="lineno">419</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -3932,7 +3978,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">416</td>
+      <td class="lineno">420</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">320</td>
@@ -3940,7 +3986,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">417</td>
+      <td class="lineno">421</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -3948,7 +3994,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">418</td>
+      <td class="lineno">422</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -3956,7 +4002,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">419</td>
+      <td class="lineno">423</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">320</td>
@@ -3964,7 +4010,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">420</td>
+      <td class="lineno">424</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">320</td>
@@ -3972,7 +4018,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">421</td>
+      <td class="lineno">425</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -3987,7 +4033,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">422</td>
+      <td class="lineno">426</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">266</td>
@@ -3995,7 +4041,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">423</td>
+      <td class="lineno">427</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">54</td>
@@ -4003,7 +4049,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">424</td>
+      <td class="lineno">428</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">54</td>
@@ -4011,7 +4057,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">425</td>
+      <td class="lineno">429</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -4019,43 +4065,11 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">426</td>
+      <td class="lineno">430</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
       <td class="src "></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">427</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">320</td>
-      <td class="src coveredLine">ANN Exp symbol_owned_exp(const Gwion gwion, const Symbol *data) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">428</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">320</td>
-      <td class="src coveredLine">  const Value v = prim_self(data)-&gt;value;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">429</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">320</td>
-      <td class="src coveredLine">  const Exp base = new_prim_id(gwion-&gt;mp, dot_symbol(gwion-&gt;st, v), loc_cpy(gwion-&gt;mp, prim_pos(data)));</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">430</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">320</td>
-      <td class="src coveredLine">  const Exp dot = new_exp_dot(gwion-&gt;mp, base, *data);</td>
     </tr>
 
     <tr class="source-line">
@@ -4063,7 +4077,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">320</td>
-      <td class="src coveredLine">  dot-&gt;d.exp_dot.t_base = dot-&gt;d.exp_dot.base-&gt;info-&gt;type = dot_type(gwion-&gt;st, v);</td>
+      <td class="src coveredLine">ANN Exp symbol_owned_exp(const Gwion gwion, const Symbol *data) {</td>
     </tr>
 
     <tr class="source-line">
@@ -4071,7 +4085,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">320</td>
-      <td class="src coveredLine">  dot-&gt;info-&gt;type = prim_exp(data)-&gt;info-&gt;type;</td>
+      <td class="src coveredLine">  const Value v = prim_self(data)-&gt;value;</td>
     </tr>
 
     <tr class="source-line">
@@ -4079,7 +4093,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">320</td>
-      <td class="src coveredLine">  exp_setvar(dot, exp_getvar(prim_exp(data)));</td>
+      <td class="src coveredLine">  const Exp base = new_prim_id(gwion-&gt;mp, dot_symbol(gwion-&gt;st, v), loc_cpy(gwion-&gt;mp, prim_pos(data)));</td>
     </tr>
 
     <tr class="source-line">
@@ -4087,11 +4101,43 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">320</td>
-      <td class="src coveredLine">  return dot;</td>
+      <td class="src coveredLine">  const Exp dot = new_exp_dot(gwion-&gt;mp, base, *data);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">435</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">320</td>
+      <td class="src coveredLine">  dot-&gt;d.exp_dot.t_base = dot-&gt;d.exp_dot.base-&gt;info-&gt;type = dot_type(gwion-&gt;st, v);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">436</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">320</td>
+      <td class="src coveredLine">  dot-&gt;info-&gt;type = prim_exp(data)-&gt;info-&gt;type;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">437</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">320</td>
+      <td class="src coveredLine">  exp_setvar(dot, exp_getvar(prim_exp(data)));</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">438</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">320</td>
+      <td class="src coveredLine">  return dot;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">439</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -4099,7 +4145,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">436</td>
+      <td class="lineno">440</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -4107,7 +4153,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">437</td>
+      <td class="lineno">441</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
@@ -4115,7 +4161,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">438</td>
+      <td class="lineno">442</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
@@ -4123,7 +4169,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">439</td>
+      <td class="lineno">443</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
@@ -4131,7 +4177,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">440</td>
+      <td class="lineno">444</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
@@ -4139,7 +4185,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">441</td>
+      <td class="lineno">445</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
@@ -4147,7 +4193,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">442</td>
+      <td class="lineno">446</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
@@ -4155,7 +4201,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">443</td>
+      <td class="lineno">447</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
@@ -4163,7 +4209,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">444</td>
+      <td class="lineno">448</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
@@ -4171,7 +4217,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">445</td>
+      <td class="lineno">449</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
@@ -4179,7 +4225,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">446</td>
+      <td class="lineno">450</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
@@ -4187,7 +4233,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">447</td>
+      <td class="lineno">451</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
@@ -4195,7 +4241,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">448</td>
+      <td class="lineno">452</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
@@ -4203,7 +4249,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">449</td>
+      <td class="lineno">453</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
@@ -4211,7 +4257,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">450</td>
+      <td class="lineno">454</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
@@ -4219,43 +4265,11 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">451</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">733</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_end(gwi, &#34;$&#34;, NULL))</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">452</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">733</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_add(gwi, opck_implicit_null2obj))</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">453</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">733</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_emi(gwi, opem_implicit_null2obj))</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">454</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">733</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_end(gwi, &#34;@implicit&#34;, NULL))</td>
-    </tr>
-
-    <tr class="source-line">
       <td class="lineno">455</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_ini(gwi, &#34;@null&#34;, &#34;Object&#34;, &#34;int&#34;))</td>
+      <td class="src coveredLine">  GWI_BB(gwi_oper_end(gwi, &#34;$&#34;, NULL))</td>
     </tr>
 
     <tr class="source-line">
@@ -4271,7 +4285,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_end(gwi, &#34;@implicit&#34;, NULL))</td>
+      <td class="src coveredLine">  GWI_BB(gwi_oper_emi(gwi, opem_implicit_null2obj))</td>
     </tr>
 
     <tr class="source-line">
@@ -4279,7 +4293,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_ini(gwi, NULL, &#34;Object&#34;, &#34;bool&#34;))</td>
+      <td class="src coveredLine">  GWI_BB(gwi_oper_end(gwi, &#34;@implicit&#34;, NULL))</td>
     </tr>
 
     <tr class="source-line">
@@ -4287,7 +4301,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_add(gwi, opck_unary_meta2))</td>
+      <td class="src coveredLine">  GWI_BB(gwi_oper_ini(gwi, &#34;@null&#34;, &#34;Object&#34;, &#34;int&#34;))</td>
     </tr>
 
     <tr class="source-line">
@@ -4295,7 +4309,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_end(gwi, &#34;!&#34;, IntNot))</td>
+      <td class="src coveredLine">  GWI_BB(gwi_oper_add(gwi, opck_implicit_null2obj))</td>
     </tr>
 
     <tr class="source-line">
@@ -4303,7 +4317,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_ini(gwi, &#34;Object&#34;, NULL, NULL))</td>
+      <td class="src coveredLine">  GWI_BB(gwi_oper_end(gwi, &#34;@implicit&#34;, NULL))</td>
     </tr>
 
     <tr class="source-line">
@@ -4311,7 +4325,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_add(gwi, opck_object_scan))</td>
+      <td class="src coveredLine">  GWI_BB(gwi_oper_ini(gwi, NULL, &#34;Object&#34;, &#34;bool&#34;))</td>
     </tr>
 
     <tr class="source-line">
@@ -4319,7 +4333,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_end(gwi, &#34;@scan&#34;, NULL))</td>
+      <td class="src coveredLine">  GWI_BB(gwi_oper_add(gwi, opck_unary_meta2))</td>
     </tr>
 
     <tr class="source-line">
@@ -4327,7 +4341,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
-      <td class="src coveredLine">  gwi_item_ini(gwi, &#34;@null&#34;, &#34;null&#34;);</td>
+      <td class="src coveredLine">  GWI_BB(gwi_oper_end(gwi, &#34;!&#34;, IntNot))</td>
     </tr>
 
     <tr class="source-line">
@@ -4335,7 +4349,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
-      <td class="src coveredLine">  gwi_item_end(gwi, 0, NULL);</td>
+      <td class="src coveredLine">  GWI_BB(gwi_oper_ini(gwi, &#34;Object&#34;, NULL, NULL))</td>
     </tr>
 
     <tr class="source-line">
@@ -4343,11 +4357,43 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">733</td>
-      <td class="src coveredLine">  return GW_OK;</td>
+      <td class="src coveredLine">  GWI_BB(gwi_oper_add(gwi, opck_object_scan))</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">467</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">733</td>
+      <td class="src coveredLine">  GWI_BB(gwi_oper_end(gwi, &#34;@scan&#34;, NULL))</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">468</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">733</td>
+      <td class="src coveredLine">  gwi_item_ini(gwi, &#34;@null&#34;, &#34;null&#34;);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">469</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">733</td>
+      <td class="src coveredLine">  gwi_item_end(gwi, 0, NULL);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">470</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">733</td>
+      <td class="src coveredLine">  return GW_OK;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">471</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
