@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<script type="text/javascript" src="../focus.js"></script><html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Gwion coverage report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="index.css">
+  </head>
+
+  <body>
+    <h1>GCC Code Coverage Report</h1>
+
+    <hr/>
+
+    <div class="summary">
+<table class="legend">
+  <tr>
+    <th scope="row">Directory:</th>
+    <td>src/</td>
+  </tr>
+  <tr>
+    <th scope="row">File:</th>
+    <td>src/vm/shreduler.c</td>
+  </tr>
+  <tr>
+    <th scope="row">Date:</th>
+    <td>2020-05-08 19:54:06</td>
+  </tr>
+</table>
+<table class="coverage">
+  <tr>
+    <th></th>
+    <th scope="col">Exec</th>
+    <th scope="col">Total</th>
+    <th scope="col">Coverage</th>
+  </tr>
+  <tr>
+    <th scope="row">Lines:</th>
+    <td>85</td>
+    <td>85</td>
+    <td class="coverage-high">100.0%</td>
+  </tr>
+  <tr>
+    <th scope="row">Branches:</th>
+    <td>40</td>
+    <td>40</td>
+    <td class="coverage-high">100.0%</td>
+  </tr>
+</table>
+    </div>
+
+    <hr/>
+
+<div class="file-source">
+  <table>
+    <tr>
+      <td align="right" class="srcHeader">Line</td>
+      <td align="right" class="srcHeader">Branch</td>
+      <td align="right" class="srcHeader">Exec</td>
+      <td align="left" class="srcHeader src">Source</td>
+    </tr>
+
+
+    <tr class="source-line">
+      <td class="lineno">1</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &lt;stdlib.h&gt;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">2</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;gwion_util.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">3</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;gwion_ast.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">4</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;gwion_env.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">5</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;vm.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">6</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;object.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">7</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;driver.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">8</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;shreduler_private.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">9</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">10</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">732</td>
+      <td class="src coveredLine">ANN void shreduler_set_loop(const Shreduler s, const m_bool loop) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">11</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">732</td>
+      <td class="src coveredLine">  s-&gt;loop = loop &gt; 0;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">12</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">732</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">13</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">14</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">6244527</td>
+      <td class="src coveredLine">ANN VM_Shred shreduler_get(const Shreduler s) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">15</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">6244527</td>
+      <td class="src coveredLine">  Driver *const bbq = s-&gt;bbq;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">16</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">6244527</td>
+      <td class="src coveredLine">  struct ShredTick_ *const tk = s-&gt;list;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">17</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 2351887 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 3892640 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">6244527</td>
+      <td class="src coveredLine">  if(!tk) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">18</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">4/4</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 1 taken 782478 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 1569409 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 734 times.</div>
+          <div class="takenBranch">&check; Branch 4 taken 781744 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">2351887</td>
+      <td class="src coveredLine">    if(!vector_size(&amp;s-&gt;shreds) &amp;&amp; !s-&gt;loop)</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">19</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">      bbq-&gt;is_running = 0;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">20</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2351887</td>
+      <td class="src coveredLine">    return NULL;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">21</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">  }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">22</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">3892640</td>
+      <td class="src coveredLine">  const m_float time = (m_float)bbq-&gt;pos + (m_float)GWION_EPSILON;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">23</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 615 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 3892025 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">3892640</td>
+      <td class="src coveredLine">  if(tk-&gt;wake_time &lt;= time) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">24</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 158 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 457 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">615</td>
+      <td class="src coveredLine">    if((s-&gt;list = tk-&gt;next))</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">25</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">158</td>
+      <td class="src coveredLine">      s-&gt;list-&gt;prev = NULL;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">26</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">615</td>
+      <td class="src coveredLine">    tk-&gt;next = tk-&gt;prev = NULL;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">27</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">615</td>
+      <td class="src coveredLine">    s-&gt;curr = tk;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">28</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">615</td>
+      <td class="src coveredLine">    return tk-&gt;self;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">29</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">  }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">30</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">3892025</td>
+      <td class="src coveredLine">  return NULL;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">31</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">32</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">33</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">75</td>
+      <td class="src coveredLine">ANN static void shreduler_parent(const VM_Shred out, const Vector v) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">34</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">75</td>
+      <td class="src coveredLine">  vector_rem2(v, (vtype)out);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">35</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 1 taken 32 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 43 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">75</td>
+      <td class="src coveredLine">  if(!vector_size(v)) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">36</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">32</td>
+      <td class="src coveredLine">    vector_release(v);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">37</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">32</td>
+      <td class="src coveredLine">    out-&gt;tick-&gt;parent-&gt;child.ptr = NULL;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">38</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">  }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">39</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">75</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">40</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">41</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">10</td>
+      <td class="src coveredLine">ANN static inline void shreduler_child(const Vector v) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">42</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 1 taken 23 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 10 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">43</td>
+      <td class="src coveredLine">  for(m_uint i = vector_size(v) + 1; --i;) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">43</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">23</td>
+      <td class="src coveredLine">    const VM_Shred child = (VM_Shred)vector_at(v, i - 1);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">44</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">23</td>
+      <td class="src coveredLine">    shreduler_remove(child-&gt;info-&gt;vm-&gt;shreduler, child, 1);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">45</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">  }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">46</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">10</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">47</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">48</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">474</td>
+      <td class="src coveredLine">ANN static void shreduler_erase(const Shreduler s, struct ShredTick_ *tk) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">49</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 75 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 399 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">474</td>
+      <td class="src coveredLine">  if(tk-&gt;parent)</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">50</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">75</td>
+      <td class="src coveredLine">    shreduler_parent(tk-&gt;self, &amp;tk-&gt;parent-&gt;child);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">51</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 10 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 464 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">474</td>
+      <td class="src coveredLine">  if(tk-&gt;child.ptr)</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">52</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">10</td>
+      <td class="src coveredLine">    shreduler_child(&amp;tk-&gt;child);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">53</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">474</td>
+      <td class="src coveredLine">  vector_rem2(&amp;s-&gt;shreds, (vtype)tk-&gt;self);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">54</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">474</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">55</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">56</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">484</td>
+      <td class="src coveredLine">ANN void shreduler_remove(const Shreduler s, const VM_Shred out, const m_bool erase) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">57</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">484</td>
+      <td class="src coveredLine">  MUTEX_LOCK(s-&gt;mutex);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">58</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">484</td>
+      <td class="src coveredLine">  struct ShredTick_ *tk = out-&gt;tick;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">59</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 461 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 23 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">484</td>
+      <td class="src coveredLine">  if(tk == s-&gt;curr)</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">60</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">461</td>
+      <td class="src coveredLine">    s-&gt;curr = NULL;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">61</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 7 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 16 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">23</td>
+      <td class="src coveredLine">  else if(tk == s-&gt;list)</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">62</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">7</td>
+      <td class="src coveredLine">    s-&gt;list = tk-&gt;next;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">63</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 15 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 469 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">484</td>
+      <td class="src coveredLine">  if(tk-&gt;prev)</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">64</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">15</td>
+      <td class="src coveredLine">    tk-&gt;prev-&gt;next = tk-&gt;next;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">65</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 5 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 479 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">484</td>
+      <td class="src coveredLine">  if(tk-&gt;next)</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">66</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">5</td>
+      <td class="src coveredLine">    tk-&gt;next-&gt;prev = tk-&gt;prev;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">67</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">484</td>
+      <td class="src coveredLine">  tk-&gt;prev = tk-&gt;next = NULL;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">68</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 474 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 10 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">484</td>
+      <td class="src coveredLine">  if(erase) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">69</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">474</td>
+      <td class="src coveredLine">    shreduler_erase(s, tk);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">70</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">474</td>
+      <td class="src coveredLine">    _release(out-&gt;info-&gt;me, out);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">71</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">  }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">72</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">484</td>
+      <td class="src coveredLine">  MUTEX_UNLOCK(s-&gt;mutex);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">73</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">484</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">74</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">75</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">640</td>
+      <td class="src coveredLine">ANN void shredule(const Shreduler s, const VM_Shred shred, const m_float wake_time) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">76</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">640</td>
+      <td class="src coveredLine">  const m_float time = wake_time + (m_float)s-&gt;bbq-&gt;pos;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">77</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">640</td>
+      <td class="src coveredLine">  struct ShredTick_ *tk = shred-&gt;tick;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">78</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">640</td>
+      <td class="src coveredLine">  tk-&gt;wake_time = time;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">79</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 176 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 464 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">640</td>
+      <td class="src coveredLine">  if(s-&gt;list) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">80</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">176</td>
+      <td class="src coveredLine">    struct ShredTick_ *curr = s-&gt;list, *prev = NULL;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">81</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">    do {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">82</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 72 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 549 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">621</td>
+      <td class="src coveredLine">      if(curr-&gt;wake_time &gt; time)</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">83</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">72</td>
+      <td class="src coveredLine">        break;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">84</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">549</td>
+      <td class="src coveredLine">      prev = curr;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">85</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 445 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 104 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">549</td>
+      <td class="src coveredLine">    } while((curr = curr-&gt;next));</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">86</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 66 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 110 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">176</td>
+      <td class="src coveredLine">    if(!prev) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">87</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">66</td>
+      <td class="src coveredLine">      tk-&gt;next = s-&gt;list;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">88</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">66</td>
+      <td class="src coveredLine">      s-&gt;list = (s-&gt;list-&gt;prev = tk);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">89</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">    } else {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">90</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 6 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 104 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">110</td>
+      <td class="src coveredLine">      if((tk-&gt;next = prev-&gt;next))</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">91</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">6</td>
+      <td class="src coveredLine">        prev-&gt;next-&gt;prev = tk;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">92</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">110</td>
+      <td class="src coveredLine">      tk-&gt;prev = prev;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">93</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">110</td>
+      <td class="src coveredLine">      prev-&gt;next = tk;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">94</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">    }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">95</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">  } else</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">96</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">464</td>
+      <td class="src coveredLine">    s-&gt;list = tk;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">97</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 154 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 486 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">640</td>
+      <td class="src coveredLine">  if(tk == s-&gt;curr)</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">98</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">154</td>
+      <td class="src coveredLine">    s-&gt;curr = NULL;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">99</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">640</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">100</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">101</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1212</td>
+      <td class="src coveredLine">ANN void shreduler_ini(const Shreduler s, const VM_Shred shred) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">102</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1212</td>
+      <td class="src coveredLine">  shred-&gt;tick = mp_calloc(shred-&gt;info-&gt;mp, ShredTick);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">103</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1212</td>
+      <td class="src coveredLine">  shred-&gt;tick-&gt;self = shred;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">104</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1212</td>
+      <td class="src coveredLine">  shred-&gt;tick-&gt;shreduler = s;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">105</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1212</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">106</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">107</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">477</td>
+      <td class="src coveredLine">ANN void shreduler_add(const Shreduler s, const VM_Shred shred) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">108</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">477</td>
+      <td class="src coveredLine">  shreduler_ini(s, shred);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">109</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">477</td>
+      <td class="src coveredLine">  shred-&gt;tick-&gt;xid = ++s-&gt;shred_ids;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">110</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">477</td>
+      <td class="src coveredLine">  vector_add(&amp;s-&gt;shreds, (vtype)shred);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">111</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">477</td>
+      <td class="src coveredLine">  shredule(s, shred, GWION_EPSILON);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">112</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">477</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+  </table>
+</div>
+
+    <hr/>
+
+    <footer>
+      Generated by: <a href="http://gcovr.com">GCOVR (Version 4.2)</a>
+    </footer>
+  </body>
+</html>
