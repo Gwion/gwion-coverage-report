@@ -25,7 +25,7 @@
   </tr>
   <tr>
     <th scope="row">Date:</th>
-    <td>2020-05-08 19:54:06</td>
+    <td>2020-05-09 11:24:14</td>
   </tr>
 </table>
 <table class="coverage">
@@ -37,15 +37,15 @@
   </tr>
   <tr>
     <th scope="row">Lines:</th>
-    <td>123</td>
-    <td>131</td>
-    <td class="coverage-high">93.9%</td>
+    <td>121</td>
+    <td>128</td>
+    <td class="coverage-high">94.5%</td>
   </tr>
   <tr>
     <th scope="row">Branches:</th>
-    <td>74</td>
-    <td>90</td>
-    <td class="coverage-medium">82.2%</td>
+    <td>73</td>
+    <td>94</td>
+    <td class="coverage-medium">77.7%</td>
   </tr>
 </table>
     </div>
@@ -1346,32 +1346,41 @@
     <tr class="source-line">
       <td class="lineno">139</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">3/4</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 22 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+          <div class="takenBranch">&check; Branch 2 taken 4 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 18 times.</div>
+        </div>
+        </details>
       </td>
       <td class="linecount coveredLine">22</td>
-      <td class="src coveredLine">  const m_str s = t-&gt;name;</td>
+      <td class="src coveredLine">  if(!index || t-&gt;name[0] != &#39;&lt;&#39;)</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">140</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">22</td>
-      <td class="src coveredLine">  m_str name = strstr(s, &#34;&lt;&#34;);</td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">    return NULL;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">141</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">22</td>
-      <td class="src coveredLine">  m_uint i = 0;</td>
+      <td class="linecount coveredLine">18</td>
+      <td class="src coveredLine">  m_str name = t-&gt;name + 2;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">142</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">22</td>
+      <td class="linecount coveredLine">18</td>
       <td class="src coveredLine">  m_uint lvl = 0;</td>
     </tr>
 
@@ -1379,108 +1388,110 @@
       <td class="lineno">143</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">22</td>
+      <td class="linecount coveredLine">18</td>
       <td class="src coveredLine">  m_uint n = 1;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">144</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 18 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 4 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">22</td>
-      <td class="src coveredLine">  const size_t len = name ? strlen(name) : 0;</td>
+      <td class="linecount coveredLine">18</td>
+      <td class="src coveredLine">  const size_t slen = strlen(name);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">145</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">22</td>
-      <td class="src coveredLine">  const size_t slen = strlen(s);</td>
+      <td class="linecount coveredLine">18</td>
+      <td class="src coveredLine">  char c, buf[slen + 1], *tmp = buf;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">146</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 86 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">22</td>
-      <td class="src coveredLine">  const size_t tlen = slen - len + 1;</td>
+      <td class="linecount coveredLine">104</td>
+      <td class="src coveredLine">  while((c = *name)) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">147</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="notTakenBranch">&cross; Branch 0 not taken.</div>
+          <div class="takenBranch">&check; Branch 1 taken 86 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">22</td>
-      <td class="src coveredLine">  char c[slen + 1];</td>
+      <td class="linecount coveredLine">86</td>
+      <td class="src coveredLine">    if(c == &#39;&lt;&#39;)</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">148</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 4 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 18 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">22</td>
-      <td class="src coveredLine">  if(!name)</td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">      ++lvl;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">149</td>
       <td class="linebranch">
         <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
+        <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
-          <div class="notTakenBranch">&cross; Branch 0 not taken.</div>
-          <div class="takenBranch">&check; Branch 1 taken 4 times.</div>
+          <div class="takenBranch">&check; Branch 0 taken 18 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 68 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">4</td>
-      <td class="src coveredLine">    return index ? NULL : s_name(insert_symbol(s));</td>
+      <td class="linecount coveredLine">86</td>
+      <td class="src coveredLine">    else if(c == &#39;&gt;&#39;) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">150</td>
       <td class="linebranch">
         <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
+        <summary class="linebranchSummary">2/4</summary>
         <div class="linebranchContents">
-          <div class="notTakenBranch">&cross; Branch 0 not taken.</div>
-          <div class="takenBranch">&check; Branch 1 taken 18 times.</div>
+          <div class="takenBranch">&check; Branch 0 taken 18 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+          <div class="takenBranch">&check; Branch 2 taken 18 times.</div>
+          <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">18</td>
-      <td class="src coveredLine">  if(index == 0) {</td>
+      <td class="src coveredLine">      if(!lvl-- &amp;&amp; n == index) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">151</td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine"></td>
-      <td class="src uncoveredLine">    snprintf(c, tlen, &#34;%s&#34;, s);</td>
+      <td class="linecount coveredLine">18</td>
+      <td class="src coveredLine">        --tmp;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">152</td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine"></td>
-      <td class="src uncoveredLine">    return s_name(insert_symbol(c));</td>
+      <td class="linecount coveredLine">18</td>
+      <td class="src coveredLine">        break;</td>
     </tr>
 
     <tr class="source-line">
@@ -1488,34 +1499,11 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">  }</td>
+      <td class="src ">      }</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">154</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">18</td>
-      <td class="src coveredLine">  ++name;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">155</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 68 times.</div>
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">86</td>
-      <td class="src coveredLine">  while(*name++) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">156</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -1526,7 +1514,23 @@
         </details>
       </td>
       <td class="linecount coveredLine">68</td>
-      <td class="src coveredLine">    if(*name == &#39;&lt;&#39;) {</td>
+      <td class="src coveredLine">    } else if(c == &#39;,&#39;) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">155</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">      if(!lvl &amp;&amp; n++ == index)</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">156</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">        break;</td>
     </tr>
 
     <tr class="source-line">
@@ -1534,7 +1538,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine"></td>
-      <td class="src uncoveredLine">      if(n == index)</td>
+      <td class="src uncoveredLine">      if(!lvl)</td>
     </tr>
 
     <tr class="source-line">
@@ -1542,114 +1546,50 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine"></td>
-      <td class="src uncoveredLine">        c[i++] = *name;</td>
+      <td class="src uncoveredLine">        ++name;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">159</td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine"></td>
-      <td class="src uncoveredLine">      lvl++;</td>
+      <td class="linecount "></td>
+      <td class="src ">    }</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">160</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 68 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount uncoveredLine"></td>
-      <td class="src uncoveredLine">      name++;</td>
+      <td class="linecount coveredLine">68</td>
+      <td class="src coveredLine">    if(n == index)</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">161</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">3/4</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 18 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 50 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 18 times.</div>
-          <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
-        </div>
-        </details>
       </td>
       <td class="linecount coveredLine">68</td>
-      <td class="src coveredLine">    } else if(*name == &#39;~&#39; &amp;&amp; !lvl--)</td>
+      <td class="src coveredLine">      *tmp++ = *name;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">162</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
-      <td class="src coveredLine">      break;</td>
+      <td class="linecount coveredLine">68</td>
+      <td class="src coveredLine">    ++name;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">163</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 50 times.</div>
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">50</td>
-      <td class="src coveredLine">    if(n == index)</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">164</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">50</td>
-      <td class="src coveredLine">      c[i++] = *name;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">165</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  }</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">166</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">18</td>
-      <td class="src coveredLine">  c[i] = &#39;\0&#39;;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">167</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 18 times.</div>
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">18</td>
-      <td class="src coveredLine">  return strlen(c) ? s_name(insert_symbol(c)) : NULL;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">168</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">169</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1657,7 +1597,54 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">170</td>
+      <td class="lineno">164</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">  }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">165</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">18</td>
+      <td class="src coveredLine">  *tmp = &#39;\0&#39;;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">166</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 18 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">18</td>
+      <td class="src coveredLine">  return strlen(buf) ? s_name(insert_symbol(buf)) : NULL;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">167</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">168</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">169</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">8</td>
@@ -1665,7 +1652,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">171</td>
+      <td class="lineno">170</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">8</td>
@@ -1673,7 +1660,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">172</td>
+      <td class="lineno">171</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">8</td>
@@ -1681,7 +1668,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">173</td>
+      <td class="lineno">172</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1689,7 +1676,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">174</td>
+      <td class="lineno">173</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -1704,7 +1691,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">175</td>
+      <td class="lineno">174</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">7</td>
@@ -1712,7 +1699,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">176</td>
+      <td class="lineno">175</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">7</td>
@@ -1720,7 +1707,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">177</td>
+      <td class="lineno">176</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1728,7 +1715,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">178</td>
+      <td class="lineno">177</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">12</td>
@@ -1736,7 +1723,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">179</td>
+      <td class="lineno">178</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -1751,7 +1738,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">180</td>
+      <td class="lineno">179</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">8</td>
@@ -1759,7 +1746,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">181</td>
+      <td class="lineno">180</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1767,7 +1754,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">182</td>
+      <td class="lineno">181</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1775,7 +1762,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">183</td>
+      <td class="lineno">182</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">31082</td>
@@ -1783,7 +1770,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">184</td>
+      <td class="lineno">183</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">31082</td>
@@ -1791,7 +1778,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">185</td>
+      <td class="lineno">184</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1799,7 +1786,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">186</td>
+      <td class="lineno">185</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">131170</td>
@@ -1807,7 +1794,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">187</td>
+      <td class="lineno">186</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">131170</td>
@@ -1815,7 +1802,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">188</td>
+      <td class="lineno">187</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1823,7 +1810,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">189</td>
+      <td class="lineno">188</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1831,7 +1818,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">190</td>
+      <td class="lineno">189</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">32184</td>
@@ -1839,7 +1826,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">191</td>
+      <td class="lineno">190</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -1854,7 +1841,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">192</td>
+      <td class="lineno">191</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
