@@ -7,14 +7,15 @@ Directory: .
 File                                       Lines    Exec  Cover   Missing
 ------------------------------------------------------------------------------
 src/arg.c                                    130     101    77%   15-19,130-136,138-139,148-153,155-157,163-168
-src/compile.c                                 86      83    96%   90-91,127
-src/emit/emit.c                             1501    1472    98%   87,412-413,497-498,501,645-646,651,750-752,756-759,761,1241,1243-1250,1268,1914,2023
+src/clean.c                                  267     266    99%   288
+src/compile.c                                 86      83    96%   94-95,131
+src/emit/emit.c                             1503    1474    98%   87,412-413,506-507,510,662-663,668,767-769,773-776,778,1243,1245-1252,1270,1916,2025
 src/emit/emitter.c                            28      28   100%   
 src/emit/escape.c                             52      52   100%   
 src/emit/memoize.c                            34      34   100%   
 src/env/context.c                             26      26   100%   
 src/env/env.c                                 84      84   100%   
-src/env/env_utils.c                           70      70   100%   
+src/env/env_utils.c                           72      72   100%   
 src/env/envset.c                              42      39    92%   16,22,50
 src/env/nspc.c                                62      61    98%   34
 src/env/tupleform.c                           38      38   100%   
@@ -23,10 +24,10 @@ src/env/value.c                               25      25   100%
 src/gwion.c                                  138     137    99%   85
 src/gwiondata.c                               35      35   100%   
 src/import/cdef.c                             84      72    85%   32-34,87-88,107-113
-src/import/checker.c                         208     180    86%   101,112,116,119-121,131,133-135,185,188-191,202-203,208,234,239-240,246-250,283,289
+src/import/checker.c                         208     174    83%   99-101,112,116,119-121,131,133-135,185,188-191,202-203,208,210-212,229,234,239-240,246-250,283,289
 src/import/enum.c                             51      51   100%   
-src/import/fdef.c                             93      93   100%   
-src/import/internals.c                        14      14   100%   
+src/import/fdef.c                             93      87    93%   61-65,77
+src/import/internals.c                        14      13    92%   18
 src/import/item.c                             33      33   100%   
 src/import/oper.c                             39      39   100%   
 src/import/special.c                          28      28   100%   
@@ -51,13 +52,13 @@ src/lib/string.c                             440     170    38%   34,87-88,91-97
 src/lib/ugen.c                               234     234   100%   
 src/lib/vararg.c                             126     125    99%   47
 src/main.c                                    14      14   100%   
-src/parse/check.c                            975     951    97%   75,94,166,506,544-545,558,572,664,739-743,750,840,862,1043,1090-1091,1093-1094,1146,1365
+src/parse/check.c                            976     952    97%   75,94,166,520,558-559,572,586,678,753-757,764,854,876,1046,1093-1094,1096-1097,1149,1368
 src/parse/did_you_mean.c                      42      42   100%   
 src/parse/func.c                              23      23   100%   
 src/parse/operator.c                         211     208    98%   261,319,328
 src/parse/scan0.c                            320     317    99%   141,220,254
-src/parse/scan1.c                            388     379    97%   16,61,130,324-325,334,454,497,535
-src/parse/scan2.c                            414     413    99%   585
+src/parse/scan1.c                            385     376    97%   16,61,130,317-318,327,447,490,528
+src/parse/scan2.c                            411     410    99%   578
 src/parse/scanx.c                             46      46   100%   
 src/parse/stage.c                             14      14   100%   
 src/parse/template.c                          88      84    95%   28,37,67,123
@@ -74,8 +75,8 @@ src/vm/vm_code.c                              48      48   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                       9698    9186    94%
+TOTAL                                       9964    9438    94%
 ------------------------------------------------------------------------------
-lines: 94.7% (9186 out of 9698)
-branches: 80.2% (4247 out of 5297)
+lines: 94.7% (9438 out of 9964)
+branches: 80.4% (4347 out of 5409)
 ```
