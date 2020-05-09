@@ -21,7 +21,7 @@
   </tr>
   <tr>
     <th scope="row">File:</th>
-    <td>src/import/oper.c</td>
+    <td>src/vm/gack.c</td>
   </tr>
   <tr>
     <th scope="row">Date:</th>
@@ -37,15 +37,15 @@
   </tr>
   <tr>
     <th scope="row">Lines:</th>
-    <td>39</td>
-    <td>39</td>
-    <td class="coverage-high">100.0%</td>
+    <td>47</td>
+    <td>50</td>
+    <td class="coverage-high">94.0%</td>
   </tr>
   <tr>
     <th scope="row">Branches:</th>
-    <td>4</td>
-    <td>4</td>
-    <td class="coverage-high">100.0%</td>
+    <td>13</td>
+    <td>16</td>
+    <td class="coverage-medium">81.2%</td>
   </tr>
 </table>
     </div>
@@ -83,7 +83,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &lt;ctype.h&gt;</td>
+      <td class="src ">#include &lt;stdarg.h&gt;</td>
     </tr>
 
     <tr class="source-line">
@@ -123,7 +123,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;traverse.h&#34;</td>
+      <td class="src ">#include &#34;object.h&#34;</td>
     </tr>
 
     <tr class="source-line">
@@ -139,7 +139,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;object.h&#34;</td>
+      <td class="src ">#include &#34;gwion.h&#34;</td>
     </tr>
 
     <tr class="source-line">
@@ -147,7 +147,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;emit.h&#34;</td>
+      <td class="src ">#include &#34;operator.h&#34;</td>
     </tr>
 
     <tr class="source-line">
@@ -155,7 +155,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;gwion.h&#34;</td>
+      <td class="src ">#include &#34;import.h&#34;</td>
     </tr>
 
     <tr class="source-line">
@@ -163,7 +163,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;operator.h&#34;</td>
+      <td class="src ">#include &#34;gack.h&#34;</td>
     </tr>
 
     <tr class="source-line">
@@ -171,15 +171,15 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;import.h&#34;</td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">15</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;gwi.h&#34;</td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">ANN2(1) static int fmtlen(const char *fmt, va_list args) {</td>
     </tr>
 
     <tr class="source-line">
@@ -187,137 +187,230 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;mpool.h&#34;</td>
+      <td class="src ">  va_list tmpa;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">17</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;specialid.h&#34;</td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">  va_copy(tmpa, args);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">18</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">  const int size = vsnprintf(NULL, 0, fmt, tmpa);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">19</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">340308</td>
-      <td class="src coveredLine">ANN static Type _get_type(const Gwi gwi, const m_str s) {</td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">  va_end(tmpa);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">20</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 10290 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 330018 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">340308</td>
-      <td class="src coveredLine">  if(s == (m_str)OP_ANY_TYPE)</td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">  return size;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">21</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">10290</td>
-      <td class="src coveredLine">    return OP_ANY_TYPE;</td>
+      <td class="linecount "></td>
+      <td class="src ">}</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">22</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">330018</td>
-      <td class="src coveredLine">  Type_Decl *td = str2decl(gwi, s);</td>
+      <td class="linecount "></td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">23</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">330018</td>
-      <td class="src coveredLine">  const Type t = known_type(gwi-&gt;gwion-&gt;env, td);</td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">ANN2(2) static int gw_vasprintf(MemPool mp, char **str, const char *fmt, va_list args) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">24</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">330018</td>
-      <td class="src coveredLine">  free_type_decl(gwi-&gt;gwion-&gt;mp, td);</td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">  char *base = *str;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">25</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 341 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 1072 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">330018</td>
-      <td class="src coveredLine">  return t;</td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">  const size_t base_len = base ? strlen(base) : 0;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">26</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+          <div class="takenBranch">&check; Branch 2 taken 1413 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">  DECL_BB(const int, size, = fmtlen(fmt, args))</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">27</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">  char *ret = mp_malloc2(mp, base_len + size + 1);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">28</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 341 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 1072 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">377058</td>
-      <td class="src coveredLine">ANN2(1) static inline Type get_type(const Gwi gwi, const m_str str) {</td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">  if(base)</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">29</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 340308 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 36750 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">377058</td>
-      <td class="src coveredLine">  return str ? _get_type(gwi, str) : NULL;</td>
+      <td class="linecount coveredLine">341</td>
+      <td class="src coveredLine">    strcpy(ret, base);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">30</td>
       <td class="linebranch">
       </td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">  const int final_len = vsprintf(ret + base_len, fmt, args);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">31</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="notTakenBranch">&cross; Branch 0 not taken.</div>
+          <div class="takenBranch">&check; Branch 1 taken 1413 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">  if(final_len &lt; 0) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">32</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">    mp_free2(mp, base_len + size + 1, ret);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">33</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">    return -1;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">34</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">  }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">35</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 341 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 1072 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">  if(base)</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">36</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">341</td>
+      <td class="src coveredLine">    mp_free2(mp, strlen(base), base);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">37</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">  *str = ret;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">38</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">  return final_len;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">39</td>
+      <td class="linebranch">
+      </td>
       <td class="linecount "></td>
       <td class="src ">}</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">31</td>
+      <td class="lineno">40</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -325,83 +418,11 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">32</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">125686</td>
-      <td class="src coveredLine">ANN2(1,2) static int import_op(const Gwi gwi, const struct OperCK* op,</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">33</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">    const f_instr f) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">34</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">125686</td>
-      <td class="src coveredLine">  const Type lhs = get_type(gwi, op-&gt;lhs),</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">35</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">125686</td>
-      <td class="src coveredLine">             rhs = get_type(gwi, op-&gt;rhs),</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">36</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">125686</td>
-      <td class="src coveredLine">             ret = get_type(gwi, op-&gt;ret);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">37</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">125686</td>
-      <td class="src coveredLine">  const struct Op_Func opfunc = { .ck=op-&gt;ck, .em=op-&gt;em };</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">38</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">502744</td>
-      <td class="src coveredLine">  const struct Op_Import opi = { .lhs=lhs, .rhs=rhs, .ret=ret,</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">39</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">377058</td>
-      <td class="src coveredLine">    .func=&amp;opfunc, .data=(uintptr_t)f, .pos=gwi-&gt;loc, .op=op-&gt;sym };</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">40</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">125686</td>
-      <td class="src coveredLine">  return add_op(gwi-&gt;gwion, &amp;opi);</td>
-    </tr>
-
-    <tr class="source-line">
       <td class="lineno">41</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">ANN2(2) int gw_asprintf(MemPool mp, char **str, const char *fmt, ...) {</td>
     </tr>
 
     <tr class="source-line">
@@ -409,67 +430,43 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src ">  va_list args;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">43</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">  va_start(args, fmt);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">44</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">44101</td>
-      <td class="src coveredLine">ANN2(1) m_int gwi_oper_ini(const Gwi gwi, const restrict m_str l,</td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">  const int ret = gw_vasprintf(mp, str, fmt, args);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">45</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">    const restrict m_str r, const restrict m_str t) {</td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">  va_end(args);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">46</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">44101</td>
-      <td class="src coveredLine">  gwi-&gt;oper-&gt;ret = t;</td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">  return ret;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">47</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">44101</td>
-      <td class="src coveredLine">  gwi-&gt;oper-&gt;rhs = r;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">48</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">44101</td>
-      <td class="src coveredLine">  gwi-&gt;oper-&gt;lhs = l;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">49</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">44101</td>
-      <td class="src coveredLine">  return GW_OK;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">50</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -477,7 +474,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">51</td>
+      <td class="lineno">48</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -485,27 +482,65 @@
     </tr>
 
     <tr class="source-line">
+      <td class="lineno">49</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">__attribute__((returns_nonnull))</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">50</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1685</td>
+      <td class="src coveredLine">ANN static inline VM_Code get_gack(Type t) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">51</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 1417 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 268 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">1685</td>
+      <td class="src coveredLine">  do if(t-&gt;e-&gt;gack)</td>
+    </tr>
+
+    <tr class="source-line">
       <td class="lineno">52</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">55125</td>
-      <td class="src coveredLine">ANN m_int gwi_oper_add(const Gwi gwi, Type (*ck)(Env, void*, m_bool*)) {</td>
+      <td class="linecount coveredLine">1417</td>
+      <td class="src coveredLine">    return t-&gt;e-&gt;gack;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">53</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 268 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">55125</td>
-      <td class="src coveredLine">  gwi-&gt;oper-&gt;ck = ck;</td>
+      <td class="linecount coveredLine">268</td>
+      <td class="src coveredLine">  while((t = t-&gt;e-&gt;parent));</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">54</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">55125</td>
-      <td class="src coveredLine">  return GW_OK;</td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">  return t-&gt;e-&gt;gack; // unreachable</td>
     </tr>
 
     <tr class="source-line">
@@ -528,100 +563,84 @@
       <td class="lineno">57</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">13965</td>
-      <td class="src coveredLine">ANN m_int gwi_oper_emi(const Gwi gwi, const opem em) {</td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">ANN static void prepare_call(const VM_Shred shred, const m_uint offset) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">58</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">13965</td>
-      <td class="src coveredLine">  gwi-&gt;oper-&gt;em = em;</td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  shred-&gt;mem += offset;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">59</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">13965</td>
-      <td class="src coveredLine">  return GW_OK;</td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  *(m_uint*)(shred-&gt;mem  + SZ_INT) = offset + SZ_INT;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">60</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  *(VM_Code*)(shred-&gt;mem + SZ_INT*2) = shred-&gt;code;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">61</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  *(m_uint*)(shred-&gt;mem  + SZ_INT*3) = shred-&gt;pc;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">62</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">125686</td>
-      <td class="src coveredLine">ANN m_int gwi_oper_end(const Gwi gwi, const m_str op, const f_instr f) {</td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  *(m_uint*)(shred-&gt;mem  + SZ_INT*4) = SZ_INT;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">63</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">125686</td>
-      <td class="src coveredLine">  gwi-&gt;oper-&gt;sym = insert_symbol(gwi-&gt;gwion-&gt;st, op);</td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  shred-&gt;mem += SZ_INT*5;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">64</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">125686</td>
-      <td class="src coveredLine">  const m_bool ret = import_op(gwi, gwi-&gt;oper, f);</td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  *(M_Object*)(shred-&gt;mem)= *(M_Object*)(shred-&gt;reg - SZ_INT);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">65</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">125686</td>
-      <td class="src coveredLine">  gwi-&gt;oper-&gt;ck = NULL;</td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  shred-&gt;pc = 0;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">66</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">125686</td>
-      <td class="src coveredLine">  gwi-&gt;oper-&gt;em = NULL;</td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">}</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">67</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">125686</td>
-      <td class="src coveredLine">  return ret;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">68</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">69</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -629,59 +648,122 @@
     </tr>
 
     <tr class="source-line">
+      <td class="lineno">68</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1417</td>
+      <td class="src coveredLine">ANN void gack(const VM_Shred shred, const m_uint offset) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">69</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1417</td>
+      <td class="src coveredLine">  const Type t = *(Type*)shred-&gt;reg;</td>
+    </tr>
+
+    <tr class="source-line">
       <td class="lineno">70</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">4410</td>
-      <td class="src coveredLine">ANN m_int gwi_oper_cond(const Gwi gwi, const m_str type,</td>
+      <td class="linecount coveredLine">1417</td>
+      <td class="src coveredLine">  const VM_Code code = get_gack(t);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">71</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 1413 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 4 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount "></td>
-      <td class="src ">  const f_instr f1, const f_instr f2) {</td>
+      <td class="linecount coveredLine">1417</td>
+      <td class="src coveredLine">  if(GET_FLAG(code, builtin)) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">72</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">4410</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_ini(gwi, NULL, type, &#34;bool&#34;))</td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">    ((f_gack)code-&gt;native_func)(t, (shred-&gt;reg - t-&gt;size), shred);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">73</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">4410</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_end(gwi, &#34;@conditionnal&#34;, f1))</td>
+      <td class="linecount coveredLine">1413</td>
+      <td class="src coveredLine">    POP_REG(shred, t-&gt;size);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">74</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">4410</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_end(gwi, &#34;@unconditionnal&#34;, f2))</td>
+      <td class="linecount "></td>
+      <td class="src ">  } else {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">75</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">4410</td>
-      <td class="src coveredLine">  return GW_OK;</td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">    prepare_call(shred, offset);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">76</td>
       <td class="linebranch">
       </td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">    shred-&gt;code = code;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">77</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">    POP_REG(shred, SZ_INT*2);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">78</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">  }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">79</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1417</td>
+      <td class="src coveredLine">  return;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">80</td>
+      <td class="linebranch">
+      </td>
       <td class="linecount "></td>
       <td class="src ">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">81</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
     </tr>
 
   </table>
