@@ -21,7 +21,7 @@
   </tr>
   <tr>
     <th scope="row">File:</th>
-    <td>src/emit/memoize.c</td>
+    <td>src/env/type_special.c</td>
   </tr>
   <tr>
     <th scope="row">Date:</th>
@@ -37,14 +37,14 @@
   </tr>
   <tr>
     <th scope="row">Lines:</th>
-    <td>34</td>
-    <td>34</td>
+    <td>33</td>
+    <td>33</td>
     <td class="coverage-high">100.0%</td>
   </tr>
   <tr>
     <th scope="row">Branches:</th>
-    <td>6</td>
-    <td>6</td>
+    <td>10</td>
+    <td>10</td>
     <td class="coverage-high">100.0%</td>
   </tr>
 </table>
@@ -91,7 +91,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;vm.h&#34;</td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
@@ -99,7 +99,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;instr.h&#34;</td>
+      <td class="src ">static m_str const special_name[] = { &#34;:nonnull&#34;, &#34;:force&#34; };</td>
     </tr>
 
     <tr class="source-line">
@@ -107,7 +107,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;emit.h&#34;</td>
+      <td class="src ">#define SPECIAL_LEN strlen(special_name[0]) + strlen(special_name[1])</td>
     </tr>
 
     <tr class="source-line">
@@ -115,7 +115,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;gwion.h&#34;</td>
+      <td class="src ">static const ae_flag special_flag[] = { ae_flag_nonnull, ae_flag_force };</td>
     </tr>
 
     <tr class="source-line">
@@ -123,7 +123,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;memoize.h&#34;</td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
@@ -131,7 +131,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src ">typedef struct {</td>
     </tr>
 
     <tr class="source-line">
@@ -139,7 +139,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">struct Memoize_ {</td>
+      <td class="src ">  const Type    type;</td>
     </tr>
 
     <tr class="source-line">
@@ -147,7 +147,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">  struct Vector_ v;</td>
+      <td class="src ">  Symbol  name;</td>
     </tr>
 
     <tr class="source-line">
@@ -155,7 +155,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">  m_uint arg_sz;</td>
+      <td class="src ">  ae_flag flag;</td>
     </tr>
 
     <tr class="source-line">
@@ -163,7 +163,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">  m_uint ret_sz;</td>
+      <td class="src ">  uint st_type;</td>
     </tr>
 
     <tr class="source-line">
@@ -171,7 +171,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">  size_t limit;</td>
+      <td class="src ">} SpecialType;</td>
     </tr>
 
     <tr class="source-line">
@@ -179,7 +179,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">  size_t curr;</td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
@@ -187,79 +187,86 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">};</td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">17</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount coveredLine">4444</td>
+      <td class="src coveredLine">ANN static Type specialtype_create(MemPool p, const SpecialType *s) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">18</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">Memoize memoize_ini(const Emitter emit, const Func f) {</td>
+      <td class="linecount coveredLine">4444</td>
+      <td class="src coveredLine">  const Type t = type_copy(p, s-&gt;type);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">19</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 4413 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 31 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  Memoize m = mp_calloc(emit-&gt;gwion-&gt;mp, Memoize);</td>
+      <td class="linecount coveredLine">4444</td>
+      <td class="src coveredLine">  if(t-&gt;nspc)</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">20</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  vector_init(&amp;m-&gt;v);</td>
+      <td class="linecount coveredLine">4413</td>
+      <td class="src coveredLine">    ADD_REF(t-&gt;nspc)</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">21</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  m-&gt;ret_sz = f-&gt;def-&gt;base-&gt;ret_type-&gt;size;</td>
+      <td class="linecount coveredLine">4444</td>
+      <td class="src coveredLine">  t-&gt;name = s_name(s-&gt;name);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">22</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  m-&gt;arg_sz = f-&gt;def-&gt;stack_depth;</td>
+      <td class="linecount coveredLine">4444</td>
+      <td class="src coveredLine">  t-&gt;flag = s-&gt;type-&gt;flag | s-&gt;flag;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">23</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  m-&gt;limit = emit-&gt;info-&gt;memoize;</td>
+      <td class="linecount coveredLine">4444</td>
+      <td class="src coveredLine">  t-&gt;e-&gt;parent = s-&gt;type;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">24</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  return m;</td>
+      <td class="linecount coveredLine">4444</td>
+      <td class="src coveredLine">  nspc_add_type_front(s-&gt;type-&gt;e-&gt;owner, s-&gt;name, t);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">25</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
+      <td class="linecount coveredLine">4444</td>
+      <td class="src coveredLine">  return t;</td>
     </tr>
 
     <tr class="source-line">
@@ -267,66 +274,11 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src ">}</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">27</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">void memoize_end(MemPool p, Memoize m) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">28</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 55 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 1 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">56</td>
-      <td class="src coveredLine">  for(m_uint i = 0; i &lt; vector_size(&amp;m-&gt;v); ++i)</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">29</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">55</td>
-      <td class="src coveredLine">    mp_free2(p, m-&gt;arg_sz + m-&gt;arg_sz, (void*)vector_at(&amp;m-&gt;v, i));</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">30</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  vector_release(&amp;m-&gt;v);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">31</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  mp_free(p, Memoize, m);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">32</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">}</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">33</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -334,62 +286,23 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">34</td>
+      <td class="lineno">28</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">53</td>
-      <td class="src coveredLine">ANN static inline m_bit* get_data(MemPool mp, Memoize m) {</td>
+      <td class="linecount coveredLine">17700</td>
+      <td class="src coveredLine">static inline int get_flag(const Type t, const ae_flag flag) {</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">35</td>
+      <td class="lineno">29</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 51 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 2 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">53</td>
-      <td class="src coveredLine">  if(vector_size(&amp;m-&gt;v) &gt;= m-&gt;limit)</td>
+      <td class="linecount coveredLine">17700</td>
+      <td class="src coveredLine">  return (t-&gt;flag &amp; flag) == flag;</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">36</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">51</td>
-      <td class="src coveredLine">    return (m_bit*)vector_at(&amp;m-&gt;v, m-&gt;curr++ % m-&gt;limit);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">37</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">  m_bit* data = mp_calloc2(mp, m-&gt;arg_sz + m-&gt;ret_sz);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">38</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">  vector_add(&amp;m-&gt;v, (vtype)data);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">39</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">  return data;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">40</td>
+      <td class="lineno">30</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -397,71 +310,191 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">41</td>
+      <td class="lineno">31</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
       <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">32</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">33</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">35400</td>
+      <td class="src coveredLine">ANN static void specialtype_flag(SpecialType *s, m_str c, const uint i) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">34</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">35400</td>
+      <td class="src coveredLine">  const ae_flag flag = special_flag[i];</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">35</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">4/4</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 17700 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 17700 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 5 times.</div>
+          <div class="takenBranch">&check; Branch 4 taken 17695 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">35400</td>
+      <td class="src coveredLine">  if(i == s-&gt;st_type || get_flag(s-&gt;type, flag)) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">36</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">17705</td>
+      <td class="src coveredLine">    strcat(c, special_name[0]);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">37</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">17705</td>
+      <td class="src coveredLine">    s-&gt;flag |= flag;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">38</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">  }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">39</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">35400</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">40</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">41</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">17700</td>
+      <td class="src coveredLine">ANN static void specialtype_init(SymTable *st, SpecialType *s) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">42</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">53</td>
-      <td class="src coveredLine">INSTR(MemoizeStore) {</td>
+      <td class="linecount coveredLine">17700</td>
+      <td class="src coveredLine">  const size_t sz = strlen(s-&gt;type-&gt;name);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">43</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">53</td>
-      <td class="src coveredLine">  const Memoize m = shred-&gt;code-&gt;memoize;</td>
+      <td class="linecount coveredLine">17700</td>
+      <td class="src coveredLine">  char c[sz + SPECIAL_LEN + 1];</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">44</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">53</td>
-      <td class="src coveredLine">  m_bit* data = get_data(shred-&gt;info-&gt;vm-&gt;gwion-&gt;mp, m);</td>
+      <td class="linecount coveredLine">17700</td>
+      <td class="src coveredLine">  strcpy(c, s-&gt;type-&gt;name);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">45</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">53</td>
-      <td class="src coveredLine">  memcpy(data, shred-&gt;mem, m-&gt;arg_sz);</td>
+      <td class="linecount coveredLine">17700</td>
+      <td class="src coveredLine">  m_str flagged = strchr(c, &#39;:&#39;);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">46</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 5 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 17695 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">53</td>
-      <td class="src coveredLine">  memcpy(data + m-&gt;arg_sz, shred-&gt;reg - m-&gt;ret_sz, m-&gt;ret_sz);</td>
+      <td class="linecount coveredLine">17700</td>
+      <td class="src coveredLine">  if(flagged)</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">47</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">53</td>
-      <td class="src coveredLine">  vector_add(&amp;m-&gt;v, (vtype)data);</td>
+      <td class="linecount coveredLine">5</td>
+      <td class="src coveredLine">    *flagged = &#39;\0&#39;;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">48</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">53</td>
-      <td class="src coveredLine">}</td>
+      <td class="linecount coveredLine">17700</td>
+      <td class="src coveredLine">  specialtype_flag(s, c, 0);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">49</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">17700</td>
+      <td class="src coveredLine">  specialtype_flag(s, c, 1);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">50</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">17700</td>
+      <td class="src coveredLine">  s-&gt;name = insert_symbol(st, c);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">51</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">17700</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">52</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -469,82 +502,66 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">50</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1319</td>
-      <td class="src coveredLine">INSTR(MemoizeIni) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">51</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1319</td>
-      <td class="src coveredLine">  const m_uint idx = *(m_uint*)MEM(instr-&gt;m_val);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">52</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1319</td>
-      <td class="src coveredLine">  const Memoize m = shred-&gt;code-&gt;memoize;</td>
-    </tr>
-
-    <tr class="source-line">
       <td class="lineno">53</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 1266 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 53 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">1319</td>
-      <td class="src coveredLine">  if(idx &lt; VLEN(&amp;m-&gt;v)) {</td>
+      <td class="linecount coveredLine">17700</td>
+      <td class="src coveredLine">ANN Type special_type(SymTable *st, const Type t, const uint st_type) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">54</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1266</td>
-      <td class="src coveredLine">    const m_bit* data = (m_bit*)vector_at(&amp;m-&gt;v, idx);</td>
+      <td class="linecount coveredLine">17700</td>
+      <td class="src coveredLine">  SpecialType s = { .type=t, .st_type=st_type };</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">55</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1266</td>
-      <td class="src coveredLine">    memcpy(MEM(instr-&gt;m_val + SZ_INT *2), data, instr-&gt;m_val2);</td>
+      <td class="linecount coveredLine">17700</td>
+      <td class="src coveredLine">  specialtype_init(st, &amp;s);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">56</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 1 taken 13256 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 4444 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount "></td>
-      <td class="src ">  } else</td>
+      <td class="linecount coveredLine">22144</td>
+      <td class="src coveredLine">  return nspc_lookup_type1(t-&gt;e-&gt;owner, s.name) ?:</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">57</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">53</td>
-      <td class="src coveredLine">    shred-&gt;pc = *(m_uint*)MEM(instr-&gt;m_val + SZ_INT);</td>
+      <td class="linecount coveredLine">4444</td>
+      <td class="src coveredLine">    specialtype_create(st-&gt;p, &amp;s);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">58</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1319</td>
-      <td class="src coveredLine">}</td>
+      <td class="linecount "></td>
+      <td class="src ">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">59</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
     </tr>
 
   </table>
