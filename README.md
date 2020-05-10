@@ -21,6 +21,7 @@ src/env/func.c                                23      23   100%
 src/env/nspc.c                                62      61    98%   34
 src/env/tupleform.c                           38      38   100%   
 src/env/type.c                               128     121    94%   128,132,149,156-159
+src/env/type_special.c                        33      33   100%   
 src/env/value.c                               25      25   100%   
 src/gwion.c                                  138     137    99%   85
 src/gwiondata.c                               35      35   100%   
@@ -63,7 +64,7 @@ src/parse/scanx.c                             46      46   100%
 src/parse/stage.c                             14      14   100%   
 src/parse/template.c                          88      84    95%   28,37,67,123
 src/parse/traverse.c                          43      42    97%   67
-src/parse/type_decl.c                         62      60    96%   53,60
+src/parse/type_decl.c                         32      30    93%   12,19
 src/parse/type_utils.c                        17       4    23%   14-18,21-22,24-29
 src/pass.c                                    34      34   100%   
 src/plug.c                                   113     113   100%   
@@ -76,8 +77,8 @@ src/vm/vm_code.c                              48      48   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10023    9510    94%
+TOTAL                                      10026    9513    94%
 ------------------------------------------------------------------------------
-lines: 94.9% (9510 out of 10023)
-branches: 80.7% (4403 out of 5457)
+lines: 94.9% (9513 out of 10026)
+branches: 80.7% (4406 out of 5459)
 ```
