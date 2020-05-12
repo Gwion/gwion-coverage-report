@@ -25,7 +25,7 @@
   </tr>
   <tr>
     <th scope="row">Date:</th>
-    <td>2020-05-12 16:18:23</td>
+    <td>2020-05-12 19:34:39</td>
   </tr>
 </table>
 <table class="coverage">
@@ -37,15 +37,15 @@
   </tr>
   <tr>
     <th scope="row">Lines:</th>
-    <td>125</td>
-    <td>126</td>
+    <td>127</td>
+    <td>128</td>
     <td class="coverage-high">99.2%</td>
   </tr>
   <tr>
     <th scope="row">Branches:</th>
-    <td>32</td>
-    <td>42</td>
-    <td class="coverage-medium">76.2%</td>
+    <td>34</td>
+    <td>48</td>
+    <td class="coverage-low">70.8%</td>
   </tr>
 </table>
     </div>
@@ -202,130 +202,43 @@
       <td class="lineno">18</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">16</td>
+      <td class="linecount coveredLine">15</td>
       <td class="src coveredLine">void free_vararg(MemPool p, struct Vararg_* arg) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">19</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 15 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">16</td>
-      <td class="src coveredLine">  xfree(arg-&gt;d);</td>
+      <td class="linecount coveredLine">15</td>
+      <td class="src coveredLine">  if(arg-&gt;l) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">20</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">16</td>
-      <td class="src coveredLine">  vector_release(&amp;arg-&gt;t);</td>
+      <td class="linecount coveredLine">15</td>
+      <td class="src coveredLine">    xfree(arg-&gt;d);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">21</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">16</td>
-      <td class="src coveredLine">  mp_free(p, Vararg, arg);</td>
+      <td class="linecount coveredLine">15</td>
+      <td class="src coveredLine">    vector_release(&amp;arg-&gt;t);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">22</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">16</td>
-      <td class="src coveredLine">}</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">23</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">24</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">16</td>
-      <td class="src coveredLine">static DTOR(vararg_dtor) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">25</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">16</td>
-      <td class="src coveredLine">  struct Vararg_ *arg = *(struct Vararg_**)o-&gt;data;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">26</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">16</td>
-      <td class="src coveredLine">  m_uint offset = 0;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">27</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 41 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 16 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">57</td>
-      <td class="src coveredLine">  for(m_uint i = 0; i &lt; vector_size(&amp;arg-&gt;t); ++i) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">28</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">41</td>
-      <td class="src coveredLine">    const Type t = (Type)vector_at(&amp;arg-&gt;t, i);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">29</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 4 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 37 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">41</td>
-      <td class="src coveredLine">    if(isa(t, shred-&gt;info-&gt;vm-&gt;gwion-&gt;type[et_object]) &gt; 0)</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">30</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">4</td>
-      <td class="src coveredLine">      release(*(M_Object*)(arg-&gt;d + offset), shred);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">31</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">41</td>
-      <td class="src coveredLine">    offset += t-&gt;size;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">32</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -333,23 +246,23 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">33</td>
+      <td class="lineno">23</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">16</td>
-      <td class="src coveredLine">  free_vararg(shred-&gt;info-&gt;vm-&gt;gwion-&gt;mp, arg);</td>
+      <td class="linecount coveredLine">15</td>
+      <td class="src coveredLine">  mp_free(p, Vararg, arg);</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">34</td>
+      <td class="lineno">24</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">16</td>
+      <td class="linecount coveredLine">15</td>
       <td class="src coveredLine">}</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">35</td>
+      <td class="lineno">25</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -357,35 +270,136 @@
     </tr>
 
     <tr class="source-line">
+      <td class="lineno">26</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">15</td>
+      <td class="src coveredLine">static DTOR(vararg_dtor) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">27</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">15</td>
+      <td class="src coveredLine">  struct Vararg_ *arg = *(struct Vararg_**)o-&gt;data;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">28</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 15 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">15</td>
+      <td class="src coveredLine">  if(arg-&gt;l) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">29</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">15</td>
+      <td class="src coveredLine">    m_uint offset = 0;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">30</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 1 taken 39 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 15 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">54</td>
+      <td class="src coveredLine">    for(m_uint i = 0; i &lt; vector_size(&amp;arg-&gt;t); ++i) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">31</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">39</td>
+      <td class="src coveredLine">      const Type t = (Type)vector_at(&amp;arg-&gt;t, i);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">32</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 4 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 35 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">39</td>
+      <td class="src coveredLine">      if(isa(t, shred-&gt;info-&gt;vm-&gt;gwion-&gt;type[et_object]) &gt; 0)</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">33</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">        release(*(M_Object*)(arg-&gt;d + offset), shred);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">34</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">39</td>
+      <td class="src coveredLine">      offset += t-&gt;size;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">35</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">    }</td>
+    </tr>
+
+    <tr class="source-line">
       <td class="lineno">36</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">static MFUN(mfun_vararg_cpy) {</td>
+      <td class="linecount "></td>
+      <td class="src ">  }</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">37</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  struct Vararg_ *src =  *(struct Vararg_**)o-&gt;data;</td>
+      <td class="linecount coveredLine">15</td>
+      <td class="src coveredLine">  free_vararg(shred-&gt;info-&gt;vm-&gt;gwion-&gt;mp, arg);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">38</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  struct Vararg_* arg = mp_calloc(shred-&gt;info-&gt;mp, Vararg);</td>
+      <td class="linecount coveredLine">15</td>
+      <td class="src coveredLine">}</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">39</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  vector_copy2(&amp;src-&gt;t, &amp;arg-&gt;t);</td>
+      <td class="linecount "></td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
@@ -393,7 +407,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  arg-&gt;l = src-&gt;l;</td>
+      <td class="src coveredLine">static MFUN(mfun_vararg_cpy) {</td>
     </tr>
 
     <tr class="source-line">
@@ -401,7 +415,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  arg-&gt;d = (m_bit*)xmalloc(round2szint(arg-&gt;l));</td>
+      <td class="src coveredLine">  struct Vararg_ *src =  *(struct Vararg_**)o-&gt;data;</td>
     </tr>
 
     <tr class="source-line">
@@ -409,11 +423,43 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  m_uint offset = 0;</td>
+      <td class="src coveredLine">  struct Vararg_* arg = mp_calloc(shred-&gt;info-&gt;mp, Vararg);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">43</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">  vector_copy2(&amp;src-&gt;t, &amp;arg-&gt;t);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">44</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">  arg-&gt;l = src-&gt;l;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">45</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">  arg-&gt;d = (m_bit*)xmalloc(round2szint(arg-&gt;l));</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">46</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">  m_uint offset = 0;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">47</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -428,7 +474,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">44</td>
+      <td class="lineno">48</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
@@ -436,7 +482,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">45</td>
+      <td class="lineno">49</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
@@ -444,7 +490,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">46</td>
+      <td class="lineno">50</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -459,7 +505,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">47</td>
+      <td class="lineno">51</td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine"></td>
@@ -467,7 +513,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">48</td>
+      <td class="lineno">52</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
@@ -475,7 +521,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">49</td>
+      <td class="lineno">53</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -483,7 +529,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">50</td>
+      <td class="lineno">54</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
@@ -491,7 +537,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">51</td>
+      <td class="lineno">55</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
@@ -499,7 +545,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">52</td>
+      <td class="lineno">56</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
@@ -507,7 +553,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">53</td>
+      <td class="lineno">57</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
@@ -515,7 +561,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">54</td>
+      <td class="lineno">58</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
@@ -523,7 +569,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">55</td>
+      <td class="lineno">59</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
@@ -531,7 +577,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">56</td>
+      <td class="lineno">60</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
@@ -539,7 +585,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">57</td>
+      <td class="lineno">61</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -547,133 +593,140 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">58</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">15</td>
-      <td class="src coveredLine">INSTR(VarargIni) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">59</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">15</td>
-      <td class="src coveredLine">  const M_Object o = new_object(shred-&gt;info-&gt;mp, shred, shred-&gt;info-&gt;vm-&gt;gwion-&gt;type[et_vararg]);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">60</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">15</td>
-      <td class="src coveredLine">  struct Vararg_* arg = mp_calloc(shred-&gt;info-&gt;mp, Vararg);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">61</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">15</td>
-      <td class="src coveredLine">  POP_REG(shred, instr-&gt;m_val - SZ_INT)</td>
-    </tr>
-
-    <tr class="source-line">
       <td class="lineno">62</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">15</td>
-      <td class="src coveredLine">  arg-&gt;l = instr-&gt;m_val;</td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">INSTR(VarargIni) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">63</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">15</td>
-      <td class="src coveredLine">  arg-&gt;d = (m_bit*)xmalloc(round2szint(arg-&gt;l));</td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">  const M_Object o = new_object(shred-&gt;info-&gt;mp, shred, shred-&gt;info-&gt;vm-&gt;gwion-&gt;type[et_vararg]);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">64</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">15</td>
-      <td class="src coveredLine">  const Vector kinds = (Vector)instr-&gt;m_val2;</td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">  struct Vararg_* arg = mp_calloc(shred-&gt;info-&gt;mp, Vararg);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">65</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">15</td>
-      <td class="src coveredLine">  vector_copy2(kinds, &amp;arg-&gt;t);</td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">  POP_REG(shred, instr-&gt;m_val - SZ_INT)</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">66</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 14 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">15</td>
-      <td class="src coveredLine">  m_uint offset = 0;</td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">  if((arg-&gt;l = instr-&gt;m_val)) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">67</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 40 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 15 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">55</td>
-      <td class="src coveredLine">  for(m_uint i = 0; i &lt; vector_size(&amp;arg-&gt;t); ++i) {</td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">    arg-&gt;d = (m_bit*)xmalloc(round2szint(arg-&gt;l));</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">68</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">40</td>
-      <td class="src coveredLine">    const Type t = (Type)vector_at(&amp;arg-&gt;t, arg-&gt;i);</td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">    const Vector kinds = (Vector)instr-&gt;m_val2;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">69</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">40</td>
-      <td class="src coveredLine">    *(m_uint*)(arg-&gt;d + offset) = *(m_uint*)(shred-&gt;reg - SZ_INT + offset);</td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">    vector_copy2(kinds, &amp;arg-&gt;t);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">70</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 2 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 38 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">40</td>
-      <td class="src coveredLine">    if(isa(t, shred-&gt;info-&gt;vm-&gt;gwion-&gt;type[et_object]) &gt; 0) {</td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">    m_uint offset = 0;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">71</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 1 taken 38 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 14 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">      const M_Object obj = *(M_Object*)(arg-&gt;d + offset);</td>
+      <td class="linecount coveredLine">52</td>
+      <td class="src coveredLine">    for(m_uint i = 0; i &lt; vector_size(&amp;arg-&gt;t); ++i) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">72</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">38</td>
+      <td class="src coveredLine">      const Type t = (Type)vector_at(&amp;arg-&gt;t, arg-&gt;i);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">73</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">38</td>
+      <td class="src coveredLine">      *(m_uint*)(arg-&gt;d + offset) = *(m_uint*)(shred-&gt;reg - SZ_INT + offset);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">74</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 2 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 36 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">38</td>
+      <td class="src coveredLine">      if(isa(t, shred-&gt;info-&gt;vm-&gt;gwion-&gt;type[et_object]) &gt; 0) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">75</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine">        const M_Object obj = *(M_Object*)(arg-&gt;d + offset);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">76</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -684,19 +737,35 @@
         </details>
       </td>
       <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">      if(obj)</td>
+      <td class="src coveredLine">        if(obj)</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">73</td>
+      <td class="lineno">77</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">        ++obj-&gt;ref;</td>
+      <td class="src coveredLine">          ++obj-&gt;ref;</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">74</td>
+      <td class="lineno">78</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">79</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">38</td>
+      <td class="src coveredLine">      offset += t-&gt;size;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">80</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -704,15 +773,15 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">75</td>
+      <td class="lineno">81</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">40</td>
-      <td class="src coveredLine">    offset += t-&gt;size;</td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">    arg-&gt;s = vector_size(kinds);</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">76</td>
+      <td class="lineno">82</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -720,39 +789,31 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">77</td>
+      <td class="lineno">83</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">15</td>
-      <td class="src coveredLine">  arg-&gt;s = vector_size(kinds);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">78</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">15</td>
+      <td class="linecount coveredLine">14</td>
       <td class="src coveredLine">  *(struct Vararg_**)o-&gt;data = arg;</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">79</td>
+      <td class="lineno">84</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">15</td>
+      <td class="linecount coveredLine">14</td>
       <td class="src coveredLine">  *(M_Object*)REG(-SZ_INT) = o;</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">80</td>
+      <td class="lineno">85</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">15</td>
+      <td class="linecount coveredLine">14</td>
       <td class="src coveredLine">}</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">81</td>
+      <td class="lineno">86</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -760,62 +821,62 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">82</td>
+      <td class="lineno">87</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">11</td>
+      <td class="linecount coveredLine">9</td>
       <td class="src coveredLine">static INSTR(VarargEnd) {</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">83</td>
+      <td class="lineno">88</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">11</td>
+      <td class="linecount coveredLine">9</td>
       <td class="src coveredLine">  const M_Object o = *(M_Object*)REG(0);</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">84</td>
+      <td class="lineno">89</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">11</td>
+      <td class="linecount coveredLine">9</td>
       <td class="src coveredLine">  struct Vararg_* arg = *(struct Vararg_**)o-&gt;data;</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">85</td>
+      <td class="lineno">90</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">11</td>
+      <td class="linecount coveredLine">9</td>
       <td class="src coveredLine">  arg-&gt;o += ((Type)vector_at(&amp;arg-&gt;t, arg-&gt;i))-&gt;size;</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">86</td>
+      <td class="lineno">91</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 6 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 5 times.</div>
+          <div class="takenBranch">&check; Branch 0 taken 5 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 4 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">11</td>
+      <td class="linecount coveredLine">9</td>
       <td class="src coveredLine">  if(++arg-&gt;i &lt; arg-&gt;s)</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">87</td>
+      <td class="lineno">92</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">6</td>
+      <td class="linecount coveredLine">5</td>
       <td class="src coveredLine">    shred-&gt;pc = instr-&gt;m_val;</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">88</td>
+      <td class="lineno">93</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -823,59 +884,19 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">89</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">5</td>
-      <td class="src coveredLine">    arg-&gt;i = arg-&gt;o = 0;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">90</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">11</td>
-      <td class="src coveredLine">}</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">91</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">92</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine">static OP_CHECK(opck_vararg_cast) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">93</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine">  const Exp_Cast* cast = (Exp_Cast*)data;</td>
-    </tr>
-
-    <tr class="source-line">
       <td class="lineno">94</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine">  return known_type(env, cast-&gt;td);</td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">    arg-&gt;i = arg-&gt;o = 0;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">95</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
+      <td class="linecount coveredLine">9</td>
+      <td class="src coveredLine">}</td>
     </tr>
 
     <tr class="source-line">
@@ -890,35 +911,75 @@
       <td class="lineno">97</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">13</td>
-      <td class="src coveredLine">static INSTR(VarargCast) {</td>
+      <td class="linecount coveredLine">7</td>
+      <td class="src coveredLine">static OP_CHECK(opck_vararg_cast) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">98</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">13</td>
-      <td class="src coveredLine">  const M_Object o = *(M_Object*)REG(-SZ_INT);</td>
+      <td class="linecount coveredLine">7</td>
+      <td class="src coveredLine">  const Exp_Cast* cast = (Exp_Cast*)data;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">99</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 1 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 12 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">13</td>
-      <td class="src coveredLine">  if(!*(m_uint*)(o-&gt;data + SZ_INT))</td>
+      <td class="linecount coveredLine">7</td>
+      <td class="src coveredLine">  return known_type(env, cast-&gt;td);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">100</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">101</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">102</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">11</td>
+      <td class="src coveredLine">static INSTR(VarargCast) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">103</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">11</td>
+      <td class="src coveredLine">  const M_Object o = *(M_Object*)REG(-SZ_INT);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">104</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 1 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 10 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">11</td>
+      <td class="src coveredLine">  if(!*(m_uint*)(o-&gt;data + SZ_INT))</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">105</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
@@ -926,38 +987,38 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">101</td>
+      <td class="lineno">106</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">12</td>
+      <td class="linecount coveredLine">10</td>
       <td class="src coveredLine">  struct Vararg_* arg = *(struct Vararg_**)o-&gt;data;</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">102</td>
+      <td class="lineno">107</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">12</td>
+      <td class="linecount coveredLine">10</td>
       <td class="src coveredLine">  const Type t = (Type)instr-&gt;m_val;</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">103</td>
+      <td class="lineno">108</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
           <div class="takenBranch">&check; Branch 1 taken 1 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 11 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 9 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">12</td>
+      <td class="linecount coveredLine">10</td>
       <td class="src coveredLine">  if(isa((Type)vector_at(&amp;arg-&gt;t, arg-&gt;i), t) &lt; 0)</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">104</td>
+      <td class="lineno">109</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
@@ -965,102 +1026,30 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">105</td>
+      <td class="lineno">110</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 11 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 11 times.</div>
+          <div class="takenBranch">&check; Branch 0 taken 9 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 9 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">22</td>
+      <td class="linecount coveredLine">18</td>
       <td class="src coveredLine">  for(m_uint i = 0; i &lt; t-&gt;size; i += SZ_INT)</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">106</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">11</td>
-      <td class="src coveredLine">    *(m_uint*)REG(i - SZ_INT) = *(m_uint*)(arg-&gt;d + arg-&gt;o + i);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">107</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">108</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">109</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine">static OP_EMIT(opem_vararg_cast) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">110</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine">  const Exp_Cast* cast = (Exp_Cast*)data;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">111</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine">  const Instr instr = emit_add_instr(emit, VarargCast);</td>
+      <td class="linecount coveredLine">9</td>
+      <td class="src coveredLine">    *(m_uint*)REG(i - SZ_INT) = *(m_uint*)(arg-&gt;d + arg-&gt;o + i);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">112</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine">  instr-&gt;m_val = (m_uint)exp_self(cast)-&gt;info-&gt;type;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">113</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine">  const Instr push = emit_add_instr(emit, RegPush);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">114</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine">  push-&gt;m_val = exp_self(cast)-&gt;info-&gt;type-&gt;size - SZ_INT;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">115</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine">  return instr;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">116</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1068,7 +1057,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">117</td>
+      <td class="lineno">113</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1076,42 +1065,67 @@
     </tr>
 
     <tr class="source-line">
+      <td class="lineno">114</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">7</td>
+      <td class="src coveredLine">static OP_EMIT(opem_vararg_cast) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">115</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">7</td>
+      <td class="src coveredLine">  const Exp_Cast* cast = (Exp_Cast*)data;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">116</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">7</td>
+      <td class="src coveredLine">  const Instr instr = emit_add_instr(emit, VarargCast);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">117</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">7</td>
+      <td class="src coveredLine">  instr-&gt;m_val = (m_uint)exp_self(cast)-&gt;info-&gt;type;</td>
+    </tr>
+
+    <tr class="source-line">
       <td class="lineno">118</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
-      <td class="src coveredLine">static FREEARG(freearg_vararg) {</td>
+      <td class="linecount coveredLine">7</td>
+      <td class="src coveredLine">  const Instr push = emit_add_instr(emit, RegPush);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">119</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 15 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 3 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">18</td>
-      <td class="src coveredLine">  if(instr-&gt;m_val2)</td>
+      <td class="linecount coveredLine">7</td>
+      <td class="src coveredLine">  push-&gt;m_val = exp_self(cast)-&gt;info-&gt;type-&gt;size - SZ_INT;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">120</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">15</td>
-      <td class="src coveredLine">    free_vector(((Gwion)gwion)-&gt;mp, (Vector)instr-&gt;m_val2);</td>
+      <td class="linecount coveredLine">7</td>
+      <td class="src coveredLine">  return instr;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">121</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
-      <td class="src coveredLine">}</td>
+      <td class="linecount "></td>
+      <td class="src ">}</td>
     </tr>
 
     <tr class="source-line">
@@ -1126,41 +1140,39 @@
       <td class="lineno">123</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">21</td>
-      <td class="src coveredLine">static ID_CHECK(idck_vararg) {</td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">static FREEARG(freearg_vararg) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">124</td>
       <td class="linebranch">
         <details class="linebranchDetails">
-        <summary class="linebranchSummary">3/4</summary>
+        <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 20 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 1 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 20 times.</div>
-          <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
+          <div class="takenBranch">&check; Branch 0 taken 14 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">21</td>
-      <td class="src coveredLine">  if(env-&gt;func &amp;&amp; GET_FLAG(env-&gt;func-&gt;def, variadic))</td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">  if(instr-&gt;m_val2)</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">125</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">20</td>
-      <td class="src coveredLine">    return nonnul_type(env, exp_self(prim)-&gt;info-&gt;type);</td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">    free_vector(((Gwion)gwion)-&gt;mp, (Vector)instr-&gt;m_val2);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">126</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  ERR_O(exp_self(prim)-&gt;pos, _(&#34;&#39;vararg&#39; must be used inside variadic function&#34;))</td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">}</td>
     </tr>
 
     <tr class="source-line">
@@ -1168,47 +1180,56 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">}</td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">128</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount coveredLine">19</td>
+      <td class="src coveredLine">static ID_CHECK(idck_vararg) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">129</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">3/4</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 18 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 1 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 18 times.</div>
+          <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">35</td>
-      <td class="src coveredLine">static ID_EMIT(idem_vararg) {</td>
+      <td class="linecount coveredLine">19</td>
+      <td class="src coveredLine">  if(env-&gt;func &amp;&amp; GET_FLAG(env-&gt;func-&gt;def, variadic))</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">130</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">35</td>
-      <td class="src coveredLine">  const Instr instr = emit_add_instr(emit, RegPushMem);</td>
+      <td class="linecount coveredLine">18</td>
+      <td class="src coveredLine">    return nonnul_type(env, exp_self(prim)-&gt;info-&gt;type);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">131</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">35</td>
-      <td class="src coveredLine">  instr-&gt;m_val = emit-&gt;code-&gt;stack_depth - SZ_INT;</td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">  ERR_O(exp_self(prim)-&gt;pos, _(&#34;&#39;vararg&#39; must be used inside variadic function&#34;))</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">132</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">35</td>
-      <td class="src coveredLine">  return instr;</td>
+      <td class="linecount "></td>
+      <td class="src ">}</td>
     </tr>
 
     <tr class="source-line">
@@ -1216,39 +1237,39 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">}</td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">134</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount coveredLine">29</td>
+      <td class="src coveredLine">static ID_EMIT(idem_vararg) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">135</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">static GACK(gack_vararg) {</td>
+      <td class="linecount coveredLine">29</td>
+      <td class="src coveredLine">  const Instr instr = emit_add_instr(emit, RegPushMem);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">136</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">  INTERP_PRINTF(&#34;%p&#34;, *(M_Object*)VALUE);</td>
+      <td class="linecount coveredLine">29</td>
+      <td class="src coveredLine">  instr-&gt;m_val = emit-&gt;code-&gt;stack_depth - SZ_INT;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">137</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">}</td>
+      <td class="linecount coveredLine">29</td>
+      <td class="src coveredLine">  return instr;</td>
     </tr>
 
     <tr class="source-line">
@@ -1256,59 +1277,11 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src ">}</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">139</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">5</td>
-      <td class="src coveredLine">ANN void emit_vararg_end(const Emitter emit, const m_uint pc) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">140</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">5</td>
-      <td class="src coveredLine">  const Instr pop = emit_add_instr(emit, RegPop);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">141</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">5</td>
-      <td class="src coveredLine">  pop-&gt;m_val = SZ_INT;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">142</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">5</td>
-      <td class="src coveredLine">  const Instr instr = emit_add_instr(emit, VarargEnd);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">143</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">5</td>
-      <td class="src coveredLine">  instr-&gt;m_val = pc;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">144</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">5</td>
-      <td class="src coveredLine">}</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">145</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1316,110 +1289,123 @@
     </tr>
 
     <tr class="source-line">
+      <td class="lineno">140</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine">static GACK(gack_vararg) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">141</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine">  INTERP_PRINTF(&#34;%p&#34;, *(M_Object*)VALUE);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">142</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">143</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">144</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">ANN void emit_vararg_end(const Emitter emit, const m_uint pc) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">145</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  const Instr pop = emit_add_instr(emit, RegPop);</td>
+    </tr>
+
+    <tr class="source-line">
       <td class="lineno">146</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">GWION_IMPORT(vararg) {</td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  pop-&gt;m_val = SZ_INT;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">147</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  const Type t_vararg  = gwi_class_ini(gwi, &#34;Vararg&#34;, &#34;Object&#34;);</td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  const Instr instr = emit_add_instr(emit, VarargEnd);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">148</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  gwi_class_xtor(gwi, NULL, vararg_dtor);</td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">  instr-&gt;m_val = pc;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">149</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  gwi_gack(gwi, t_vararg, gack_vararg);</td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine">}</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">150</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-          <div class="takenBranch">&check; Branch 2 taken 735 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  CHECK_BB(gwi_item_ini(gwi, &#34;@internal&#34;, &#34;@data&#34;))</td>
+      <td class="linecount "></td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">151</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-          <div class="takenBranch">&check; Branch 2 taken 735 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  CHECK_BB(gwi_item_end(gwi, ae_flag_none, NULL))</td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">GWION_IMPORT(vararg) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">152</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-          <div class="takenBranch">&check; Branch 2 taken 735 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  CHECK_BB(gwi_item_ini(gwi, &#34;int&#34;, &#34;@inLoop&#34;))</td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  const Type t_vararg  = gwi_class_ini(gwi, &#34;Vararg&#34;, &#34;Object&#34;);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">153</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-          <div class="takenBranch">&check; Branch 2 taken 735 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  CHECK_BB(gwi_item_end(gwi, ae_flag_none, NULL))</td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  gwi_class_xtor(gwi, NULL, vararg_dtor);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">154</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-          <div class="takenBranch">&check; Branch 2 taken 735 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  CHECK_BB(gwi_func_ini(gwi, &#34;Vararg&#34;, &#34;cpy&#34;))</td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  gwi_gack(gwi, t_vararg, gack_vararg);</td>
     </tr>
 
     <tr class="source-line">
@@ -1429,28 +1415,42 @@
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
           <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-          <div class="takenBranch">&check; Branch 2 taken 735 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 734 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  CHECK_BB(gwi_func_end(gwi, mfun_vararg_cpy, ae_flag_none))</td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  CHECK_BB(gwi_item_ini(gwi, &#34;@internal&#34;, &#34;@data&#34;))</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">156</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+          <div class="takenBranch">&check; Branch 2 taken 734 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  GWI_BB(gwi_class_end(gwi))</td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  CHECK_BB(gwi_item_end(gwi, ae_flag_none, NULL))</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">157</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+          <div class="takenBranch">&check; Branch 2 taken 734 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  SET_FLAG(t_vararg, abstract);</td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  CHECK_BB(gwi_item_ini(gwi, &#34;int&#34;, &#34;@inLoop&#34;))</td>
     </tr>
 
     <tr class="source-line">
@@ -1460,80 +1460,141 @@
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
           <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-          <div class="takenBranch">&check; Branch 2 taken 735 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 734 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  CHECK_BB(gwi_set_global_type(gwi, t_vararg, et_vararg))</td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  CHECK_BB(gwi_item_end(gwi, ae_flag_none, NULL))</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">159</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+          <div class="takenBranch">&check; Branch 2 taken 734 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_ini(gwi, &#34;nonnull Vararg&#34;, (m_str)OP_ANY_TYPE, NULL))</td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  CHECK_BB(gwi_func_ini(gwi, &#34;Vararg&#34;, &#34;cpy&#34;))</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">160</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+          <div class="takenBranch">&check; Branch 2 taken 734 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_add(gwi, opck_vararg_cast))</td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  CHECK_BB(gwi_func_end(gwi, mfun_vararg_cpy, ae_flag_none))</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">161</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_emi(gwi, opem_vararg_cast))</td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  GWI_BB(gwi_class_end(gwi))</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">162</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  GWI_BB(gwi_oper_end(gwi, &#34;$&#34;, NULL))</td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  SET_FLAG(t_vararg, abstract);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">163</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+          <div class="takenBranch">&check; Branch 2 taken 734 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  gwi_register_freearg(gwi, VarargIni, freearg_vararg);</td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  CHECK_BB(gwi_set_global_type(gwi, t_vararg, et_vararg))</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">164</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  struct SpecialId_ spid = { .type=t_vararg, .is_const=1, .ck=idck_vararg, .em=idem_vararg};</td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  GWI_BB(gwi_oper_ini(gwi, &#34;nonnull Vararg&#34;, (m_str)OP_ANY_TYPE, NULL))</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">165</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  gwi_specialid(gwi, &#34;vararg&#34;, &amp;spid);</td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  GWI_BB(gwi_oper_add(gwi, opck_vararg_cast))</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">166</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  return GW_OK;</td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  GWI_BB(gwi_oper_emi(gwi, opem_vararg_cast))</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">167</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  GWI_BB(gwi_oper_end(gwi, &#34;$&#34;, NULL))</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">168</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  gwi_register_freearg(gwi, VarargIni, freearg_vararg);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">169</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  struct SpecialId_ spid = { .type=t_vararg, .is_const=1, .ck=idck_vararg, .em=idem_vararg};</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">170</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  gwi_specialid(gwi, &#34;vararg&#34;, &amp;spid);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">171</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">734</td>
+      <td class="src coveredLine">  return GW_OK;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">172</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
