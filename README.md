@@ -36,7 +36,7 @@ src/import/special.c                          28      28   100%
 src/import/tdef.c                             25      25   100%   
 src/import/type.c                             23      23   100%   
 src/import/udef.c                             60      60   100%   
-src/lib/array.c                              327     308    94%   60,109,167-168,294-301,310-316
+src/lib/array.c                              331     312    94%   60,109,167-168,295-302,311-317
 src/lib/engine.c                             121     121   100%   
 src/lib/event.c                               47      47   100%   
 src/lib/func.c                               242     240    99%   92,176
@@ -57,8 +57,8 @@ src/parse/check.c                            987     961    97%   75,94,164,520,
 src/parse/did_you_mean.c                      42      42   100%   
 src/parse/func_operator.c                     12      12   100%   
 src/parse/operator.c                         223     220    98%   275,333,342
-src/parse/scan0.c                            332     326    98%   142,221,255,324-326
-src/parse/scan1.c                            388     379    97%   16,61,130,318-319,330,450,493,531
+src/parse/scan0.c                            316     310    98%   122,201,235,304-306
+src/parse/scan1.c                            403     394    97%   16,61,130,338-339,350,470,513,551
 src/parse/scan2.c                            407     406    99%   575
 src/parse/scanx.c                             46      46   100%   
 src/parse/stage.c                             14      14   100%   
@@ -77,8 +77,8 @@ src/vm/vm_code.c                              48      48   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10036    9523    94%
+TOTAL                                      10039    9526    94%
 ------------------------------------------------------------------------------
-lines: 94.9% (9523 out of 10036)
-branches: 80.7% (4411 out of 5465)
+lines: 94.9% (9526 out of 10039)
+branches: 80.8% (4410 out of 5461)
 ```
