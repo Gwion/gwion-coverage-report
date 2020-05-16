@@ -21,7 +21,7 @@
   </tr>
   <tr>
     <th scope="row">File:</th>
-    <td>src/import/internals.c</td>
+    <td>src/parse/func_operator.c</td>
   </tr>
   <tr>
     <th scope="row">Date:</th>
@@ -37,14 +37,14 @@
   </tr>
   <tr>
     <th scope="row">Lines:</th>
-    <td>14</td>
-    <td>14</td>
+    <td>12</td>
+    <td>12</td>
     <td class="coverage-high">100.0%</td>
   </tr>
   <tr>
     <th scope="row">Branches:</th>
-    <td>4</td>
-    <td>4</td>
+    <td>14</td>
+    <td>14</td>
     <td class="coverage-high">100.0%</td>
   </tr>
 </table>
@@ -99,7 +99,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;traverse.h&#34;</td>
+      <td class="src ">#include &#34;instr.h&#34;</td>
     </tr>
 
     <tr class="source-line">
@@ -107,7 +107,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;instr.h&#34;</td>
+      <td class="src ">#include &#34;object.h&#34;</td>
     </tr>
 
     <tr class="source-line">
@@ -115,7 +115,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;object.h&#34;</td>
+      <td class="src ">#include &#34;gwion.h&#34;</td>
     </tr>
 
     <tr class="source-line">
@@ -123,7 +123,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;gwion.h&#34;</td>
+      <td class="src ">#include &#34;operator.h&#34;</td>
     </tr>
 
     <tr class="source-line">
@@ -131,180 +131,146 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;operator.h&#34;</td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">10</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;import.h&#34;</td>
+      <td class="linecount coveredLine">37</td>
+      <td class="src coveredLine">ANN void func_operator(const Func_Def fdef, struct Op_Import *opi) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">11</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;gwi.h&#34;</td>
+      <td class="linecount coveredLine">37</td>
+      <td class="src coveredLine">  opi-&gt;op =fdef-&gt;base-&gt;xid;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">12</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount coveredLine">37</td>
+      <td class="src coveredLine">  const m_str str = s_name(fdef-&gt;base-&gt;xid);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">13</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">742</td>
-      <td class="src coveredLine">void gwi_body(const Gwi gwi, const Ast body) {</td>
+      <td class="linecount coveredLine">74</td>
+      <td class="src coveredLine">  const uint is_unary = GET_FLAG(fdef, unary) +</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">14</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">4/4</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 35 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 2 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 2 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 33 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">742</td>
-      <td class="src coveredLine">  const Class_Def cdef = gwi-&gt;gwion-&gt;env-&gt;class_def-&gt;e-&gt;def;</td>
+      <td class="linecount coveredLine">37</td>
+      <td class="src coveredLine">    (!strcmp(str, &#34;@conditionnal&#34;) || !strcmp(str, &#34;@unconditionnal&#34;));</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">15</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 738 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 4 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">742</td>
-      <td class="src coveredLine">  if(!cdef-&gt;body)</td>
+      <td class="linecount coveredLine">37</td>
+      <td class="src coveredLine">  const Arg_List args = fdef-&gt;base-&gt;args;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">16</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 31 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 6 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">738</td>
-      <td class="src coveredLine">    cdef-&gt;body = body;</td>
+      <td class="linecount coveredLine">68</td>
+      <td class="src coveredLine">  opi-&gt;lhs = is_unary ? NULL :</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">17</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 16 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 15 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount "></td>
-      <td class="src ">  else</td>
+      <td class="linecount coveredLine">31</td>
+      <td class="src coveredLine">    args ? args-&gt;var_decl-&gt;value-&gt;type : NULL;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">18</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 6 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 16 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">4</td>
-      <td class="src coveredLine">    gwi-&gt;body-&gt;next = body;</td>
+      <td class="linecount coveredLine">75</td>
+      <td class="src coveredLine">  opi-&gt;rhs = args ? is_unary ? args-&gt;var_decl-&gt;value-&gt;type :</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">19</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 10 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 6 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">742</td>
-      <td class="src coveredLine">  gwi-&gt;body = body;</td>
+      <td class="linecount coveredLine">22</td>
+      <td class="src coveredLine">    args-&gt;next ? args-&gt;next-&gt;var_decl-&gt;value-&gt;type :</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">20</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 22 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 15 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">742</td>
-      <td class="src coveredLine">}</td>
+      <td class="linecount coveredLine">65</td>
+      <td class="src coveredLine">    fdef-&gt;base-&gt;ret_type : NULL;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">21</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">22</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">34</td>
-      <td class="src coveredLine">ANN void gwi_reset(const Gwi gwi) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">23</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 23 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 11 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">34</td>
-      <td class="src coveredLine">  if(gwi-&gt;ck) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">24</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">23</td>
-      <td class="src coveredLine">    ck_clean(gwi);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">25</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">23</td>
-      <td class="src coveredLine">    mp_free2(gwi-&gt;gwion-&gt;mp, sizeof(ImportCK), gwi-&gt;ck);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">26</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">23</td>
-      <td class="src coveredLine">    gwi-&gt;ck = NULL;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">27</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  }</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">28</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">34</td>
-      <td class="src coveredLine">  env_reset(gwi-&gt;gwion-&gt;env);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">29</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">34</td>
+      <td class="linecount coveredLine">37</td>
       <td class="src coveredLine">}</td>
     </tr>
 
