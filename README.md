@@ -1,5 +1,6 @@
   * [AFL](https://fennecdjay.github.io/gwion-coverage-report/AFL) ([diff](https://fennecdjay.github.io/gwion-coverage-report/AFL/diff.html))
   * [Explicit](https://fennecdjay.github.io/gwion-coverage-report/Explicit) ([diff](https://fennecdjay.github.io/gwion-coverage-report/Explicit/diff.html))
   * [Fuzzing](https://fennecdjay.github.io/gwion-coverage-report/Fuzzing) ([diff](https://fennecdjay.github.io/gwion-coverage-report/Fuzzing/diff.html))
+  * [dev](https://fennecdjay.github.io/gwion-coverage-report/dev) ([diff](https://fennecdjay.github.io/gwion-coverage-report/dev/diff.html))
   * [fixes](https://fennecdjay.github.io/gwion-coverage-report/fixes) ([diff](https://fennecdjay.github.io/gwion-coverage-report/fixes/diff.html))
   * [master](https://fennecdjay.github.io/gwion-coverage-report/master) ([diff](https://fennecdjay.github.io/gwion-coverage-report/master/diff.html))

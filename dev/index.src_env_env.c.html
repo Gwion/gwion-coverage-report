@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<script type="text/javascript" src="../focus.js"></script><html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Gwion coverage report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="index.css">
+  </head>
+
+  <body>
+    <h1>GCC Code Coverage Report</h1>
+
+    <hr/>
+
+    <div class="summary">
+<table class="legend">
+  <tr>
+    <th scope="row">Directory:</th>
+    <td>src/</td>
+  </tr>
+  <tr>
+    <th scope="row">File:</th>
+    <td>src/env/env.c</td>
+  </tr>
+  <tr>
+    <th scope="row">Date:</th>
+    <td>2020-05-16 21:55:27</td>
+  </tr>
+</table>
+<table class="coverage">
+  <tr>
+    <th></th>
+    <th scope="col">Exec</th>
+    <th scope="col">Total</th>
+    <th scope="col">Coverage</th>
+  </tr>
+  <tr>
+    <th scope="row">Lines:</th>
+    <td>84</td>
+    <td>84</td>
+    <td class="coverage-high">100.0%</td>
+  </tr>
+  <tr>
+    <th scope="row">Branches:</th>
+    <td>10</td>
+    <td>10</td>
+    <td class="coverage-high">100.0%</td>
+  </tr>
+</table>
+    </div>
+
+    <hr/>
+
+<div class="file-source">
+  <table>
+    <tr>
+      <td align="right" class="srcHeader">Line</td>
+      <td align="right" class="srcHeader">Branch</td>
+      <td align="right" class="srcHeader">Exec</td>
+      <td align="left" class="srcHeader src">Source</td>
+    </tr>
+
+
+    <tr class="source-line">
+      <td class="lineno">1</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;gwion_util.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">2</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;gwion_ast.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">3</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;gwion_env.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">4</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;vm.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">5</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;gwion.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">6</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;operator.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">7</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;traverse.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">8</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;vm.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">9</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#include &#34;parse.h&#34;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">10</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">11</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">738</td>
+      <td class="src coveredLine">ANN static struct Env_Scope_ *new_envscope(MemPool p) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">12</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">738</td>
+      <td class="src coveredLine">  struct Env_Scope_ *a = mp_calloc(p, Env_Scope);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">13</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">738</td>
+      <td class="src coveredLine">  vector_init(&amp;a-&gt;breaks);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">14</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">738</td>
+      <td class="src coveredLine">  vector_init(&amp;a-&gt;conts);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">15</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">738</td>
+      <td class="src coveredLine">  vector_init(&amp;a-&gt;class_stack);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">16</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">738</td>
+      <td class="src coveredLine">  vector_init(&amp;a-&gt;nspc_stack);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">17</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">738</td>
+      <td class="src coveredLine">  vector_init(&amp;a-&gt;known_ctx);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">18</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">738</td>
+      <td class="src coveredLine">  return a;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">19</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">20</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">21</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">738</td>
+      <td class="src coveredLine">Env new_env(MemPool p) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">22</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">738</td>
+      <td class="src coveredLine">  const Env env = (Env)xmalloc(sizeof(struct Env_));</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">23</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">738</td>
+      <td class="src coveredLine">  env-&gt;global_nspc = new_nspc(p, &#34;global_nspc&#34;);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">24</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">738</td>
+      <td class="src coveredLine">  env-&gt;context = NULL;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">25</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">738</td>
+      <td class="src coveredLine">  env-&gt;scope = new_envscope(p);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">26</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">738</td>
+      <td class="src coveredLine">  env_reset(env);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">27</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">738</td>
+      <td class="src coveredLine">  return env;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">28</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">29</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">30</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1410</td>
+      <td class="src coveredLine">ANN void env_reset(const Env env) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">31</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1410</td>
+      <td class="src coveredLine">  vector_clear(&amp;env-&gt;scope-&gt;breaks);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">32</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1410</td>
+      <td class="src coveredLine">  vector_clear(&amp;env-&gt;scope-&gt;conts);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">33</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1410</td>
+      <td class="src coveredLine">  vector_clear(&amp;env-&gt;scope-&gt;nspc_stack);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">34</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1410</td>
+      <td class="src coveredLine">  vector_add(&amp;env-&gt;scope-&gt;nspc_stack, (vtype)env-&gt;global_nspc);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">35</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1410</td>
+      <td class="src coveredLine">  vector_clear(&amp;env-&gt;scope-&gt;class_stack);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">36</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1410</td>
+      <td class="src coveredLine">  vector_add(&amp;env-&gt;scope-&gt;class_stack, (vtype)NULL);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">37</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1410</td>
+      <td class="src coveredLine">  env-&gt;curr = env-&gt;global_nspc;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">38</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1410</td>
+      <td class="src coveredLine">  env-&gt;class_def = NULL;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">39</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1410</td>
+      <td class="src coveredLine">  env-&gt;func = NULL;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">40</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1410</td>
+      <td class="src coveredLine">  env-&gt;scope-&gt;depth = 0;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">41</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1410</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">42</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">43</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">737</td>
+      <td class="src coveredLine">ANN void release_ctx(struct Env_Scope_ *a, struct Gwion_ *gwion) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">44</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">737</td>
+      <td class="src coveredLine">  const m_uint size = vector_size(&amp;a-&gt;known_ctx);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">45</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 493 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 737 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">1967</td>
+      <td class="src coveredLine">  for(m_uint i = size + 1; --i;)</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">46</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">493</td>
+      <td class="src coveredLine">    REM_REF((Context)vector_at(&amp;a-&gt;known_ctx, i - 1), gwion);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">47</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">737</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">48</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">49</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">737</td>
+      <td class="src coveredLine">ANN static void free_env_scope(struct Env_Scope_  *a, Gwion gwion) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">50</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">737</td>
+      <td class="src coveredLine">  release_ctx(a, gwion);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">51</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">737</td>
+      <td class="src coveredLine">  vector_release(&amp;a-&gt;known_ctx);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">52</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">737</td>
+      <td class="src coveredLine">  vector_release(&amp;a-&gt;nspc_stack);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">53</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">737</td>
+      <td class="src coveredLine">  vector_release(&amp;a-&gt;class_stack);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">54</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">737</td>
+      <td class="src coveredLine">  vector_release(&amp;a-&gt;breaks);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">55</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">737</td>
+      <td class="src coveredLine">  vector_release(&amp;a-&gt;conts);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">56</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">737</td>
+      <td class="src coveredLine">  mp_free(gwion-&gt;mp, Env_Scope, a);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">57</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">737</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">58</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">59</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">737</td>
+      <td class="src coveredLine">ANN void free_env(const Env a) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">60</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">737</td>
+      <td class="src coveredLine">  free_env_scope(a-&gt;scope, a-&gt;gwion);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">61</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 1 taken 1468 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 737 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">737</td>
+      <td class="src coveredLine">  while(pop_global(a-&gt;gwion));</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">62</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">737</td>
+      <td class="src coveredLine">  xfree(a);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">63</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">737</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">64</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">65</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13128</td>
+      <td class="src coveredLine">ANN2(1,3) m_uint env_push(const Env env, const Type type, const Nspc nspc) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">66</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13128</td>
+      <td class="src coveredLine">  const m_uint scope = env-&gt;scope-&gt;depth;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">67</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13128</td>
+      <td class="src coveredLine">  vector_add(&amp;env-&gt;scope-&gt;class_stack, (vtype)env-&gt;class_def);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">68</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13128</td>
+      <td class="src coveredLine">  env-&gt;class_def = type;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">69</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13128</td>
+      <td class="src coveredLine">  vector_add(&amp;env-&gt;scope-&gt;nspc_stack, (vtype)env-&gt;curr);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">70</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13128</td>
+      <td class="src coveredLine">  env-&gt;curr = nspc;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">71</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13128</td>
+      <td class="src coveredLine">  env-&gt;scope-&gt;depth = 0;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">72</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13128</td>
+      <td class="src coveredLine">  return scope;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">73</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">74</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">75</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13122</td>
+      <td class="src coveredLine">ANN void env_pop(const Env env, const m_uint scope) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">76</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13122</td>
+      <td class="src coveredLine">  env-&gt;class_def = (Type)vector_pop(&amp;env-&gt;scope-&gt;class_stack);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">77</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13122</td>
+      <td class="src coveredLine">  env-&gt;curr = (Nspc)vector_pop(&amp;env-&gt;scope-&gt;nspc_stack);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">78</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13122</td>
+      <td class="src coveredLine">  env-&gt;scope-&gt;depth = scope;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">79</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13122</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">80</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">81</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">25747</td>
+      <td class="src coveredLine">ANN void env_add_type(const Env env, const Type type) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">82</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">25747</td>
+      <td class="src coveredLine">  const Type v_type = type_copy(env-&gt;gwion-&gt;mp, env-&gt;gwion-&gt;type[et_class]);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">83</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">25747</td>
+      <td class="src coveredLine">  v_type-&gt;e-&gt;d.base_type = type;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">84</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">25747</td>
+      <td class="src coveredLine">  SET_FLAG(type, builtin);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">85</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">25747</td>
+      <td class="src coveredLine">  const Symbol sym = insert_symbol(type-&gt;name);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">86</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">25747</td>
+      <td class="src coveredLine">  nspc_add_type_front(env-&gt;curr, sym, type);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">87</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">25747</td>
+      <td class="src coveredLine">  const Value v = new_value(env-&gt;gwion-&gt;mp, v_type, s_name(sym));</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">88</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">25747</td>
+      <td class="src coveredLine">  SET_FLAG(v, valid | ae_flag_const | ae_flag_global | ae_flag_builtin);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">89</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">25747</td>
+      <td class="src coveredLine">  nspc_add_value(env-&gt;curr, insert_symbol(type-&gt;name), v);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">90</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">25747</td>
+      <td class="src coveredLine">  v-&gt;from-&gt;owner = type-&gt;e-&gt;owner = env-&gt;curr;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">91</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">25747</td>
+      <td class="src coveredLine">  v-&gt;from-&gt;owner_class = type-&gt;e-&gt;owner_class = env-&gt;class_def; // t owner_class ?</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">92</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">25747</td>
+      <td class="src coveredLine">  type-&gt;xid = ++env-&gt;scope-&gt;type_xid;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">93</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">25747</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">94</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">95</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">638</td>
+      <td class="src coveredLine">ANN m_bool type_engine_check_prog(const Env env, const Ast ast) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">96</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">638</td>
+      <td class="src coveredLine">  const Context ctx = new_context(env-&gt;gwion-&gt;mp, ast, env-&gt;name);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">97</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">638</td>
+      <td class="src coveredLine">  env_reset(env);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">98</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">638</td>
+      <td class="src coveredLine">  load_context(ctx, env);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">99</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">638</td>
+      <td class="src coveredLine">  const m_bool ret = traverse_ast(env, ast);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">100</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 397 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 241 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">638</td>
+      <td class="src coveredLine">  if(ret &gt; 0) //{</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">101</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">397</td>
+      <td class="src coveredLine">    nspc_commit(env-&gt;curr);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">102</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">4/4</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 241 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 397 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 96 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 145 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">638</td>
+      <td class="src coveredLine">  if(ret &gt; 0 || env-&gt;context-&gt;global)</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">103</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">493</td>
+      <td class="src coveredLine">    vector_add(&amp;env-&gt;scope-&gt;known_ctx, (vtype)ctx);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">104</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">  else //nspc_rollback(env-&gt;global_nspc);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">105</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">145</td>
+      <td class="src coveredLine">    REM_REF(ctx, env-&gt;gwion);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">106</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">638</td>
+      <td class="src coveredLine">  unload_context(ctx, env);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">107</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">638</td>
+      <td class="src coveredLine">  return ret;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">108</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">}</td>
+    </tr>
+
+  </table>
+</div>
+
+    <hr/>
+
+    <footer>
+      Generated by: <a href="http://gcovr.com">GCOVR (Version 4.2)</a>
+    </footer>
+  </body>
+</html>
