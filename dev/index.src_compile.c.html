@@ -25,7 +25,7 @@
   </tr>
   <tr>
     <th scope="row">Date:</th>
-    <td>2020-05-20 08:39:16</td>
+    <td>2020-05-20 15:55:13</td>
   </tr>
 </table>
 <table class="coverage">
@@ -37,15 +37,15 @@
   </tr>
   <tr>
     <th scope="row">Lines:</th>
-    <td>79</td>
     <td>83</td>
-    <td class="coverage-high">95.2%</td>
+    <td>86</td>
+    <td class="coverage-high">96.5%</td>
   </tr>
   <tr>
     <th scope="row">Branches:</th>
-    <td>38</td>
-    <td>42</td>
-    <td class="coverage-high">90.5%</td>
+    <td>41</td>
+    <td>46</td>
+    <td class="coverage-medium">89.1%</td>
   </tr>
 </table>
     </div>
@@ -743,8 +743,8 @@
       <td class="lineno">74</td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine"></td>
-      <td class="src uncoveredLine">ANN static int is_reg(const m_str path) {</td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">ANN static int is_reg(const m_str path) {</td>
     </tr>
 
     <tr class="source-line">
@@ -759,16 +759,16 @@
       <td class="lineno">76</td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine"></td>
-      <td class="src uncoveredLine">  stat(path, &amp;s);</td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">  stat(path, &amp;s);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">77</td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine"></td>
-      <td class="src uncoveredLine">  return S_ISREG(s.st_mode);</td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">  return S_ISREG(s.st_mode);</td>
     </tr>
 
     <tr class="source-line">
@@ -872,35 +872,60 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">//  if(c-&gt;type == COMPILE_FILE &amp;&amp; !is_reg(name)) {</td>
+      <td class="src ">#ifndef __FUZZING__</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">91</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">3/4</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 1 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 1379 times.</div>
+          <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
+          <div class="takenBranch">&check; Branch 4 taken 1 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount "></td>
-      <td class="src ">//    gw_err(_(&#34;&#39;%s&#39;: is a not a regular file\n&#34;), name);</td>
+      <td class="linecount coveredLine">1380</td>
+      <td class="src coveredLine">  if(c-&gt;type == COMPILE_FILE &amp;&amp; !is_reg(name)) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">92</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">//    return GW_ERROR;</td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">    gw_err(_(&#34;&#39;%s&#39;: is a not a regular file\n&#34;), name);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">93</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">//  }</td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">    return GW_ERROR;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">94</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">  }</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">95</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">#endif</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">96</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -915,7 +940,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">95</td>
+      <td class="lineno">97</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">719</td>
@@ -923,7 +948,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">96</td>
+      <td class="lineno">98</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">719</td>
@@ -931,7 +956,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">97</td>
+      <td class="lineno">99</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">719</td>
@@ -939,7 +964,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">98</td>
+      <td class="lineno">100</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -947,7 +972,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">99</td>
+      <td class="lineno">101</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">661</td>
@@ -955,7 +980,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">100</td>
+      <td class="lineno">102</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -963,7 +988,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">101</td>
+      <td class="lineno">103</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -971,7 +996,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">102</td>
+      <td class="lineno">104</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">661</td>
@@ -979,7 +1004,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">103</td>
+      <td class="lineno">105</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">661</td>
@@ -987,7 +1012,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">104</td>
+      <td class="lineno">106</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -1002,7 +1027,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">105</td>
+      <td class="lineno">107</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">638</td>
@@ -1010,7 +1035,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">106</td>
+      <td class="lineno">108</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -1025,7 +1050,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">107</td>
+      <td class="lineno">109</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1028</td>
@@ -1033,7 +1058,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">108</td>
+      <td class="lineno">110</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -1048,7 +1073,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">109</td>
+      <td class="lineno">111</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1056,7 +1081,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">110</td>
+      <td class="lineno">112</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">386</td>
@@ -1064,7 +1089,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">111</td>
+      <td class="lineno">113</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1072,7 +1097,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">112</td>
+      <td class="lineno">114</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1080,7 +1105,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">113</td>
+      <td class="lineno">115</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1380</td>
@@ -1088,7 +1113,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">114</td>
+      <td class="lineno">116</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1096,7 +1121,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">115</td>
+      <td class="lineno">117</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -1111,7 +1136,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">116</td>
+      <td class="lineno">118</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">719</td>
@@ -1119,7 +1144,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">117</td>
+      <td class="lineno">119</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -1134,7 +1159,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">118</td>
+      <td class="lineno">120</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">275</td>
@@ -1142,7 +1167,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">119</td>
+      <td class="lineno">121</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">275</td>
@@ -1150,7 +1175,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">120</td>
+      <td class="lineno">122</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1158,7 +1183,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">121</td>
+      <td class="lineno">123</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -1173,7 +1198,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">122</td>
+      <td class="lineno">124</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">386</td>
@@ -1181,7 +1206,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">123</td>
+      <td class="lineno">125</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">386</td>
@@ -1189,7 +1214,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">124</td>
+      <td class="lineno">126</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">386</td>
@@ -1197,7 +1222,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">125</td>
+      <td class="lineno">127</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">386</td>
@@ -1205,7 +1230,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">126</td>
+      <td class="lineno">128</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">386</td>
@@ -1213,7 +1238,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">127</td>
+      <td class="lineno">129</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1221,7 +1246,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">128</td>
+      <td class="lineno">130</td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine"></td>
@@ -1229,7 +1254,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">129</td>
+      <td class="lineno">131</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1237,27 +1262,11 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">130</td>
+      <td class="lineno">132</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
       <td class="src "></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">131</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1380</td>
-      <td class="src coveredLine">ANN static m_uint compile(struct Gwion_* gwion, struct Compiler* c) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">132</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1380</td>
-      <td class="src coveredLine">  compiler_name(gwion-&gt;mp, c);</td>
     </tr>
 
     <tr class="source-line">
@@ -1265,7 +1274,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1380</td>
-      <td class="src coveredLine">  MUTEX_LOCK(gwion-&gt;data-&gt;mutex);</td>
+      <td class="src coveredLine">ANN static m_uint compile(struct Gwion_* gwion, struct Compiler* c) {</td>
     </tr>
 
     <tr class="source-line">
@@ -1273,7 +1282,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1380</td>
-      <td class="src coveredLine">  const m_uint ret = _compile(gwion, c);</td>
+      <td class="src coveredLine">  compiler_name(gwion-&gt;mp, c);</td>
     </tr>
 
     <tr class="source-line">
@@ -1281,7 +1290,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1380</td>
-      <td class="src coveredLine">  MUTEX_UNLOCK(gwion-&gt;data-&gt;mutex);</td>
+      <td class="src coveredLine">  MUTEX_LOCK(gwion-&gt;data-&gt;mutex);</td>
     </tr>
 
     <tr class="source-line">
@@ -1289,7 +1298,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1380</td>
-      <td class="src coveredLine">  compiler_clean(gwion, c);</td>
+      <td class="src coveredLine">  const m_uint ret = _compile(gwion, c);</td>
     </tr>
 
     <tr class="source-line">
@@ -1297,11 +1306,27 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1380</td>
-      <td class="src coveredLine">  return ret;</td>
+      <td class="src coveredLine">  MUTEX_UNLOCK(gwion-&gt;data-&gt;mutex);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">138</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1380</td>
+      <td class="src coveredLine">  compiler_clean(gwion, c);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">139</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1380</td>
+      <td class="src coveredLine">  return ret;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">140</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1309,27 +1334,11 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">139</td>
+      <td class="lineno">141</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
       <td class="src "></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">140</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1378</td>
-      <td class="src coveredLine">ANN m_uint compile_filename(struct Gwion_* gwion, const m_str filename) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">141</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1378</td>
-      <td class="src coveredLine">  struct Compiler c = { .base=filename, .type=COMPILE_NAME };</td>
     </tr>
 
     <tr class="source-line">
@@ -1337,11 +1346,27 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1378</td>
-      <td class="src coveredLine">  return compile(gwion, &amp;c);</td>
+      <td class="src coveredLine">ANN m_uint compile_filename(struct Gwion_* gwion, const m_str filename) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">143</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1378</td>
+      <td class="src coveredLine">  struct Compiler c = { .base=filename, .type=COMPILE_NAME };</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">144</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1378</td>
+      <td class="src coveredLine">  return compile(gwion, &amp;c);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">145</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1349,27 +1374,11 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">144</td>
+      <td class="lineno">146</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
       <td class="src "></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">145</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">ANN m_uint compile_string(struct Gwion_* vm, const m_str filename, const m_str data) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">146</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  struct Compiler c = { .base=filename, .type=COMPILE_MSTR, .data=data };</td>
     </tr>
 
     <tr class="source-line">
@@ -1377,11 +1386,27 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  return compile(vm, &amp;c);</td>
+      <td class="src coveredLine">ANN m_uint compile_string(struct Gwion_* vm, const m_str filename, const m_str data) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">148</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">  struct Compiler c = { .base=filename, .type=COMPILE_MSTR, .data=data };</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">149</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">  return compile(vm, &amp;c);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">150</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1389,7 +1414,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">149</td>
+      <td class="lineno">151</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1397,7 +1422,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">150</td>
+      <td class="lineno">152</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
@@ -1405,7 +1430,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">151</td>
+      <td class="lineno">153</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
@@ -1413,7 +1438,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">152</td>
+      <td class="lineno">154</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
@@ -1421,7 +1446,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">153</td>
+      <td class="lineno">155</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
