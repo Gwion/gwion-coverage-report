@@ -25,7 +25,7 @@
   </tr>
   <tr>
     <th scope="row">Date:</th>
-    <td>2020-05-24 12:20:57</td>
+    <td>2020-05-24 20:16:20</td>
   </tr>
 </table>
 <table class="coverage">
@@ -37,14 +37,14 @@
   </tr>
   <tr>
     <th scope="row">Lines:</th>
-    <td>1480</td>
-    <td>1506</td>
+    <td>1482</td>
+    <td>1508</td>
     <td class="coverage-high">98.3%</td>
   </tr>
   <tr>
     <th scope="row">Branches:</th>
-    <td>647</td>
-    <td>832</td>
+    <td>644</td>
+    <td>828</td>
     <td class="coverage-medium">77.8%</td>
   </tr>
 </table>
@@ -5285,7 +5285,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">14</td>
-      <td class="src coveredLine">ANN static void emit_struct_decl_finish(const Emitter emit, const Value v) {</td>
+      <td class="src coveredLine">ANN static void decl_expand(const Emitter emit, const Type t) {</td>
     </tr>
 
     <tr class="source-line">
@@ -5309,7 +5309,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">14</td>
-      <td class="src coveredLine">  instr-&gt;m_val2 = v-&gt;type-&gt;size;</td>
+      <td class="src coveredLine">  instr-&gt;m_val2 = t-&gt;size;</td>
     </tr>
 
     <tr class="source-line">
@@ -5317,7 +5317,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">14</td>
-      <td class="src coveredLine">  regpush(emit, v-&gt;type-&gt;size - SZ_INT);</td>
+      <td class="src coveredLine">  regpush(emit, t-&gt;size - SZ_INT);</td>
     </tr>
 
     <tr class="source-line">
@@ -5340,12 +5340,83 @@
       <td class="lineno">595</td>
       <td class="linebranch">
       </td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">ANN static void emit_struct_decl_finish(const Emitter emit, const Type t, const uint emit_addr) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">596</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">    emit-&gt;code-&gt;frame-&gt;curr_offset += t-&gt;size;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">597</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">    emit_ext_ctor(emit, t-&gt;nspc-&gt;pre_ctor);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">598</td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 14 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">    if(!emit_addr)</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">599</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">      decl_expand(emit, t);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">600</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">    emit-&gt;code-&gt;frame-&gt;curr_offset -= t-&gt;size;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">601</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">602</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">603</td>
+      <td class="linebranch">
+      </td>
       <td class="linecount coveredLine">16</td>
       <td class="src coveredLine">ANN static m_bool emit_exp_decl_static(const Emitter emit, const Var_Decl var_decl, const uint is_ref, const uint emit_addr) {</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">596</td>
+      <td class="lineno">604</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">16</td>
@@ -5353,7 +5424,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">597</td>
+      <td class="lineno">605</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/4</summary>
@@ -5370,7 +5441,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">598</td>
+      <td class="lineno">606</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -5385,7 +5456,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">599</td>
+      <td class="lineno">607</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/4</summary>
@@ -5402,7 +5473,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">600</td>
+      <td class="lineno">608</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -5413,50 +5484,19 @@
         </details>
       </td>
       <td class="linecount coveredLine">16</td>
-      <td class="src coveredLine">  if(struct_ctor(v) /* &amp;&amp; !GET_FLAG(decl-&gt;td, ref) */) {</td>
+      <td class="src coveredLine">  if(struct_ctor(v) /* &amp;&amp; !GET_FLAG(decl-&gt;td, ref) */)</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">601</td>
+      <td class="lineno">609</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">    emit_ext_ctor(emit, v-&gt;type-&gt;nspc-&gt;pre_ctor);</td>
+      <td class="src coveredLine">    emit_struct_decl_finish(emit, v-&gt;type, emit_addr);</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">602</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 1 times.</div>
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">    if(!emit_addr)</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">603</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">      emit_struct_decl_finish(emit, v);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">604</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  }</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">605</td>
+      <td class="lineno">610</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">16</td>
@@ -5464,7 +5504,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">606</td>
+      <td class="lineno">611</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -5472,7 +5512,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">607</td>
+      <td class="lineno">612</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -5480,7 +5520,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">608</td>
+      <td class="lineno">613</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">32</td>
@@ -5488,7 +5528,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">609</td>
+      <td class="lineno">614</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">32</td>
@@ -5496,7 +5536,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">610</td>
+      <td class="lineno">615</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">32</td>
@@ -5504,7 +5544,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">611</td>
+      <td class="lineno">616</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -5519,7 +5559,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">612</td>
+      <td class="lineno">617</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">19</td>
@@ -5527,7 +5567,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">613</td>
+      <td class="lineno">618</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">32</td>
@@ -5535,7 +5575,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">614</td>
+      <td class="lineno">619</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -5543,7 +5583,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">615</td>
+      <td class="lineno">620</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -5551,7 +5591,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">616</td>
+      <td class="lineno">621</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">601</td>
@@ -5559,7 +5599,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">617</td>
+      <td class="lineno">622</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -5567,7 +5607,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">618</td>
+      <td class="lineno">623</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">601</td>
@@ -5575,7 +5615,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">619</td>
+      <td class="lineno">624</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">601</td>
@@ -5583,7 +5623,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">620</td>
+      <td class="lineno">625</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">601</td>
@@ -5591,26 +5631,24 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">621</td>
+      <td class="lineno">626</td>
       <td class="linebranch">
         <details class="linebranchDetails">
-        <summary class="linebranchSummary">6/6</summary>
+        <summary class="linebranchSummary">4/4</summary>
         <div class="linebranchContents">
           <div class="takenBranch">&check; Branch 0 taken 34 times.</div>
           <div class="takenBranch">&check; Branch 1 taken 567 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 7 times.</div>
-          <div class="takenBranch">&check; Branch 3 taken 27 times.</div>
-          <div class="takenBranch">&check; Branch 4 taken 2 times.</div>
-          <div class="takenBranch">&check; Branch 5 taken 572 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 27 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 7 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">601</td>
-      <td class="src coveredLine">  const m_bool is_array = (array &amp;&amp; array-&gt;exp) || GET_FLAG(decl-&gt;td, force);</td>
+      <td class="src coveredLine">  const m_bool is_array = (array &amp;&amp; array-&gt;exp) /*|| GET_FLAG(decl-&gt;td, force)*/;</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">622</td>
+      <td class="lineno">627</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">601</td>
@@ -5618,7 +5656,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">623</td>
+      <td class="lineno">628</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">5/6</summary>
@@ -5637,16 +5675,16 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">624</td>
+      <td class="lineno">629</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">7/8</summary>
         <div class="linebranchContents">
           <div class="takenBranch">&check; Branch 0 taken 239 times.</div>
           <div class="takenBranch">&check; Branch 1 taken 362 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 210 times.</div>
-          <div class="takenBranch">&check; Branch 3 taken 29 times.</div>
-          <div class="takenBranch">&check; Branch 4 taken 160 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 212 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 27 times.</div>
+          <div class="takenBranch">&check; Branch 4 taken 162 times.</div>
           <div class="takenBranch">&check; Branch 5 taken 50 times.</div>
           <div class="takenBranch">&check; Branch 6 taken 189 times.</div>
           <div class="notTakenBranch">&cross; Branch 7 not taken.</div>
@@ -5658,7 +5696,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">625</td>
+      <td class="lineno">630</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -5673,7 +5711,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">626</td>
+      <td class="lineno">631</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">601</td>
@@ -5681,7 +5719,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">627</td>
+      <td class="lineno">632</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -5696,7 +5734,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">628</td>
+      <td class="lineno">633</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">478</td>
@@ -5704,7 +5742,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">629</td>
+      <td class="lineno">634</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">478</td>
@@ -5712,7 +5750,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">630</td>
+      <td class="lineno">635</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -5727,7 +5765,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">631</td>
+      <td class="lineno">636</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">43</td>
@@ -5735,7 +5773,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">632</td>
+      <td class="lineno">637</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">43</td>
@@ -5743,7 +5781,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">633</td>
+      <td class="lineno">638</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -5751,7 +5789,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">634</td>
+      <td class="lineno">639</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -5759,7 +5797,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">635</td>
+      <td class="lineno">640</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/4</summary>
@@ -5776,7 +5814,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">636</td>
+      <td class="lineno">641</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">5/6</summary>
@@ -5795,7 +5833,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">637</td>
+      <td class="lineno">642</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">601</td>
@@ -5803,16 +5841,16 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">638</td>
+      <td class="lineno">643</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">7/8</summary>
         <div class="linebranchContents">
           <div class="takenBranch">&check; Branch 0 taken 239 times.</div>
           <div class="takenBranch">&check; Branch 1 taken 362 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 210 times.</div>
-          <div class="takenBranch">&check; Branch 3 taken 29 times.</div>
-          <div class="takenBranch">&check; Branch 4 taken 160 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 212 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 27 times.</div>
+          <div class="takenBranch">&check; Branch 4 taken 162 times.</div>
           <div class="takenBranch">&check; Branch 5 taken 50 times.</div>
           <div class="takenBranch">&check; Branch 6 taken 189 times.</div>
           <div class="notTakenBranch">&cross; Branch 7 not taken.</div>
@@ -5824,7 +5862,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">639</td>
+      <td class="lineno">644</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">189</td>
@@ -5832,7 +5870,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">640</td>
+      <td class="lineno">645</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -5847,7 +5885,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">641</td>
+      <td class="lineno">646</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">4/4</summary>
@@ -5864,7 +5902,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">642</td>
+      <td class="lineno">647</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">2</td>
@@ -5872,65 +5910,11 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">643</td>
+      <td class="lineno">648</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">2</td>
       <td class="src coveredLine">      push-&gt;m_val = -(missing_depth) * SZ_INT;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">644</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">    }</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">645</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 11 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 401 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">412</td>
-      <td class="src coveredLine">  } else if(struct_ctor(v) /* &amp;&amp; !GET_FLAG(decl-&gt;td, ref) */) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">646</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">11</td>
-      <td class="src coveredLine">    emit_ext_ctor(emit, v-&gt;type-&gt;nspc-&gt;pre_ctor);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">647</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 11 times.</div>
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">11</td>
-      <td class="src coveredLine">    if(!emit_addr)</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">648</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">11</td>
-      <td class="src coveredLine">      emit_struct_decl_finish(emit, v);</td>
     </tr>
 
     <tr class="source-line">
@@ -5944,13 +5928,36 @@
     <tr class="source-line">
       <td class="lineno">650</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 1 taken 11 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 401 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">412</td>
+      <td class="src coveredLine">  } else if(struct_ctor(v) /* &amp;&amp; !GET_FLAG(decl-&gt;td, ref) */)</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">651</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">11</td>
+      <td class="src coveredLine">    emit_struct_decl_finish(emit, v-&gt;type, emit_addr);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">652</td>
+      <td class="linebranch">
       </td>
       <td class="linecount coveredLine">601</td>
       <td class="src coveredLine">  return GW_OK;</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">651</td>
+      <td class="lineno">653</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -5958,7 +5965,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">652</td>
+      <td class="lineno">654</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -5966,7 +5973,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">653</td>
+      <td class="lineno">655</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">5</td>
@@ -5974,7 +5981,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">654</td>
+      <td class="lineno">656</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -5982,7 +5989,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">655</td>
+      <td class="lineno">657</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">5</td>
@@ -5990,7 +5997,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">656</td>
+      <td class="lineno">658</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">5</td>
@@ -5998,7 +6005,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">657</td>
+      <td class="lineno">659</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">5</td>
@@ -6006,7 +6013,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">658</td>
+      <td class="lineno">660</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/4</summary>
@@ -6023,7 +6030,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">659</td>
+      <td class="lineno">661</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">5</td>
@@ -6031,7 +6038,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">660</td>
+      <td class="lineno">662</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/6</summary>
@@ -6050,7 +6057,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">661</td>
+      <td class="lineno">663</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">5/8</summary>
@@ -6071,7 +6078,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">662</td>
+      <td class="lineno">664</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -6086,7 +6093,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">663</td>
+      <td class="lineno">665</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -6101,7 +6108,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">664</td>
+      <td class="lineno">666</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">5</td>
@@ -6109,7 +6116,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">665</td>
+      <td class="lineno">667</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">5</td>
@@ -6117,7 +6124,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">666</td>
+      <td class="lineno">668</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">5</td>
@@ -6125,7 +6132,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">667</td>
+      <td class="lineno">669</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">5</td>
@@ -6133,7 +6140,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">668</td>
+      <td class="lineno">670</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">5/8</summary>
@@ -6154,7 +6161,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">669</td>
+      <td class="lineno">671</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
@@ -6162,7 +6169,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">670</td>
+      <td class="lineno">672</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -6177,7 +6184,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">671</td>
+      <td class="lineno">673</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/4</summary>
@@ -6194,7 +6201,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">672</td>
+      <td class="lineno">674</td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine"></td>
@@ -6202,7 +6209,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">673</td>
+      <td class="lineno">675</td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine"></td>
@@ -6210,7 +6217,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">674</td>
+      <td class="lineno">676</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -6218,7 +6225,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">675</td>
+      <td class="lineno">677</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
@@ -6226,7 +6233,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">676</td>
+      <td class="lineno">678</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1</td>
@@ -6234,7 +6241,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">677</td>
+      <td class="lineno">679</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -6245,30 +6252,7 @@
         </details>
       </td>
       <td class="linecount coveredLine">4</td>
-      <td class="src coveredLine">  } else if(struct_ctor(v) /* &amp;&amp; !GET_FLAG(decl-&gt;td, ref) */) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">678</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">    emit_ext_ctor(emit, v-&gt;type-&gt;nspc-&gt;pre_ctor);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">679</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 2 times.</div>
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">    if(!emit_addr)</td>
+      <td class="src coveredLine">  } else if(struct_ctor(v) /* &amp;&amp; !GET_FLAG(decl-&gt;td, ref) */)</td>
     </tr>
 
     <tr class="source-line">
@@ -6276,19 +6260,11 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">      emit_struct_decl_finish(emit, v);</td>
+      <td class="src coveredLine">    emit_struct_decl_finish(emit, v-&gt;type, emit_addr);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">681</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  }</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">682</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">5</td>
@@ -6296,11 +6272,19 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">683</td>
+      <td class="lineno">682</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
       <td class="src ">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">683</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
@@ -6308,7 +6292,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src ">ANN static m_bool emit_class_def(const Emitter, const Class_Def);</td>
     </tr>
 
     <tr class="source-line">
@@ -6316,7 +6300,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">ANN static m_bool emit_class_def(const Emitter, const Class_Def);</td>
+      <td class="src ">ANN static m_bool emit_cdef(const Emitter, const Class_Def);</td>
     </tr>
 
     <tr class="source-line">
@@ -6324,19 +6308,11 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">ANN static m_bool emit_cdef(const Emitter, const Class_Def);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">687</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
       <td class="src "></td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">688</td>
+      <td class="lineno">687</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">27</td>
@@ -6344,7 +6320,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">689</td>
+      <td class="lineno">688</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">54</td>
@@ -6352,7 +6328,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">690</td>
+      <td class="lineno">689</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">27</td>
@@ -6360,7 +6336,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">691</td>
+      <td class="lineno">690</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">27</td>
@@ -6368,7 +6344,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">692</td>
+      <td class="lineno">691</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -6376,7 +6352,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">693</td>
+      <td class="lineno">692</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -6384,7 +6360,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">694</td>
+      <td class="lineno">693</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">615</td>
@@ -6392,7 +6368,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">695</td>
+      <td class="lineno">694</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">615</td>
@@ -6400,7 +6376,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">696</td>
+      <td class="lineno">695</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">615</td>
@@ -6408,7 +6384,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">697</td>
+      <td class="lineno">696</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/4</summary>
@@ -6425,7 +6401,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">698</td>
+      <td class="lineno">697</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">615</td>
@@ -6433,7 +6409,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">699</td>
+      <td class="lineno">698</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -6441,7 +6417,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">700</td>
+      <td class="lineno">699</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">622</td>
@@ -6449,7 +6425,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">701</td>
+      <td class="lineno">700</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -6464,7 +6440,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">702</td>
+      <td class="lineno">701</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -6479,7 +6455,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">703</td>
+      <td class="lineno">702</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -6494,7 +6470,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">704</td>
+      <td class="lineno">703</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -6509,7 +6485,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">705</td>
+      <td class="lineno">704</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -6517,7 +6493,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">706</td>
+      <td class="lineno">705</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -6532,7 +6508,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">707</td>
+      <td class="lineno">706</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -6547,7 +6523,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">708</td>
+      <td class="lineno">707</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">14</td>
@@ -6555,7 +6531,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">709</td>
+      <td class="lineno">708</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -6570,7 +6546,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">710</td>
+      <td class="lineno">709</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">615</td>
@@ -6578,7 +6554,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">711</td>
+      <td class="lineno">710</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -6586,7 +6562,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">712</td>
+      <td class="lineno">711</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -6594,7 +6570,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">713</td>
+      <td class="lineno">712</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">615</td>
@@ -6602,7 +6578,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">714</td>
+      <td class="lineno">713</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">615</td>
@@ -6610,7 +6586,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">715</td>
+      <td class="lineno">714</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">4/4</summary>
@@ -6627,7 +6603,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">716</td>
+      <td class="lineno">715</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -6642,7 +6618,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">717</td>
+      <td class="lineno">716</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">615</td>
@@ -6650,7 +6626,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">718</td>
+      <td class="lineno">717</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -6665,7 +6641,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">719</td>
+      <td class="lineno">718</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">615</td>
@@ -6673,7 +6649,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">720</td>
+      <td class="lineno">719</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -6688,7 +6664,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">721</td>
+      <td class="lineno">720</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">5</td>
@@ -6696,7 +6672,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">722</td>
+      <td class="lineno">721</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">615</td>
@@ -6704,7 +6680,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">723</td>
+      <td class="lineno">722</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -6712,7 +6688,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">724</td>
+      <td class="lineno">723</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -6720,7 +6696,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">725</td>
+      <td class="lineno">724</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">18</td>
@@ -6728,7 +6704,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">726</td>
+      <td class="lineno">725</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">18</td>
@@ -6736,7 +6712,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">727</td>
+      <td class="lineno">726</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">18</td>
@@ -6744,7 +6720,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">728</td>
+      <td class="lineno">727</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">18</td>
@@ -6752,7 +6728,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">729</td>
+      <td class="lineno">728</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -6767,7 +6743,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">730</td>
+      <td class="lineno">729</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -6782,7 +6758,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">731</td>
+      <td class="lineno">730</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">41</td>
@@ -6790,7 +6766,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">732</td>
+      <td class="lineno">731</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">41</td>
@@ -6798,7 +6774,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">733</td>
+      <td class="lineno">732</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -6806,7 +6782,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">734</td>
+      <td class="lineno">733</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">7</td>
@@ -6814,7 +6790,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">735</td>
+      <td class="lineno">734</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">48</td>
@@ -6822,7 +6798,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">736</td>
+      <td class="lineno">735</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -6830,7 +6806,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">737</td>
+      <td class="lineno">736</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">18</td>
@@ -6838,7 +6814,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">738</td>
+      <td class="lineno">737</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -6846,7 +6822,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">739</td>
+      <td class="lineno">738</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -6854,7 +6830,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">740</td>
+      <td class="lineno">739</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">18</td>
@@ -6862,7 +6838,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">741</td>
+      <td class="lineno">740</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">18</td>
@@ -6870,7 +6846,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">742</td>
+      <td class="lineno">741</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">18</td>
@@ -6878,7 +6854,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">743</td>
+      <td class="lineno">742</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -6893,7 +6869,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">744</td>
+      <td class="lineno">743</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">15</td>
@@ -6901,7 +6877,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">745</td>
+      <td class="lineno">744</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -6909,7 +6885,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">746</td>
+      <td class="lineno">745</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">3</td>
@@ -6917,7 +6893,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">747</td>
+      <td class="lineno">746</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">18</td>
@@ -6925,7 +6901,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">748</td>
+      <td class="lineno">747</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -6933,7 +6909,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">749</td>
+      <td class="lineno">748</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -6941,7 +6917,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">750</td>
+      <td class="lineno">749</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1247</td>
@@ -6949,7 +6925,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">751</td>
+      <td class="lineno">750</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1247</td>
@@ -6957,7 +6933,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">752</td>
+      <td class="lineno">751</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1317</td>
@@ -6965,7 +6941,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">753</td>
+      <td class="lineno">752</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -6980,7 +6956,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">754</td>
+      <td class="lineno">753</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1247</td>
@@ -6988,7 +6964,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">755</td>
+      <td class="lineno">754</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -6996,7 +6972,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">756</td>
+      <td class="lineno">755</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -7004,7 +6980,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">757</td>
+      <td class="lineno">756</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -7012,7 +6988,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">758</td>
+      <td class="lineno">757</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">413</td>
@@ -7020,7 +6996,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">759</td>
+      <td class="lineno">758</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -7035,7 +7011,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">760</td>
+      <td class="lineno">759</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -7050,7 +7026,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">761</td>
+      <td class="lineno">760</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">197</td>
@@ -7058,7 +7034,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">762</td>
+      <td class="lineno">761</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -7066,7 +7042,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">763</td>
+      <td class="lineno">762</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/4</summary>
@@ -7083,7 +7059,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">764</td>
+      <td class="lineno">763</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">18</td>
@@ -7091,7 +7067,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">765</td>
+      <td class="lineno">764</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">413</td>
@@ -7099,7 +7075,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">766</td>
+      <td class="lineno">765</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -7107,7 +7083,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">767</td>
+      <td class="lineno">766</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -7115,7 +7091,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">768</td>
+      <td class="lineno">767</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">412</td>
@@ -7123,7 +7099,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">769</td>
+      <td class="lineno">768</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -7138,7 +7114,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">770</td>
+      <td class="lineno">769</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">412</td>
@@ -7146,7 +7122,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">771</td>
+      <td class="lineno">770</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -7154,7 +7130,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">772</td>
+      <td class="lineno">771</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -7162,7 +7138,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">773</td>
+      <td class="lineno">772</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">385</td>
@@ -7170,7 +7146,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">774</td>
+      <td class="lineno">773</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -7185,7 +7161,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">775</td>
+      <td class="lineno">774</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -7200,7 +7176,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">776</td>
+      <td class="lineno">775</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -7215,7 +7191,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">777</td>
+      <td class="lineno">776</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -7223,7 +7199,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">778</td>
+      <td class="lineno">777</td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine"></td>
@@ -7231,7 +7207,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">779</td>
+      <td class="lineno">778</td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine"></td>
@@ -7239,7 +7215,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">780</td>
+      <td class="lineno">779</td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine"></td>
@@ -7247,7 +7223,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">781</td>
+      <td class="lineno">780</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -7255,7 +7231,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">782</td>
+      <td class="lineno">781</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">385</td>
@@ -7263,7 +7239,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">783</td>
+      <td class="lineno">782</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -7278,7 +7254,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">784</td>
+      <td class="lineno">783</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">2</td>
@@ -7286,7 +7262,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">785</td>
+      <td class="lineno">784</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">2</td>
@@ -7294,7 +7270,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">786</td>
+      <td class="lineno">785</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">2</td>
@@ -7302,7 +7278,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">787</td>
+      <td class="lineno">786</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">2</td>
@@ -7310,7 +7286,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">788</td>
+      <td class="lineno">787</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/4</summary>
@@ -7327,7 +7303,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">789</td>
+      <td class="lineno">788</td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine"></td>
@@ -7335,7 +7311,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">790</td>
+      <td class="lineno">789</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">385</td>
@@ -7343,7 +7319,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">791</td>
+      <td class="lineno">790</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -7351,7 +7327,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">792</td>
+      <td class="lineno">791</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -7359,15 +7335,15 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">793</td>
+      <td class="lineno">792</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">465</td>
-      <td class="src coveredLine">ANN static m_uint get_decl_size(Var_Decl_List a) {</td>
+      <td class="src coveredLine">ANN static m_uint get_decl_size(Var_Decl_List a, uint emit_addr) {</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">794</td>
+      <td class="lineno">793</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">465</td>
@@ -7375,7 +7351,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">795</td>
+      <td class="lineno">794</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -7383,15 +7359,22 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">796</td>
+      <td class="lineno">795</td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 472 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+        </div>
+        </details>
       </td>
       <td class="linecount coveredLine">472</td>
-      <td class="src coveredLine">    size += a-&gt;self-&gt;value-&gt;type-&gt;size;</td>
+      <td class="src coveredLine">    size += !emit_addr ? a-&gt;self-&gt;value-&gt;type-&gt;size : SZ_INT;</td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">797</td>
+      <td class="lineno">796</td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -7406,7 +7389,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">798</td>
+      <td class="lineno">797</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">465</td>
@@ -7414,7 +7397,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">799</td>
+      <td class="lineno">798</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -7422,7 +7405,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">800</td>
+      <td class="lineno">799</td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -7430,11 +7413,19 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno">801</td>
+      <td class="lineno">800</td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">1923</td>
       <td class="src coveredLine">ANN static m_uint pop_exp_size(Exp e) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">801</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1923</td>
+      <td class="src coveredLine">  const uint emit_addr = exp_getvar(e);</td>
     </tr>
 
     <tr class="source-line">
@@ -7473,7 +7464,7 @@
         </details>
       </td>
       <td class="linecount coveredLine">1923</td>
-      <td class="src coveredLine">        get_decl_size(e-&gt;d.exp_decl.list) : e-&gt;info-&gt;type-&gt;size);</td>
+      <td class="src coveredLine">        get_decl_size(e-&gt;d.exp_decl.list, emit_addr) : e-&gt;info-&gt;type-&gt;size);</td>
     </tr>
 
     <tr class="source-line">
