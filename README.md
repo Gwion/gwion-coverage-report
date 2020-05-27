@@ -15,7 +15,7 @@ src/emit/escape.c                             52      52   100%
 src/emit/memoize.c                            34      34   100%   
 src/env/context.c                             26      26   100%   
 src/env/env.c                                 84      84   100%   
-src/env/env_utils.c                           76      76   100%   
+src/env/env_utils.c                           77      77   100%   
 src/env/envset.c                              44      41    93%   16,22,52
 src/env/func.c                                23      23   100%   
 src/env/nspc.c                                62      61    98%   34
@@ -40,7 +40,7 @@ src/lib/array.c                              333     314    94%   60,109,168-169
 src/lib/engine.c                             130     128    98%   30-31
 src/lib/event.c                               47      47   100%   
 src/lib/func.c                               255     207    81%   88,172,208-212,215-222,225-229,232-234,237-243,246-251,254-260,270-274
-src/lib/instr.c                               79      78    98%   75
+src/lib/instr.c                               81      79    97%   39,78
 src/lib/modules.c                            220     219    99%   252
 src/lib/object.c                              85      81    95%   114,120-122
 src/lib/object_op.c                          302     297    98%   57,362,396-398
@@ -53,7 +53,7 @@ src/lib/string.c                             440     170    38%   34,87-88,91-97
 src/lib/ugen.c                               234     234   100%   
 src/lib/vararg.c                             129     128    99%   51
 src/main.c                                    14      14   100%   
-src/parse/check.c                            996     963    96%   75,94,166,409-411,524,591,684,761-765,772,843-846,861,883,964-968,1061,1108-1109,1111-1112,1164,1390
+src/parse/check.c                           1000     967    96%   75,94,172,415-417,530,597,690,767-771,778,849-852,867,889,970-974,1067,1114-1115,1117-1118,1170,1396
 src/parse/did_you_mean.c                      42      42   100%   
 src/parse/func_operator.c                     12      12   100%   
 src/parse/operator.c                         223     220    98%   275,333,342
@@ -76,8 +76,8 @@ src/vm/vm_code.c                              48      48   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10061    9474    94%
+TOTAL                                      10068    9480    94%
 ------------------------------------------------------------------------------
-lines: 94.2% (9474 out of 10061)
-branches: 80.4% (4357 out of 5421)
+lines: 94.2% (9480 out of 10068)
+branches: 80.4% (4364 out of 5427)
 ```
