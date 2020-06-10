@@ -21,7 +21,7 @@
   </tr>
   <tr>
     <th scope="row">File:</th>
-    <td>src/main.c</td>
+    <td>src/emit/modify_instr.c</td>
   </tr>
   <tr>
     <th scope="row">Date:</th>
@@ -37,15 +37,15 @@
   </tr>
   <tr>
     <th scope="row">Lines:</th>
-    <td>14</td>
-    <td>14</td>
-    <td class="coverage-high">100.0%</td>
+    <td>10</td>
+    <td>23</td>
+    <td class="coverage-low">43.5%</td>
   </tr>
   <tr>
     <th scope="row">Branches:</th>
+    <td>0</td>
     <td>2</td>
-    <td>2</td>
-    <td class="coverage-high">100.0%</td>
+    <td class="coverage-none">0.0%</td>
   </tr>
 </table>
     </div>
@@ -67,7 +67,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &lt;signal.h&gt;</td>
+      <td class="src ">#include &#34;gwion_util.h&#34;</td>
     </tr>
 
     <tr class="source-line">
@@ -75,7 +75,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;gwion_util.h&#34;</td>
+      <td class="src ">#include &#34;gwion_ast.h&#34;</td>
     </tr>
 
     <tr class="source-line">
@@ -83,7 +83,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;gwion_ast.h&#34;</td>
+      <td class="src ">#include &#34;gwion_env.h&#34;</td>
     </tr>
 
     <tr class="source-line">
@@ -91,7 +91,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;gwion_env.h&#34;</td>
+      <td class="src ">#include &#34;vm.h&#34;</td>
     </tr>
 
     <tr class="source-line">
@@ -99,7 +99,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;vm.h&#34;</td>
+      <td class="src ">#include &#34;gwion.h&#34;</td>
     </tr>
 
     <tr class="source-line">
@@ -107,7 +107,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;gwion.h&#34;</td>
+      <td class="src ">#include &#34;instr.h&#34;</td>
     </tr>
 
     <tr class="source-line">
@@ -115,7 +115,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#include &#34;arg.h&#34;</td>
+      <td class="src ">#include &#34;emit.h&#34;</td>
     </tr>
 
     <tr class="source-line">
@@ -130,8 +130,8 @@
       <td class="lineno">9</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">static void sig(int unused NUSED) {</td>
+      <td class="linecount "></td>
+      <td class="src ">// should be in vm.h</td>
     </tr>
 
     <tr class="source-line">
@@ -139,7 +139,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#ifdef BUILD_ON_WINDOWS</td>
+      <td class="src ">#define VAL (*(m_uint*)(byte + SZ_INT))</td>
     </tr>
 
     <tr class="source-line">
@@ -147,7 +147,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">  exit(EXIT_FAILURE);</td>
+      <td class="src ">#define FVAL (*(m_float*)(byte + SZ_INT))</td>
     </tr>
 
     <tr class="source-line">
@@ -155,23 +155,23 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#else</td>
+      <td class="src ">#define VAL2 (*(m_uint*)(byte + SZ_INT*2))</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">13</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  pthread_kill(pthread_self(), SIGTERM);</td>
+      <td class="linecount "></td>
+      <td class="src ">/*</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">14</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  pthread_exit(NULL);</td>
+      <td class="linecount "></td>
+      <td class="src ">ANN static void set_recurs(m_bit *byte, m_bit **reg) {</td>
     </tr>
 
     <tr class="source-line">
@@ -179,7 +179,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#endif</td>
+      <td class="src ">  *(m_bit*)byte = eRegPushImm;</td>
     </tr>
 
     <tr class="source-line">
@@ -187,7 +187,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">}</td>
+      <td class="src ">  VAL = (*(m_uint*)(*reg-SZ_INT) = );</td>
     </tr>
 
     <tr class="source-line">
@@ -195,7 +195,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src ">  VAL2 = -SZ_INT;</td>
     </tr>
 
     <tr class="source-line">
@@ -203,7 +203,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">#ifdef __AFL_HAVE_MANUAL_CONTROL</td>
+      <td class="src ">// copy from vm_code</td>
     </tr>
 
     <tr class="source-line">
@@ -211,7 +211,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src ">}</td>
     </tr>
 
     <tr class="source-line">
@@ -219,7 +219,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">static void afl_run(const Gwion gwion) {</td>
+      <td class="src ">*/</td>
     </tr>
 
     <tr class="source-line">
@@ -227,39 +227,39 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">  gw_seed(gwion-&gt;vm-&gt;rand, 0);</td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">22</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">  __AFL_INIT();</td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">ANN static void set_func(m_bit *byte, m_bit **reg) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">23</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">  while (__AFL_LOOP(256)) {</td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">  *(m_bit*)byte = eRegSetImm;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">24</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">    FILE* f = fdopen(0, &#34;r&#34;);</td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">  VAL = (*(m_uint*)(*reg-SZ_INT) = (m_uint)((Func)VAL)-&gt;code);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">25</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">    push_global(gwion, &#34;[afl]&#34;);</td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">  VAL2 = -SZ_INT;</td>
     </tr>
 
     <tr class="source-line">
@@ -267,7 +267,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">    if(compile_file(gwion, &#34;afl&#34;, f))</td>
+      <td class="src ">// copy from vm_code</td>
     </tr>
 
     <tr class="source-line">
@@ -275,7 +275,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">      gwion_run(gwion);</td>
+      <td class="src ">}</td>
     </tr>
 
     <tr class="source-line">
@@ -283,47 +283,47 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">    pop_global(gwion);</td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">29</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">  }</td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">ANN static void set_ctor(m_bit *byte, m_bit *reg) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">30</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">  *(m_bit*)byte = eRegSetImm;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">31</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">  VAL = (*(m_uint*)(reg+SZ_INT) = (m_uint)((Type)VAL)-&gt;nspc-&gt;pre_ctor);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">32</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">#define gwion_run(a) { afl_run(a); return 0; }</td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">  VAL2 = SZ_INT;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">33</td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src ">#endif</td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine">}</td>
     </tr>
 
     <tr class="source-line">
@@ -338,95 +338,88 @@
       <td class="lineno">35</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">738</td>
-      <td class="src coveredLine">int main(int argc, char** argv) {</td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">ANN void emit_mod_recurs(const Emitter emit) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">36</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">738</td>
-      <td class="src coveredLine">  Arg arg = { .arg={.argc=argc, .argv=argv}, .loop=-1 };</td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">  const Instr instr = vector_size(&amp;emit-&gt;code-&gt;instr) ?</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">37</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">738</td>
-      <td class="src coveredLine">  signal(SIGINT, sig);</td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">    (Instr)vector_back(&amp;emit-&gt;code-&gt;instr) : emit_add_instr(emit, RegPushImm);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">38</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">738</td>
-      <td class="src coveredLine">  signal(SIGTERM, sig);</td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">  instr-&gt;opcode = ePushStaticCode;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">39</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">738</td>
-      <td class="src coveredLine">  struct Gwion_ gwion = {};</td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">  instr-&gt;m_val = 0;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">40</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">738</td>
-      <td class="src coveredLine">  const m_bool ini = gwion_ini(&amp;gwion, &amp;arg);</td>
+      <td class="linecount "></td>
+      <td class="src ">}</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">41</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">738</td>
-      <td class="src coveredLine">  arg_release(&amp;arg);</td>
+      <td class="linecount "></td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">42</td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 735 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 3 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">738</td>
-      <td class="src coveredLine">  if(ini &gt; 0)</td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">ANN void emit_mod_func(const Emitter emit, const Func f) {</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">43</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">    gwion_run(&amp;gwion);</td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">  const Instr instr = emit_add_instr(emit, PushStaticCode);</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">44</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">737</td>
-      <td class="src coveredLine">  gwion_end(&amp;gwion);</td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">  instr-&gt;m_val = (m_uint)f;</td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno">45</td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">737</td>
-      <td class="src coveredLine">  THREAD_RETURN(EXIT_SUCCESS);</td>
+      <td class="linecount uncoveredLine"></td>
+      <td class="src uncoveredLine">  instr-&gt;m_val2 = (m_uint)set_func;</td>
     </tr>
 
     <tr class="source-line">
@@ -435,6 +428,54 @@
       </td>
       <td class="linecount "></td>
       <td class="src ">}</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">47</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">48</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine">ANN void emit_mod_ctor(const Emitter emit, const Type t) {</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">49</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine">  const Instr instr = emit_add_instr(emit, PushStaticCode);</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">50</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine">  instr-&gt;m_val = (m_uint)t;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">51</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine">  instr-&gt;m_val2 = (m_uint)set_ctor;</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno">52</td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine">}</td>
     </tr>
 
   </table>
