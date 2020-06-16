@@ -14,7 +14,7 @@ src/emit/emitter.c                            28      28   100%
 src/emit/escape.c                             52      52   100%   
 src/emit/memoize.c                            34      34   100%   
 src/env/context.c                             26      26   100%   
-src/env/env.c                                 84      84   100%   
+src/env/env.c                                 85      85   100%   
 src/env/env_utils.c                           77      77   100%   
 src/env/envset.c                              44      41    93%   16,22,52
 src/env/func.c                                23      23   100%   
@@ -77,8 +77,8 @@ src/vm/vm_code.c                              45      45   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10130    9534    94%
+TOTAL                                      10131    9535    94%
 ------------------------------------------------------------------------------
-lines: 94.1% (9534 out of 10130)
-branches: 80.1% (4394 out of 5485)
+lines: 94.1% (9535 out of 10131)
+branches: 80.1% (4392 out of 5483)
 ```
