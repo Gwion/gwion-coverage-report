@@ -59,7 +59,7 @@ src/parse/did_you_mean.c                      42      42   100%
 src/parse/func_operator.c                     13      13   100%   
 src/parse/operator.c                         223     220    98%   275,333,342
 src/parse/scan0.c                            323     316    97%   122,202,211,246,317-319
-src/parse/scan1.c                            399     391    98%   53,84,123,331-332,343,506,544
+src/parse/scan1.c                            401     393    98%   53,84,125,333-334,345,508,546
 src/parse/scan2.c                            408     406    99%   378,576
 src/parse/scanx.c                             49      49   100%   
 src/parse/stage.c                             14      14   100%   
@@ -77,8 +77,8 @@ src/vm/vm_code.c                              45      45   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10160    9599    94%
+TOTAL                                      10162    9601    94%
 ------------------------------------------------------------------------------
-lines: 94.5% (9599 out of 10160)
-branches: 80.3% (4424 out of 5511)
+lines: 94.5% (9601 out of 10162)
+branches: 80.3% (4427 out of 5513)
 ```
