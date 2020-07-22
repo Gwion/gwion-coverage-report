@@ -1,1035 +1,1063 @@
-<!DOCTYPE html>
+
 <script type="text/javascript" src="../focus.js"></script><html>
 
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>Gwion coverage report</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="index.css">
-  </head>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Gwion coverage report</title>
+  <style media="screen" type="text/css">
 
-  <body>
-    <h1>Gwion coverage report</h1>
+    body
+    {
+      color: #000000;
+      background-color: #FFFFFF;
+    }
 
-    <hr/>
+    /* Link formats: use maroon w/underlines */
+    a:link
+    {
+      color: navy;
+      text-decoration: underline;
+    }
+    a:visited
+    {
+      color: maroon;
+      text-decoration: underline;
+    }
+    a:active
+    {
+      color: navy;
+      text-decoration: underline;
+    }
 
-    <div class="summary">
-<table class="legend">
-  <tr>
-    <th scope="row">Directory:</th>
-    <td>src/</td>
-  </tr>
-  <tr>
-    <th scope="row">File:</th>
-    <td>src/import/enum.c</td>
-  </tr>
-  <tr>
-    <th scope="row">Date:</th>
-    <td>2020-07-15 21:38:45</td>
-  </tr>
-</table>
-<table class="coverage">
-  <tr>
-    <th></th>
-    <th scope="col">Exec</th>
-    <th scope="col">Total</th>
-    <th scope="col">Coverage</th>
-  </tr>
-  <tr>
-    <th scope="row">Lines:</th>
-    <td>51</td>
-    <td>51</td>
-    <td class="coverage-high">100.0%</td>
-  </tr>
-  <tr>
-    <th scope="row">Branches:</th>
-    <td>23</td>
-    <td>30</td>
-    <td class="coverage-medium">76.7%</td>
-  </tr>
-</table>
-    </div>
+    /*** TD formats ***/
+    td
+    {
+      font-family: sans-serif;
+    }
+    td.title
+    {
+      text-align: center;
+      padding-bottom: 10px;
+      font-size: 20pt;
+      font-weight: bold;
+    }
 
-    <hr/>
+    /* TD Header Information */
+    td.headerName
+    {
+      text-align: right;
+      color: black;
+      padding-right: 6px;
+      font-weight: bold;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+    td.headerValue
+    {
+      text-align: left;
+      color: blue;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    td.headerTableEntry
+    {
+      text-align: right;
+      color: black;
+      font-weight: bold;
+      white-space: nowrap;
+      padding-left: 12px;
+      padding-right: 4px;
+      background-color: LightBlue;
+    }
+    td.headerValueLeg
+    {
+      text-align: left;
+      color: black;
+      font-size: 80%;
+      white-space: nowrap;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 2px;
+    }
 
-<div class="file-source">
-  <table>
+    /* Color of horizontal ruler */
+    td.hr
+    {
+      background-color: navy;
+      height:3px;
+    }
+    /* Footer format */
+    td.footer
+    {
+      text-align: center;
+      padding-top: 3px;
+      font-family: sans-serif;
+    }
+
+    /* Coverage Table */
+
+    td.coverTableHead
+    {
+      text-align: center;
+      color: white;
+      background-color: SteelBlue;
+      font-family: sans-serif;
+      font-size: 120%;
+      white-space: nowrap;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+    td.coverFile
+    {
+      text-align: left;
+      padding-left: 10px;
+      padding-right: 20px;
+      color: black;
+      background-color: LightBlue;
+      font-family: monospace;
+      font-weight: bold;
+      font-size: 110%;
+    }
+    td.coverBar
+    {
+      padding-left: 10px;
+      padding-right: 10px;
+      background-color: LightBlue;
+    }
+    td.coverBarOutline
+    {
+      background-color: white;
+    }
+    td.coverValue
+    {
+      padding-top: 2px;
+      text-align: right;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-family: sans-serif;
+      white-space: nowrap;
+      font-weight: bold;
+    }
+
+    /* Link Details */
+    a.detail:link
+    {
+      color: #B8D0FF;
+      font-size:80%;
+    }
+    a.detail:visited
+    {
+      color: #B8D0FF;
+      font-size:80%;
+    }
+    a.detail:active
+    {
+      color: #FFFFFF;
+      font-size:80%;
+    }
+
+    .graphcont{
+        color:#000;
+        font-weight:700;
+        float:left
+    }
+
+    .graph{
+        float:left;
+        background-color: white;
+        position:relative;
+        width:280px;
+        padding:0
+    }
+
+    .graph .bar{
+        display:block;
+        position:relative;
+        border:black 1px solid;
+        text-align:center;
+        color:#fff;
+        height:10px;
+        font-family:Arial,Helvetica,sans-serif;
+        font-size:12px;
+        line-height:1.9em
+    }
+
+    .graph .bar span{
+        position:absolute;
+        left:1em
+    }
+
+    td.coveredLine,
+    span.coveredLine
+    {
+        background-color: LightGreen!important;
+    }
+
+    td.uncoveredLine,
+    span.uncoveredLine
+    {
+        background-color: LightPink!important;
+    }
+
+    .linebranch, .linecount
+    {
+        border-right: 1px gray solid;
+        background-color: lightgray;
+    }
+
+    span.takenBranch
+    {
+        color: Green!important;
+        cursor: help;
+    }
+
+    span.notTakenBranch
+    {
+        color: Red!important;
+        cursor: help;
+    }
+
+    .src
+    {
+        padding-left: 12px;
+    }
+
+    .srcHeader,
+    span.takenBranch,
+    span.notTakenBranch
+    {
+        font-family: monospace;
+        font-weight: bold;
+    }
+
+    pre
+    {
+        height : 15px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .lineno
+    {
+        background-color: #EFE383;
+        border-right: 1px solid #BBB15F;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr><td class="title">GCC Code Coverage Report</td></tr>
+    <tr><td class="hr"></td></tr>
+
     <tr>
-      <td align="right" class="srcHeader">Line</td>
-      <td align="right" class="srcHeader">Branch</td>
-      <td align="right" class="srcHeader">Exec</td>
-      <td align="left" class="srcHeader src">Source</td>
+      <td width="100%">
+        <table cellpadding="1" border="0" width="100%">
+          <tr>
+            <td width="10%" class="headerName">Directory:</td>
+            <td width="35%" class="headerValue">src/</td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerValue" style="text-align:right;">Exec</td>
+            <td width="10%" class="headerValue" style="text-align:right;">Total</td>
+            <td width="15%" class="headerValue" style="text-align:right;">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerName">File:</td>
+            <td class="headerValue">src/import/enum.c</td>
+            <td></td>
+            <td class="headerName">Lines:</td>
+            <td class="headerTableEntry">51</td>
+            <td class="headerTableEntry">51</td>
+            <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerName">Date:</td>
+            <td class="headerValue">2020-07-22 15:54:32</td>
+            <td></td>
+            <td class="headerName">Branches:</td>
+            <td class="headerTableEntry">23</td>
+            <td class="headerTableEntry">30</td>
+            <td class="headerTableEntry" style="background-color:#FFFF55">76.7 %</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="hr"></td></tr>
+  </table>
+
+  <br>
+  <table cellspacing="0" cellpadding="1">
+    <tr>
+      <td width="5%" align="right" class="srcHeader">Line</td>
+      <td width="5%" align="right" class="srcHeader">Branch</td>
+      <td width="5%" align="right" class="srcHeader">Exec</td>
+      <td width="75%" align="left" class="srcHeader src">Source</td>
+    </tr>
+
+
+    <tr>
+    <td align="right" class="lineno"><pre>1</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//! \file enum.c</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>2</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//! \brief enumerations utils</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>3</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>4</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "gwion_util.h"</pre></td>
     </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>5</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "gwion_ast.h"</pre></td>
+    </tr>
 
+    <tr>
+    <td align="right" class="lineno"><pre>6</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "gwion_env.h"</pre></td>
+    </tr>
 
-    <tr class="source-line">
-      <td class="lineno">1</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//! \file enum.c</td>
+    <tr>
+    <td align="right" class="lineno"><pre>7</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "vm.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">2</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//! \brief enumerations utils</td>
+    <tr>
+    <td align="right" class="lineno"><pre>8</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "traverse.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">3</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>9</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "instr.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">4</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;gwion_util.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>10</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "object.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">5</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;gwion_ast.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>11</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "emit.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">6</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;gwion_env.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>12</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "gwion.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">7</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;vm.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>13</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "operator.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">8</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;traverse.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>14</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "import.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">9</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;instr.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>15</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "gwi.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">10</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;object.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>16</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">11</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;emit.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>17</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//! start an enum definition</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">12</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;gwion.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>18</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//! \arg the importer</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">13</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;operator.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>19</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//! \arg string defining a primitive type</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">14</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;import.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>20</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//! why is return type m_int ?</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">15</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;gwi.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>21</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>737</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN2(1) m_int gwi_enum_ini(const Gwi gwi, const m_str type) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">16</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>22</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 2 taken 736 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>737</pre></td>
+    <td align="left" class="src coveredLine"><pre>  CHECK_BB(ck_ini(gwi, ck_edef))</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">17</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//! start an enum definition</td>
+    <tr>
+    <td align="right" class="lineno"><pre>23</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 732 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>736</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(type)</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">18</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//! \arg the importer</td>
+    <tr>
+    <td align="right" class="lineno"><pre>24</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//    CHECK_OB((gwi->ck->sym = str2sym(gwi, type)))</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">19</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//! \arg string defining a primitive type</td>
+    <tr>
+    <td align="right" class="lineno"><pre>25</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 732 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>732</pre></td>
+    <td align="left" class="src coveredLine"><pre>    CHECK_OB((gwi->ck->xid = str2sym(gwi, type)))</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">20</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//! why is return type m_int ?</td>
+    <tr>
+    <td align="right" class="lineno"><pre>26</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>736</pre></td>
+    <td align="left" class="src coveredLine"><pre>  vector_init(&amp;gwi->ck->v);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">21</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">738</td>
-      <td class="src coveredLine">ANN2(1) m_int gwi_enum_ini(const Gwi gwi, const m_str type) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">22</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 1 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 737 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">738</td>
-      <td class="src coveredLine">  CHECK_BB(ck_ini(gwi, ck_edef))</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">23</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 733 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 4 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">737</td>
-      <td class="src coveredLine">  if(type)</td>
+    <tr>
+    <td align="right" class="lineno"><pre>27</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>736</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">24</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//    CHECK_OB((gwi-&gt;ck-&gt;sym = str2sym(gwi, type)))</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">25</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-          <div class="takenBranch">&check; Branch 2 taken 733 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">733</td>
-      <td class="src coveredLine">    CHECK_OB((gwi-&gt;ck-&gt;xid = str2sym(gwi, type)))</td>
+    <tr>
+    <td align="right" class="lineno"><pre>28</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">26</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">737</td>
-      <td class="src coveredLine">  vector_init(&amp;gwi-&gt;ck-&gt;v);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>29</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">27</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">737</td>
-      <td class="src coveredLine">  return GW_OK;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>30</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// adds the id_list to the enum</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">28</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>31</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// change that algo?</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">29</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>32</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1501</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static void add2list(struct ImportCK* ck, const ID_List list) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">30</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">// adds the id_list to the enum</td>
+    <tr>
+    <td align="right" class="lineno"><pre>33</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 736 times">&check;</span><span class="takenBranch" title="Branch 1 taken 765 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1501</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(!ck->tmpl)</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">31</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">// change that algo?</td>
+    <tr>
+    <td align="right" class="lineno"><pre>34</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>736</pre></td>
+    <td align="left" class="src coveredLine"><pre>    ck->tmpl = list;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">32</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1503</td>
-      <td class="src coveredLine">ANN static void add2list(struct ImportCK* ck, const ID_List list) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">33</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 737 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 766 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">1503</td>
-      <td class="src coveredLine">  if(!ck-&gt;tmpl)</td>
+    <tr>
+    <td align="right" class="lineno"><pre>35</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  else</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">34</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">737</td>
-      <td class="src coveredLine">    ck-&gt;tmpl = list;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>36</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>765</pre></td>
+    <td align="left" class="src coveredLine"><pre>    ck->curr->next = list;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">35</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  else</td>
+    <tr>
+    <td align="right" class="lineno"><pre>37</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1501</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ck->curr = list;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">36</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">766</td>
-      <td class="src coveredLine">    ck-&gt;curr-&gt;next = list;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>38</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1501</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">37</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1503</td>
-      <td class="src coveredLine">  ck-&gt;curr = list;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>39</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>/*</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">38</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1503</td>
-      <td class="src coveredLine">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>40</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>void Append(DL_Enum* d, const ID_List list) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">39</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">/*</td>
+    <tr>
+    <td align="right" class="lineno"><pre>41</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  List* next = &amp;d->base;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">40</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">void Append(DL_Enum* d, const ID_List list) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>42</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  while (*next != NULL) next = &amp;(*next)->Next;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">41</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  List* next = &amp;d-&gt;base;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>43</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  *next = list;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">42</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  while (*next != NULL) next = &amp;(*next)-&gt;Next;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>44</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  next->next = NULL;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">43</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  *next = list;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>45</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">44</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  next-&gt;next = NULL;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>46</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>*/</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">45</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>47</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//! add an enum entry</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">46</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">*/</td>
+    <tr>
+    <td align="right" class="lineno"><pre>48</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//! \arg the importer</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">47</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//! add an enum entry</td>
+    <tr>
+    <td align="right" class="lineno"><pre>49</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//! \arg name of the entry</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">48</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//! \arg the importer</td>
+    <tr>
+    <td align="right" class="lineno"><pre>50</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//! TODO: change return type to m_bool</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">49</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//! \arg name of the entry</td>
+    <tr>
+    <td align="right" class="lineno"><pre>51</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1502</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN m_int gwi_enum_add(const Gwi gwi, const m_str name, const m_uint i) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">50</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//! TODO: change return type to m_bool</td>
+    <tr>
+    <td align="right" class="lineno"><pre>52</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1501 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1502</pre></td>
+    <td align="left" class="src coveredLine"><pre>  CHECK_BB(ck_ok(gwi, ck_edef))</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">51</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1504</td>
-      <td class="src coveredLine">ANN m_int gwi_enum_add(const Gwi gwi, const m_str name, const m_uint i) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">52</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 1 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 1503 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">1504</td>
-      <td class="src coveredLine">  CHECK_BB(ck_ok(gwi, ck_edef))</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">53</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-          <div class="takenBranch">&check; Branch 2 taken 1503 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">1503</td>
-      <td class="src coveredLine">  DECL_OB(const ID_List, list, = str2symlist(gwi, name))</td>
+    <tr>
+    <td align="right" class="lineno"><pre>53</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 1501 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1501</pre></td>
+    <td align="left" class="src coveredLine"><pre>  DECL_OB(const ID_List, list, = str2symlist(gwi, name))</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">54</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1503</td>
-      <td class="src coveredLine">  add2list(gwi-&gt;ck, list);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>54</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1501</pre></td>
+    <td align="left" class="src coveredLine"><pre>  add2list(gwi->ck, list);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">55</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1503</td>
-      <td class="src coveredLine">  ALLOC_PTR(gwi-&gt;gwion-&gt;mp, addr, m_int, i);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>55</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1501</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ALLOC_PTR(gwi->gwion->mp, addr, m_int, i);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">56</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1503</td>
-      <td class="src coveredLine">  vector_add(&amp;gwi-&gt;ck-&gt;v, (vtype)addr);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>56</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1501</pre></td>
+    <td align="left" class="src coveredLine"><pre>  vector_add(&amp;gwi->ck->v, (vtype)addr);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">57</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1503</td>
-      <td class="src coveredLine">  return GW_OK;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>57</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1501</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">58</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>58</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">59</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>59</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">60</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//! set enum values</td>
+    <tr>
+    <td align="right" class="lineno"><pre>60</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//! set enum values</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">61</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//! \arg the importer</td>
+    <tr>
+    <td align="right" class="lineno"><pre>61</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//! \arg the importer</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">62</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//! \arg a vector of values</td>
+    <tr>
+    <td align="right" class="lineno"><pre>62</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//! \arg a vector of values</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">63</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//! \note [internal]</td>
+    <tr>
+    <td align="right" class="lineno"><pre>63</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//! \note [internal]</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">64</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">736</td>
-      <td class="src coveredLine">ANN static void import_enum_end(const Gwi gwi, const Vector v) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>64</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>735</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static void import_enum_end(const Gwi gwi, const Vector v) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">65</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">736</td>
-      <td class="src coveredLine">  ImportCK *ck = gwi-&gt;ck;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">66</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 1501 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 736 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">2237</td>
-      <td class="src coveredLine">  for(m_uint i = 0; i &lt; vector_size(v); i++) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>65</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>735</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ImportCK *ck = gwi->ck;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">67</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1501</td>
-      <td class="src coveredLine">    const Value value = (Value)vector_at(v, i);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>66</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1499 times">&check;</span><span class="takenBranch" title="Branch 2 taken 735 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>2234</pre></td>
+    <td align="left" class="src coveredLine"><pre>  for(m_uint i = 0; i &lt; vector_size(v); i++) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">68</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1501</td>
-      <td class="src coveredLine">    const m_uint addr = vector_at(&amp;ck-&gt;v, i);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>67</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1499</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const Value value = (Value)vector_at(v, i);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">69</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1501</td>
-      <td class="src coveredLine">    SET_FLAG(value, builtin);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>68</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1499</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const m_uint addr = vector_at(&amp;ck->v, i);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">70</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//    ADD_REF(value-&gt;type); // what ?</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">71</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 1481 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 20 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">1501</td>
-      <td class="src coveredLine">    if(!gwi-&gt;gwion-&gt;env-&gt;class_def)</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">72</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 1481 times.</div>
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">1481</td>
-      <td class="src coveredLine">      value-&gt;d.ptr = (m_uint*)(addr ? addr : i);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>69</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1499</pre></td>
+    <td align="left" class="src coveredLine"><pre>    SET_FLAG(value, builtin);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">73</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">    else</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">74</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 20 times.</div>
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">20</td>
-      <td class="src coveredLine">      value-&gt;d.ptr = (m_uint*)(addr ? *(m_uint*)addr : i);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>70</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//    ADD_REF(value->type); // what ?</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">75</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  }</td>
+    <tr>
+    <td align="right" class="lineno"><pre>71</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1479 times">&check;</span><span class="takenBranch" title="Branch 1 taken 20 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1499</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if(!gwi->gwion->env->class_def)</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">76</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  // better clean ?</td>
+    <tr>
+    <td align="right" class="lineno"><pre>72</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1479 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1479</pre></td>
+    <td align="left" class="src coveredLine"><pre>      value->d.ptr = (m_uint*)(addr ? addr : i);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">77</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">736</td>
-      <td class="src coveredLine">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>73</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    else</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">78</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>74</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 20 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>20</pre></td>
+    <td align="left" class="src coveredLine"><pre>      value->d.ptr = (m_uint*)(addr ? *(m_uint*)addr : i);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">79</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//! finish enum import</td>
+    <tr>
+    <td align="right" class="lineno"><pre>75</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">80</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//! \arg the importer</td>
+    <tr>
+    <td align="right" class="lineno"><pre>76</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // better clean ?</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">81</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">//! TODO: check what happens in inside template class</td>
+    <tr>
+    <td align="right" class="lineno"><pre>77</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>735</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">82</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">736</td>
-      <td class="src coveredLine">ANN Type gwi_enum_end(const Gwi gwi) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">83</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-          <div class="takenBranch">&check; Branch 2 taken 736 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">736</td>
-      <td class="src coveredLine">  CHECK_BO(ck_ok(gwi, ck_edef))</td>
+    <tr>
+    <td align="right" class="lineno"><pre>78</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">84</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">736</td>
-      <td class="src coveredLine">  const Gwion gwion = gwi-&gt;gwion;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>79</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//! finish enum import</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">85</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2208</td>
-      <td class="src coveredLine">  const Enum_Def edef  = new_enum_def(gwion-&gt;mp, gwi-&gt;ck-&gt;tmpl,</td>
+    <tr>
+    <td align="right" class="lineno"><pre>80</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//! \arg the importer</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">86</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1472</td>
-      <td class="src coveredLine">      gwi-&gt;ck-&gt;xid, loc(gwi));</td>
+    <tr>
+    <td align="right" class="lineno"><pre>81</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//! TODO: check what happens in inside template class</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">87</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">736</td>
-      <td class="src coveredLine">  gwi-&gt;ck-&gt;tmpl = NULL;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>82</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>735</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN Type gwi_enum_end(const Gwi gwi) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">88</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">736</td>
-      <td class="src coveredLine">  const m_bool ret = traverse_enum_def(gwion-&gt;env, edef);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>83</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 735 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>735</pre></td>
+    <td align="left" class="src coveredLine"><pre>  CHECK_BO(ck_ok(gwi, ck_edef))</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">89</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">736</td>
-      <td class="src coveredLine">  import_enum_end(gwi, &amp;edef-&gt;values);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">90</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 735 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 1 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">736</td>
-      <td class="src coveredLine">  const Type t = ret &gt; 0 ? edef-&gt;t : NULL;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>84</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>735</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Gwion gwion = gwi->gwion;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">91</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">736</td>
-      <td class="src coveredLine">  free_enum_def(gwion-&gt;mp, edef);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>85</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2205</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Enum_Def edef  = new_enum_def(gwion->mp, gwi->ck->tmpl,</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">92</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">736</td>
-      <td class="src coveredLine">  vector_release(&amp;gwi-&gt;ck-&gt;v);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>86</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1470</pre></td>
+    <td align="left" class="src coveredLine"><pre>      gwi->ck->xid, loc(gwi));</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">93</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">736</td>
-      <td class="src coveredLine">  gwi-&gt;ck-&gt;v.ptr = NULL;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>87</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>735</pre></td>
+    <td align="left" class="src coveredLine"><pre>  gwi->ck->tmpl = NULL;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">94</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">736</td>
-      <td class="src coveredLine">  ck_end(gwi);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>88</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>735</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const m_bool ret = traverse_enum_def(gwion->env, edef);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">95</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">736</td>
-      <td class="src coveredLine">  return t;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>89</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>735</pre></td>
+    <td align="left" class="src coveredLine"><pre>  import_enum_end(gwi, &amp;edef->values);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">96</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>90</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 734 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>735</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Type t = ret > 0 ? edef->t : NULL;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">97</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>91</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>735</pre></td>
+    <td align="left" class="src coveredLine"><pre>  free_enum_def(gwion->mp, edef);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">98</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">ANN void ck_clean_edef(MemPool mp, ImportCK *ck) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">99</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 1 times.</div>
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  if(ck-&gt;tmpl)</td>
+    <tr>
+    <td align="right" class="lineno"><pre>92</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>735</pre></td>
+    <td align="left" class="src coveredLine"><pre>  vector_release(&amp;gwi->ck->v);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">100</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">    free_id_list(mp, ck-&gt;tmpl);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">101</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 1 times.</div>
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  if(ck-&gt;v.ptr) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">102</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 1 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 1 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">    for(m_uint i = 0; i &lt; vector_size(&amp;ck-&gt;v); ++i)</td>
+    <tr>
+    <td align="right" class="lineno"><pre>93</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>735</pre></td>
+    <td align="left" class="src coveredLine"><pre>  gwi->ck->v.ptr = NULL;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">103</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">      mp_free2(mp, SZ_INT, (m_uint*)vector_at(&amp;ck-&gt;v, i));</td>
+    <tr>
+    <td align="right" class="lineno"><pre>94</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>735</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ck_end(gwi);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">104</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">    vector_release(&amp;ck-&gt;v);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>95</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>735</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return t;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">105</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  }</td>
+    <tr>
+    <td align="right" class="lineno"><pre>96</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">106</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>97</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">107</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>98</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN void ck_clean_edef(MemPool mp, ImportCK *ck) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>99</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(ck->tmpl)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>100</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>    free_id_list(mp, ck->tmpl);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>101</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(ck->v.ptr) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>102</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for(m_uint i = 0; i &lt; vector_size(&amp;ck->v); ++i)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>103</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>      mp_free2(mp, SZ_INT, (m_uint*)vector_at(&amp;ck->v, i));</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>104</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>    vector_release(&amp;ck->v);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>105</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>106</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>107</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
   </table>
-</div>
+  <br>
 
-    <hr/>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr><td class="hr"><td></tr>
+    <tr><td class="footer">Generated by: <a href="http://gcovr.com">GCOVR (Version 4.2)</a></td></tr>
+  </table>
+  <br>
 
-    <footer>
-      Generated by: <a href="http://gcovr.com">GCOVR (Version 4.2)</a>
-    </footer>
-  </body>
+</body>
+
 </html>
+
