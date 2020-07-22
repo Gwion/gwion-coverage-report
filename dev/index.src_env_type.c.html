@@ -269,18 +269,18 @@
             <td class="headerValue">src/env/type.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">126</td>
             <td class="headerTableEntry">133</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">94.7 %</td>
+            <td class="headerTableEntry">140</td>
+            <td class="headerTableEntry" style="background-color:LightGreen">95.0 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-07-22 15:54:32</td>
+            <td class="headerValue">2020-07-22 18:11:44</td>
             <td></td>
             <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">79</td>
-            <td class="headerTableEntry">102</td>
-            <td class="headerTableEntry" style="background-color:#FFFF55">77.5 %</td>
+            <td class="headerTableEntry">84</td>
+            <td class="headerTableEntry">108</td>
+            <td class="headerTableEntry" style="background-color:#FFFF55">77.8 %</td>
           </tr>
         </table>
       </td>
@@ -1093,7 +1093,7 @@
     <tr>
     <td align="right" class="lineno"><pre>114</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 73 times">&check;</span><span class="takenBranch" title="Branch 1 taken 29 times">&check;</span><span class="takenBranch" title="Branch 2 taken 13 times">&check;</span><span class="takenBranch" title="Branch 3 taken 60 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>144</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>102</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(depth > 1 || isa(src, env->gwion->type[et_compound]) > 0) {</pre></td>
     </tr>
 
@@ -1694,6 +1694,69 @@
 
     <tr>
     <td align="right" class="lineno"><pre>200</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>201</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>202</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>12685</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN void inherit(const Type t) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>203</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>12685</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Nspc nspc = t->nspc, parent = t->e->parent->nspc;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>204</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 12685 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 6016 times">&check;</span><span class="takenBranch" title="Branch 3 taken 6669 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>12685</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(!nspc || !parent)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>205</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>6016</pre></td>
+    <td align="left" class="src coveredLine"><pre>    return;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>206</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>6669</pre></td>
+    <td align="left" class="src coveredLine"><pre>  nspc->info->offset = parent->info->offset;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>207</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 5910 times">&check;</span><span class="takenBranch" title="Branch 1 taken 759 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>6669</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(parent->info->vtable.ptr)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>208</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>5910</pre></td>
+    <td align="left" class="src coveredLine"><pre>    vector_copy2(&amp;parent->info->vtable, &amp;nspc->info->vtable);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>209</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
