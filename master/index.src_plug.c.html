@@ -1,1909 +1,1791 @@
-<!DOCTYPE html>
+
 <script type="text/javascript" src="../focus.js"></script><html>
 
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>Gwion coverage report</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="index.css">
-  </head>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Gwion coverage report</title>
+  <style media="screen" type="text/css">
 
-  <body>
-    <h1>Gwion coverage report</h1>
+    body
+    {
+      color: #000000;
+      background-color: #FFFFFF;
+    }
 
-    <hr/>
+    /* Link formats: use maroon w/underlines */
+    a:link
+    {
+      color: navy;
+      text-decoration: underline;
+    }
+    a:visited
+    {
+      color: maroon;
+      text-decoration: underline;
+    }
+    a:active
+    {
+      color: navy;
+      text-decoration: underline;
+    }
 
-    <div class="summary">
-<table class="legend">
-  <tr>
-    <th scope="row">Directory:</th>
-    <td>src/</td>
-  </tr>
-  <tr>
-    <th scope="row">File:</th>
-    <td>src/plug.c</td>
-  </tr>
-  <tr>
-    <th scope="row">Date:</th>
-    <td>2020-06-20 07:44:34</td>
-  </tr>
-</table>
-<table class="coverage">
-  <tr>
-    <th></th>
-    <th scope="col">Exec</th>
-    <th scope="col">Total</th>
-    <th scope="col">Coverage</th>
-  </tr>
-  <tr>
-    <th scope="row">Lines:</th>
-    <td>113</td>
-    <td>113</td>
-    <td class="coverage-high">100.0%</td>
-  </tr>
-  <tr>
-    <th scope="row">Branches:</th>
-    <td>41</td>
-    <td>42</td>
-    <td class="coverage-high">97.6%</td>
-  </tr>
-</table>
-    </div>
+    /*** TD formats ***/
+    td
+    {
+      font-family: sans-serif;
+    }
+    td.title
+    {
+      text-align: center;
+      padding-bottom: 10px;
+      font-size: 20pt;
+      font-weight: bold;
+    }
 
-    <hr/>
+    /* TD Header Information */
+    td.headerName
+    {
+      text-align: right;
+      color: black;
+      padding-right: 6px;
+      font-weight: bold;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+    td.headerValue
+    {
+      text-align: left;
+      color: blue;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    td.headerTableEntry
+    {
+      text-align: right;
+      color: black;
+      font-weight: bold;
+      white-space: nowrap;
+      padding-left: 12px;
+      padding-right: 4px;
+      background-color: LightBlue;
+    }
+    td.headerValueLeg
+    {
+      text-align: left;
+      color: black;
+      font-size: 80%;
+      white-space: nowrap;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 2px;
+    }
 
-<div class="file-source">
-  <table>
+    /* Color of horizontal ruler */
+    td.hr
+    {
+      background-color: navy;
+      height:3px;
+    }
+    /* Footer format */
+    td.footer
+    {
+      text-align: center;
+      padding-top: 3px;
+      font-family: sans-serif;
+    }
+
+    /* Coverage Table */
+
+    td.coverTableHead
+    {
+      text-align: center;
+      color: white;
+      background-color: SteelBlue;
+      font-family: sans-serif;
+      font-size: 120%;
+      white-space: nowrap;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+    td.coverFile
+    {
+      text-align: left;
+      padding-left: 10px;
+      padding-right: 20px;
+      color: black;
+      background-color: LightBlue;
+      font-family: monospace;
+      font-weight: bold;
+      font-size: 110%;
+    }
+    td.coverBar
+    {
+      padding-left: 10px;
+      padding-right: 10px;
+      background-color: LightBlue;
+    }
+    td.coverBarOutline
+    {
+      background-color: white;
+    }
+    td.coverValue
+    {
+      padding-top: 2px;
+      text-align: right;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-family: sans-serif;
+      white-space: nowrap;
+      font-weight: bold;
+    }
+
+    /* Link Details */
+    a.detail:link
+    {
+      color: #B8D0FF;
+      font-size:80%;
+    }
+    a.detail:visited
+    {
+      color: #B8D0FF;
+      font-size:80%;
+    }
+    a.detail:active
+    {
+      color: #FFFFFF;
+      font-size:80%;
+    }
+
+    .graphcont{
+        color:#000;
+        font-weight:700;
+        float:left
+    }
+
+    .graph{
+        float:left;
+        background-color: white;
+        position:relative;
+        width:280px;
+        padding:0
+    }
+
+    .graph .bar{
+        display:block;
+        position:relative;
+        border:black 1px solid;
+        text-align:center;
+        color:#fff;
+        height:10px;
+        font-family:Arial,Helvetica,sans-serif;
+        font-size:12px;
+        line-height:1.9em
+    }
+
+    .graph .bar span{
+        position:absolute;
+        left:1em
+    }
+
+    td.coveredLine,
+    span.coveredLine
+    {
+        background-color: LightGreen!important;
+    }
+
+    td.uncoveredLine,
+    span.uncoveredLine
+    {
+        background-color: LightPink!important;
+    }
+
+    .linebranch, .linecount
+    {
+        border-right: 1px gray solid;
+        background-color: lightgray;
+    }
+
+    span.takenBranch
+    {
+        color: Green!important;
+        cursor: help;
+    }
+
+    span.notTakenBranch
+    {
+        color: Red!important;
+        cursor: help;
+    }
+
+    .src
+    {
+        padding-left: 12px;
+    }
+
+    .srcHeader,
+    span.takenBranch,
+    span.notTakenBranch
+    {
+        font-family: monospace;
+        font-weight: bold;
+    }
+
+    pre
+    {
+        height : 15px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .lineno
+    {
+        background-color: #EFE383;
+        border-right: 1px solid #BBB15F;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr><td class="title">GCC Code Coverage Report</td></tr>
+    <tr><td class="hr"></td></tr>
+
     <tr>
-      <td align="right" class="srcHeader">Line</td>
-      <td align="right" class="srcHeader">Branch</td>
-      <td align="right" class="srcHeader">Exec</td>
-      <td align="left" class="srcHeader src">Source</td>
+      <td width="100%">
+        <table cellpadding="1" border="0" width="100%">
+          <tr>
+            <td width="10%" class="headerName">Directory:</td>
+            <td width="35%" class="headerValue">src/</td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerValue" style="text-align:right;">Exec</td>
+            <td width="10%" class="headerValue" style="text-align:right;">Total</td>
+            <td width="15%" class="headerValue" style="text-align:right;">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerName">File:</td>
+            <td class="headerValue">src/plug.c</td>
+            <td></td>
+            <td class="headerName">Lines:</td>
+            <td class="headerTableEntry">113</td>
+            <td class="headerTableEntry">113</td>
+            <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerName">Date:</td>
+            <td class="headerValue">2020-07-23 09:39:03</td>
+            <td></td>
+            <td class="headerName">Branches:</td>
+            <td class="headerTableEntry">41</td>
+            <td class="headerTableEntry">42</td>
+            <td class="headerTableEntry" style="background-color:LightGreen">97.6 %</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="hr"></td></tr>
+  </table>
+
+  <br>
+  <table cellspacing="0" cellpadding="1">
+    <tr>
+      <td width="5%" align="right" class="srcHeader">Line</td>
+      <td width="5%" align="right" class="srcHeader">Branch</td>
+      <td width="5%" align="right" class="srcHeader">Exec</td>
+      <td width="75%" align="left" class="srcHeader src">Source</td>
+    </tr>
+
+
+    <tr>
+    <td align="right" class="lineno"><pre>1</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#ifndef BUILD_ON_WINDOWS</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>2</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include &lt;glob.h></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>3</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include &lt;dlfcn.h></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>4</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#else</pre></td>
     </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>5</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include &lt;windows.h></pre></td>
+    </tr>
 
+    <tr>
+    <td align="right" class="lineno"><pre>6</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
+    </tr>
 
-    <tr class="source-line">
-      <td class="lineno">1</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#ifndef BUILD_ON_WINDOWS</td>
+    <tr>
+    <td align="right" class="lineno"><pre>7</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "gwion_util.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">2</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &lt;glob.h&gt;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>8</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "gwion_ast.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">3</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &lt;dlfcn.h&gt;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>9</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "gwion_env.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">4</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#else</td>
+    <tr>
+    <td align="right" class="lineno"><pre>10</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "vm.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">5</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &lt;windows.h&gt;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>11</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "gwion.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">6</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#endif</td>
+    <tr>
+    <td align="right" class="lineno"><pre>12</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "operator.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">7</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;gwion_util.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>13</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "instr.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">8</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;gwion_ast.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>14</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "object.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">9</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;gwion_env.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>15</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "import.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">10</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;vm.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>16</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">11</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;gwion.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>17</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>typedef m_bool (*import)(Gwi);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">12</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;operator.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>18</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>typedef m_str  (*modstr)(void);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">13</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;instr.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>19</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>typedef void*  (*modini)(const struct Gwion_*, const Vector);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">14</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;object.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>20</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>typedef void*  (*modrun)(const struct Gwion_*, void*);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">15</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;import.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>21</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>typedef void*  (*modend)(const struct Gwion_*, void*);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">16</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>22</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">17</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">typedef m_bool (*import)(Gwi);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>23</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>struct Plug_ {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">18</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">typedef m_str  (*modstr)(void);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>24</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  m_str name;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">19</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">typedef void*  (*modini)(const struct Gwion_*, const Vector);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>25</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  modini ini;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">20</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">typedef void*  (*modrun)(const struct Gwion_*, void*);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>26</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  modend end;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">21</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">typedef void*  (*modend)(const struct Gwion_*, void*);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>27</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  void* self;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">22</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>28</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>};</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">23</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">struct Plug_ {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>29</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#define STR_EXPAND(tok) #tok</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">24</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  m_str name;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>30</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#define STR(tok) STR_EXPAND(tok)</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">25</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  modini ini;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>31</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#ifndef BUILD_ON_WINDOWS</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">26</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  modend end;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>32</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include &lt;dlfcn.h></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">27</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  void* self;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>33</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#define DLOPEN(dl, b) dlopen(dl, b)</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">28</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">};</td>
+    <tr>
+    <td align="right" class="lineno"><pre>34</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#define DLSYM(dl, t, a) (t)(intptr_t)dlsym(dl, STR(a));</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">29</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#define STR_EXPAND(tok) #tok</td>
+    <tr>
+    <td align="right" class="lineno"><pre>35</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#define DLCLOSE(dl) dlclose(dl);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">30</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#define STR(tok) STR_EXPAND(tok)</td>
+    <tr>
+    <td align="right" class="lineno"><pre>36</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#define DLERROR() dlerror()</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">31</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#ifndef BUILD_ON_WINDOWS</td>
+    <tr>
+    <td align="right" class="lineno"><pre>37</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#else</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">32</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &lt;dlfcn.h&gt;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>38</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "windows.h"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">33</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#define DLOPEN(dl, b) dlopen(dl, b)</td>
+    <tr>
+    <td align="right" class="lineno"><pre>39</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#define DLOPEN(dl, b) LoadLibrary(dl)</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">34</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#define DLSYM(dl, t, a) (t)(intptr_t)dlsym(dl, STR(a));</td>
+    <tr>
+    <td align="right" class="lineno"><pre>40</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#define DLSYM(dl, t, a) (t)(intptr_t)GetProcAddress(dl, STR(a));</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">35</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#define DLCLOSE(dl) dlclose(dl);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>41</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#define DLCLOSE(dl) FreeLibrary(dl);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">36</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#define DLERROR() dlerror()</td>
+    <tr>
+    <td align="right" class="lineno"><pre>42</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#define DLERROR() "plugin"</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">37</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#else</td>
+    <tr>
+    <td align="right" class="lineno"><pre>43</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">38</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#include &#34;windows.h&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>44</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">39</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#define DLOPEN(dl, b) LoadLibrary(dl)</td>
+    <tr>
+    <td align="right" class="lineno"><pre>45</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>struct PlugHandle {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">40</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#define DLSYM(dl, t, a) (t)(intptr_t)GetProcAddress(dl, STR(a));</td>
+    <tr>
+    <td align="right" class="lineno"><pre>46</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  MemPool mp;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">41</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#define DLCLOSE(dl) FreeLibrary(dl);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>47</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  PlugInfo* pi;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">42</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#define DLERROR() &#34;plugin&#34;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>48</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  void *dl;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">43</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#endif</td>
+    <tr>
+    <td align="right" class="lineno"><pre>49</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  m_str file;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">44</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>50</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  m_str name;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">45</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">struct PlugHandle {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>51</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>};</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">46</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  MemPool mp;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>52</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">47</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  PlugInfo* pi;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>53</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>734</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static struct Plug_* new_plug(MemPool p, const modini ini) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">48</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  void *dl;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>54</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>734</pre></td>
+    <td align="left" class="src coveredLine"><pre>  struct Plug_ *plug = mp_calloc(p, Plug);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">49</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  m_str file;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>55</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>734</pre></td>
+    <td align="left" class="src coveredLine"><pre>  plug->ini  = ini;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">50</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  m_str name;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>56</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>734</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return plug;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">51</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">};</td>
+    <tr>
+    <td align="right" class="lineno"><pre>57</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">52</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>58</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">53</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">739</td>
-      <td class="src coveredLine">ANN static struct Plug_* new_plug(MemPool p, const modini ini) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>59</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static void plug_import(struct PlugHandle *h) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">54</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">739</td>
-      <td class="src coveredLine">  struct Plug_ *plug = mp_calloc(p, Plug);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>60</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const import imp = DLSYM(h->dl, import, GWIMPORT_NAME);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">55</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">739</td>
-      <td class="src coveredLine">  plug-&gt;ini  = ini;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>61</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 69 times">&check;</span><span class="takenBranch" title="Branch 1 taken 6 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(imp)</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">56</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">739</td>
-      <td class="src coveredLine">  return plug;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>62</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>69</pre></td>
+    <td align="left" class="src coveredLine"><pre>    vector_add(&amp;h->pi->vec[GWPLUG_IMPORT], (vtype)imp);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">57</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>63</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">58</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>64</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">59</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">ANN static void plug_import(struct PlugHandle *h) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>65</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static void plug_module(struct PlugHandle *h) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">60</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">  const import imp = DLSYM(h-&gt;dl, import, GWIMPORT_NAME);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">61</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 70 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 6 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">  if(imp)</td>
+    <tr>
+    <td align="right" class="lineno"><pre>66</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const modini ini = DLSYM(h->dl, modini, GWMODINI_NAME);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">62</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">70</td>
-      <td class="src coveredLine">    vector_add(&amp;h-&gt;pi-&gt;vec[GWPLUG_IMPORT], (vtype)imp);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>67</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4 times">&check;</span><span class="takenBranch" title="Branch 1 taken 71 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(ini) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">63</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>68</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
+    <td align="left" class="src coveredLine"><pre>    struct Plug_ *plug = new_plug(h->mp, ini);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">64</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>69</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
+    <td align="left" class="src coveredLine"><pre>    plug->name = h->name;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">65</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">ANN static void plug_module(struct PlugHandle *h) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>70</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
+    <td align="left" class="src coveredLine"><pre>    plug->end  = DLSYM(h->dl, modend, GWMODEND_NAME);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">66</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">  const modini ini = DLSYM(h-&gt;dl, modini, GWMODINI_NAME);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">67</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 4 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 72 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">  if(ini) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>71</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
+    <td align="left" class="src coveredLine"><pre>    vector_add(&amp;h->pi->vec[GWPLUG_MODULE], (vtype)plug);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">68</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">4</td>
-      <td class="src coveredLine">    struct Plug_ *plug = new_plug(h-&gt;mp, ini);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>72</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">69</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">4</td>
-      <td class="src coveredLine">    plug-&gt;name = h-&gt;name;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>73</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">70</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">4</td>
-      <td class="src coveredLine">    plug-&gt;end  = DLSYM(h-&gt;dl, modend, GWMODEND_NAME);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>74</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">71</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">4</td>
-      <td class="src coveredLine">    vector_add(&amp;h-&gt;pi-&gt;vec[GWPLUG_MODULE], (vtype)plug);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>75</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static void plug_driver(struct PlugHandle *h) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">72</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  }</td>
+    <tr>
+    <td align="right" class="lineno"><pre>76</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const f_bbqset drv = DLSYM(h->dl, f_bbqset, GWDRIVER_NAME);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">73</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>77</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6 times">&check;</span><span class="takenBranch" title="Branch 1 taken 69 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(drv)</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">74</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>78</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="left" class="src coveredLine"><pre>    map_set(&amp;h->pi->drv, (vtype)h->name, (vtype)drv);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">75</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">ANN static void plug_driver(struct PlugHandle *h) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>79</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">76</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">  const f_bbqset drv = DLSYM(h-&gt;dl, f_bbqset, GWDRIVER_NAME);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">77</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 6 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 70 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">  if(drv)</td>
+    <tr>
+    <td align="right" class="lineno"><pre>80</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">78</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">6</td>
-      <td class="src coveredLine">    map_set(&amp;h-&gt;pi-&gt;drv, (vtype)h-&gt;name, (vtype)drv);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>81</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static inline m_str plug_name(struct PlugHandle *h) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">79</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>82</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const modstr str = DLSYM(h->dl, modstr, GWMODSTR_NAME);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">80</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>83</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6 times">&check;</span><span class="takenBranch" title="Branch 1 taken 69 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return str ? str() : NULL;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">81</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">ANN static inline m_str plug_name(struct PlugHandle *h) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>84</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">82</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">  const modstr str = DLSYM(h-&gt;dl, modstr, GWMODSTR_NAME);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">83</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 6 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 70 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">  return str ? str() : NULL;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>85</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">84</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>86</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>76</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static void plug_get(struct PlugHandle *h, const m_str c) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">85</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>87</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>76</pre></td>
+    <td align="left" class="src coveredLine"><pre>  h->dl = DLOPEN(c, RTLD_LAZY | RTLD_GLOBAL);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">86</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">77</td>
-      <td class="src coveredLine">ANN static void plug_get(struct PlugHandle *h, const m_str c) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>88</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 75 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>76</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(h->dl) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">87</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">77</td>
-      <td class="src coveredLine">  h-&gt;dl = DLOPEN(c, RTLD_LAZY | RTLD_GLOBAL);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">88</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 76 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 1 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">77</td>
-      <td class="src coveredLine">  if(h-&gt;dl) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>89</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>    vector_add(&amp;h->pi->vec[GWPLUG_DL], (vtype)h->dl);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">89</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">    vector_add(&amp;h-&gt;pi-&gt;vec[GWPLUG_DL], (vtype)h-&gt;dl);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>90</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>    h->name = plug_name(h);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">90</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">    h-&gt;name = plug_name(h);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>91</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>    plug_import(h);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">91</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">    plug_import(h);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>92</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>    plug_module(h);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">92</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">    plug_module(h);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>93</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>    plug_driver(h);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">93</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">    plug_driver(h);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>94</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  } else</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">94</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  } else</td>
+    <tr>
+    <td align="right" class="lineno"><pre>95</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>    gw_err(_("error in %s."), DLERROR());</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">95</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">    gw_err(_(&#34;error in %s.&#34;), DLERROR());</td>
+    <tr>
+    <td align="right" class="lineno"><pre>96</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>76</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">96</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">77</td>
-      <td class="src coveredLine">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>97</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">97</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>98</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>808</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static void plug_get_all(struct PlugHandle *h, const m_str name) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">98</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">814</td>
-      <td class="src coveredLine">ANN static void plug_get_all(struct PlugHandle *h, const m_str name) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>99</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#ifndef BUILD_ON_WINDOWS</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">99</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#ifndef BUILD_ON_WINDOWS</td>
+    <tr>
+    <td align="right" class="lineno"><pre>100</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  glob_t results;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">100</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  glob_t results;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">101</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 737 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 77 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">814</td>
-      <td class="src coveredLine">  if(glob(name, 0, NULL, &amp;results))</td>
+    <tr>
+    <td align="right" class="lineno"><pre>101</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 732 times">&check;</span><span class="takenBranch" title="Branch 2 taken 76 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>808</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(glob(name, 0, NULL, &amp;results))</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">102</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">737</td>
-      <td class="src coveredLine">    return;</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">103</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 77 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 77 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">154</td>
-      <td class="src coveredLine">  for(m_uint i = 0; i &lt; results.gl_pathc; i++)</td>
+    <tr>
+    <td align="right" class="lineno"><pre>102</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>732</pre></td>
+    <td align="left" class="src coveredLine"><pre>    return;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">104</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">77</td>
-      <td class="src coveredLine">    plug_get(h, results.gl_pathv[i]);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>103</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 76 times">&check;</span><span class="takenBranch" title="Branch 1 taken 76 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>152</pre></td>
+    <td align="left" class="src coveredLine"><pre>  for(m_uint i = 0; i &lt; results.gl_pathc; i++)</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">105</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">77</td>
-      <td class="src coveredLine">  globfree(&amp;results);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>104</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>76</pre></td>
+    <td align="left" class="src coveredLine"><pre>    plug_get(h, results.gl_pathv[i]);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">106</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#else</td>
+    <tr>
+    <td align="right" class="lineno"><pre>105</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>76</pre></td>
+    <td align="left" class="src coveredLine"><pre>  globfree(&amp;results);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">107</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  WIN32_FIND_DATA filedata;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>106</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#else</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">108</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  HANDLE file = FindFirstFile(name, &amp;filedata);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>107</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  WIN32_FIND_DATA filedata;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">109</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  if(file == INVALID_HANDLE_VALUE)</td>
+    <tr>
+    <td align="right" class="lineno"><pre>108</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  HANDLE file = FindFirstFile(name, &amp;filedata);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">110</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">    return;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>109</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  if(file == INVALID_HANDLE_VALUE)</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">111</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  do {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>110</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    return;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">112</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">    char c[PATH_MAX];</td>
+    <tr>
+    <td align="right" class="lineno"><pre>111</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  do {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">113</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">    strcpy(c, name);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>112</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    char c[PATH_MAX];</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">114</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">    strcpy(c + strlen(name) - 4, filedata.cFileName);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>113</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    strcpy(c, name);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">115</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">    plug_get(h, c);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>114</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    strcpy(c + strlen(name) - 4, filedata.cFileName);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">116</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  } while(FindNextFile(file,&amp;filedata));</td>
+    <tr>
+    <td align="right" class="lineno"><pre>115</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    plug_get(h, c);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">117</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  FindClose(file);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>116</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  } while(FindNextFile(file,&amp;filedata));</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">118</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">#endif</td>
+    <tr>
+    <td align="right" class="lineno"><pre>117</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  FindClose(file);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">119</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>118</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">120</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>119</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">121</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">ANN2(1) static void* pp_ini(const struct Gwion_ *gwion, const Vector v) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>120</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">122</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  pparg_run(gwion-&gt;ppa, v);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>121</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN2(1) static void* pp_ini(const struct Gwion_ *gwion, const Vector v) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">123</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  return NULL;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>122</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
+    <td align="left" class="src coveredLine"><pre>  pparg_run(gwion->ppa, v);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">124</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>123</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return NULL;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">125</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>124</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">126</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">ANN static void register_pp(const struct PlugHandle* h) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>125</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">127</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  struct Plug_ *plug = new_plug(h-&gt;mp, pp_ini);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>126</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static void register_pp(const struct PlugHandle* h) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">128</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  plug-&gt;name = &#34;pp&#34;;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>127</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
+    <td align="left" class="src coveredLine"><pre>  struct Plug_ *plug = new_plug(h->mp, pp_ini);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">129</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  vector_add(&amp;h-&gt;pi-&gt;vec[GWPLUG_MODULE], (vtype)plug);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>128</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
+    <td align="left" class="src coveredLine"><pre>  plug->name = "pp";</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">130</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>129</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
+    <td align="left" class="src coveredLine"><pre>  vector_add(&amp;h->pi->vec[GWPLUG_MODULE], (vtype)plug);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">131</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>130</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">132</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">ANN PlugInfo* new_pluginfo(MemPool p, const Vector list) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>131</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">133</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  PlugInfo *pi = (PlugInfo*)mp_calloc(p, PlugInfo);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">134</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 2205 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 735 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">2940</td>
-      <td class="src coveredLine">  for(m_uint i = 0; i &lt; GWPLUG_LAST; ++i)</td>
+    <tr>
+    <td align="right" class="lineno"><pre>132</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN PlugInfo* new_pluginfo(MemPool p, const Vector list) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">135</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2205</td>
-      <td class="src coveredLine">    vector_init(&amp;pi-&gt;vec[i]);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>133</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
+    <td align="left" class="src coveredLine"><pre>  PlugInfo *pi = (PlugInfo*)mp_calloc(p, PlugInfo);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">136</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  map_init(&amp;pi-&gt;drv);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>134</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2190 times">&check;</span><span class="takenBranch" title="Branch 1 taken 730 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>2920</pre></td>
+    <td align="left" class="src coveredLine"><pre>  for(m_uint i = 0; i &lt; GWPLUG_LAST; ++i)</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">137</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  struct PlugHandle h = { .mp=p, .pi=pi };</td>
+    <tr>
+    <td align="right" class="lineno"><pre>135</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2190</pre></td>
+    <td align="left" class="src coveredLine"><pre>    vector_init(&amp;pi->vec[i]);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">138</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  register_pp(&amp;h);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">139</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 814 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 735 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">1549</td>
-      <td class="src coveredLine">  for(m_uint i = 0; i &lt; vector_size(list); i++) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>136</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
+    <td align="left" class="src coveredLine"><pre>  map_init(&amp;pi->drv);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">140</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">814</td>
-      <td class="src coveredLine">    const m_str dir = (m_str)vector_at(list, i);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>137</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
+    <td align="left" class="src coveredLine"><pre>  struct PlugHandle h = { .mp=p, .pi=pi };</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">141</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">814</td>
-      <td class="src coveredLine">    char name[strlen(dir) + 6];</td>
+    <tr>
+    <td align="right" class="lineno"><pre>138</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
+    <td align="left" class="src coveredLine"><pre>  register_pp(&amp;h);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">142</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">814</td>
-      <td class="src coveredLine">    sprintf(name, &#34;%s/*.so&#34;, dir);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>139</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 808 times">&check;</span><span class="takenBranch" title="Branch 2 taken 730 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1538</pre></td>
+    <td align="left" class="src coveredLine"><pre>  for(m_uint i = 0; i &lt; vector_size(list); i++) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">143</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">814</td>
-      <td class="src coveredLine">    plug_get_all(&amp;h, name);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>140</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>808</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const m_str dir = (m_str)vector_at(list, i);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">144</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  }</td>
+    <tr>
+    <td align="right" class="lineno"><pre>141</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>808</pre></td>
+    <td align="left" class="src coveredLine"><pre>    char name[strlen(dir) + 6];</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">145</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  return pi;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>142</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>808</pre></td>
+    <td align="left" class="src coveredLine"><pre>    sprintf(name, "%s/*.so", dir);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">146</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>143</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>808</pre></td>
+    <td align="left" class="src coveredLine"><pre>    plug_get_all(&amp;h, name);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">147</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>144</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">148</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">734</td>
-      <td class="src coveredLine">ANN static void plug_free_module(const struct Gwion_* gwion, const Vector v) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">149</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 738 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 734 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">1472</td>
-      <td class="src coveredLine">  for(m_uint i = 0; i &lt; vector_size(v); ++i) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>145</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return pi;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">150</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">738</td>
-      <td class="src coveredLine">    struct Plug_ *plug = (struct Plug_*)vector_at(v, i);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">151</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 4 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 734 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">738</td>
-      <td class="src coveredLine">    if(plug-&gt;end)</td>
+    <tr>
+    <td align="right" class="lineno"><pre>146</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">152</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">4</td>
-      <td class="src coveredLine">      plug-&gt;end(gwion, plug-&gt;self);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>147</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">153</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">738</td>
-      <td class="src coveredLine">    mp_free(gwion-&gt;mp, Plug, plug);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>148</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>729</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static void plug_free_module(const struct Gwion_* gwion, const Vector v) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">154</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  }</td>
+    <tr>
+    <td align="right" class="lineno"><pre>149</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 733 times">&check;</span><span class="takenBranch" title="Branch 2 taken 729 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1462</pre></td>
+    <td align="left" class="src coveredLine"><pre>  for(m_uint i = 0; i &lt; vector_size(v); ++i) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">155</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">734</td>
-      <td class="src coveredLine">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>150</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>733</pre></td>
+    <td align="left" class="src coveredLine"><pre>    struct Plug_ *plug = (struct Plug_*)vector_at(v, i);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">156</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>151</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4 times">&check;</span><span class="takenBranch" title="Branch 1 taken 729 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>733</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if(plug->end)</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">157</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">734</td>
-      <td class="src coveredLine">ANN static inline void plug_free_dls(const Vector v) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">158</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 76 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 734 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">810</td>
-      <td class="src coveredLine">  for(m_uint i = 0; i &lt; vector_size(v); ++i)</td>
+    <tr>
+    <td align="right" class="lineno"><pre>152</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
+    <td align="left" class="src coveredLine"><pre>      plug->end(gwion, plug->self);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">159</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">76</td>
-      <td class="src coveredLine">    DLCLOSE((void*)vector_at(v, i));</td>
+    <tr>
+    <td align="right" class="lineno"><pre>153</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>733</pre></td>
+    <td align="left" class="src coveredLine"><pre>    mp_free(gwion->mp, Plug, plug);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">160</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">734</td>
-      <td class="src coveredLine">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>154</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">161</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>155</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>729</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">162</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">734</td>
-      <td class="src coveredLine">void free_plug(const struct Gwion_ *gwion) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>156</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">163</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">734</td>
-      <td class="src coveredLine">  PlugInfo *p = gwion-&gt;data-&gt;plug;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>157</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>729</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static inline void plug_free_dls(const Vector v) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">164</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">734</td>
-      <td class="src coveredLine">  struct Vector_ * const v = p-&gt;vec;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>158</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 75 times">&check;</span><span class="takenBranch" title="Branch 2 taken 729 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>804</pre></td>
+    <td align="left" class="src coveredLine"><pre>  for(m_uint i = 0; i &lt; vector_size(v); ++i)</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">165</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">734</td>
-      <td class="src coveredLine">  plug_free_module(gwion, &amp;v[GWPLUG_MODULE]);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>159</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
+    <td align="left" class="src coveredLine"><pre>    DLCLOSE((void*)vector_at(v, i));</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">166</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">734</td>
-      <td class="src coveredLine">  plug_free_dls(&amp;v[GWPLUG_DL]);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">167</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 2202 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 734 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">2936</td>
-      <td class="src coveredLine">  for(m_uint i = 0; i &lt; GWPLUG_LAST; ++i)</td>
+    <tr>
+    <td align="right" class="lineno"><pre>160</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>729</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">168</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2202</td>
-      <td class="src coveredLine">    vector_release(&amp;v[i]);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>161</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">169</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">734</td>
-      <td class="src coveredLine">  map_release(&amp;p-&gt;drv);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>162</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>729</pre></td>
+    <td align="left" class="src coveredLine"><pre>void free_plug(const struct Gwion_ *gwion) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">170</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">734</td>
-      <td class="src coveredLine">  mp_free(gwion-&gt;mp, PlugInfo, p);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>163</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>729</pre></td>
+    <td align="left" class="src coveredLine"><pre>  PlugInfo *p = gwion->data->plug;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">171</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">734</td>
-      <td class="src coveredLine">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>164</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>729</pre></td>
+    <td align="left" class="src coveredLine"><pre>  struct Vector_ * const v = p->vec;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">172</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>165</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>729</pre></td>
+    <td align="left" class="src coveredLine"><pre>  plug_free_module(gwion, &amp;v[GWPLUG_MODULE]);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">173</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">739</td>
-      <td class="src coveredLine">ANN static Vector get_arg(MemPool p, const m_str name, const Vector v) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>166</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>729</pre></td>
+    <td align="left" class="src coveredLine"><pre>  plug_free_dls(&amp;v[GWPLUG_DL]);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">174</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">739</td>
-      <td class="src coveredLine">  const size_t len = strlen(name);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">175</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 82 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 737 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">1558</td>
-      <td class="src coveredLine">  for(m_uint i = vector_size(v) + 1; --i;) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>167</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2187 times">&check;</span><span class="takenBranch" title="Branch 1 taken 729 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>2916</pre></td>
+    <td align="left" class="src coveredLine"><pre>  for(m_uint i = 0; i &lt; GWPLUG_LAST; ++i)</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">176</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">82</td>
-      <td class="src coveredLine">    const m_str str = (m_str)vector_at(v, i - 1);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">177</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 2 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 80 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">82</td>
-      <td class="src coveredLine">    if(!strncmp(name, str, len)) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>168</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2187</pre></td>
+    <td align="left" class="src coveredLine"><pre>    vector_release(&amp;v[i]);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">178</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">      vector_rem(v, i-1);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>169</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>729</pre></td>
+    <td align="left" class="src coveredLine"><pre>  map_release(&amp;p->drv);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">179</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">      const m_str arg = strchr(str, &#39;=&#39;);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">180</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 2 times.</div>
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">      return arg ? split_args(p, arg+1) : NULL;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>170</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>729</pre></td>
+    <td align="left" class="src coveredLine"><pre>  mp_free(gwion->mp, PlugInfo, p);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">181</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">    }</td>
+    <tr>
+    <td align="right" class="lineno"><pre>171</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>729</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">182</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  }</td>
+    <tr>
+    <td align="right" class="lineno"><pre>172</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">183</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">737</td>
-      <td class="src coveredLine">  return NULL;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>173</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>734</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static Vector get_arg(MemPool p, const m_str name, const Vector v) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">184</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>174</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>734</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const size_t len = strlen(name);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">185</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>175</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 81 times">&check;</span><span class="takenBranch" title="Branch 2 taken 732 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1547</pre></td>
+    <td align="left" class="src coveredLine"><pre>  for(m_uint i = vector_size(v) + 1; --i;) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">186</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">ANN static void plug_free_arg(MemPool p, const Vector v) {</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">187</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 5 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 2 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">7</td>
-      <td class="src coveredLine">  for(m_uint i = 0; i &lt; vector_size(v); ++i)</td>
+    <tr>
+    <td align="right" class="lineno"><pre>176</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>81</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const m_str str = (m_str)vector_at(v, i - 1);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">188</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">5</td>
-      <td class="src coveredLine">    free_mstr(p, (m_str)vector_at(v, i));</td>
+    <tr>
+    <td align="right" class="lineno"><pre>177</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="takenBranch" title="Branch 1 taken 79 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>81</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if(!strncmp(name, str, len)) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">189</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">  free_vector(p, v);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>178</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>      vector_rem(v, i-1);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">190</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>179</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>      const m_str arg = strchr(str, '=');</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">191</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>180</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>      return arg ? split_args(p, arg+1) : NULL;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">192</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">ANN void plug_run(const struct Gwion_ *gwion, const Vector args) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>181</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">193</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">  const Vector v = &amp;gwion-&gt;data-&gt;plug-&gt;vec[GWPLUG_MODULE];</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">194</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 739 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 735 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">1474</td>
-      <td class="src coveredLine">  for(m_uint i = 0; i &lt; vector_size(v); ++i) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>182</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">195</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">739</td>
-      <td class="src coveredLine">    struct Plug_ *plug = (struct Plug_*)vector_at(v, i);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>183</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>732</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return NULL;</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">196</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">739</td>
-      <td class="src coveredLine">    const Vector arg = get_arg(gwion-&gt;mp, plug-&gt;name, args);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>184</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">197</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">739</td>
-      <td class="src coveredLine">    plug-&gt;self = plug-&gt;ini(gwion, arg);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">198</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 2 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 737 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">739</td>
-      <td class="src coveredLine">    if(arg)</td>
+    <tr>
+    <td align="right" class="lineno"><pre>185</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">199</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">      plug_free_arg(gwion-&gt;mp, arg);</td>
+    <tr>
+    <td align="right" class="lineno"><pre>186</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static void plug_free_arg(MemPool p, const Vector v) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">200</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  }</td>
+    <tr>
+    <td align="right" class="lineno"><pre>187</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 5 times">&check;</span><span class="takenBranch" title="Branch 2 taken 2 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
+    <td align="left" class="src coveredLine"><pre>  for(m_uint i = 0; i &lt; vector_size(v); ++i)</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">201</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">735</td>
-      <td class="src coveredLine">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>188</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>    free_mstr(p, (m_str)vector_at(v, i));</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">202</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+    <tr>
+    <td align="right" class="lineno"><pre>189</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  free_vector(p, v);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">203</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">ANN void* get_module(const struct Gwion_ *gwion, const m_str name) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>190</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">204</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine">  const Vector v = &amp;gwion-&gt;data-&gt;plug-&gt;vec[GWPLUG_MODULE];</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">205</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 4 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 1 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">5</td>
-      <td class="src coveredLine">  for(m_uint i = 0; i &lt; vector_size(v); ++i) {</td>
+    <tr>
+    <td align="right" class="lineno"><pre>191</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">206</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">4</td>
-      <td class="src coveredLine">    struct Plug_ *plug = (struct Plug_*)vector_at(v, i);</td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno">207</td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 1 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 3 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">4</td>
-      <td class="src coveredLine">    if(!strcmp(name, plug-&gt;name))</td>
+    <tr>
+    <td align="right" class="lineno"><pre>192</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN void plug_run(const struct Gwion_ *gwion, const Vector args) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">208</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">      return plug-&gt;self;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>193</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Vector v = &amp;gwion->data->plug->vec[GWPLUG_MODULE];</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">209</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">  }</td>
+    <tr>
+    <td align="right" class="lineno"><pre>194</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 734 times">&check;</span><span class="takenBranch" title="Branch 2 taken 730 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1464</pre></td>
+    <td align="left" class="src coveredLine"><pre>  for(m_uint i = 0; i &lt; vector_size(v); ++i) {</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">210</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">1</td>
-      <td class="src coveredLine">  return NULL;</td>
+    <tr>
+    <td align="right" class="lineno"><pre>195</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>734</pre></td>
+    <td align="left" class="src coveredLine"><pre>    struct Plug_ *plug = (struct Plug_*)vector_at(v, i);</pre></td>
     </tr>
 
-    <tr class="source-line">
-      <td class="lineno">211</td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src ">}</td>
+    <tr>
+    <td align="right" class="lineno"><pre>196</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>734</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const Vector arg = get_arg(gwion->mp, plug->name, args);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>197</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>734</pre></td>
+    <td align="left" class="src coveredLine"><pre>    plug->self = plug->ini(gwion, arg);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>198</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="takenBranch" title="Branch 1 taken 732 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>734</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if(arg)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>199</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>      plug_free_arg(gwion->mp, arg);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>200</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>201</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>730</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>202</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>203</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN void* get_module(const struct Gwion_ *gwion, const m_str name) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>204</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Vector v = &amp;gwion->data->plug->vec[GWPLUG_MODULE];</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>205</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>  for(m_uint i = 0; i &lt; vector_size(v); ++i) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>206</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
+    <td align="left" class="src coveredLine"><pre>    struct Plug_ *plug = (struct Plug_*)vector_at(v, i);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>207</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if(!strcmp(name, plug->name))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>208</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>      return plug->self;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>209</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>210</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return NULL;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>211</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
   </table>
-</div>
+  <br>
 
-    <hr/>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr><td class="hr"><td></tr>
+    <tr><td class="footer">Generated by: <a href="http://gcovr.com">GCOVR (Version 4.2)</a></td></tr>
+  </table>
+  <br>
 
-    <footer>
-      Generated by: <a href="http://gcovr.com">GCOVR (Version 4.2)</a>
-    </footer>
-  </body>
+</body>
+
 </html>
+
