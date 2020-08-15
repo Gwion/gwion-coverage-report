@@ -15,7 +15,7 @@ src/emit/escape.c                             52      52   100%
 src/emit/memoize.c                            33      33   100%   
 src/env/context.c                             26      26   100%   
 src/env/env.c                                 85      85   100%   
-src/env/env_utils.c                           77      77   100%   
+src/env/env_utils.c                           71      71   100%   
 src/env/envset.c                              44      41    93%   16,22,52
 src/env/func.c                                23      23   100%   
 src/env/nspc.c                                62      61    98%   34
@@ -63,7 +63,7 @@ src/parse/scan1.c                            421     412    97%   53,87,128,337-
 src/parse/scan2.c                            408     405    99%   302,378,575
 src/parse/scanx.c                             43      43   100%   
 src/parse/stage.c                             14      14   100%   
-src/parse/template.c                          88      84    95%   28,37,67,123
+src/parse/template.c                          92      88    95%   28,37,67,127
 src/parse/traverse.c                          43      42    97%   67
 src/parse/type_decl.c                         32      30    93%   12,19
 src/pass.c                                    34      34   100%   
@@ -77,8 +77,8 @@ src/vm/vm_code.c                              45      45   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10273    9709    94%
+TOTAL                                      10271    9707    94%
 ------------------------------------------------------------------------------
-lines: 94.5% (9709 out of 10273)
-branches: 80.3% (4472 out of 5571)
+lines: 94.5% (9707 out of 10271)
+branches: 80.3% (4465 out of 5563)
 ```
