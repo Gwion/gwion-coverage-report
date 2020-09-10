@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-09-10 16:25:23</td>
+            <td class="headerValue">2020-09-10 17:53:37</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">10</td>
@@ -862,98 +862,98 @@
     <tr>
     <td align="right" class="lineno"><pre>81</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26302</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>27032</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN void env_add_type(const Env env, const Type type) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>82</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26302</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>27032</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Type v_type = type_copy(env->gwion->mp, env->gwion->type[et_class]);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>83</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26302</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>27032</pre></td>
     <td align="left" class="src coveredLine"><pre>  ADD_REF(v_type);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>84</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26302</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>27032</pre></td>
     <td align="left" class="src coveredLine"><pre>  v_type->e->d.base_type = type;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>85</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26302</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>27032</pre></td>
     <td align="left" class="src coveredLine"><pre>  SET_FLAG(type, builtin);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>86</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26302</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>27032</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Symbol sym = insert_symbol(type->name);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>87</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26302</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>27032</pre></td>
     <td align="left" class="src coveredLine"><pre>  nspc_add_type_front(env->curr, sym, type);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>88</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26302</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>27032</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Value v = new_value(env->gwion->mp, v_type, s_name(sym));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>89</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26302</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>27032</pre></td>
     <td align="left" class="src coveredLine"><pre>  SET_FLAG(v, valid | ae_flag_const | ae_flag_global | ae_flag_builtin);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>90</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26302</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>27032</pre></td>
     <td align="left" class="src coveredLine"><pre>  nspc_add_value(env->curr, insert_symbol(type->name), v);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>91</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26302</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>27032</pre></td>
     <td align="left" class="src coveredLine"><pre>  v->from->owner = type->e->owner = env->curr;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>92</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26302</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>27032</pre></td>
     <td align="left" class="src coveredLine"><pre>  v->from->owner_class = type->e->owner_class = env->class_def; // t owner_class ?</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>93</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26302</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>27032</pre></td>
     <td align="left" class="src coveredLine"><pre>  type->xid = ++env->scope->type_xid;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>94</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26302</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>27032</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
