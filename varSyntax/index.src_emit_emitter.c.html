@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-09-11 15:50:20</td>
+            <td class="headerValue">2020-09-12 09:27:04</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">2</td>
@@ -414,63 +414,63 @@
     <tr>
     <td align="right" class="lineno"><pre>17</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>732</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
     <td align="left" class="src coveredLine"><pre>ANEW Emitter new_emitter(MemPool p) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>18</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>732</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
     <td align="left" class="src coveredLine"><pre>  Emitter emit = (Emitter)mp_calloc(p, Emitter);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>19</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>732</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_init(&amp;emit->stack);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>20</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>732</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit->info = (struct EmitterInfo_*)mp_calloc(p, EmitterInfo);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>21</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>732</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_init(&amp;emit->info->pure);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>22</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>732</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit->info->escape = escape_table(p);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>23</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>732</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit->info->emit_code = emit_code;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>732</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit->info->finalyzer = EOC;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>25</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>732</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
     <td align="left" class="src coveredLine"><pre>  return emit;</pre></td>
     </tr>
 
@@ -491,49 +491,49 @@
     <tr>
     <td align="right" class="lineno"><pre>28</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>711</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN void free_emitter(MemPool p, Emitter a) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>29</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>711</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_release(&amp;a->stack);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>30</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>711</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_release(&amp;a->info->pure);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>31</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>711</pre></td>
     <td align="left" class="src coveredLine"><pre>  mp_free2(p, 256, a->info->escape);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>32</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>711</pre></td>
     <td align="left" class="src coveredLine"><pre>  mp_free(p, EmitterInfo, a->info);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>33</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>711</pre></td>
     <td align="left" class="src coveredLine"><pre>  mp_free(p, Emitter, a);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>34</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>731</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>711</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
