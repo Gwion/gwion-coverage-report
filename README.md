@@ -1,4 +1,5 @@
   * [Bisect](https://fennecdjay.github.io/gwion-coverage-report/Bisect) ([diff](https://fennecdjay.github.io/gwion-coverage-report/Bisect/diff.html))
+  * [Bisect2](https://fennecdjay.github.io/gwion-coverage-report/Bisect2) ([diff](https://fennecdjay.github.io/gwion-coverage-report/Bisect2/diff.html))
   * [TemplateRight](https://fennecdjay.github.io/gwion-coverage-report/TemplateRight) ([diff](https://fennecdjay.github.io/gwion-coverage-report/TemplateRight/diff.html))
   * [add-Aleserche](https://fennecdjay.github.io/gwion-coverage-report/add-Aleserche) ([diff](https://fennecdjay.github.io/gwion-coverage-report/add-Aleserche/diff.html))
   * [add-Pranav2612000](https://fennecdjay.github.io/gwion-coverage-report/add-Pranav2612000) ([diff](https://fennecdjay.github.io/gwion-coverage-report/add-Pranav2612000/diff.html))
