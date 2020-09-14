@@ -25,22 +25,22 @@ src/env/type_special.c                        33      33   100%
 src/env/value.c                               25      25   100%   
 src/gwion.c                                  138     137    99%   85
 src/gwiondata.c                               35      35   100%   
-src/import/cdef.c                             83      75    90%   34,105-111
-src/import/checker.c                         201     178    88%   101,112,116,119-121,133,185-188,199-200,207-209,235-239,273,279
-src/import/enum.c                             51      51   100%   
-src/import/fdef.c                             94      94   100%   
-src/import/internals.c                        14      14   100%   
-src/import/item.c                             33      33   100%   
-src/import/oper.c                             39      39   100%   
-src/import/special.c                          29      29   100%   
-src/import/tdef.c                             25      24    96%   32
-src/import/type.c                             23      23   100%   
-src/import/udef.c                             60      60   100%   
+src/import/import_cdef.c                      83      75    90%   34,105-111
+src/import/import_checker.c                  201     178    88%   101,112,116,119-121,133,185-188,199-200,207-209,235-239,273,279
+src/import/import_enum.c                      51      51   100%   
+src/import/import_fdef.c                      94      94   100%   
+src/import/import_internals.c                 14      14   100%   
+src/import/import_item.c                      33      33   100%   
+src/import/import_oper.c                      39      39   100%   
+src/import/import_special.c                   29      29   100%   
+src/import/import_tdef.c                      25      24    96%   32
+src/import/import_type.c                      23      23   100%   
+src/import/import_udef.c                      60      60   100%   
 src/lib/array.c                              347     322    92%   53,56,107,164-165,298-305,314-320,373-377
 src/lib/engine.c                             130     128    98%   30-31
 src/lib/event.c                               47      47   100%   
-src/lib/func.c                               292     283    96%   88,176,199,234-238,303
 src/lib/instr.c                               98      96    98%   39,78
+src/lib/lib_func.c                           292     283    96%   88,176,199,234-238,303
 src/lib/modules.c                            220     219    99%   252
 src/lib/object.c                              83      82    98%   112
 src/lib/object_op.c                          322     304    94%   57,260-261,354,389-391,411-420,422
