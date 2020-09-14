@@ -20,13 +20,13 @@ src/env/envset.c                              44      40    90%   16,22,26,52
 src/env/func.c                                23      23   100%   
 src/env/nspc.c                                62      61    98%   34
 src/env/tupleform.c                           38      38   100%   
-src/env/type.c                               142     134    94%   136,140,150,161,166-169
+src/env/type.c                               140     133    95%   136,140,157,164-167
 src/env/type_special.c                        33      33   100%   
 src/env/value.c                               25      25   100%   
 src/gwion.c                                  138     137    99%   85
 src/gwiondata.c                               35      35   100%   
 src/import/cdef.c                             82      74    90%   32,104-110
-src/import/checker.c                         201     178    88%   101,112,116,119-121,133,185-188,199-200,207-209,235-239,273,279
+src/import/checker.c                         201     180    89%   101,112,116,119-121,133,185-188,207-209,235-239,273,279
 src/import/enum.c                             51      51   100%   
 src/import/fdef.c                             94      94   100%   
 src/import/internals.c                        14      14   100%   
@@ -43,7 +43,7 @@ src/lib/func.c                               292     283    96%   88,176,199,234
 src/lib/instr.c                               98      96    98%   39,78
 src/lib/modules.c                            220     219    99%   252
 src/lib/object.c                              83      82    98%   112
-src/lib/object_op.c                          322     304    94%   57,273-274,367,402-404,424-433,435
+src/lib/object_op.c                          323     305    94%   57,273-274,368,403-405,425-434,436
 src/lib/opfunc.c                              65      59    90%   13-16,81-82
 src/lib/prim.c                               234     233    99%   234
 src/lib/prim_values.c                         30      30   100%   
@@ -57,7 +57,7 @@ src/parse/check.c                           1025     987    96%   75,96,177,295-
 src/parse/compat_func.c                       11      11   100%   
 src/parse/did_you_mean.c                      42      42   100%   
 src/parse/func_operator.c                     13      13   100%   
-src/parse/operator.c                         226     223    98%   278,336,345
+src/parse/operator.c                         223     220    98%   275,333,342
 src/parse/scan0.c                            324     317    97%   123,203,212,247,318-320
 src/parse/scan1.c                            451     441    97%   54,90,131,161,379-380,391,521,582,620
 src/parse/scan2.c                            409     406    99%   302,379,576
@@ -77,8 +77,8 @@ src/vm/vm_code.c                              45      45   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10319    9755    94%
+TOTAL                                      10315    9754    94%
 ------------------------------------------------------------------------------
-lines: 94.5% (9755 out of 10319)
-branches: 80.2% (4458 out of 5557)
+lines: 94.6% (9754 out of 10315)
+branches: 80.2% (4461 out of 5561)
 ```
