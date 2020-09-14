@@ -36,7 +36,7 @@ src/import/import_special.c                   29      29   100%
 src/import/import_tdef.c                      25      24    96%   32
 src/import/import_type.c                      23      23   100%   
 src/import/import_udef.c                      60      60   100%   
-src/lib/array.c                              347     322    92%   53,56,107,164-165,298-305,314-320,373-377
+src/lib/array.c                              415     370    89%   53,56,89-90,117,174-175,197-200,213-223,225-226,257,381-388,397-403,460-464
 src/lib/engine.c                             130     128    98%   30-31
 src/lib/event.c                               47      47   100%   
 src/lib/instr.c                               98      96    98%   39,78
@@ -77,8 +77,8 @@ src/vm/vm_code.c                              45      45   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10321    9757    94%
+TOTAL                                      10389    9805    94%
 ------------------------------------------------------------------------------
-lines: 94.5% (9757 out of 10321)
-branches: 80.2% (4458 out of 5557)
+lines: 94.4% (9805 out of 10389)
+branches: 80.2% (4466 out of 5571)
 ```
