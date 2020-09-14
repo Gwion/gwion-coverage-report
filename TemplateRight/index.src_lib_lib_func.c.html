@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-09-14 11:40:46</td>
+            <td class="headerValue">2020-09-14 11:51:08</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">118</td>
@@ -1723,29 +1723,29 @@
     <tr>
     <td align="right" class="lineno"><pre>204</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  m_str name = NULL;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="left" class="src coveredLine"><pre>  char name[13 + strlen(env->curr->name) +</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>205</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  asprintf(&amp;name, "generated@%u:%u", bin->rhs->pos->first.line, bin->rhs->pos->first.column);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>    num_digit(bin->rhs->pos->first.line) + num_digit(bin->rhs->pos->first.column)];</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>206</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  fptr_def->base->xid = insert_symbol(name);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  sprintf(name, "generated@%s@%u:%u", env->curr->name, bin->rhs->pos->first.line, bin->rhs->pos->first.column);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>207</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  free(name);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  fptr_def->base->xid = insert_symbol(name);</pre></td>
     </tr>
 
     <tr>
