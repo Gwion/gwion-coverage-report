@@ -266,11 +266,11 @@
           </tr>
           <tr>
             <td class="headerName">File:</td>
-            <td class="headerValue">src/env/value.c</td>
+            <td class="headerValue">src/import/import_internals.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">25</td>
-            <td class="headerTableEntry">25</td>
+            <td class="headerTableEntry">14</td>
+            <td class="headerTableEntry">14</td>
             <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
           </tr>
           <tr>
@@ -278,8 +278,8 @@
             <td class="headerValue">2020-09-21 18:03:19</td>
             <td></td>
             <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">20</td>
-            <td class="headerTableEntry">20</td>
+            <td class="headerTableEntry">4</td>
+            <td class="headerTableEntry">4</td>
             <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
           </tr>
         </table>
@@ -331,209 +331,174 @@
     <td align="right" class="lineno"><pre>5</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "gwion.h"</pre></td>
+    <td align="left" class="src "><pre>#include "traverse.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>6</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "instr.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>7</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>95881</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static void free_value(Value a, Gwion gwion) {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "object.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>8</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>95881</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Type t = a->type;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "gwion.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>9</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 53607 times">&check;</span><span class="takenBranch" title="Branch 1 taken 42274 times">&check;</span><span class="takenBranch" title="Branch 2 taken 10272 times">&check;</span><span class="takenBranch" title="Branch 3 taken 43335 times">&check;</span><br/><span class="takenBranch" title="Branch 4 taken 10267 times">&check;</span><span class="takenBranch" title="Branch 5 taken 5 times">&check;</span><span class="takenBranch" title="Branch 6 taken 1469 times">&check;</span><span class="takenBranch" title="Branch 7 taken 8798 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>106148</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(!GET_FLAG(a, func) &amp;&amp; a->d.ptr &amp;&amp; !GET_FLAG(a, union) &amp;&amp;</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "operator.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>10</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1461 times">&check;</span><span class="takenBranch" title="Branch 1 taken 8 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1443 times">&check;</span><span class="takenBranch" title="Branch 3 taken 18 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>11736</pre></td>
-    <td align="left" class="src coveredLine"><pre>      !(GET_FLAG(a, enum) &amp;&amp; GET_FLAG(a, builtin) &amp;&amp; a->from->owner_class)</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "import.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>11</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 7866 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2383 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>10249</pre></td>
-    <td align="left" class="src coveredLine"><pre>      &amp;&amp; isa(t, gwion->type[et_object]) &lt; 0)</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "gwi.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>12</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>7866</pre></td>
-    <td align="left" class="src coveredLine"><pre>   _mp_free(gwion->mp, t->size, a->d.ptr);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>13</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 29 times">&check;</span><span class="takenBranch" title="Branch 1 taken 87986 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="takenBranch" title="Branch 3 taken 28 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>88015</pre></td>
-    <td align="left" class="src coveredLine"><pre>  else if(GET_FLAG(a, enum) &amp;&amp; GET_FLAG(a, dtor))</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1427</pre></td>
+    <td align="left" class="src coveredLine"><pre>void gwi_body(const Gwi gwi, const Ast body) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>14</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>    xfree(a->d.ptr);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1427</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Class_Def cdef = gwi->gwion->env->class_def->e->def;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>15</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 29732 times">&check;</span><span class="takenBranch" title="Branch 2 taken 66149 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>95881</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(is_class(gwion, t))</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1425 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1427</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(!cdef->body)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>16</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>29732</pre></td>
-    <td align="left" class="src coveredLine"><pre>    REM_REF(t, gwion)</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1425</pre></td>
+    <td align="left" class="src coveredLine"><pre>    cdef->body = body;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>17</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>95881</pre></td>
-    <td align="left" class="src coveredLine"><pre>  mp_free(gwion->mp, ValueFrom, a->from);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  else</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>18</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>95881</pre></td>
-    <td align="left" class="src coveredLine"><pre>  mp_free(gwion->mp, Value, a);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>    gwi->body->next = body;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>19</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>95881</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1427</pre></td>
+    <td align="left" class="src coveredLine"><pre>  gwi->body = body;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>20</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1427</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>21</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>122104</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN Value new_value(MemPool p, const Type type, const m_str name) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>22</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>122104</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Value a = mp_calloc(p, Value);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>23</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>122104</pre></td>
-    <td align="left" class="src coveredLine"><pre>  a->from = mp_calloc(p, ValueFrom);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>24</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>122104</pre></td>
-    <td align="left" class="src coveredLine"><pre>  a->type       = type;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>25</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>122104</pre></td>
-    <td align="left" class="src coveredLine"><pre>  a->name       = name;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>26</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>122104</pre></td>
-    <td align="left" class="src coveredLine"><pre>  a->ref = new_refcount(p, free_value);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>27</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>122104</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return a;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>28</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>29</pre></td>
-    <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>30</pre></td>
+    <td align="right" class="lineno"><pre>22</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>113254</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN void valuefrom(const Env env, struct ValueFrom_ *from) {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN void gwi_reset(const Gwi gwi) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>31</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>113254</pre></td>
-    <td align="left" class="src coveredLine"><pre>  from->owner = env->curr;</pre></td>
+    <td align="right" class="lineno"><pre>23</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 23 times">&check;</span><span class="takenBranch" title="Branch 1 taken 13 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(gwi->ck) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>32</pre></td>
+    <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>113254</pre></td>
-    <td align="left" class="src coveredLine"><pre>  from->owner_class = env->class_def;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
+    <td align="left" class="src coveredLine"><pre>    ck_clean(gwi);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>33</pre></td>
+    <td align="right" class="lineno"><pre>25</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>113254</pre></td>
-    <td align="left" class="src coveredLine"><pre>  from->ctx = env->context;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
+    <td align="left" class="src coveredLine"><pre>    mp_free2(gwi->gwion->mp, sizeof(ImportCK), gwi->ck);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>34</pre></td>
+    <td align="right" class="lineno"><pre>26</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>113254</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
+    <td align="left" class="src coveredLine"><pre>    gwi->ck = NULL;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>27</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>28</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
+    <td align="left" class="src coveredLine"><pre>  env_reset(gwi->gwion->env);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>29</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 

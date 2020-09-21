@@ -266,11 +266,11 @@
           </tr>
           <tr>
             <td class="headerName">File:</td>
-            <td class="headerValue">src/env/type_special.c</td>
+            <td class="headerValue">src/import/import_type.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">33</td>
-            <td class="headerTableEntry">33</td>
+            <td class="headerTableEntry">23</td>
+            <td class="headerTableEntry">23</td>
             <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
           </tr>
           <tr>
@@ -278,9 +278,9 @@
             <td class="headerValue">2020-09-21 18:03:19</td>
             <td></td>
             <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">10</td>
-            <td class="headerTableEntry">10</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
+            <td class="headerTableEntry">14</td>
+            <td class="headerTableEntry">16</td>
+            <td class="headerTableEntry" style="background-color:#FFFF55">87.5 %</td>
           </tr>
         </table>
       </td>
@@ -303,424 +303,333 @@
     <td align="right" class="lineno"><pre>1</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "gwion_util.h"</pre></td>
+    <td align="left" class="src "><pre>#include &lt;stdlib.h></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "gwion_ast.h"</pre></td>
+    <td align="left" class="src "><pre>#include &lt;string.h></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>3</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "gwion_env.h"</pre></td>
+    <td align="left" class="src "><pre>#include &lt;ctype.h></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>4</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "vm.h"</pre></td>
+    <td align="left" class="src "><pre>#include "gwion_util.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>5</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "gwion.h"</pre></td>
+    <td align="left" class="src "><pre>#include "gwion_ast.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>6</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "gwion_env.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>7</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>static m_str const special_name[] = { "^nonnull", "^force" };</pre></td>
+    <td align="left" class="src "><pre>#include "vm.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>8</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#define SPECIAL_LEN strlen(special_name[0]) + strlen(special_name[1])</pre></td>
+    <td align="left" class="src "><pre>#include "traverse.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>9</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>static const ae_flag special_flag[] = { ae_flag_nonnull, ae_flag_force };</pre></td>
+    <td align="left" class="src "><pre>#include "instr.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>10</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "object.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>11</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>typedef struct {</pre></td>
+    <td align="left" class="src "><pre>#include "emit.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>12</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  const Type    type;</pre></td>
+    <td align="left" class="src "><pre>#include "gwion.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>13</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  Symbol  name;</pre></td>
+    <td align="left" class="src "><pre>#include "operator.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>14</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  ae_flag flag;</pre></td>
+    <td align="left" class="src "><pre>#include "import.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>15</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  uint st_type;</pre></td>
+    <td align="left" class="src "><pre>#include "gwi.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>16</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>} SpecialType;</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>17</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount coveredLine"><pre>12107</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN2(1) static Type get_parent(const Gwi gwi, const m_str parent_name) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>18</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3561 times">&check;</span><span class="takenBranch" title="Branch 1 taken 8546 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>12107</pre></td>
+    <td align="left" class="src coveredLine"><pre>  Type_Decl* td = parent_name ? str2decl(gwi, parent_name) : NULL;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>19</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4327</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static Type specialtype_create(const Env env, const SpecialType *s) {</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3561 times">&check;</span><span class="takenBranch" title="Branch 1 taken 8546 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>12107</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(td) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>20</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4327</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Type t = type_copy(env->gwion->mp, s->type);</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3560 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 3560 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>3561</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if(td->array || td->types) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>21</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4281 times">&check;</span><span class="takenBranch" title="Branch 1 taken 46 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>4327</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(t->nspc)</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>      const m_str str = td->array ? "array" : "template";</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>22</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4281</pre></td>
-    <td align="left" class="src coveredLine"><pre>    ADD_REF(t->nspc)</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>      free_type_decl(gwi->gwion->mp, td);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>23</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4327</pre></td>
-    <td align="left" class="src coveredLine"><pre>  t->name = s_name(s->name);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>      GWI_ERR_O(_("can't use gwi_mk_type to extend %s types"), str)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4327</pre></td>
-    <td align="left" class="src coveredLine"><pre>  t->flag = s->type->flag | s->flag;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>25</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4327</pre></td>
-    <td align="left" class="src coveredLine"><pre>  t->e->parent = unflag_type(s->type);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>26</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4327</pre></td>
-    <td align="left" class="src coveredLine"><pre>  nspc_add_type_front(s->type->e->owner, s->name, t);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>27</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4327</pre></td>
-    <td align="left" class="src coveredLine"><pre>  mk_class(env, t);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>28</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4327</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return t;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>29</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>30</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>31</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17901</pre></td>
-    <td align="left" class="src coveredLine"><pre>static inline int get_flag(const Type t, const ae_flag flag) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>32</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17901</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return (t->flag &amp; flag) == flag;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>33</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>34</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>35</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>36</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35802</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static void specialtype_flag(SpecialType *s, m_str c, const uint i) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>37</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35802</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const ae_flag flag = special_flag[i];</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>38</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 17901 times">&check;</span><span class="takenBranch" title="Branch 1 taken 17901 times">&check;</span><span class="takenBranch" title="Branch 3 taken 5 times">&check;</span><span class="takenBranch" title="Branch 4 taken 17896 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>35802</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(i == s->st_type || get_flag(s->type, flag)) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>39</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17906</pre></td>
-    <td align="left" class="src coveredLine"><pre>    strcat(c, special_name[i]);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>40</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17906</pre></td>
-    <td align="left" class="src coveredLine"><pre>    s->flag |= flag;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>41</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
+    <td align="right" class="lineno"><pre>26</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3560 times">&check;</span><span class="takenBranch" title="Branch 1 taken 8546 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>12106</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Type parent = td ? known_type(gwi->gwion->env, td) : NULL;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>27</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3560 times">&check;</span><span class="takenBranch" title="Branch 1 taken 8546 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>12106</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(td)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>28</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3560</pre></td>
+    <td align="left" class="src coveredLine"><pre>    free_type_decl(gwi->gwion->mp, td);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>29</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>12106</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return parent;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>30</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>31</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>32</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>12111</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN2(1,2) Type gwi_mk_type(const Gwi gwi, const m_str name, const m_uint size, const m_str parent_name) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>33</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span><span class="takenBranch" title="Branch 2 taken 12107 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>12111</pre></td>
+    <td align="left" class="src coveredLine"><pre>  CHECK_OO(str2sym(gwi, name))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>34</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>12107</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Type parent = get_parent(gwi, parent_name);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>35</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>12107</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Type t = new_type(gwi->gwion->mp, 0, name, parent);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>36</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>12107</pre></td>
+    <td align="left" class="src coveredLine"><pre>  t->size = size;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>37</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>12107</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return t;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>38</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>39</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>40</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>27077</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN m_int gwi_add_type(const Gwi gwi, const Type type) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>41</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>27077</pre></td>
+    <td align="left" class="src coveredLine"><pre>  env_add_type(gwi->gwion->env, type);</pre></td>
+    </tr>
+
+    <tr>
     <td align="right" class="lineno"><pre>42</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35802</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>27077</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return (m_int)type->xid;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>43</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>44</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17901</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static void specialtype_init(SymTable *st, SpecialType *s) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>45</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17901</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const size_t sz = strlen(s->type->name);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>46</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17901</pre></td>
-    <td align="left" class="src coveredLine"><pre>  char c[sz + SPECIAL_LEN + 1];</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>47</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17901</pre></td>
-    <td align="left" class="src coveredLine"><pre>  strcpy(c, s->type->name);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>48</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17901</pre></td>
-    <td align="left" class="src coveredLine"><pre>  m_str flagged = strchr(c, '^');</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>49</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 5 times">&check;</span><span class="takenBranch" title="Branch 1 taken 17896 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>17901</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(flagged)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>50</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
-    <td align="left" class="src coveredLine"><pre>    *flagged = '\0';</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>51</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17901</pre></td>
-    <td align="left" class="src coveredLine"><pre>  specialtype_flag(s, c, 0);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>52</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17901</pre></td>
-    <td align="left" class="src coveredLine"><pre>  specialtype_flag(s, c, 1);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>53</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17901</pre></td>
-    <td align="left" class="src coveredLine"><pre>  s->name = insert_symbol(st, c);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>54</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17901</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>55</pre></td>
-    <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>56</pre></td>
+    <td align="right" class="lineno"><pre>45</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17901</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN Type special_type(const Env env, const Type t, const uint st_type) {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>11392</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN m_int gwi_set_global_type(const Gwi gwi, const Type type, const type_enum te) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>57</pre></td>
+    <td align="right" class="lineno"><pre>46</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17901</pre></td>
-    <td align="left" class="src coveredLine"><pre>  SpecialType s = { .type=t, .st_type=st_type };</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>11392</pre></td>
+    <td align="left" class="src coveredLine"><pre>  gwi->gwion->type[te] = type;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>58</pre></td>
+    <td align="right" class="lineno"><pre>47</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17901</pre></td>
-    <td align="left" class="src coveredLine"><pre>  specialtype_init(env->gwion->st, &amp;s);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>11392</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return gwi_add_type(gwi, type);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>59</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 13574 times">&check;</span><span class="takenBranch" title="Branch 2 taken 4327 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>17901</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return nspc_lookup_type1(t->e->owner, s.name) ?:</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>60</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    specialtype_create(env, &amp;s);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>61</pre></td>
+    <td align="right" class="lineno"><pre>48</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
