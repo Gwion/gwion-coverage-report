@@ -33,7 +33,7 @@ src/import/import_internals.c                 14      14   100%
 src/import/import_item.c                      33      33   100%   
 src/import/import_oper.c                      39      39   100%   
 src/import/import_special.c                   29      29   100%   
-src/import/import_tdef.c                      25      24    96%   32
+src/import/import_tdef.c                      25      25   100%   
 src/import/import_type.c                      23      23   100%   
 src/import/import_udef.c                      60      60   100%   
 src/lib/array.c                              416     373    89%   53,56,89-90,117,174-175,206-216,218-221,255,380-387,396-402,459-463
@@ -77,8 +77,8 @@ src/vm/vm_code.c                              45      45   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10423    9831    94%
+TOTAL                                      10423    9832    94%
 ------------------------------------------------------------------------------
-lines: 94.3% (9831 out of 10423)
-branches: 80.1% (4478 out of 5592)
+lines: 94.3% (9832 out of 10423)
+branches: 80.3% (4493 out of 5594)
 ```
