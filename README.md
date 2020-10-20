@@ -27,7 +27,7 @@ src/gwion.c                                  140     138    98%   83,87
 src/gwiondata.c                               35      35   100%   
 src/import/cleaner.c                          20      20   100%   
 src/import/import_cdef.c                      83      75    90%   34,105-111
-src/import/import_checker.c                  188     158    84%   102,113,117,119-121,133,147-150,161-162,169-171,189-193,218-224,236,242
+src/import/import_checker.c                  188     163    86%   102,113,117,119-121,133,147-150,161-162,169-171,189-193,223-224,236,242
 src/import/import_enum.c                      51      51   100%   
 src/import/import_fdef.c                      94      94   100%   
 src/import/import_internals.c                 14      14   100%   
@@ -54,7 +54,7 @@ src/lib/string.c                             426     179    42%   86-87,90-96,99
 src/lib/ugen.c                               228     228   100%   
 src/lib/vararg.c                             139     137    98%   35,52
 src/main.c                                    14      14   100%   
-src/parse/check.c                            927     891    96%   76,97,171,289-295,297,596,670-674,681,753-756,771,797,878-882,970,1017-1018,1020-1021,1073,1309
+src/parse/check.c                            914     883    96%   76,97,170,288-294,296,595,669-673,680,752-755,770,796,950,997-998,1000-1001,1053,1289
 src/parse/compat_func.c                       11      11   100%   
 src/parse/did_you_mean.c                      41      39    95%   40,57
 src/parse/func_operator.c                     13      13   100%   
@@ -79,8 +79,8 @@ src/vm/vm_code.c                              45      45   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10417    9825    94%
+TOTAL                                      10404    9822    94%
 ------------------------------------------------------------------------------
-lines: 94.3% (9825 out of 10417)
-branches: 80.3% (4489 out of 5588)
+lines: 94.4% (9822 out of 10404)
+branches: 80.4% (4490 out of 5584)
 ```
