@@ -58,7 +58,7 @@ src/parse/check.c                            914     883    96%   76,97,170,288-
 src/parse/compat_func.c                       11      11   100%   
 src/parse/did_you_mean.c                      41      39    95%   40,57
 src/parse/func_operator.c                     13      13   100%   
-src/parse/func_resolve_tmpl.c                100      98    98%   64,133
+src/parse/func_resolve_tmpl.c                119     117    98%   66,165
 src/parse/operator.c                         226     223    98%   278,336,345
 src/parse/scan0.c                            318     311    97%   123,203,212,247,318-320
 src/parse/scan1.c                            453     443    97%   54,90,131,161,376-377,388,524,585,623
@@ -79,8 +79,8 @@ src/vm/vm_code.c                              45      45   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10403    9821    94%
+TOTAL                                      10422    9840    94%
 ------------------------------------------------------------------------------
-lines: 94.4% (9821 out of 10403)
-branches: 80.4% (4490 out of 5584)
+lines: 94.4% (9840 out of 10422)
+branches: 80.4% (4492 out of 5586)
 ```
