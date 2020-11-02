@@ -269,13 +269,13 @@
             <td class="headerValue">src/lib/ptr.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">122</td>
-            <td class="headerTableEntry">128</td>
+            <td class="headerTableEntry">123</td>
+            <td class="headerTableEntry">129</td>
             <td class="headerTableEntry" style="background-color:LightGreen">95.3 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-10-26 12:32:45</td>
+            <td class="headerValue">2020-11-02 11:48:49</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">39</td>
@@ -728,9 +728,9 @@
 
     <tr>
     <td align="right" class="lineno"><pre>62</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><br/></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(_t->e->def &amp;&amp; !GET_FLAG(_t, check))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(_t->e->cdef &amp;&amp; !tflag(_t, tflag_check))</pre></td>
     </tr>
 
     <tr>
@@ -861,16 +861,16 @@
 
     <tr>
     <td align="right" class="lineno"><pre>81</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if(!GET_FLAG(t, check))</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if(!tflag(t, tflag_check))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>82</pre></td>
     <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>      CHECK_BN(traverse_class_def(env, t->e->def))</pre></td>
+    <td align="left" class="src coveredLine"><pre>      CHECK_BN(traverse_class_def(env, t->e->cdef))</pre></td>
     </tr>
 
     <tr>
@@ -1290,277 +1290,305 @@
     <td align="right" class="lineno"><pre>142</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>17</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Type base = known_type(env, t->e->def->base.tmpl->call->td);</pre></td>
+    <td align="left" class="src coveredLine"><pre>set_tflag(t, tflag_tmpl);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>143</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//if(!tflag(t, tflag_scan1))exit(3);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>144</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>17</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Type base = known_type(env, t->e->cdef->base.tmpl->call->td);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>145</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 5 times">&check;</span><span class="takenBranch" title="Branch 1 taken 12 times">&check;</span><span class="takenBranch" title="Branch 2 taken 4 times">&check;</span><span class="takenBranch" title="Branch 3 taken 1 times">&check;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>17</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(isa(base, env->gwion->type[et_compound]) > 0 &amp;&amp; !t->nspc->dtor) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>144</pre></td>
+    <td align="right" class="lineno"><pre>146</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>    t->nspc->dtor = new_vm_code(env->gwion->mp, NULL, SZ_INT, ae_flag_member | ae_flag_builtin, "@PtrDtor");</pre></td>
+    <td align="left" class="src coveredLine"><pre>    t->nspc->dtor = new_vm_code(env->gwion->mp, NULL, SZ_INT, 1, "@PtrDtor");</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>145</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="lineno"><pre>147</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if(!GET_FLAG(t, struct))</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if(!tflag(t, tflag_struct))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>146</pre></td>
+    <td align="right" class="lineno"><pre>148</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>4</pre></td>
     <td align="left" class="src coveredLine"><pre>      t->nspc->dtor->native_func = (m_uint)ptr_object_dtor;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>147</pre></td>
+    <td align="right" class="lineno"><pre>149</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    else</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>148</pre></td>
+    <td align="right" class="lineno"><pre>150</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>      t->nspc->dtor->native_func = (m_uint)ptr_struct_dtor;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>149</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>    SET_FLAG(t, dtor);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>150</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
-    </tr>
-
-    <tr>
     <td align="right" class="lineno"><pre>151</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>17</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return t;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
+    <td align="left" class="src coveredLine"><pre>    set_tflag(t, tflag_dtor);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>152</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>153</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>17</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return t;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>154</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>155</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>154</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>GWION_IMPORT(ptr) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>155</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Type _t_ptr = gwi_class_ini(gwi, "@Ptr", NULL);</pre></td>
-    </tr>
-
-    <tr>
     <td align="right" class="lineno"><pre>156</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_class_end(gwi))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>GWION_IMPORT(ptr) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>157</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  SET_FLAG(_t_ptr, unary);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Type _t_ptr = gwi_class_ini(gwi, "@Ptr", NULL);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>158</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "@Ptr", NULL, NULL))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_class_end(gwi))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>159</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_ptr_scan))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  set_tflag(_t_ptr, tflag_ntmpl);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>160</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@scan", NULL))</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//  set_tflag(_t_ptr, tflag_tmpl);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>161</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Type t_ptr = gwi_class_ini(gwi, "Ptr:[A]", "@Ptr");</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "@Ptr", NULL, NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>162</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  gwi->gwion->type[et_ptr] = t_ptr;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_ptr_scan))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>163</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_item_ini(gwi, "@internal", "@val"))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@scan", NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>164</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_item_end(gwi, 0, NULL))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Type t_ptr = gwi_class_ini(gwi, "Ptr:[A]", "@Ptr");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>165</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_class_end(gwi))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  gwi->gwion->type[et_ptr] = t_ptr;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>166</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  SET_FLAG(t_ptr, unary);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_item_ini(gwi, "@internal", "@val"))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>167</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, (m_str)OP_ANY_TYPE, "nonnull Ptr", NULL))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_item_end(gwi, 0, NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>168</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_ptr_assign))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_class_end(gwi))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>169</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, ":=>", instr_ptr_assign))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  set_tflag(t_ptr, tflag_ntmpl);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>170</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_ptr_implicit))</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//  set_tflag(t_ptr, tflag_tmpl);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>171</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_ptr_implicit))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, (m_str)OP_ANY_TYPE, "nonnull Ptr", NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>172</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@implicit", Cast2Ptr))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_ptr_assign))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>173</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_ptr_cast))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, ":=>", instr_ptr_assign))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>174</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_ptr_cast))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_ptr_implicit))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>175</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "$", Cast2Ptr))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_ptr_implicit))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>176</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, NULL, "nonnull Ptr", NULL))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@implicit", Cast2Ptr))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>177</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_ptr_deref))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_ptr_cast))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>178</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_ptr_deref))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_ptr_cast))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>179</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "*", instr_ptr_deref))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "$", Cast2Ptr))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>180</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, NULL, "nonnull Ptr", NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>181</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_ptr_deref))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>182</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_ptr_deref))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>183</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "*", instr_ptr_deref))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>184</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>717</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>185</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
