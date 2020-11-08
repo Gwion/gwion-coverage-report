@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-11-07 19:29:26</td>
+            <td class="headerValue">2020-11-08 13:14:16</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">85</td>
@@ -401,7 +401,7 @@
     <td align="right" class="lineno"><pre>15</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>37606</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static void free_type(Type a, Gwion gwion) {</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN void free_type(const Type a, struct Gwion_ *const gwion) {</pre></td>
     </tr>
 
     <tr>
@@ -457,7 +457,7 @@
     <td align="right" class="lineno"><pre>23</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>18038</pre></td>
-    <td align="left" class="src coveredLine"><pre>    REM_REF(a->nspc, gwion);</pre></td>
+    <td align="left" class="src coveredLine"><pre>    nspc_remref(a->nspc, gwion);</pre></td>
     </tr>
 
     <tr>
@@ -569,7 +569,7 @@
     <td align="right" class="lineno"><pre>39</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>108869</pre></td>
-    <td align="left" class="src coveredLine"><pre>  type->ref = new_refcount(p, free_type);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  type->ref = 1;</pre></td>
     </tr>
 
     <tr>
@@ -680,14 +680,14 @@
     <tr>
     <td align="right" class="lineno"><pre>55</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>989498</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>989395</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN m_bool isa(const restrict Type var, const restrict Type parent) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>56</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 888414 times">&check;</span><span class="takenBranch" title="Branch 1 taken 101084 times">&check;</span><span class="takenBranch" title="Branch 2 taken 450270 times">&check;</span><span class="takenBranch" title="Branch 3 taken 438144 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>989498</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 888312 times">&check;</span><span class="takenBranch" title="Branch 1 taken 101083 times">&check;</span><span class="takenBranch" title="Branch 2 taken 450220 times">&check;</span><span class="takenBranch" title="Branch 3 taken 438092 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>989395</pre></td>
     <td align="left" class="src coveredLine"><pre>  return (var->xid == parent->xid) ? 1 : var->e->parent ? isa(var->e->parent, parent) : -1;</pre></td>
     </tr>
 
@@ -1108,7 +1108,7 @@
     <td align="right" class="lineno"><pre>116</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>59</pre></td>
-    <td align="left" class="src coveredLine"><pre>  ADD_REF((t->nspc = env->gwion->type[et_array]->nspc))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  nspc_addref((t->nspc = env->gwion->type[et_array]->nspc));</pre></td>
     </tr>
 
     <tr>

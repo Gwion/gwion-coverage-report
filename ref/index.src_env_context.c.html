@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-11-07 19:29:26</td>
+            <td class="headerValue">2020-11-08 13:14:16</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">4</td>
@@ -345,14 +345,14 @@
     <td align="right" class="lineno"><pre>7</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>689</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static void free_context(const Context a, Gwion gwion) {</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN void free_context(const Context a, Gwion gwion) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>8</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>689</pre></td>
-    <td align="left" class="src coveredLine"><pre>  REM_REF(a->nspc, gwion)</pre></td>
+    <td align="left" class="src coveredLine"><pre>  nspc_remref(a->nspc, gwion);</pre></td>
     </tr>
 
     <tr>
@@ -422,7 +422,7 @@
     <td align="right" class="lineno"><pre>18</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  context->ref = new_refcount(p, free_context);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  context->ref = 1;</pre></td>
     </tr>
 
     <tr>
@@ -457,7 +457,7 @@
     <td align="right" class="lineno"><pre>23</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  ADD_REF((env->context = context))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  context_addref((env->context = context));</pre></td>
     </tr>
 
     <tr>
@@ -548,7 +548,7 @@
     <td align="right" class="lineno"><pre>36</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  REM_REF(context, env->gwion)</pre></td>
+    <td align="left" class="src coveredLine"><pre>  context_remref(context, env->gwion);</pre></td>
     </tr>
 
     <tr>
