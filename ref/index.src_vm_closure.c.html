@@ -266,21 +266,21 @@
           </tr>
           <tr>
             <td class="headerName">File:</td>
-            <td class="headerValue">src/parse/func_operator.c</td>
+            <td class="headerValue">src/vm/closure.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
+            <td class="headerTableEntry">12</td>
             <td class="headerTableEntry">13</td>
-            <td class="headerTableEntry">13</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
+            <td class="headerTableEntry" style="background-color:LightGreen">92.3 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
             <td class="headerValue">2020-11-10 16:45:45</td>
             <td></td>
             <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">15</td>
-            <td class="headerTableEntry">16</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">93.8 %</td>
+            <td class="headerTableEntry">1</td>
+            <td class="headerTableEntry">2</td>
+            <td class="headerTableEntry" style="background-color:LightPink">50.0 %</td>
           </tr>
         </table>
       </td>
@@ -345,118 +345,146 @@
     <td align="right" class="lineno"><pre>7</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "gwion.h"</pre></td>
+    <td align="left" class="src "><pre>#include "array.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>8</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "operator.h"</pre></td>
+    <td align="left" class="src "><pre>#include "memoize.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>9</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "gwion.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>10</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>46</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN void func_operator(const Func_Def fdef, struct Op_Import *opi) {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "operator.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>11</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>46</pre></td>
-    <td align="left" class="src coveredLine"><pre>  opi->op =fdef->base->xid;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "import.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>12</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>46</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const m_str str = s_name(fdef->base->xid);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>13</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>92</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const uint is_unary = fbflag(fdef->base, fbflag_unary) +</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN Closure* new_closure(MemPool mp, const m_uint sz) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>14</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 44 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span><span class="takenBranch" title="Branch 2 taken 2 times">&check;</span><span class="takenBranch" title="Branch 3 taken 42 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>46</pre></td>
-    <td align="left" class="src coveredLine"><pre>    (!strcmp(str, "@conditionnal") || !strcmp(str, "@unconditionnal"));</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  Closure *a = mp_malloc(mp, Closure);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>15</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>46</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Arg_List args = fdef->base->args;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  a->data = mp_malloc2(mp, sz);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>16</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 40 times">&check;</span><span class="takenBranch" title="Branch 1 taken 6 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>86</pre></td>
-    <td align="left" class="src coveredLine"><pre>  opi->lhs = is_unary ? NULL :</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  map_init(&amp;a->m);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>17</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 24 times">&check;</span><span class="takenBranch" title="Branch 1 taken 16 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>40</pre></td>
-    <td align="left" class="src coveredLine"><pre>    args ? args->var_decl->value->type : NULL;</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  a->sz = sz;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>18</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 42 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>46</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(strcmp(str, "@implicit"))</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return a;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>19</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6 times">&check;</span><span class="takenBranch" title="Branch 1 taken 20 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>88</pre></td>
-    <td align="left" class="src coveredLine"><pre>    opi->rhs = args ? is_unary ? args->var_decl->value->type :</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>20</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 26 times">&check;</span><span class="takenBranch" title="Branch 1 taken 16 times">&check;</span><span class="takenBranch" title="Branch 2 taken 20 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>88</pre></td>
-    <td align="left" class="src coveredLine"><pre>      (args->next ? args->next->var_decl->value->type : NULL) : NULL;</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>21</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  else</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN void free_closure(Closure *a, const Gwion gwion) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>22</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>    opi->rhs = fdef->base->ret_type;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Map m = &amp;a->m;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>23</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  for(m_uint i = 0; i &lt; map_size(m); ++i)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>46</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    compound_release(gwion->vm->cleaner_shred, (Type)VKEY(m, i), a->data + VVAL(m, i));</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>25</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  map_release(m);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>26</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  _mp_free(gwion->mp, a->sz, a->data);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>27</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
