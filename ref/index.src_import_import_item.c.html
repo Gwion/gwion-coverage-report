@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-11-12 01:34:51</td>
+            <td class="headerValue">2020-11-12 14:15:58</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">15</td>
@@ -527,7 +527,7 @@
     <td align="right" class="lineno"><pre>33</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>22556</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN2(1) m_int gwi_item_end(const Gwi gwi, const ae_flag flag, const m_uint* addr) {</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN2(1) m_int gwi_item_end(const Gwi gwi, const ae_flag flag, m_uint *const addr) {</pre></td>
     </tr>
 
     <tr>
@@ -548,42 +548,42 @@
     <td align="right" class="lineno"><pre>36</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>22555</pre></td>
-    <td align="left" class="src coveredLine"><pre>  gwi->ck->exp->d.exp_decl.list->self->addr = (m_uint*)addr;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>37</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>22555</pre></td>
     <td align="left" class="src coveredLine"><pre>  gwi->ck->exp->d.exp_decl.td->flag = flag;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>38</pre></td>
+    <td align="right" class="lineno"><pre>37</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 13100 times">&check;</span><span class="takenBranch" title="Branch 1 taken 9455 times">&check;</span><span class="takenBranch" title="Branch 3 taken 1456 times">&check;</span><span class="takenBranch" title="Branch 4 taken 11644 times">&check;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>22555</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(env->class_def &amp;&amp; tflag(env->class_def, tflag_tmpl))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>39</pre></td>
+    <td align="right" class="lineno"><pre>38</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1456</pre></td>
     <td align="left" class="src coveredLine"><pre>    return gwi_item_tmpl(gwi);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>40</pre></td>
+    <td align="right" class="lineno"><pre>39</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 2 taken 21098 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>21099</pre></td>
     <td align="left" class="src coveredLine"><pre>  CHECK_BB(traverse_exp(env, gwi->ck->exp))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>41</pre></td>
+    <td align="right" class="lineno"><pre>40</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>21098</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Value value = gwi->ck->exp->d.exp_decl.list->self->value;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>41</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>21098</pre></td>
+    <td align="left" class="src coveredLine"><pre>  value->d.ptr = addr;</pre></td>
     </tr>
 
     <tr>
