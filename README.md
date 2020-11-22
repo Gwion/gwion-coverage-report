@@ -13,7 +13,7 @@ src/emit/emit.c                             1609    1556    96%   138,144-145,14
 src/emit/emitter.c                            28      28   100%   
 src/emit/escape.c                             52      52   100%   
 src/emit/memoize.c                            33      33   100%   
-src/env/context.c                             26      26   100%   
+src/env/context.c                             28      28   100%   
 src/env/env.c                                 88      88   100%   
 src/env/env_utils.c                           72      72   100%   
 src/env/envset.c                              46      42    91%   16,23,27,53
@@ -62,7 +62,7 @@ src/parse/func_resolve_tmpl.c                105     104    99%   59
 src/parse/operator.c                         225     222    98%   278,336,345
 src/parse/scan0.c                            317     307    96%   120,139-141,201,210,239,304-306
 src/parse/scan1.c                            447     434    97%   56,86,157,376-377,388,468-471,522,582,616
-src/parse/scan2.c                            410     406    99%   311,315,386,587
+src/parse/scan2.c                            417     412    98%   297,329,333,404,605
 src/parse/scanx.c                             41      41   100%   
 src/parse/stage.c                             14      14   100%   
 src/parse/template.c                          99      92    92%   28,37,67,75,90-91,135
@@ -80,8 +80,8 @@ src/vm/vm_code.c                              47      47   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10543   10084    95%
+TOTAL                                      10552   10092    95%
 ------------------------------------------------------------------------------
-lines: 95.6% (10084 out of 10543)
-branches: 81.2% (4531 out of 5581)
+lines: 95.6% (10092 out of 10552)
+branches: 81.2% (4542 out of 5595)
 ```
