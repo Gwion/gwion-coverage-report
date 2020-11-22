@@ -22,7 +22,7 @@ src/env/nspc.c                                62      61    98%   34
 src/env/tupleform.c                           38      38   100%   
 src/env/type.c                               137     124    90%   77,127-129,131-133,144,155,160-163
 src/env/type_special.c                        34      34   100%   
-src/env/value.c                               25      25   100%   
+src/env/value.c                               27      27   100%   
 src/gwion.c                                  126     125    99%   69
 src/gwiondata.c                               35      35   100%   
 src/import/cleaner.c                          20      20   100%   
@@ -80,8 +80,8 @@ src/vm/vm_code.c                              47      47   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10557   10092    95%
+TOTAL                                      10559   10094    95%
 ------------------------------------------------------------------------------
-lines: 95.6% (10092 out of 10557)
-branches: 81.2% (4543 out of 5597)
+lines: 95.6% (10094 out of 10559)
+branches: 81.2% (4544 out of 5599)
 ```
