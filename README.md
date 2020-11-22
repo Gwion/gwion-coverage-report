@@ -30,7 +30,7 @@ src/import/import_cdef.c                      90      85    94%   33-35,83,96
 src/import/import_checker.c                  186     163    87%   102,113,117,119-121,133,147-150,161-162,169-171,189-193,234,240
 src/import/import_enum.c                      51      51   100%   
 src/import/import_fdef.c                      99      98    99%   95
-src/import/import_internals.c                 24      24   100%   
+src/import/import_internals.c                 29      24    82%   43-47
 src/import/import_item.c                      35      35   100%   
 src/import/import_oper.c                      39      39   100%   
 src/import/import_special.c                   28      28   100%   
@@ -80,8 +80,8 @@ src/vm/vm_code.c                              47      47   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10552   10092    95%
+TOTAL                                      10557   10092    95%
 ------------------------------------------------------------------------------
-lines: 95.6% (10092 out of 10552)
-branches: 81.2% (4542 out of 5595)
+lines: 95.6% (10092 out of 10557)
+branches: 81.2% (4543 out of 5597)
 ```
