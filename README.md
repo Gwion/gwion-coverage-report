@@ -26,7 +26,7 @@ src/env/value.c                               25      25   100%
 src/gwion.c                                  126     125    99%   69
 src/gwiondata.c                               35      35   100%   
 src/import/cleaner.c                          20      20   100%   
-src/import/import_cdef.c                      79      78    98%   77
+src/import/import_cdef.c                      79      78    98%   67
 src/import/import_checker.c                  186     163    87%   102,113,117,119-121,133,147-150,161-162,169-171,189-193,234,240
 src/import/import_enum.c                      51      51   100%   
 src/import/import_fdef.c                      99      98    99%   95
@@ -44,7 +44,7 @@ src/lib/instr.c                               98      93    94%   31,33-34,38,51
 src/lib/lib_func.c                           292     284    97%   88,193,228-232,298
 src/lib/modules.c                            220     219    99%   252
 src/lib/object.c                              83      82    98%   113
-src/lib/object_op.c                          333     316    94%   57,272-273,368,379,387,433-442,444
+src/lib/object_op.c                          332     315    94%   57,271-272,367,378,386,432-441,443
 src/lib/opfunc.c                              64      58    90%   13-16,80-81
 src/lib/prim.c                               243     242    99%   240
 src/lib/prim_values.c                         30      30   100%   
@@ -80,8 +80,8 @@ src/vm/vm_code.c                              47      47   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10574   10119    95%
+TOTAL                                      10573   10118    95%
 ------------------------------------------------------------------------------
-lines: 95.7% (10119 out of 10574)
-branches: 80.6% (4558 out of 5657)
+lines: 95.7% (10118 out of 10573)
+branches: 80.6% (4555 out of 5653)
 ```
