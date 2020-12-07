@@ -65,7 +65,7 @@ TOTAL 95% :+1:
 |[src/vm/driver.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_driver.c.html)|25%|:-1:|
 |[src/vm/gack.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_gack.c.html)|-5%|:+1:|
 |[src/vm/shreduler.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_shreduler.c.html)|100%|:+1:|
-|[src/vm/vm.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_vm.c.html)|-9%|:+1:|
+|[src/vm/vm.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_vm.c.html)|-10%|:+1:|
 |[src/vm/vm_name.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_vm_name.c.html)|100%|:+1:|
 </details>
 
@@ -102,10 +102,10 @@ TOTAL 80% :+1:
 |[src/lib/lib_func.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_lib_func.c.html)|-10%|:-1:|
 |[src/lib/modules.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_modules.c.html)|-5%|:-1:|
 |[src/lib/object.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_object.c.html)|7%|:+1:|
-|[src/lib/object_op.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_object_op.c.html)|10%|:+1:|
+|[src/lib/object_op.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_object_op.c.html)|9%|:+1:|
 |[src/lib/opfunc.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_opfunc.c.html)|10%|:+1:|
 |[src/lib/ptr.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_ptr.c.html)|1%|:+1:|
-|[src/lib/shred.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_shred.c.html)|46%|:+1:|
+|[src/lib/shred.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_shred.c.html)|45%|:+1:|
 |[src/lib/string.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_string.c.html)|-45%|:-1:|
 |[src/lib/ugen.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_ugen.c.html)|-31%|:-1:|
 |[src/lib/vararg.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_vararg.c.html)|-14%|:+1:|
@@ -128,7 +128,7 @@ TOTAL 80% :+1:
 |[src/vm/driver.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_driver.c.html)|52%|:-1:|
 |[src/vm/gack.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_gack.c.html)|-15%|:+1:|
 |[src/vm/shreduler.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_shreduler.c.html)|87%|:+1:|
-|[src/vm/vm.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_vm.c.html)|-35%|:+1:|
+|[src/vm/vm.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_vm.c.html)|-36%|:+1:|
 |[src/vm/vm_name.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_vm_name.c.html)|-5%|:-1:|
 </details>
 
