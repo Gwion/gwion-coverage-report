@@ -59,7 +59,7 @@ src/parse/compat_func.c                       11      11   100%
 src/parse/did_you_mean.c                      41      40    97%   40
 src/parse/func_operator.c                     13      13   100%   
 src/parse/func_resolve_tmpl.c                105     104    99%   59
-src/parse/operator.c                         222     220    99%   269,329
+src/parse/operator.c                         222     220    99%   267,327
 src/parse/scan0.c                            315     308    97%   119,199,208,236,301-303
 src/parse/scan1.c                            450     436    96%   56,87,159,378-379,390,470-473,524,559,586,620
 src/parse/scan2.c                            409     406    99%   308,378,579
@@ -83,5 +83,5 @@ src/vm/vm_shred.c                             33      33   100%
 TOTAL                                      10565   10104    95%
 ------------------------------------------------------------------------------
 lines: 95.6% (10104 out of 10565)
-branches: 80.4% (4540 out of 5645)
+branches: 80.4% (4531 out of 5635)
 ```
