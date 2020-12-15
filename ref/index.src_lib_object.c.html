@@ -269,18 +269,18 @@
             <td class="headerValue">src/lib/object.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">71</td>
+            <td class="headerTableEntry">84</td>
             <td class="headerTableEntry">85</td>
-            <td class="headerTableEntry" style="background-color:#FFFF55">83.5 %</td>
+            <td class="headerTableEntry" style="background-color:LightGreen">98.8 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-12-15 00:25:44</td>
+            <td class="headerValue">2020-12-15 00:36:46</td>
             <td></td>
             <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">33</td>
+            <td class="headerTableEntry">49</td>
             <td class="headerTableEntry">56</td>
-            <td class="headerTableEntry" style="background-color:LightPink">58.9 %</td>
+            <td class="headerTableEntry" style="background-color:#FFFF55">87.5 %</td>
           </tr>
         </table>
       </td>
@@ -743,28 +743,28 @@
     <tr>
     <td align="right" class="lineno"><pre>64</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>7468</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>7485</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN void __release(const M_Object o, const VM_Shred shred) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>65</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>7468</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>7485</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_rem2(&amp;shred->gc, (vtype)o);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>66</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>7468</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>7485</pre></td>
     <td align="left" class="src coveredLine"><pre>  MemPool p = shred->info->mp;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>67</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>7468</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>7485</pre></td>
     <td align="left" class="src coveredLine"><pre>  Type t = o->type_ref;</pre></td>
     </tr>
 
@@ -777,30 +777,30 @@
 
     <tr>
     <td align="right" class="lineno"><pre>69</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 14928 times">&check;</span><span class="takenBranch" title="Branch 1 taken 6855 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>21783</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 14962 times">&check;</span><span class="takenBranch" title="Branch 1 taken 6864 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>21826</pre></td>
     <td align="left" class="src coveredLine"><pre>    if(!t->nspc)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>70</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>14928</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>14962</pre></td>
     <td align="left" class="src coveredLine"><pre>      continue;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>71</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 6855 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>6855</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if(isa(t, shred->info->vm->gwion->type[et_union]) > 0) {</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6864 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>6864</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if(isa(t, shred->info->vm->gwion->type[et_union]) &lt; 0) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>72</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>      struct scope_iter iter = { t->nspc->info->value, 0, 0 };\</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>6864</pre></td>
+    <td align="left" class="src coveredLine"><pre>      struct scope_iter iter = { t->nspc->info->value, 0, 0 };\</pre></td>
     </tr>
 
     <tr>
@@ -812,86 +812,86 @@
 
     <tr>
     <td align="right" class="lineno"><pre>74</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>      while(scope_iter(&amp;iter, &amp;v) > 0) {</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 63600 times">&check;</span><span class="takenBranch" title="Branch 2 taken 6864 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>77328</pre></td>
+    <td align="left" class="src coveredLine"><pre>      while(scope_iter(&amp;iter, &amp;v) > 0) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>75</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>        if(!GET_FLAG(v, static) &amp;&amp; !vflag(v, vflag_union) &amp;&amp;</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 62678 times">&check;</span><span class="takenBranch" title="Branch 1 taken 922 times">&check;</span><span class="takenBranch" title="Branch 3 taken 62678 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 5 taken 20 times">&check;</span><span class="takenBranch" title="Branch 6 taken 62658 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>126278</pre></td>
+    <td align="left" class="src coveredLine"><pre>        if(!GET_FLAG(v, static) &amp;&amp; !vflag(v, vflag_union) &amp;&amp;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>76</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>            isa(v->type, shred->info->vm->gwion->type[et_object]) > 0)</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>62678</pre></td>
+    <td align="left" class="src coveredLine"><pre>            isa(v->type, shred->info->vm->gwion->type[et_object]) > 0)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>77</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>          release(*(M_Object*)(o->data + v->from->offset), shred);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>20</pre></td>
+    <td align="left" class="src coveredLine"><pre>          release(*(M_Object*)(o->data + v->from->offset), shred);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>78</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>        else if(tflag(v->type, tflag_struct) &amp;&amp;</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 2 taken 63579 times">&check;</span><span class="takenBranch" title="Branch 3 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>63581</pre></td>
+    <td align="left" class="src coveredLine"><pre>        else if(tflag(v->type, tflag_struct) &amp;&amp;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>79</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>              !GET_FLAG(v, static) &amp;&amp; !vflag(v, vflag_union) &amp;&amp; v->type->info->tuple) {</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>              !GET_FLAG(v, static) &amp;&amp; !vflag(v, vflag_union) &amp;&amp; v->type->info->tuple) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>80</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>          const TupleForm tf = v->type->info->tuple;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>          const TupleForm tf = v->type->info->tuple;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>81</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>          for(m_uint i = 0; i &lt; vector_size(&amp;tf->types); ++i) {</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>          for(m_uint i = 0; i &lt; vector_size(&amp;tf->types); ++i) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>82</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>            const m_bit *data = o->data + v->from->offset;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
+    <td align="left" class="src coveredLine"><pre>            const m_bit *data = o->data + v->from->offset;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>83</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>            const Type t = (Type)vector_at(&amp;tf->types, i);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
+    <td align="left" class="src coveredLine"><pre>            const Type t = (Type)vector_at(&amp;tf->types, i);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>84</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>            if(isa(t, shred->info->vm->gwion->type[et_object]) > 0)</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
+    <td align="left" class="src coveredLine"><pre>            if(isa(t, shred->info->vm->gwion->type[et_object]) > 0)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>85</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>              release(*(M_Object*)(data + vector_at(&amp;tf->offset, i)), shred);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>              release(*(M_Object*)(data + vector_at(&amp;tf->offset, i)), shred);</pre></td>
     </tr>
 
     <tr>
@@ -924,8 +924,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>90</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 5768 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1087 times">&check;</span><span class="takenBranch" title="Branch 3 taken 5768 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>6855</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 5773 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1091 times">&check;</span><span class="takenBranch" title="Branch 3 taken 5773 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>6864</pre></td>
     <td align="left" class="src coveredLine"><pre>    if(tflag(t, tflag_dtor) &amp;&amp; t->nspc->dtor) {</pre></td>
     </tr>
 
@@ -938,15 +938,15 @@
 
     <tr>
     <td align="right" class="lineno"><pre>92</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 5764 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>5768</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 5769 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5773</pre></td>
     <td align="left" class="src coveredLine"><pre>      if(t->nspc->dtor->builtin)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>93</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>5764</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5769</pre></td>
     <td align="left" class="src coveredLine"><pre>        ((f_xtor)t->nspc->dtor->native_func)(o, NULL, shred);</pre></td>
     </tr>
 
@@ -994,15 +994,15 @@
 
     <tr>
     <td align="right" class="lineno"><pre>100</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 14315 times">&check;</span><span class="takenBranch" title="Branch 1 taken 7464 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>21779</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 14341 times">&check;</span><span class="takenBranch" title="Branch 1 taken 7481 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>21822</pre></td>
     <td align="left" class="src coveredLine"><pre>  } while((t = t->info->parent));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>101</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>7464</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>7481</pre></td>
     <td align="left" class="src coveredLine"><pre>  free_object(p, o);</pre></td>
     </tr>
 
@@ -1023,35 +1023,35 @@
     <tr>
     <td align="right" class="lineno"><pre>104</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>7464</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>7481</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN void free_object(MemPool p, const M_Object o) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>105</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 5859 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1605 times">&check;</span><span class="takenBranch" title="Branch 2 taken 5826 times">&check;</span><span class="takenBranch" title="Branch 3 taken 33 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>7464</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 5868 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1613 times">&check;</span><span class="takenBranch" title="Branch 2 taken 5834 times">&check;</span><span class="takenBranch" title="Branch 3 taken 34 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>7481</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(o->type_ref->nspc &amp;&amp; o->type_ref->nspc->info->offset)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>106</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>5826</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5834</pre></td>
     <td align="left" class="src coveredLine"><pre>    mp_free2(p, o->type_ref->nspc->info->offset, o->data);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>107</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>7464</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>7481</pre></td>
     <td align="left" class="src coveredLine"><pre>  mp_free(p, M_Object, o);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>108</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>7464</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>7481</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
