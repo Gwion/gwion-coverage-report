@@ -269,13 +269,13 @@
             <td class="headerValue">src/parse/func_resolve_tmpl.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">104</td>
-            <td class="headerTableEntry">105</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">99.0 %</td>
+            <td class="headerTableEntry">107</td>
+            <td class="headerTableEntry">108</td>
+            <td class="headerTableEntry" style="background-color:LightGreen">99.1 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-12-15 14:03:00</td>
+            <td class="headerValue">2020-12-15 14:49:42</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">58</td>
@@ -1065,313 +1065,348 @@
     <tr>
     <td align="right" class="lineno"><pre>110</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>113</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static Func _find_template_match(const Env env, const Value v, const Exp_Call* exp) {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>112</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static Func find_tmpl(const Env env, const Value v, const Exp_Call* exp, const m_str tmpl_name) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>111</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>113</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>112</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Type_List types = exp->tmpl->call;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>112</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>113</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>112</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Func former = env->func;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>113</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 2 taken 112 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>113</pre></td>
-    <td align="left" class="src coveredLine"><pre>  DECL_OO(const m_str, tmpl_name, = tl2str(env, types))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>114</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>112</pre></td>
     <td align="left" class="src coveredLine"><pre>  const m_uint scope = env->scope->depth;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>115</pre></td>
+    <td align="right" class="lineno"><pre>114</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>112</pre></td>
     <td align="left" class="src coveredLine"><pre>  struct EnvSet es = { .env=env, .data=env, .func=(_exp_func)check_cdef,</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>116</pre></td>
+    <td align="right" class="lineno"><pre>115</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    .scope=scope, .flag=tflag_check };</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>117</pre></td>
+    <td align="right" class="lineno"><pre>116</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>112</pre></td>
     <td align="left" class="src coveredLine"><pre>  struct ResolverArgs ra = {.v = v, .e = exp, .tmpl_name = tmpl_name, .types = types};</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>118</pre></td>
+    <td align="right" class="lineno"><pre>117</pre></td>
     <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 112 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>112</pre></td>
     <td align="left" class="src coveredLine"><pre>  CHECK_BO(envset_push(&amp;es, v->from->owner_class, v->from->owner))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>119</pre></td>
+    <td align="right" class="lineno"><pre>118</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>112</pre></td>
     <td align="left" class="src coveredLine"><pre>  (void)env_push(env, v->from->owner_class, v->from->owner);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>120</pre></td>
+    <td align="right" class="lineno"><pre>119</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>224</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Func m_func = !is_fptr(env->gwion, v->type) ?</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>121</pre></td>
+    <td align="right" class="lineno"><pre>120</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 104 times">&check;</span><span class="takenBranch" title="Branch 1 taken 8 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>112</pre></td>
     <td align="left" class="src coveredLine"><pre>      func_match(env, &amp;ra) :fptr_match(env, &amp;ra);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>122</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>112</pre></td>
-    <td align="left" class="src coveredLine"><pre>  free_mstr(env->gwion->mp, tmpl_name);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>123</pre></td>
+    <td align="right" class="lineno"><pre>121</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="takenBranch" title="Branch 1 taken 110 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>112</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(es.run)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>124</pre></td>
+    <td align="right" class="lineno"><pre>122</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>    envset_pop(&amp;es, v->from->owner_class);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>125</pre></td>
+    <td align="right" class="lineno"><pre>123</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>112</pre></td>
     <td align="left" class="src coveredLine"><pre>  env_pop(env, scope);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>126</pre></td>
+    <td align="right" class="lineno"><pre>124</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>112</pre></td>
     <td align="left" class="src coveredLine"><pre>  env->func = former;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>127</pre></td>
+    <td align="right" class="lineno"><pre>125</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>112</pre></td>
     <td align="left" class="src coveredLine"><pre>  return m_func;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>128</pre></td>
+    <td align="right" class="lineno"><pre>126</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>129</pre></td>
+    <td align="right" class="lineno"><pre>127</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
+    <td align="right" class="lineno"><pre>128</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>113</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static Func _find_template_match(const Env env, const Value v, const Exp_Call* exp) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>129</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 2 taken 112 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>113</pre></td>
+    <td align="left" class="src coveredLine"><pre>  DECL_OO(const m_str, tmpl_name, = tl2str(env, exp->tmpl->call))</pre></td>
+    </tr>
+
+    <tr>
     <td align="right" class="lineno"><pre>130</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>112</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Func f = find_tmpl(env, v, exp, tmpl_name);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>131</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>112</pre></td>
+    <td align="left" class="src coveredLine"><pre>  free_mstr(env->gwion->mp, tmpl_name);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>132</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>112</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return f;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>133</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>134</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>135</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>80</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static inline m_bool check_call(const Env env, const Exp_Call* exp) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>131</pre></td>
+    <td align="right" class="lineno"><pre>136</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>80</pre></td>
     <td align="left" class="src coveredLine"><pre>  const ae_exp_t et = exp->func->exp_type;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>132</pre></td>
+    <td align="right" class="lineno"><pre>137</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 37 times">&check;</span><span class="takenBranch" title="Branch 1 taken 43 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="takenBranch" title="Branch 3 taken 36 times">&check;</span><br/><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>80</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(et != ae_exp_primary &amp;&amp; et != ae_exp_dot &amp;&amp; et != ae_exp_cast)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>133</pre></td>
+    <td align="right" class="lineno"><pre>138</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    ERR_B(exp->func->pos, _("invalid expression for function call."))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>134</pre></td>
+    <td align="right" class="lineno"><pre>139</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>79</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>135</pre></td>
+    <td align="right" class="lineno"><pre>140</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>136</pre></td>
+    <td align="right" class="lineno"><pre>141</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>137</pre></td>
+    <td align="right" class="lineno"><pre>142</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>80</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN Func find_template_match(const Env env, const Value value, const Exp_Call* exp) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>138</pre></td>
+    <td align="right" class="lineno"><pre>143</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 2 taken 79 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>80</pre></td>
     <td align="left" class="src coveredLine"><pre>  CHECK_BO(check_call(env, exp))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>139</pre></td>
+    <td align="right" class="lineno"><pre>144</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>79</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Func f = _find_template_match(env, value, exp);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>140</pre></td>
+    <td align="right" class="lineno"><pre>145</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 61 times">&check;</span><span class="takenBranch" title="Branch 1 taken 18 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>79</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(f)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>141</pre></td>
+    <td align="right" class="lineno"><pre>146</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>61</pre></td>
     <td align="left" class="src coveredLine"><pre>    return f;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>142</pre></td>
+    <td align="right" class="lineno"><pre>147</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>  Type t = value->from->owner_class;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>143</pre></td>
+    <td align="right" class="lineno"><pre>148</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 35 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span><span class="takenBranch" title="Branch 2 taken 34 times">&check;</span><span class="takenBranch" title="Branch 3 taken 1 times">&check;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>57</pre></td>
     <td align="left" class="src coveredLine"><pre>  while(t &amp;&amp; t->nspc) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>144</pre></td>
+    <td align="right" class="lineno"><pre>149</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 34 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>34</pre></td>
     <td align="left" class="src coveredLine"><pre>    const Func_Def fdef = value->d.func_ref ? value->d.func_ref->def : value->type->info->func->def;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>145</pre></td>
+    <td align="right" class="lineno"><pre>150</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>34</pre></td>
     <td align="left" class="src coveredLine"><pre>    const Value v = nspc_lookup_value0(t->nspc, fdef->base->xid);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>146</pre></td>
+    <td align="right" class="lineno"><pre>151</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 34 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>34</pre></td>
     <td align="left" class="src coveredLine"><pre>    if(v) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>147</pre></td>
+    <td align="right" class="lineno"><pre>152</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>34</pre></td>
     <td align="left" class="src coveredLine"><pre>      const Func f = _find_template_match(env, v, exp);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>148</pre></td>
+    <td align="right" class="lineno"><pre>153</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 13 times">&check;</span><span class="takenBranch" title="Branch 1 taken 21 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>34</pre></td>
     <td align="left" class="src coveredLine"><pre>      if(f)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>149</pre></td>
+    <td align="right" class="lineno"><pre>154</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>13</pre></td>
     <td align="left" class="src coveredLine"><pre>        return f;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>150</pre></td>
+    <td align="right" class="lineno"><pre>155</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>151</pre></td>
+    <td align="right" class="lineno"><pre>156</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>21</pre></td>
     <td align="left" class="src coveredLine"><pre>    t = t->info->parent;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>152</pre></td>
+    <td align="right" class="lineno"><pre>157</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>153</pre></td>
+    <td align="right" class="lineno"><pre>158</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>5</pre></td>
     <td align="left" class="src coveredLine"><pre>  ERR_O(exp_self(exp)->pos, _("arguments do not match for template call"))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>154</pre></td>
+    <td align="right" class="lineno"><pre>159</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
