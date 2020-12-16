@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-12-16 21:28:29</td>
+            <td class="headerValue">2020-12-16 23:50:10</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">108</td>
@@ -1024,7 +1024,7 @@
     <td align="right" class="lineno"><pre>104</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 209 times">&check;</span><span class="takenBranch" title="Branch 2 taken 27 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 209 times">&check;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>236</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(is_class(emit->gwion, member->t_base) || member->base->exp_type == ae_exp_cast) {</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(is_class(emit->gwion, member->base->info->type) || member->base->exp_type == ae_exp_cast) {</pre></td>
     </tr>
 
     <tr>
@@ -1080,7 +1080,7 @@
     <td align="right" class="lineno"><pre>112</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span><span class="takenBranch" title="Branch 2 taken 205 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>209</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if(tflag(member->t_base, tflag_struct)) {</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if(tflag(member->base->info->type, tflag_struct)) {</pre></td>
     </tr>
 
     <tr>
@@ -1325,14 +1325,14 @@
     <td align="right" class="lineno"><pre>147</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>559</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const m_bool base_static = is_class(env->gwion, member->t_base);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const m_bool base_static = is_class(env->gwion, member->base->info->type);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>148</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 98 times">&check;</span><span class="takenBranch" title="Branch 1 taken 461 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>559</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Type the_base = base_static ? member->t_base->info->base_type : member->t_base;</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Type the_base = base_static ? member->base->info->type->info->base_type : member->base->info->type;</pre></td>
     </tr>
 
     <tr>
@@ -1416,7 +1416,7 @@
     <td align="right" class="lineno"><pre>160</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>6</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if(member->t_base->nspc)</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if(member->base->info->type->nspc)</pre></td>
     </tr>
 
     <tr>
@@ -1577,7 +1577,7 @@
     <td align="right" class="lineno"><pre>183</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>468</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Type t_base = actual_type(emit->gwion, member->t_base);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Type t_base = actual_type(emit->gwion, member->base->info->type);</pre></td>
     </tr>
 
     <tr>
@@ -1591,7 +1591,7 @@
     <td align="right" class="lineno"><pre>185</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 384 times">&check;</span><span class="takenBranch" title="Branch 2 taken 84 times">&check;</span><span class="takenBranch" title="Branch 4 taken 4 times">&check;</span><span class="takenBranch" title="Branch 5 taken 380 times">&check;</span><br/><span class="takenBranch" title="Branch 6 taken 2 times">&check;</span><span class="takenBranch" title="Branch 7 taken 2 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>472</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(!is_class(emit->gwion, member->t_base) &amp;&amp; (vflag(value, vflag_member) ||</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(!is_class(emit->gwion, member->base->info->type) &amp;&amp; (vflag(value, vflag_member) ||</pre></td>
     </tr>
 
     <tr>
