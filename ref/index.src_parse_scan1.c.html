@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-12-18 13:02:28</td>
+            <td class="headerValue">2020-12-19 14:56:23</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">385</td>
@@ -429,7 +429,7 @@
     <td align="right" class="lineno"><pre>19</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>        ERR_B(td_pos(td), _("%s declared inside %s"), t->name, owner->name);</pre></td>
+    <td align="left" class="src coveredLine"><pre>        ERR_B(td->pos, _("%s declared inside %s"), t->name, owner->name);</pre></td>
     </tr>
 
     <tr>
@@ -632,7 +632,7 @@
     <td align="right" class="lineno"><pre>48</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>  ERR_O(td_pos(td), _("cannot declare variables of size '0' (i.e. 'void')..."))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ERR_O(td->pos, _("cannot declare variables of size '0' (i.e. 'void')..."))</pre></td>
     </tr>
 
     <tr>
@@ -1367,7 +1367,7 @@
     <td align="right" class="lineno"><pre>153</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return new_prim_id(mp, insert_symbol(name + 1), loc_cpy(mp, pos));</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return new_prim_id(mp, insert_symbol(name + 1), pos);</pre></td>
     </tr>
 
     <tr>
@@ -3663,7 +3663,7 @@
     <td align="right" class="lineno"><pre>481</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>    ERR_B(td_pos(base->td), _("'%s' must be in class def!!"), s_name(base->xid))</pre></td>
+    <td align="left" class="src coveredLine"><pre>    ERR_B(base->td->pos, _("'%s' must be in class def!!"), s_name(base->xid))</pre></td>
     </tr>
 
     <tr>
@@ -3677,7 +3677,7 @@
     <td align="right" class="lineno"><pre>483</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>    ERR_B(td_pos(base->td), _("'%s' must not have args"), s_name(base->xid))</pre></td>
+    <td align="left" class="src coveredLine"><pre>    ERR_B(base->td->pos, _("'%s' must not have args"), s_name(base->xid))</pre></td>
     </tr>
 
     <tr>
@@ -3691,7 +3691,7 @@
     <td align="right" class="lineno"><pre>485</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>    ERR_B(td_pos(base->td), _("'%s' must return 'void'"), s_name(base->xid))</pre></td>
+    <td align="left" class="src coveredLine"><pre>    ERR_B(base->td->pos, _("'%s' must return 'void'"), s_name(base->xid))</pre></td>
     </tr>
 
     <tr>
@@ -3740,7 +3740,7 @@
     <td align="right" class="lineno"><pre>492</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  ERR_B(td_pos(base->td), _("'%s' must have one (and only one) argument"), s_name(base->xid))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ERR_B(base->td->pos, _("'%s' must have one (and only one) argument"), s_name(base->xid))</pre></td>
     </tr>
 
     <tr>
@@ -3789,7 +3789,7 @@
     <td align="right" class="lineno"><pre>499</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>    ERR_B(td_pos(base->td), _("'%s' must return 'int'"), s_name(base->xid))</pre></td>
+    <td align="left" class="src coveredLine"><pre>    ERR_B(base->td->pos, _("'%s' must return 'int'"), s_name(base->xid))</pre></td>
     </tr>
 
     <tr>
@@ -4228,9 +4228,9 @@
 
     <tr>
     <td align="right" class="lineno"><pre>562</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="takenBranch" title="Branch 3 taken 40710 times">&check;</span></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 2 taken 40710 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>40711</pre></td>
-    <td align="left" class="src coveredLine"><pre>    CHECK_BB(env_storage(env, fdef->base->flag, td_pos(fdef->base->td)))</pre></td>
+    <td align="left" class="src coveredLine"><pre>    CHECK_BB(env_storage(env, fdef->base->flag, fdef->base->td->pos))</pre></td>
     </tr>
 
     <tr>
@@ -4384,7 +4384,7 @@
     <td align="right" class="lineno"><pre>584</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>      ERR_O(td_pos(tdef->ext), _("recursive (%s &lt;= %s) class declaration."), tdef->type->name, t->name)</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>      ERR_O(tdef->ext->pos, _("recursive (%s &lt;= %s) class declaration."), tdef->type->name, t->name)</pre></td>
     </tr>
 
     <tr>
@@ -4426,7 +4426,7 @@
     <td align="right" class="lineno"><pre>590</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>50</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const loc_t pos = td_pos(cdef->base.ext);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const loc_t pos = cdef->base.ext->pos;</pre></td>
     </tr>
 
     <tr>

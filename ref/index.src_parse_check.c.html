@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-12-18 13:02:28</td>
+            <td class="headerValue">2020-12-19 14:56:23</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">705</td>
@@ -456,14 +456,14 @@
     <tr>
     <td align="right" class="lineno"><pre>23</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>168</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>112</pre></td>
     <td align="left" class="src coveredLine"><pre>  struct Op_Import opi = { .op=sym, .lhs=e->info->type,</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>112</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>56</pre></td>
     <td align="left" class="src coveredLine"><pre>        .rhs=t, .data=(uintptr_t)&amp;imp, .pos=e->pos, .op_type=op_implicit };</pre></td>
     </tr>
 
@@ -1570,7 +1570,7 @@
     <td align="right" class="lineno"><pre>182</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    ERR_O(td_pos(decl->td), _("can't find type"));</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    ERR_O(decl->td->pos, _("can't find type"));</pre></td>
     </tr>
 
     <tr>
@@ -1589,9 +1589,9 @@
 
     <tr>
     <td align="right" class="lineno"><pre>185</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="takenBranch" title="Branch 3 taken 20120 times">&check;</span></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 2 taken 20120 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>20121</pre></td>
-    <td align="left" class="src coveredLine"><pre>    CHECK_BO(inferable(env, t, td_pos(decl->td)))</pre></td>
+    <td align="left" class="src coveredLine"><pre>    CHECK_BO(inferable(env, t, decl->td->pos))</pre></td>
     </tr>
 
     <tr>
@@ -2529,7 +2529,7 @@
     <td align="right" class="lineno"><pre>319</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>148</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Exp base = new_prim_id(env->gwion->mp, insert_symbol(name), loc_cpy(env->gwion->mp, prim_pos(data)));</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Exp base = new_prim_id(env->gwion->mp, insert_symbol(name), prim_pos(data));</pre></td>
     </tr>
 
     <tr>
@@ -3228,14 +3228,14 @@
     <tr>
     <td align="right" class="lineno"><pre>419</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>27</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
     <td align="left" class="src coveredLine"><pre>  struct Op_Import opi = { .op=sym, .lhs=e->info->type, .rhs=range->base->info->type,</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>420</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
     <td align="left" class="src coveredLine"><pre>    .pos=e->pos, .data=(uintptr_t)exp_self(range), .op_type=op_exp };</pre></td>
     </tr>
 
@@ -3264,14 +3264,14 @@
     <td align="right" class="lineno"><pre>424</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>57</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN2(1,2,4) static Type_Decl* prepend_type_decl(MemPool mp, const Symbol xid, Type_Decl* td, const loc_t pos) {</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN2(1,2) static Type_Decl* prepend_type_decl(MemPool mp, const Symbol xid, Type_Decl* td, const struct loc_t_ pos) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>425</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>57</pre></td>
-    <td align="left" class="src coveredLine"><pre>  Type_Decl *a = new_type_decl(mp, xid, loc_cpy(mp, pos));</pre></td>
+    <td align="left" class="src coveredLine"><pre>  Type_Decl *a = new_type_decl(mp, xid, pos);</pre></td>
     </tr>
 
     <tr>
@@ -5230,14 +5230,14 @@
     <tr>
     <td align="right" class="lineno"><pre>705</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1374</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>916</pre></td>
     <td align="left" class="src coveredLine"><pre>  struct Op_Import opi = { .op=insert_symbol("@func_check"),</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>706</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>916</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>458</pre></td>
     <td align="left" class="src coveredLine"><pre>  .rhs=t, .pos=e->pos, .data=(uintptr_t)e, .op_type=op_exp };</pre></td>
     </tr>
 
@@ -6133,14 +6133,14 @@
     <tr>
     <td align="right" class="lineno"><pre>834</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 79 times">&check;</span><span class="takenBranch" title="Branch 1 taken 13 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>276</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>184</pre></td>
     <td align="left" class="src coveredLine"><pre>  struct Op_Import opi = { .op=insert_symbol(b ? "@conditionnal" : "@unconditionnal"),</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>835</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>184</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>92</pre></td>
     <td align="left" class="src coveredLine"><pre>    .rhs=type, .pos=e->pos, .data=(uintptr_t)e, .op_type=op_exp };</pre></td>
     </tr>
 
@@ -7799,14 +7799,14 @@
     <tr>
     <td align="right" class="lineno"><pre>1072</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>16</pre></td>
     <td align="left" class="src coveredLine"><pre>      struct Op_Import opi = { .op=op, .lhs=base->info->type, .rhs=e->info->type,</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1073</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>16</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
     <td align="left" class="src coveredLine"><pre>        .data=(uintptr_t)&amp;ebin.d.exp_binary, .pos=e->pos, .op_type=op_binary };</pre></td>
     </tr>
 
@@ -8297,7 +8297,7 @@
     <td align="right" class="lineno"><pre>1143</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>    ERR_B(td_pos(fdef->base->td), _("can't override final function '%s'\n"), parent->name)</pre></td>
+    <td align="left" class="src coveredLine"><pre>    ERR_B(fdef->base->td->pos, _("can't override final function '%s'\n"), parent->name)</pre></td>
     </tr>
 
     <tr>
@@ -8332,7 +8332,7 @@
     <td align="right" class="lineno"><pre>1148</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>    ERR_B(td_pos(fdef->base->td),</pre></td>
+    <td align="left" class="src coveredLine"><pre>    ERR_B(fdef->base->td->pos,</pre></td>
     </tr>
 
     <tr>
@@ -8717,7 +8717,7 @@
     <td align="right" class="lineno"><pre>1203</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>        ERR_B(td_pos(f2->def->base->td), _("global function '%s' already defined"</pre></td>
+    <td align="left" class="src coveredLine"><pre>        ERR_B(f2->def->base->td->pos, _("global function '%s' already defined"</pre></td>
     </tr>
 
     <tr>
