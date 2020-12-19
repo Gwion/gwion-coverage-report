@@ -29,7 +29,7 @@ src/import/import_cdef.c                      79      78    98%   67
 src/import/import_checker.c                  207     184    88%   102,113,117,119-121,133,147-150,161-162,169-171,189-193,269,275
 src/import/import_enum.c                      55      54    98%   84
 src/import/import_fdef.c                      99      98    99%   95
-src/import/import_internals.c                 24      24   100%   
+src/import/import_internals.c                 23      23   100%   
 src/import/import_item.c                      35      35   100%   
 src/import/import_oper.c                      39      39   100%   
 src/import/import_special.c                   28      28   100%   
@@ -41,10 +41,10 @@ src/lib/engine.c                             129     127    98%   25-26
 src/lib/event.c                               45      45   100%   
 src/lib/foreach.c                             19      18    94%   25
 src/lib/instr.c                               99      94    94%   31,33-34,38,51
-src/lib/lib_func.c                           278     275    98%   88,191,290
+src/lib/lib_func.c                           276     273    98%   88,191,288
 src/lib/modules.c                            220     218    99%   252,260
 src/lib/object.c                              85      82    96%   122-124
-src/lib/object_op.c                          216     198    91%   29-30,35,48,248,255,282-291,293,300
+src/lib/object_op.c                          215     197    91%   29-30,35,48,247,254,281-290,292,299
 src/lib/opfunc.c                              63      57    90%   13-16,80-81
 src/lib/prim.c                               248     247    99%   244
 src/lib/prim_values.c                         30      30   100%   
@@ -62,7 +62,7 @@ src/parse/did_you_mean.c                      41      39    95%   40,57
 src/parse/func_operator.c                     13      13   100%   
 src/parse/func_resolve_tmpl.c                108     107    99%   59
 src/parse/operator.c                         172     171    99%   253
-src/parse/scan0.c                            294     286    97%   119,199,209,244,255,278-280
+src/parse/scan0.c                            294     286    97%   119,198,208,243,254,277-279
 src/parse/scan1.c                            452     438    96%   56,159,379-380,391,406,464-467,518,553,584,616
 src/parse/scan2.c                            387     384    99%   277,347,548
 src/parse/scanx.c                             38      38   100%   
@@ -81,8 +81,8 @@ src/vm/vm_code.c                              47      47   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10448    9855    94%
+TOTAL                                      10444    9851    94%
 ------------------------------------------------------------------------------
-lines: 94.3% (9855 out of 10448)
+lines: 94.3% (9851 out of 10444)
 branches: 78.7% (4353 out of 5533)
 ```
