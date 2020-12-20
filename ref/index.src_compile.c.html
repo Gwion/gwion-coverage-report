@@ -269,13 +269,13 @@
             <td class="headerValue">src/compile.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">88</td>
-            <td class="headerTableEntry">91</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">96.7 %</td>
+            <td class="headerTableEntry">99</td>
+            <td class="headerTableEntry">102</td>
+            <td class="headerTableEntry" style="background-color:LightGreen">97.1 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-12-20 14:12:55</td>
+            <td class="headerValue">2020-12-20 15:24:35</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">50</td>
@@ -1009,232 +1009,232 @@
     <tr>
     <td align="right" class="lineno"><pre>102</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>648</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static inline m_bool _check(struct Gwion_* gwion, struct Compiler* c) {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>627</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static inline m_bool _passes(struct Gwion_* gwion, struct Compiler* c) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>103</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>648</pre></td>
-    <td align="left" class="src coveredLine"><pre>  struct AstGetter_ arg = { c->name, c->file, gwion->st, .ppa=gwion->ppa };</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>104</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 21 times">&check;</span><span class="takenBranch" title="Branch 2 taken 627 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>648</pre></td>
-    <td align="left" class="src coveredLine"><pre>  CHECK_OB((c->ast = parse(&amp;arg)))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>105</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>627</pre></td>
-    <td align="left" class="src coveredLine"><pre>  gwion->env->name = c->name;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>106</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1021 times">&check;</span><span class="takenBranch" title="Branch 2 taken 390 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>2822</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1411</pre></td>
     <td align="left" class="src coveredLine"><pre>  for(m_uint i = 0; i &lt; vector_size(&amp;gwion->data->passes->vec); ++i) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>107</pre></td>
+    <td align="right" class="lineno"><pre>104</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1021</pre></td>
-    <td align="left" class="src coveredLine"><pre>    const compilation_pass *pass = (compilation_pass*)vector_at(&amp;gwion->data->passes->vec, i);</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const compilation_pass pass = (compilation_pass)vector_at(&amp;gwion->data->passes->vec, i);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>108</pre></td>
-    <td align="right" class="linebranch"></td>
+    <td align="right" class="lineno"><pre>105</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 237 times">&check;</span><span class="takenBranch" title="Branch 2 taken 784 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>1021</pre></td>
-    <td align="left" class="src coveredLine"><pre>    m_bool ret = pass[0](gwion->env, c->ast);</pre></td>
+    <td align="left" class="src coveredLine"><pre>    CHECK_BB(pass(gwion->env, c->ast))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>109</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 237 times">&check;</span><span class="takenBranch" title="Branch 1 taken 784 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1021</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if(ret &lt; 0)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>110</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>237</pre></td>
-    <td align="left" class="src coveredLine"><pre>      ast_cleaner(gwion, c->ast);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>111</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 627 times">&check;</span><span class="takenBranch" title="Branch 1 taken 394 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1021</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if(pass[1])</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>112</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 233 times">&check;</span><span class="takenBranch" title="Branch 2 taken 394 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>864</pre></td>
-    <td align="left" class="src coveredLine"><pre>      CHECK_BB(pass[1](gwion->env, &amp;ret))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>113</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4 times">&check;</span><span class="takenBranch" title="Branch 1 taken 784 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>788</pre></td>
-    <td align="left" class="src coveredLine"><pre>    CHECK_BB(ret)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>114</pre></td>
+    <td align="right" class="lineno"><pre>106</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>115</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 383 times">&check;</span><span class="takenBranch" title="Branch 1 taken 7 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>390</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(!arg.global)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>116</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>383</pre></td>
-    <td align="left" class="src coveredLine"><pre>    ast_cleaner(gwion, c->ast);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>117</pre></td>
+    <td align="right" class="lineno"><pre>107</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>390</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>118</pre></td>
+    <td align="right" class="lineno"><pre>108</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>119</pre></td>
+    <td align="right" class="lineno"><pre>109</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
+    <td align="right" class="lineno"><pre>110</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>111</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>627</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static inline m_bool passes(struct Gwion_* gwion, struct Compiler* c) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>112</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>627</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Env env = gwion->env;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>113</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>627</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Context ctx = new_context(env->gwion->mp, c->ast, env->name);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>114</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>627</pre></td>
+    <td align="left" class="src coveredLine"><pre>  env_reset(env);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>115</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>627</pre></td>
+    <td align="left" class="src coveredLine"><pre>  load_context(ctx, env);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>116</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>627</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const m_bool ret = _passes(gwion, c);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>117</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 390 times">&check;</span><span class="takenBranch" title="Branch 1 taken 237 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>627</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(ret > 0) //{</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>118</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>390</pre></td>
+    <td align="left" class="src coveredLine"><pre>    nspc_commit(env->curr);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>119</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 237 times">&check;</span><span class="takenBranch" title="Branch 1 taken 390 times">&check;</span><span class="takenBranch" title="Branch 2 taken 3 times">&check;</span><span class="takenBranch" title="Branch 3 taken 234 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>627</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(ret > 0 || env->context->global)</pre></td>
+    </tr>
+
+    <tr>
     <td align="right" class="lineno"><pre>120</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1250</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static m_uint _compile(struct Gwion_* gwion, struct Compiler* c) {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>393</pre></td>
+    <td align="left" class="src coveredLine"><pre>    vector_add(&amp;env->scope->known_ctx, (vtype)ctx);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>121</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 602 times">&check;</span><span class="takenBranch" title="Branch 2 taken 648 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1250</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(compiler_open(gwion->mp, c) &lt; 0)</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  else //nspc_rollback(env->global_nspc);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>122</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>602</pre></td>
-    <td align="left" class="src coveredLine"><pre>    return 0;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>234</pre></td>
+    <td align="left" class="src coveredLine"><pre>    context_remref(ctx, env->gwion);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>123</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 258 times">&check;</span><span class="takenBranch" title="Branch 2 taken 390 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>648</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(_check(gwion, c) &lt; 0) {</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>627</pre></td>
+    <td align="left" class="src coveredLine"><pre>  unload_context(ctx, env);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>124</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>258</pre></td>
-    <td align="left" class="src coveredLine"><pre>    gw_err(_("while compiling file '%s'\n"), c->base);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>627</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>125</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>258</pre></td>
-    <td align="left" class="src coveredLine"><pre>    return 0;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>126</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>127</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 390 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>390</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(gwion->emit->info->code) {</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>648</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static inline m_bool _check(struct Gwion_* gwion, struct Compiler* c) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>128</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>390</pre></td>
-    <td align="left" class="src coveredLine"><pre>    const VM_Shred shred = new_vm_shred(gwion->mp, gwion->emit->info->code);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>648</pre></td>
+    <td align="left" class="src coveredLine"><pre>  struct AstGetter_ arg = { c->name, c->file, gwion->st, .ppa=gwion->ppa };</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>129</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>390</pre></td>
-    <td align="left" class="src coveredLine"><pre>    shred->info->args = c->args;</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 21 times">&check;</span><span class="takenBranch" title="Branch 2 taken 627 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>648</pre></td>
+    <td align="left" class="src coveredLine"><pre>  CHECK_OB((c->ast = parse(&amp;arg)))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>130</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>390</pre></td>
-    <td align="left" class="src coveredLine"><pre>    vm_add_shred(gwion->vm, shred);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>627</pre></td>
+    <td align="left" class="src coveredLine"><pre>  gwion->env->name = c->name;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>131</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>390</pre></td>
-    <td align="left" class="src coveredLine"><pre>    gwion->emit->info->code = NULL;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>627</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const m_bool ret = passes(gwion, c);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>132</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>390</pre></td>
-    <td align="left" class="src coveredLine"><pre>    return shred->tick->xid;</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 615 times">&check;</span><span class="takenBranch" title="Branch 1 taken 12 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>627</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(!arg.global)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>133</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>615</pre></td>
+    <td align="left" class="src coveredLine"><pre>    ast_cleaner(gwion, c->ast);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>134</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  return GW_OK;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>627</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
     </tr>
 
     <tr>
@@ -1255,158 +1255,277 @@
     <td align="right" class="lineno"><pre>137</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1250</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static m_uint compile(struct Gwion_* gwion, struct Compiler* c) {</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static m_uint _compile(struct Gwion_* gwion, struct Compiler* c) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>138</pre></td>
-    <td align="right" class="linebranch"></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 602 times">&check;</span><span class="takenBranch" title="Branch 2 taken 648 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>1250</pre></td>
-    <td align="left" class="src coveredLine"><pre>  compiler_name(gwion->mp, c);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(compiler_open(gwion->mp, c) &lt; 0)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>139</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1250</pre></td>
-    <td align="left" class="src coveredLine"><pre>  MUTEX_LOCK(gwion->data->mutex);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>602</pre></td>
+    <td align="left" class="src coveredLine"><pre>    return 0;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>140</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1250</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const m_uint ret = _compile(gwion, c);</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 258 times">&check;</span><span class="takenBranch" title="Branch 2 taken 390 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>648</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(_check(gwion, c) &lt; 0) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>141</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1250</pre></td>
-    <td align="left" class="src coveredLine"><pre>  MUTEX_UNLOCK(gwion->data->mutex);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>258</pre></td>
+    <td align="left" class="src coveredLine"><pre>    gw_err(_("while compiling file '%s'\n"), c->base);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>142</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1250</pre></td>
-    <td align="left" class="src coveredLine"><pre>  compiler_clean(c);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>258</pre></td>
+    <td align="left" class="src coveredLine"><pre>    return 0;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>143</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1250</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>144</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 390 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>390</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(gwion->emit->info->code) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>145</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount coveredLine"><pre>390</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const VM_Shred shred = new_vm_shred(gwion->mp, gwion->emit->info->code);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>146</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1247</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN m_uint compile_filename(struct Gwion_* gwion, const m_str filename) {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>390</pre></td>
+    <td align="left" class="src coveredLine"><pre>    shred->info->args = c->args;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>147</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1247</pre></td>
-    <td align="left" class="src coveredLine"><pre>  struct Compiler c = { .base=filename, .type=COMPILE_NAME };</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>390</pre></td>
+    <td align="left" class="src coveredLine"><pre>    vm_add_shred(gwion->vm, shred);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>148</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1247</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return compile(gwion, &amp;c);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>390</pre></td>
+    <td align="left" class="src coveredLine"><pre>    gwion->emit->info->code = NULL;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>149</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>390</pre></td>
+    <td align="left" class="src coveredLine"><pre>    return shred->tick->xid;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>150</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>151</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN m_uint compile_string(struct Gwion_* gwion, const m_str filename, const m_str data) {</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>152</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  struct Compiler c = { .base=filename, .type=COMPILE_MSTR, .data=data };</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>153</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return compile(gwion, &amp;c);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>154</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>155</pre></td>
+    <td align="right" class="lineno"><pre>153</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
+    <td align="right" class="lineno"><pre>154</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1250</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static m_uint compile(struct Gwion_* gwion, struct Compiler* c) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>155</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1250</pre></td>
+    <td align="left" class="src coveredLine"><pre>  compiler_name(gwion->mp, c);</pre></td>
+    </tr>
+
+    <tr>
     <td align="right" class="lineno"><pre>156</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1250</pre></td>
+    <td align="left" class="src coveredLine"><pre>  MUTEX_LOCK(gwion->data->mutex);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>157</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1250</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const m_uint ret = _compile(gwion, c);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>158</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1250</pre></td>
+    <td align="left" class="src coveredLine"><pre>  MUTEX_UNLOCK(gwion->data->mutex);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>159</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1250</pre></td>
+    <td align="left" class="src coveredLine"><pre>  compiler_clean(c);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>160</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1250</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>161</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>162</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>163</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1247</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN m_uint compile_filename(struct Gwion_* gwion, const m_str filename) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>164</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1247</pre></td>
+    <td align="left" class="src coveredLine"><pre>  struct Compiler c = { .base=filename, .type=COMPILE_NAME };</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>165</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1247</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return compile(gwion, &amp;c);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>166</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>167</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>168</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN m_uint compile_string(struct Gwion_* gwion, const m_str filename, const m_str data) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>169</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  struct Compiler c = { .base=filename, .type=COMPILE_MSTR, .data=data };</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>170</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return compile(gwion, &amp;c);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>171</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>172</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>173</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN m_uint compile_file(struct Gwion_* gwion, const m_str filename, FILE* file) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>157</pre></td>
+    <td align="right" class="lineno"><pre>174</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  struct Compiler c = { .base=filename, .type=COMPILE_FILE, .file=file };</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>158</pre></td>
+    <td align="right" class="lineno"><pre>175</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  return compile(gwion, &amp;c);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>159</pre></td>
+    <td align="right" class="lineno"><pre>176</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
