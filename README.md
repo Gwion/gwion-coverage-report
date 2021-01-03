@@ -19,7 +19,7 @@ src/env/env_utils.c                           70      70   100%
 src/env/envset.c                              46      42    91%   16,23,27,53
 src/env/func.c                                30      30   100%   
 src/env/nspc.c                                62      54    87%   27-34
-src/env/tupleform.c                           38      38   100%   
+src/env/tupleform.c                           38      37    97%   27
 src/env/type.c                               110     104    94%   127-129,131-133
 src/env/value.c                               25      24    96%   14
 src/gwion.c                                  134     133    99%   73
@@ -63,7 +63,7 @@ src/parse/func_operator.c                     13      13   100%
 src/parse/func_resolve_tmpl.c                108     107    99%   58
 src/parse/operator.c                         146     145    99%   51
 src/parse/scan0.c                            296     288    97%   119,198,208,245,256,279-281
-src/parse/scan1.c                            453     439    96%   56,160,381-382,393,408,466-469,520,555,586,618
+src/parse/scan1.c                            455     441    96%   56,165,386-387,398,413,471-474,525,560,591,623
 src/parse/scan2.c                            387     384    99%   277,347,548
 src/parse/scanx.c                             38      38   100%   
 src/parse/template.c                          99      92    92%   23,32,62,70,85-86,130
@@ -81,8 +81,8 @@ src/vm/vm_code.c                              93      93   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10533    9888    93%
+TOTAL                                      10535    9889    93%
 ------------------------------------------------------------------------------
-lines: 93.9% (9888 out of 10533)
-branches: 78.0% (4373 out of 5605)
+lines: 93.9% (9889 out of 10535)
+branches: 77.9% (4371 out of 5609)
 ```
