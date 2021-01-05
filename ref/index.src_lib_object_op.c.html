@@ -270,17 +270,17 @@
             <td></td>
             <td class="headerName">Lines:</td>
             <td class="headerTableEntry">200</td>
-            <td class="headerTableEntry">221</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">90.5 %</td>
+            <td class="headerTableEntry">227</td>
+            <td class="headerTableEntry" style="background-color:#FFFF55">88.1 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-01-04 21:35:01</td>
+            <td class="headerValue">2021-01-05 13:19:20</td>
             <td></td>
             <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">116</td>
+            <td class="headerTableEntry">111</td>
             <td class="headerTableEntry">138</td>
-            <td class="headerTableEntry" style="background-color:#FFFF55">84.1 %</td>
+            <td class="headerTableEntry" style="background-color:#FFFF55">80.4 %</td>
           </tr>
         </table>
       </td>
@@ -506,7 +506,7 @@
     <td align="right" class="lineno"><pre>30</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>21</pre></td>
-    <td align="left" class="src coveredLine"><pre>static OP_CHECK(at_object) {</pre></td>
+    <td align="left" class="src coveredLine"><pre>static OP_CHECK(opck_object_at) {</pre></td>
     </tr>
 
     <tr>
@@ -582,197 +582,197 @@
     <tr>
     <td align="right" class="lineno"><pre>41</pre></td>
     <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>22</pre></td>
+    <td align="left" class="src coveredLine"><pre>static OP_EMIT(opem_object_at) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>42</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>22</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Instr addref = emit_add_instr(emit, RegAddRef);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>43</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>22</pre></td>
+    <td align="left" class="src coveredLine"><pre>  addref->m_val = -SZ_INT*2;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>44</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>22</pre></td>
+    <td align="left" class="src coveredLine"><pre>  (void)emit_add_instr(emit, ObjectAssign);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>45</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>22</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>46</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>47</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>48</pre></td>
+    <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>6</pre></td>
     <td align="left" class="src coveredLine"><pre>static OP_CHECK(opck_object_cast) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>42</pre></td>
+    <td align="right" class="lineno"><pre>49</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>6</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Exp_Cast* cast = (Exp_Cast*)data;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>43</pre></td>
+    <td align="right" class="lineno"><pre>50</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>6</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Type to = known_type(env, cast->td);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>44</pre></td>
+    <td align="right" class="lineno"><pre>51</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>6</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(isa(cast->exp->type, to) &lt; 0) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>45</pre></td>
+    <td align="right" class="lineno"><pre>52</pre></td>
     <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 3 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
     <td align="left" class="src coveredLine"><pre>    if(isa(to, cast->exp->type) > 0)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>46</pre></td>
+    <td align="right" class="lineno"><pre>53</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>      ERR_N(exp_self(cast)->pos, _("can't upcast '%s' to '%s'"), cast->exp->type->name, to->name)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>47</pre></td>
+    <td align="right" class="lineno"><pre>54</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
     <td align="left" class="src coveredLine"><pre>    ERR_N(exp_self(cast)->pos, _("can't cast '%s' to '%s'"), cast->exp->type->name, to->name)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>48</pre></td>
+    <td align="right" class="lineno"><pre>55</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>49</pre></td>
+    <td align="right" class="lineno"><pre>56</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
     <td align="left" class="src coveredLine"><pre>  return exp_self(cast)->type;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>50</pre></td>
+    <td align="right" class="lineno"><pre>57</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>51</pre></td>
+    <td align="right" class="lineno"><pre>58</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>52</pre></td>
+    <td align="right" class="lineno"><pre>59</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>13</pre></td>
     <td align="left" class="src coveredLine"><pre>static OP_CHECK(opck_implicit_null2obj) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>53</pre></td>
+    <td align="right" class="lineno"><pre>60</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>13</pre></td>
     <td align="left" class="src coveredLine"><pre>  const struct Implicit* imp = (struct Implicit*)data;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>54</pre></td>
+    <td align="right" class="lineno"><pre>61</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>13</pre></td>
     <td align="left" class="src coveredLine"><pre>  return imp->t;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>55</pre></td>
+    <td align="right" class="lineno"><pre>62</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>56</pre></td>
+    <td align="right" class="lineno"><pre>63</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>57</pre></td>
+    <td align="right" class="lineno"><pre>64</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>8</pre></td>
     <td align="left" class="src coveredLine"><pre>static OP_EMIT(opem_implicit_null2obj) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>58</pre></td>
+    <td align="right" class="lineno"><pre>65</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>8</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>59</pre></td>
+    <td align="right" class="lineno"><pre>66</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>60</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>61</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>ANN /*static*/ Type scan_class(const Env env, const Type t, const Type_Decl * td);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>62</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>63</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
-    <td align="left" class="src coveredLine"><pre>static Type opck_object_scan(const Env env, const struct TemplateScan *ts) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>64</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 33 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(ts->td->types)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>65</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 31 times">&check;</span><span class="takenBranch" title="Branch 2 taken 2 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>33</pre></td>
-    <td align="left" class="src coveredLine"><pre>    return scan_class(env, ts->t, ts->td) ?: env->gwion->type[et_error];</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>66</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>  Type_Decl *td = (Type_Decl*)ts->td;</pre></td>
-    </tr>
-
-    <tr>
     <td align="right" class="lineno"><pre>67</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>  ERR_N(td->pos, _("you must provide template types for type '%s'"), ts->t->name)</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>68</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="left" class="src "><pre>ANN /*static*/ Type scan_class(const Env env, const Type t, const Type_Decl * td);</pre></td>
     </tr>
 
     <tr>
@@ -785,435 +785,435 @@
     <tr>
     <td align="right" class="lineno"><pre>70</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
-    <td align="left" class="src coveredLine"><pre>static OP_CHECK(opck_struct_scan) {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>34</pre></td>
+    <td align="left" class="src coveredLine"><pre>static Type opck_object_scan(const Env env, const struct TemplateScan *ts) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>71</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
-    <td align="left" class="src coveredLine"><pre>  struct TemplateScan *ts = (struct TemplateScan*)data;</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 32 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>34</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(ts->td->types)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>72</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return opck_object_scan(env, ts);</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 30 times">&check;</span><span class="takenBranch" title="Branch 2 taken 2 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>32</pre></td>
+    <td align="left" class="src coveredLine"><pre>    return scan_class(env, ts->t, ts->td) ?: env->gwion->type[et_error];</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>73</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  Type_Decl *td = (Type_Decl*)ts->td;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>74</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ERR_N(td->pos, _("you must provide template types for type '%s'"), ts->t->name)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>75</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>static const f_instr dotstatic[]  = { DotStatic, DotStatic2, DotStatic3, RegPushImm };</pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>76</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>static const f_instr structmember[]  = { StructMember, StructMemberFloat, StructMemberOther, StructMemberAddr };</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>77</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount coveredLine"><pre>34</pre></td>
+    <td align="left" class="src coveredLine"><pre>static OP_CHECK(opck_struct_scan) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>78</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>ANN Instr emit_kind(Emitter emit, const m_uint size, const uint addr, const f_instr func[]);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>34</pre></td>
+    <td align="left" class="src coveredLine"><pre>  struct TemplateScan *ts = (struct TemplateScan*)data;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>79</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static void emit_dot_static_data(const Emitter emit, const Value v, const uint emit_var) {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>34</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return opck_object_scan(env, ts);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>80</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const m_uint size = v->type->size;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>81</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Instr instr = emit_kind(emit, size, emit_var, dotstatic);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>82</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
-    <td align="left" class="src coveredLine"><pre>  instr->m_val = (m_uint)(v->from->owner->info->class_data + v->from->offset);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>83</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
-    <td align="left" class="src coveredLine"><pre>  instr->m_val2 = size;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>84</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>85</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>86</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>static const f_instr regpushimm[] = { RegPushImm, RegPushImm2, RegPushImm3, RegPushImm4 };</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>87</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>55</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static void emit_dot_static_import_data(const Emitter emit, const Value v, const uint emit_addr) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>88</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 25 times">&check;</span><span class="takenBranch" title="Branch 1 taken 30 times">&check;</span><span class="takenBranch" title="Branch 3 taken 25 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 5 taken 20 times">&check;</span><span class="takenBranch" title="Branch 6 taken 5 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>75</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(v->d.ptr &amp;&amp; vflag(v, vflag_builtin) &amp;&amp; GET_FLAG(v, const)) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>89</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>20</pre></td>
-    <td align="left" class="src coveredLine"><pre>    const m_uint size = v->type->size;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>90</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>20</pre></td>
-    <td align="left" class="src coveredLine"><pre>    const Instr instr = emit_kind(emit, size, emit_addr, regpushimm);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>91</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>20</pre></td>
-    <td align="left" class="src coveredLine"><pre>    instr->m_val = (m_uint)v->d.ptr;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>92</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>20</pre></td>
-    <td align="left" class="src coveredLine"><pre>    instr->m_val2 = size;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>93</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  } else</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>94</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
-    <td align="left" class="src coveredLine"><pre>    emit_dot_static_data(emit, v, emit_addr);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>95</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>55</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>96</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>static const f_instr dotmember[]  = { DotMember, DotMember2, DotMember3, DotMember4 };</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>97</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>98</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>293</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static void emit_member_func(const Emitter emit, const Exp_Dot* member) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>99</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>293</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Func f = exp_self(member)->type->info->func;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>100</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 38 times">&check;</span><span class="takenBranch" title="Branch 1 taken 255 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>293</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(f->def->base->tmpl)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>101</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>38</pre></td>
-    <td align="left" class="src coveredLine"><pre>    emit_add_instr(emit, DotTmplVal);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>102</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>else</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>103</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 222 times">&check;</span><span class="takenBranch" title="Branch 2 taken 33 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 222 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>255</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(is_class(emit->gwion, member->base->type) || member->base->exp_type == ae_exp_cast) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>104</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 32 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>33</pre></td>
-    <td align="left" class="src coveredLine"><pre>    const Instr func_i = emit_add_instr(emit, f->code ? RegPushImm : SetFunc);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>105</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 32 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>33</pre></td>
-    <td align="left" class="src coveredLine"><pre>    func_i->m_val = (m_uint)f->code ?: (m_uint)f;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>106</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>33</pre></td>
-    <td align="left" class="src coveredLine"><pre>    return;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>107</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>108</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>//  if(f->def->base->tmpl)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>109</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>//    emit_add_instr(emit, DotTmplVal);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>110</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  else {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>111</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span><span class="takenBranch" title="Branch 2 taken 218 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>222</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if(tflag(member->base->type, tflag_struct)) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>112</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>      if(!GET_FLAG(f->def->base, static)) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>113</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>        exp_setvar(member->base, 1);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>114</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>        emit_exp(emit, member->base);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>115</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>      }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>116</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>    const Instr func_i = emit_add_instr(emit, f->code ? RegPushImm : SetFunc);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>117</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>    func_i->m_val = (m_uint)f->code ?: (m_uint)f;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>118</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>      return;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>119</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>120</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 212 times">&check;</span><span class="takenBranch" title="Branch 2 taken 6 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>218</pre></td>
-    <td align="left" class="src coveredLine"><pre>    const Instr instr = emit_add_instr(emit, vflag(f->value_ref, vflag_member) ? DotFunc : DotStaticFunc);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>121</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>218</pre></td>
-    <td align="left" class="src coveredLine"><pre>    instr->m_val = f->vt_index;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>122</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>123</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>256</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>124</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>125</pre></td>
+    <td align="right" class="lineno"><pre>81</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
+    <td align="right" class="lineno"><pre>82</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>static const f_instr dotstatic[]  = { DotStatic, DotStatic2, DotStatic3, RegPushImm };</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>83</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>static const f_instr structmember[]  = { StructMember, StructMemberFloat, StructMemberOther, StructMemberAddr };</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>84</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>85</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>ANN Instr emit_kind(Emitter emit, const m_uint size, const uint addr, const f_instr func[]);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>86</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>28</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static void emit_dot_static_data(const Emitter emit, const Value v, const uint emit_var) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>87</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>28</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const m_uint size = v->type->size;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>88</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>28</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Instr instr = emit_kind(emit, size, emit_var, dotstatic);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>89</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>28</pre></td>
+    <td align="left" class="src coveredLine"><pre>  instr->m_val = (m_uint)(v->from->owner->info->class_data + v->from->offset);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>90</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>28</pre></td>
+    <td align="left" class="src coveredLine"><pre>  instr->m_val2 = size;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>91</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>28</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>92</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>93</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>static const f_instr regpushimm[] = { RegPushImm, RegPushImm2, RegPushImm3, RegPushImm4 };</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>94</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>28</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static void emit_dot_static_import_data(const Emitter emit, const Value v, const uint emit_addr) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>95</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 28 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>28</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(v->d.ptr &amp;&amp; vflag(v, vflag_builtin) &amp;&amp; GET_FLAG(v, const)) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>96</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    const m_uint size = v->type->size;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>97</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    const Instr instr = emit_kind(emit, size, emit_addr, regpushimm);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>98</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    instr->m_val = (m_uint)v->d.ptr;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>99</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    instr->m_val2 = size;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>100</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  } else</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>101</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>28</pre></td>
+    <td align="left" class="src coveredLine"><pre>    emit_dot_static_data(emit, v, emit_addr);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>102</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>28</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>103</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>static const f_instr dotmember[]  = { DotMember, DotMember2, DotMember3, DotMember4 };</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>104</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>105</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>291</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static void emit_member_func(const Emitter emit, const Exp_Dot* member) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>106</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>291</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Func f = exp_self(member)->type->info->func;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>107</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 38 times">&check;</span><span class="takenBranch" title="Branch 1 taken 253 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>291</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(f->def->base->tmpl)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>108</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>38</pre></td>
+    <td align="left" class="src coveredLine"><pre>    emit_add_instr(emit, DotTmplVal);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>109</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>else</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>110</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 222 times">&check;</span><span class="takenBranch" title="Branch 2 taken 31 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 222 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>253</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(is_class(emit->gwion, member->base->type) || member->base->exp_type == ae_exp_cast) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>111</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 30 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>31</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const Instr func_i = emit_add_instr(emit, f->code ? RegPushImm : SetFunc);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>112</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 30 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>31</pre></td>
+    <td align="left" class="src coveredLine"><pre>    func_i->m_val = (m_uint)f->code ?: (m_uint)f;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>113</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>31</pre></td>
+    <td align="left" class="src coveredLine"><pre>    return;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>114</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>115</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//  if(f->def->base->tmpl)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>116</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//    emit_add_instr(emit, DotTmplVal);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>117</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  else {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>118</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span><span class="takenBranch" title="Branch 2 taken 218 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>222</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if(tflag(member->base->type, tflag_struct)) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>119</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
+    <td align="left" class="src coveredLine"><pre>      if(!GET_FLAG(f->def->base, static)) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>120</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="left" class="src coveredLine"><pre>        exp_setvar(member->base, 1);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>121</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="left" class="src coveredLine"><pre>        emit_exp(emit, member->base);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>122</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>123</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const Instr func_i = emit_add_instr(emit, f->code ? RegPushImm : SetFunc);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>124</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
+    <td align="left" class="src coveredLine"><pre>    func_i->m_val = (m_uint)f->code ?: (m_uint)f;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>125</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
+    <td align="left" class="src coveredLine"><pre>      return;</pre></td>
+    </tr>
+
+    <tr>
     <td align="right" class="lineno"><pre>126</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>119</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static inline void emit_member(const Emitter emit, const Value v, const uint emit_addr) {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>127</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>119</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const m_uint size = v->type->size;</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 212 times">&check;</span><span class="takenBranch" title="Branch 2 taken 6 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>218</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const Instr instr = emit_add_instr(emit, vflag(f->value_ref, vflag_member) ? DotFunc : DotStaticFunc);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>128</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>119</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Instr instr = emit_kind(emit, size, emit_addr, dotmember);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>218</pre></td>
+    <td align="left" class="src coveredLine"><pre>    instr->m_val = f->vt_index;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>129</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>119</pre></td>
-    <td align="left" class="src coveredLine"><pre>  instr->m_val = v->from->offset;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>130</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>119</pre></td>
-    <td align="left" class="src coveredLine"><pre>  instr->m_val2 = size;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>256</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>131</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>119</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
@@ -1226,1391 +1226,1447 @@
     <tr>
     <td align="right" class="lineno"><pre>133</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static inline void emit_struct_data(const Emitter emit, const Value v, const uint emit_addr) {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>118</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static inline void emit_member(const Emitter emit, const Value v, const uint emit_addr) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>134</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Instr instr = emit_kind(emit, v->type->size, emit_addr, structmember);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>118</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const m_uint size = v->type->size;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>135</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
-    <td align="left" class="src coveredLine"><pre>  instr->m_val = v->from->offset;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>118</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Instr instr = emit_kind(emit, size, emit_addr, dotmember);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>136</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 7 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(!emit_addr) {</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>118</pre></td>
+    <td align="left" class="src coveredLine"><pre>  instr->m_val = v->from->offset;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>137</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
-    <td align="left" class="src coveredLine"><pre>    const Instr instr = emit_add_instr(emit, RegMove);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>118</pre></td>
+    <td align="left" class="src coveredLine"><pre>  instr->m_val2 = size;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>138</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
-    <td align="left" class="src coveredLine"><pre>    instr->m_val = v->type->size -SZ_INT;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>118</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>139</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>140</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>11</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static inline void emit_struct_data(const Emitter emit, const Value v, const uint emit_addr) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>141</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Instr instr = emit_kind(emit, v->type->size, emit_addr, structmember);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>142</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
+    <td align="left" class="src coveredLine"><pre>  instr->m_val = v->from->offset;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>143</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 7 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(!emit_addr) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>144</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const Instr instr = emit_add_instr(emit, RegMove);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>145</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
+    <td align="left" class="src coveredLine"><pre>    instr->m_val = v->type->size -SZ_INT;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>146</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>147</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>148</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>142</pre></td>
+    <td align="right" class="lineno"><pre>149</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>ANN m_bool not_from_owner_class(const Env env, const Type t, const Value v, const loc_t pos);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>143</pre></td>
+    <td align="right" class="lineno"><pre>150</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>144</pre></td>
+    <td align="right" class="lineno"><pre>151</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>585</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>552</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static inline Value get_value(const Env env, const Exp_Dot *member, const Type t) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>145</pre></td>
+    <td align="right" class="lineno"><pre>152</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>585</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>552</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Value value = find_value(t, member->xid);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>146</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 579 times">&check;</span><span class="takenBranch" title="Branch 1 taken 6 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>585</pre></td>
+    <td align="right" class="lineno"><pre>153</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 546 times">&check;</span><span class="takenBranch" title="Branch 1 taken 6 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>552</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(value)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>147</pre></td>
+    <td align="right" class="lineno"><pre>154</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>579</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>546</pre></td>
     <td align="left" class="src coveredLine"><pre>    return value;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>148</pre></td>
+    <td align="right" class="lineno"><pre>155</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="takenBranch" title="Branch 3 taken 1 times">&check;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>6</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(env->func &amp;&amp; env->func->def->base->values)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>149</pre></td>
+    <td align="right" class="lineno"><pre>156</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    return (Value)scope_lookup1(env->func->def->base->values, (m_uint)member->xid);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>150</pre></td>
+    <td align="right" class="lineno"><pre>157</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>5</pre></td>
     <td align="left" class="src coveredLine"><pre>  return NULL;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>151</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>152</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>153</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>586</pre></td>
-    <td align="left" class="src coveredLine"><pre>OP_CHECK(opck_object_dot) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>154</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>586</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Exp_Dot *member = (Exp_Dot*)data;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>155</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>586</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const m_str str = s_name(member->xid);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>156</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>586</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const m_bool base_static = is_class(env->gwion, member->base->type);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>157</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 107 times">&check;</span><span class="takenBranch" title="Branch 1 taken 479 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>586</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Type the_base = base_static ? member->base->type->info->base_type : member->base->type;</pre></td>
-    </tr>
-
-    <tr>
     <td align="right" class="lineno"><pre>158</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>//  if(!the_base->nspc)</pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>159</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>//    ERR_N(&amp;member->base->pos,</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>160</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>553</pre></td>
+    <td align="left" class="src coveredLine"><pre>OP_CHECK(opck_object_dot) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>161</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>553</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Exp_Dot *member = (Exp_Dot*)data;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>162</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>553</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const m_str str = s_name(member->xid);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>163</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>553</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const m_bool base_static = is_class(env->gwion, member->base->type);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>164</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 78 times">&check;</span><span class="takenBranch" title="Branch 1 taken 475 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>553</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Type the_base = base_static ? member->base->type->info->base_type : member->base->type;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>165</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//  if(!the_base->nspc)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>166</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//    ERR_N(&amp;member->base->pos,</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>167</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>//          _("type '%s' does not have members - invalid use in dot expression of %s"),</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>161</pre></td>
+    <td align="right" class="lineno"><pre>168</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>//          the_base->name, str)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>162</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 585 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>586</pre></td>
+    <td align="right" class="lineno"><pre>169</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 552 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>553</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(member->xid ==  insert_symbol(env->gwion->st, "this") &amp;&amp; base_static)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>163</pre></td>
+    <td align="right" class="lineno"><pre>170</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    ERR_N(exp_self(member)->pos,</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>164</pre></td>
+    <td align="right" class="lineno"><pre>171</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>          _("keyword 'this' must be associated with object instance..."))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>165</pre></td>
+    <td align="right" class="lineno"><pre>172</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>585</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>552</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Value value = get_value(env, member, the_base);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>166</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 5 times">&check;</span><span class="takenBranch" title="Branch 1 taken 580 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>585</pre></td>
+    <td align="right" class="lineno"><pre>173</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 5 times">&check;</span><span class="takenBranch" title="Branch 1 taken 547 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>552</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(!value) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>167</pre></td>
+    <td align="right" class="lineno"><pre>174</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>5</pre></td>
     <td align="left" class="src coveredLine"><pre>    env_err(env, exp_self(member)->pos,</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>168</pre></td>
+    <td align="right" class="lineno"><pre>175</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>          _("class '%s' has no member '%s'"), the_base->name, str);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>169</pre></td>
+    <td align="right" class="lineno"><pre>176</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>5</pre></td>
     <td align="left" class="src coveredLine"><pre>    if(member->base->type->nspc)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>170</pre></td>
+    <td align="right" class="lineno"><pre>177</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
     <td align="left" class="src coveredLine"><pre>      did_you_mean_type(the_base, str);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>171</pre></td>
+    <td align="right" class="lineno"><pre>178</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>5</pre></td>
     <td align="left" class="src coveredLine"><pre>    return env->gwion->type[et_error];</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>172</pre></td>
+    <td align="right" class="lineno"><pre>179</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>173</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 580 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>580</pre></td>
+    <td align="right" class="lineno"><pre>180</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 547 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>547</pre></td>
     <td align="left" class="src coveredLine"><pre>  CHECK_BN(not_from_owner_class(env, the_base, value, exp_self(member)->pos))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>174</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 177 times">&check;</span><span class="takenBranch" title="Branch 1 taken 403 times">&check;</span><span class="takenBranch" title="Branch 2 taken 8 times">&check;</span><span class="takenBranch" title="Branch 3 taken 169 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>580</pre></td>
+    <td align="right" class="lineno"><pre>181</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 177 times">&check;</span><span class="takenBranch" title="Branch 1 taken 370 times">&check;</span><span class="takenBranch" title="Branch 2 taken 8 times">&check;</span><span class="takenBranch" title="Branch 3 taken 169 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>547</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(!env->class_def || isa(env->class_def, value->from->owner_class) &lt; 0) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>175</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4 times">&check;</span><span class="takenBranch" title="Branch 1 taken 407 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>411</pre></td>
+    <td align="right" class="lineno"><pre>182</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4 times">&check;</span><span class="takenBranch" title="Branch 1 taken 374 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>378</pre></td>
     <td align="left" class="src coveredLine"><pre>    if(GET_FLAG(value, private))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>176</pre></td>
+    <td align="right" class="lineno"><pre>183</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>4</pre></td>
     <td align="left" class="src coveredLine"><pre>      ERR_N(exp_self(member)->pos,</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>177</pre></td>
+    <td align="right" class="lineno"><pre>184</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>          _("can't access private '%s' outside of class..."), value->name)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>178</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="takenBranch" title="Branch 1 taken 405 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>407</pre></td>
+    <td align="right" class="lineno"><pre>185</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="takenBranch" title="Branch 1 taken 372 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>374</pre></td>
     <td align="left" class="src coveredLine"><pre>    else if(GET_FLAG(value, protect))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>179</pre></td>
+    <td align="right" class="lineno"><pre>186</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>      exp_setprot(exp_self(member), 1);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>180</pre></td>
+    <td align="right" class="lineno"><pre>187</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>181</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 105 times">&check;</span><span class="takenBranch" title="Branch 1 taken 471 times">&check;</span><span class="takenBranch" title="Branch 3 taken 1 times">&check;</span><span class="takenBranch" title="Branch 4 taken 104 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>576</pre></td>
+    <td align="right" class="lineno"><pre>188</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 76 times">&check;</span><span class="takenBranch" title="Branch 1 taken 467 times">&check;</span><span class="takenBranch" title="Branch 3 taken 1 times">&check;</span><span class="takenBranch" title="Branch 4 taken 75 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>543</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(base_static &amp;&amp; vflag(value, vflag_member))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>182</pre></td>
+    <td align="right" class="lineno"><pre>189</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    ERR_N(exp_self(member)->pos,</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>183</pre></td>
+    <td align="right" class="lineno"><pre>190</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>          _("cannot access member '%s.%s' without object instance..."),</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>184</pre></td>
+    <td align="right" class="lineno"><pre>191</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>          the_base->name, str)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>185</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 384 times">&check;</span><span class="takenBranch" title="Branch 1 taken 191 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>575</pre></td>
+    <td align="right" class="lineno"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 360 times">&check;</span><span class="takenBranch" title="Branch 1 taken 182 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>542</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(GET_FLAG(value, const))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>186</pre></td>
+    <td align="right" class="lineno"><pre>193</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>384</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>360</pre></td>
     <td align="left" class="src coveredLine"><pre>    exp_setmeta(exp_self(member), 1);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>187</pre></td>
+    <td align="right" class="lineno"><pre>194</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>575</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>542</pre></td>
     <td align="left" class="src coveredLine"><pre>  return value->type;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>188</pre></td>
+    <td align="right" class="lineno"><pre>195</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>189</pre></td>
+    <td align="right" class="lineno"><pre>196</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>190</pre></td>
+    <td align="right" class="lineno"><pre>197</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>479</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>448</pre></td>
     <td align="left" class="src coveredLine"><pre>OP_EMIT(opem_object_dot) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>191</pre></td>
+    <td align="right" class="lineno"><pre>198</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>479</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>448</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Exp_Dot *member = (Exp_Dot*)data;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>192</pre></td>
+    <td align="right" class="lineno"><pre>199</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>479</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>448</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Type t_base = actual_type(emit->gwion, member->base->type);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>193</pre></td>
+    <td align="right" class="lineno"><pre>200</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>479</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>448</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Value value = find_value(t_base, member->xid);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>194</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 389 times">&check;</span><span class="takenBranch" title="Branch 2 taken 90 times">&check;</span><span class="takenBranch" title="Branch 4 taken 10 times">&check;</span><span class="takenBranch" title="Branch 5 taken 379 times">&check;</span><br/><span class="takenBranch" title="Branch 6 taken 8 times">&check;</span><span class="takenBranch" title="Branch 7 taken 2 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>489</pre></td>
+    <td align="right" class="lineno"><pre>201</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 387 times">&check;</span><span class="takenBranch" title="Branch 2 taken 61 times">&check;</span><span class="takenBranch" title="Branch 4 taken 9 times">&check;</span><span class="takenBranch" title="Branch 5 taken 378 times">&check;</span><br/><span class="takenBranch" title="Branch 6 taken 8 times">&check;</span><span class="takenBranch" title="Branch 7 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>457</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(!is_class(emit->gwion, member->base->type) &amp;&amp; (vflag(value, vflag_member) ||</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>195</pre></td>
+    <td align="right" class="lineno"><pre>202</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 7 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>17</pre></td>
     <td align="left" class="src coveredLine"><pre>       (isa(exp_self(member)->type, emit->gwion->type[et_function]) > 0 &amp;&amp;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>196</pre></td>
+    <td align="right" class="lineno"><pre>203</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>8</pre></td>
     <td align="left" class="src coveredLine"><pre>       !is_fptr(emit->gwion, exp_self(member)->type)))) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>197</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 371 times">&check;</span><span class="takenBranch" title="Branch 2 taken 15 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>386</pre></td>
+    <td align="right" class="lineno"><pre>204</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 370 times">&check;</span><span class="takenBranch" title="Branch 2 taken 15 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>385</pre></td>
     <td align="left" class="src coveredLine"><pre>    if(!tflag(t_base, tflag_struct))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>198</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 371 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>371</pre></td>
+    <td align="right" class="lineno"><pre>205</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 370 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>370</pre></td>
     <td align="left" class="src coveredLine"><pre>      CHECK_BB(emit_exp(emit, member->base))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>199</pre></td>
+    <td align="right" class="lineno"><pre>206</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>200</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 326 times">&check;</span><span class="takenBranch" title="Branch 2 taken 153 times">&check;</span><span class="takenBranch" title="Branch 5 taken 293 times">&check;</span><span class="takenBranch" title="Branch 6 taken 33 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>479</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(isa(exp_self(member)->type, emit->gwion->type[et_function]) > 0 &amp;&amp; !is_fptr(emit->gwion, exp_self(member)->type))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>201</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>293</pre></td>
-    <td align="left" class="src coveredLine"><pre>	  emit_member_func(emit, member);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>202</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 130 times">&check;</span><span class="takenBranch" title="Branch 2 taken 56 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>186</pre></td>
-    <td align="left" class="src coveredLine"><pre>  else if(vflag(value, vflag_member)) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>203</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 119 times">&check;</span><span class="takenBranch" title="Branch 2 taken 11 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>130</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if(!tflag(t_base, tflag_struct))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>204</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>119</pre></td>
-    <td align="left" class="src coveredLine"><pre>      emit_member(emit, value, exp_getvar(exp_self(member)));</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>205</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    else {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>206</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
-    <td align="left" class="src coveredLine"><pre>      exp_setvar(member->base, 1);</pre></td>
-    </tr>
-
-    <tr>
     <td align="right" class="lineno"><pre>207</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 11 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
-    <td align="left" class="src coveredLine"><pre>      CHECK_BB(emit_exp(emit, member->base))</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 324 times">&check;</span><span class="takenBranch" title="Branch 2 taken 124 times">&check;</span><span class="takenBranch" title="Branch 5 taken 291 times">&check;</span><span class="takenBranch" title="Branch 6 taken 33 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>448</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(isa(exp_self(member)->type, emit->gwion->type[et_function]) > 0 &amp;&amp; !is_fptr(emit->gwion, exp_self(member)->type))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>208</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
-    <td align="left" class="src coveredLine"><pre>      emit_struct_data(emit, value, exp_getvar(exp_self(member)));</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>291</pre></td>
+    <td align="left" class="src coveredLine"><pre>	  emit_member_func(emit, member);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>209</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 129 times">&check;</span><span class="takenBranch" title="Branch 2 taken 28 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>157</pre></td>
+    <td align="left" class="src coveredLine"><pre>  else if(vflag(value, vflag_member)) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>210</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 55 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>56</pre></td>
-    <td align="left" class="src coveredLine"><pre>  } else if(GET_FLAG(value, static))</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 118 times">&check;</span><span class="takenBranch" title="Branch 2 taken 11 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>129</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if(!tflag(t_base, tflag_struct))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>211</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>55</pre></td>
-    <td align="left" class="src coveredLine"><pre>    emit_dot_static_import_data(emit, value, exp_getvar(exp_self(member)));</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>118</pre></td>
+    <td align="left" class="src coveredLine"><pre>      emit_member(emit, value, exp_getvar(exp_self(member)));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>212</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  else { // member type</pre></td>
+    <td align="left" class="src "><pre>    else {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>213</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>    const Instr instr = emit_add_instr(emit, RegPushImm);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
+    <td align="left" class="src coveredLine"><pre>      exp_setvar(member->base, 1);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>214</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>    instr->m_val = (m_uint)value->type;</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 11 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
+    <td align="left" class="src coveredLine"><pre>      CHECK_BB(emit_exp(emit, member->base))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>215</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
+    <td align="left" class="src coveredLine"><pre>      emit_struct_data(emit, value, exp_getvar(exp_self(member)));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>216</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 40 times">&check;</span><span class="takenBranch" title="Branch 1 taken 439 times">&check;</span><span class="takenBranch" title="Branch 4 taken 28 times">&check;</span><span class="takenBranch" title="Branch 5 taken 12 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>479</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(GET_FLAG(value, late) &amp;&amp; !exp_getvar(exp_self(member))) {</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>217</pre></td>
-    <td align="right" class="linebranch"></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 28 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>28</pre></td>
-    <td align="left" class="src coveredLine"><pre>    const Instr instr = emit_add_instr(emit, GWOP_EXCEPT);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  } else if(GET_FLAG(value, static))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>218</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>28</pre></td>
-    <td align="left" class="src coveredLine"><pre>    instr->m_val = -SZ_INT;</pre></td>
+    <td align="left" class="src coveredLine"><pre>    emit_dot_static_import_data(emit, value, exp_getvar(exp_self(member)));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>219</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="left" class="src "><pre>  else { // member type</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>220</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>479</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    const Instr instr = emit_add_instr(emit, RegPushImm);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>221</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    instr->m_val = (m_uint)value->type;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>222</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>223</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 39 times">&check;</span><span class="takenBranch" title="Branch 1 taken 409 times">&check;</span><span class="takenBranch" title="Branch 4 taken 27 times">&check;</span><span class="takenBranch" title="Branch 5 taken 12 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>448</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(GET_FLAG(value, late) &amp;&amp; !exp_getvar(exp_self(member))) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>224</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>27</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const Instr instr = emit_add_instr(emit, GWOP_EXCEPT);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>225</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>27</pre></td>
+    <td align="left" class="src coveredLine"><pre>    instr->m_val = -SZ_INT;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>226</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>227</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>448</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>228</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>229</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>230</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>30</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static m_bool scantmpl_class_def(const Env env, struct tmpl_info *info) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>224</pre></td>
+    <td align="right" class="lineno"><pre>231</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>30</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Class_Def c = info->base->info->cdef;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>225</pre></td>
+    <td align="right" class="lineno"><pre>232</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 26 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span><span class="takenBranch" title="Branch 3 taken 4 times">&check;</span><span class="takenBranch" title="Branch 4 taken 26 times">&check;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>56</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Class_Def cdef = new_class_def(env->gwion->mp, c->flag, info->name, c->base.ext ? cpy_type_decl(env->gwion->mp, c->base.ext) : NULL,</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>226</pre></td>
+    <td align="right" class="lineno"><pre>233</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>56</pre></td>
     <td align="left" class="src coveredLine"><pre>      c->body ?cpy_ast(env->gwion->mp, c->body) : NULL, c->pos);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>227</pre></td>
+    <td align="right" class="lineno"><pre>234</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>30</pre></td>
     <td align="left" class="src coveredLine"><pre>  cdef->cflag = c->cflag;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>228</pre></td>
+    <td align="right" class="lineno"><pre>235</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>30</pre></td>
     <td align="left" class="src coveredLine"><pre>  cdef->base.tmpl = mk_tmpl(env, c->base.tmpl, info->td->types);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>229</pre></td>
+    <td align="right" class="lineno"><pre>236</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>30</pre></td>
     <td align="left" class="src coveredLine"><pre>  const m_bool ret = scan0_class_def(env, cdef);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>230</pre></td>
+    <td align="right" class="lineno"><pre>237</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 29 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>30</pre></td>
     <td align="left" class="src coveredLine"><pre>  if((info->ret = cdef->base.type)) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>231</pre></td>
+    <td align="right" class="lineno"><pre>238</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>29</pre></td>
     <td align="left" class="src coveredLine"><pre>    info->ret->info->cdef = cdef;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>232</pre></td>
+    <td align="right" class="lineno"><pre>239</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>29</pre></td>
     <td align="left" class="src coveredLine"><pre>    set_tflag(info->ret, tflag_cdef);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>233</pre></td>
+    <td align="right" class="lineno"><pre>240</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>29</pre></td>
     <td align="left" class="src coveredLine"><pre>    set_tflag(info->ret, tflag_ctmpl);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>234</pre></td>
+    <td align="right" class="lineno"><pre>241</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  } else</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>235</pre></td>
+    <td align="right" class="lineno"><pre>242</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    free_class_def(env->gwion->mp, cdef);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>236</pre></td>
+    <td align="right" class="lineno"><pre>243</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>30</pre></td>
     <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>237</pre></td>
+    <td align="right" class="lineno"><pre>244</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>238</pre></td>
+    <td align="right" class="lineno"><pre>245</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>239</pre></td>
+    <td align="right" class="lineno"><pre>246</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static m_bool scantmpl_union_def(const Env env, struct tmpl_info *info) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>240</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Union_Def u = info->base->info->udef;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>241</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Union_Def udef = new_union_def(env->gwion->mp, cpy_union_list(env->gwion->mp, u->l), u->pos);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>242</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
-    <td align="left" class="src coveredLine"><pre>  udef->xid = info->name;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>243</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
-    <td align="left" class="src coveredLine"><pre>  udef->tmpl = mk_tmpl(env, u->tmpl, info->td->types);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>244</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 6 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(GET_FLAG(info->base, global))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>245</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    SET_FLAG(udef, global);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>246</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const m_bool ret = scan0_union_def(env, udef);</pre></td>
-    </tr>
-
-    <tr>
     <td align="right" class="lineno"><pre>247</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(udef->type) {</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Union_Def u = info->base->info->udef;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>248</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
-    <td align="left" class="src coveredLine"><pre>    udef->type->info->udef = udef;// mark as udef</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Union_Def udef = new_union_def(env->gwion->mp, cpy_union_list(env->gwion->mp, u->l), u->pos);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>249</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
-    <td align="left" class="src coveredLine"><pre>    info->ret = udef->type;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>  udef->xid = info->name;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>250</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
-    <td align="left" class="src coveredLine"><pre>    set_tflag(info->ret, tflag_udef);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>  udef->tmpl = mk_tmpl(env, u->tmpl, info->td->types);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>251</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  } else</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 5 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(GET_FLAG(info->base, global))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>252</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    free_union_def(env->gwion->mp, udef);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    SET_FLAG(udef, global);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>253</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const m_bool ret = scan0_union_def(env, udef);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>254</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 5 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(udef->type) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>255</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>    udef->type->info->udef = udef;// mark as udef</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>256</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static Type _scan_class(const Env env, struct tmpl_info *info) {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>    info->ret = udef->type;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>257</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 30 times">&check;</span><span class="takenBranch" title="Branch 1 taken 6 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(info->base->info->parent !=  env->gwion->type[et_union])</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>    set_tflag(info->ret, tflag_udef);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>258</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 2 taken 29 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
-    <td align="left" class="src coveredLine"><pre>    CHECK_BO(scantmpl_class_def(env, info))</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  } else</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>259</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  else</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    free_union_def(env->gwion->mp, udef);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>260</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 6 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
-    <td align="left" class="src coveredLine"><pre>    CHECK_BO(scantmpl_union_def(env, info))</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>261</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return info->ret;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>262</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>263</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static Type _scan_class(const Env env, struct tmpl_info *info) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>264</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 30 times">&check;</span><span class="takenBranch" title="Branch 1 taken 5 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(info->base->info->parent !=  env->gwion->type[et_union])</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>265</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 2 taken 29 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="left" class="src coveredLine"><pre>    CHECK_BO(scantmpl_class_def(env, info))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>266</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  else</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>267</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 5 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>    CHECK_BO(scantmpl_union_def(env, info))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>268</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>34</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return info->ret;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>269</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>270</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>264</pre></td>
+    <td align="right" class="lineno"><pre>271</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>ANN Type tmpl_exists(const Env env, struct tmpl_info *const info);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>265</pre></td>
+    <td align="right" class="lineno"><pre>272</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>45</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>44</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN Type scan_class(const Env env, const Type t, const Type_Decl *td) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>266</pre></td>
+    <td align="right" class="lineno"><pre>273</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>45</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>44</pre></td>
     <td align="left" class="src coveredLine"><pre>  struct tmpl_info info = { .base=t, .td=td, .list=t->info->cdef->base.tmpl->list  };</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>267</pre></td>
+    <td align="right" class="lineno"><pre>274</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>45</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>44</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Type exists = tmpl_exists(env, &amp;info);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>268</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 9 times">&check;</span><span class="takenBranch" title="Branch 1 taken 36 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>45</pre></td>
+    <td align="right" class="lineno"><pre>275</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 9 times">&check;</span><span class="takenBranch" title="Branch 1 taken 35 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>44</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(exists)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>269</pre></td>
+    <td align="right" class="lineno"><pre>276</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 8 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>9</pre></td>
     <td align="left" class="src coveredLine"><pre>    return exists != env->gwion->type[et_error] ? exists : NULL;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>270</pre></td>
+    <td align="right" class="lineno"><pre>277</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>72</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>70</pre></td>
     <td align="left" class="src coveredLine"><pre>  struct EnvSet es = { .env=env, .data=env, .func=(_exp_func)scan0_cdef,</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>271</pre></td>
+    <td align="right" class="lineno"><pre>278</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
     <td align="left" class="src coveredLine"><pre>    .scope=env->scope->depth, .flag=tflag_scan0 };</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>272</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 20 times">&check;</span><span class="takenBranch" title="Branch 1 taken 16 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 36 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
+    <td align="right" class="lineno"><pre>279</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 20 times">&check;</span><span class="takenBranch" title="Branch 1 taken 15 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 35 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
     <td align="left" class="src coveredLine"><pre>  CHECK_BO(envset_push(&amp;es, t->info->owner_class, t->info->ctx ? t->info->ctx->nspc : env->curr))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>273</pre></td>
+    <td align="right" class="lineno"><pre>280</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Type ret = _scan_class(env, &amp;info);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>274</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 35 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
+    <td align="right" class="lineno"><pre>281</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 34 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(es.run)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>275</pre></td>
+    <td align="right" class="lineno"><pre>282</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    envset_pop(&amp;es, t->info->owner_class);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>276</pre></td>
+    <td align="right" class="lineno"><pre>283</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>36</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>35</pre></td>
     <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>277</pre></td>
+    <td align="right" class="lineno"><pre>284</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>278</pre></td>
+    <td align="right" class="lineno"><pre>285</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>279</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>ANN void struct_release(const VM_Shred shred, const Type base, const m_bit *ptr) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>280</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  const Vector types   = &amp;base->info->tuple->types;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>281</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  const Vector offsets = &amp;base->info->tuple->offset;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>282</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  for(m_uint i = 0; i &lt; vector_size(types); ++i) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>283</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    const Type t = (Type)vector_at(types, i);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>284</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    if(isa(t, shred->info->vm->gwion->type[et_compound]) &lt; 0)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>285</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>      continue;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>286</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    const m_uint offset = vector_at(offsets, i);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>ANN void struct_release(const VM_Shred shred, const Type base, const m_bit *ptr) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>287</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    if(!tflag(t, tflag_struct))</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  const Vector types   = &amp;base->info->tuple->types;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>288</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>      release(*(M_Object*)(ptr + offset), shred);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  const Vector offsets = &amp;base->info->tuple->offset;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>289</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    else</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  for(m_uint i = 0; i &lt; vector_size(types); ++i) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>290</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>      struct_release(shred, t, *(m_bit**)(ptr + offset));</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    const Type t = (Type)vector_at(types, i);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>291</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    if(isa(t, shred->info->vm->gwion->type[et_compound]) &lt; 0)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>292</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>      continue;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>293</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    const m_uint offset = vector_at(offsets, i);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>294</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    if(!tflag(t, tflag_struct))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>295</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>      release(*(M_Object*)(ptr + offset), shred);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>296</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    else</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>297</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>      struct_release(shred, t, *(m_bit**)(ptr + offset));</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>298</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>292</pre></td>
+    <td align="right" class="lineno"><pre>299</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>293</pre></td>
+    <td align="right" class="lineno"><pre>300</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>294</pre></td>
+    <td align="right" class="lineno"><pre>301</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>static OP_EMIT(opem_not_object) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>295</pre></td>
+    <td align="right" class="lineno"><pre>302</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Vector v = &amp;emit->code->instr;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>296</pre></td>
+    <td align="right" class="lineno"><pre>303</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Instr back = (Instr)vector_back(v);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>297</pre></td>
+    <td align="right" class="lineno"><pre>304</pre></td>
     <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(back->opcode == eGWOP_EXCEPT) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>298</pre></td>
+    <td align="right" class="lineno"><pre>305</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>    vector_pop(v);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>299</pre></td>
+    <td align="right" class="lineno"><pre>306</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>    mp_free(emit->gwion->mp, Instr, back);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>300</pre></td>
+    <td align="right" class="lineno"><pre>307</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>    emit_add_instr(emit, IntNot);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>301</pre></td>
+    <td align="right" class="lineno"><pre>308</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>    return GW_OK;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>302</pre></td>
+    <td align="right" class="lineno"><pre>309</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>303</pre></td>
+    <td align="right" class="lineno"><pre>310</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Instr instr = emit_add_instr(emit, RegSetImm);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>304</pre></td>
+    <td align="right" class="lineno"><pre>311</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>  instr->m_val2 = -SZ_INT;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>305</pre></td>
+    <td align="right" class="lineno"><pre>312</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>306</pre></td>
+    <td align="right" class="lineno"><pre>313</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>307</pre></td>
+    <td align="right" class="lineno"><pre>314</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>308</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>GWION_IMPORT(object_op) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>309</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Type t_error  = gwi_mk_type(gwi, "@error",  0, NULL);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>310</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  gwi->gwion->type[et_error] = t_error;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>311</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_set_global_type(gwi, t_error, et_error))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>312</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "Object", "Object", NULL))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>313</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, at_object))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>314</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@=>", ObjectAssign))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>315</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "Object", "Object", "bool"))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>GWION_IMPORT(object_op) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>316</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "==",  EqObject))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Type t_error  = gwi_mk_type(gwi, "@error",  0, NULL);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>317</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "!=", NeqObject))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  gwi->gwion->type[et_error] = t_error;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>318</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_object_cast))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_set_global_type(gwi, t_error, et_error))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>319</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "$", NULL))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "Object", "Object", NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>320</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_implicit_null2obj))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_object_at))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>321</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_implicit_null2obj))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_object_at))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>322</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@implicit", NULL))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@=>", NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>323</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, NULL, "Object", "bool"))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "Object", "Object", "bool"))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>324</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_not_object))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "==",  EqObject))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>325</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "!", IntNot))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "!=", NeqObject))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>326</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "@Compound", NULL, NULL))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_object_cast))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>327</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_struct_scan))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "$", NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>328</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@scan", NULL))</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_implicit_null2obj))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>329</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_implicit_null2obj))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>330</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@implicit", NULL))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>331</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, NULL, "Object", "bool"))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>332</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_not_object))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>333</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "!", IntNot))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>334</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "@Compound", NULL, NULL))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>335</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_struct_scan))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>336</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@scan", NULL))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>337</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>330</pre></td>
+    <td align="right" class="lineno"><pre>338</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>656</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>660</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>331</pre></td>
+    <td align="right" class="lineno"><pre>339</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
