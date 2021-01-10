@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-01-08 10:25:31</td>
+            <td class="headerValue">2021-01-10 21:00:34</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">31</td>
@@ -435,49 +435,49 @@
     <tr>
     <td align="right" class="lineno"><pre>20</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>15722</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>16377</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static m_bool mk_xtor(MemPool p, const Type type, const m_uint d, const enum tflag e) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>21</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6552 times">&check;</span><span class="takenBranch" title="Branch 1 taken 9170 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>15722</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6552 times">&check;</span><span class="takenBranch" title="Branch 1 taken 9825 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>16377</pre></td>
     <td align="left" class="src coveredLine"><pre>  VM_Code* code = e == tflag_ctor ? &amp;type->nspc->pre_ctor : &amp;type->nspc->dtor;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>22</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>15722</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>16377</pre></td>
     <td align="left" class="src coveredLine"><pre>  const m_str name = type->name;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>23</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>15722</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>16377</pre></td>
     <td align="left" class="src coveredLine"><pre>  *code = new_vmcode(p, NULL, SZ_INT, 1, name);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>15722</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>16377</pre></td>
     <td align="left" class="src coveredLine"><pre>  (*code)->native_func = (m_uint)d;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>25</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>15722</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>16377</pre></td>
     <td align="left" class="src coveredLine"><pre>  type->tflag |= e;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>26</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>15722</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>16377</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
@@ -595,7 +595,7 @@
 
     <tr>
     <td align="right" class="lineno"><pre>43</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 9170 times">&check;</span><span class="takenBranch" title="Branch 1 taken 657 times">&check;</span></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 9825 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>9827</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(dtor)</pre></td>
     </tr>
@@ -603,7 +603,7 @@
     <tr>
     <td align="right" class="lineno"><pre>44</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9170</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>9825</pre></td>
     <td align="left" class="src coveredLine"><pre>    mk_xtor(gwi->gwion->mp, t, (m_uint)dtor, tflag_dtor);</pre></td>
     </tr>
 
@@ -870,7 +870,7 @@
     <td align="right" class="lineno"><pre>82</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>656</pre></td>
-    <td align="left" class="src coveredLine"><pre>    set_tflag(t, tflag_tmpl);</pre></td>
+    <td align="left" class="src coveredLine"><pre>    set_tflag(t, tflag_tmpl | tflag_ntmpl);</pre></td>
     </tr>
 
     <tr>
@@ -1010,7 +1010,7 @@
     <td align="right" class="lineno"><pre>102</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1310</pre></td>
-    <td align="left" class="src coveredLine"><pre>    set_tflag(t, tflag_tmpl);</pre></td>
+    <td align="left" class="src coveredLine"><pre>    set_tflag(t, tflag_tmpl | tflag_ntmpl);</pre></td>
     </tr>
 
     <tr>
