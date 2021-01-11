@@ -269,13 +269,13 @@
             <td class="headerValue">src/emit/emit.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">1522</td>
-            <td class="headerTableEntry">1614</td>
+            <td class="headerTableEntry">1521</td>
+            <td class="headerTableEntry">1613</td>
             <td class="headerTableEntry" style="background-color:LightGreen">94.3 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-01-10 21:00:34</td>
+            <td class="headerValue">2021-01-11 15:36:54</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">690</td>
@@ -4566,63 +4566,63 @@
     <td align="right" class="lineno"><pre>610</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>321</pre></td>
-    <td align="left" class="src coveredLine"><pre>  char c[strlen(*str) + 1];</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Value v = prim_self(str)->value;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>611</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 310 times">&check;</span><span class="takenBranch" title="Branch 1 taken 11 times">&check;</span></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 259 times">&check;</span><span class="takenBranch" title="Branch 1 taken 62 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>321</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(strlen(*str)) {</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(!v->d.obj) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>612</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>310</pre></td>
-    <td align="left" class="src coveredLine"><pre>    strcpy(c, *str);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>259</pre></td>
+    <td align="left" class="src coveredLine"><pre>    char c[strlen(*str) + 1];</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>613</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 2 times">&check;</span><span class="takenBranch" title="Branch 3 taken 308 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>310</pre></td>
-    <td align="left" class="src coveredLine"><pre>    CHECK_BB(escape_str(emit, c, prim_pos(str)));</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 249 times">&check;</span><span class="takenBranch" title="Branch 1 taken 10 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>259</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if(strlen(*str)) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>614</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
-    <td align="left" class="src coveredLine"><pre>  } else c[0] = '\0';</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>249</pre></td>
+    <td align="left" class="src coveredLine"><pre>      strcpy(c, *str);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>615</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>319</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Value v = prim_self(str)->value;</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 2 times">&check;</span><span class="takenBranch" title="Branch 3 taken 247 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>249</pre></td>
+    <td align="left" class="src coveredLine"><pre>      CHECK_BB(escape_str(emit, c, prim_pos(str)));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>616</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>319</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Symbol sym = insert_symbol(c);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>10</pre></td>
+    <td align="left" class="src coveredLine"><pre>    } else c[0] = '\0';</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>617</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 257 times">&check;</span><span class="takenBranch" title="Branch 1 taken 62 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>319</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(!v->d.obj)</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>257</pre></td>
+    <td align="left" class="src coveredLine"><pre>      v->d.obj = new_string2(emit->gwion, NULL, c);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>618</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>257</pre></td>
-    <td align="left" class="src coveredLine"><pre>    v->d.obj = new_string2(emit->gwion, NULL, s_name(sym));</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
