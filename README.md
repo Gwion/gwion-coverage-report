@@ -25,7 +25,7 @@ src/env/value.c                               21      20    95%   11
 src/gwion.c                                  134     133    99%   73
 src/gwiondata.c                               35      35   100%   
 src/import/cleaner.c                          20      20   100%   
-src/import/import_cdef.c                      79      77    97%   67,80
+src/import/import_cdef.c                      94      86    91%   42-43,45-46,82,95,128-129
 src/import/import_checker.c                  207     184    88%   102,113,117,119-121,133,147-150,161-162,169-171,189-193,269,275
 src/import/import_enum.c                      51      43    84%   79,96-102
 src/import/import_fdef.c                      99      98    99%   95
@@ -81,8 +81,8 @@ src/vm/vm_code.c                              93      93   100%
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10453    9785    93%
+TOTAL                                      10468    9794    93%
 ------------------------------------------------------------------------------
-lines: 93.6% (9785 out of 10453)
-branches: 78.0% (4282 out of 5489)
+lines: 93.6% (9794 out of 10468)
+branches: 78.0% (4289 out of 5501)
 ```
