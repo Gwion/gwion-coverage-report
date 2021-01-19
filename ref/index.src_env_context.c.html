@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-01-17 19:08:21</td>
+            <td class="headerValue">2021-01-19 14:49:14</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">0</td>
@@ -344,35 +344,35 @@
     <tr>
     <td align="right" class="lineno"><pre>7</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN void free_context(const Context a, Gwion gwion) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>8</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>  nspc_remref(a->nspc, gwion);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>9</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>  free_mstr(gwion->mp, a->name);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>10</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>  mp_free(gwion->mp, Context, a);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>11</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -386,49 +386,49 @@
     <tr>
     <td align="right" class="lineno"><pre>13</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN2(2) Context new_context(MemPool p, const Ast ast, const m_str str) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>14</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Context context = mp_calloc(p, Context);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>15</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>  context->name = mstrdup(p, str);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>16</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>  context->nspc = new_nspc(p, context->name);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>17</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>  context->tree = ast;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>18</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>  context->ref = 1;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>19</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>  return context;</pre></td>
     </tr>
 
@@ -449,42 +449,42 @@
     <tr>
     <td align="right" class="lineno"><pre>22</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN void load_context(const Context context, const Env env) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>23</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>  context_addref((env->context = context));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_add(&amp;env->scope->nspc_stack, (vtype)env->curr);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>25</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>  context->nspc->parent = env->curr;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>26</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>  env->curr = context->nspc;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>27</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -498,28 +498,28 @@
     <tr>
     <td align="right" class="lineno"><pre>29</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN void unload_context(const Context context, const Env env) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>30</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>  context_remref(context, env->gwion);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>31</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>  env->curr = (Nspc)vector_pop(&amp;env->scope->nspc_stack);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>32</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>610</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>612</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
