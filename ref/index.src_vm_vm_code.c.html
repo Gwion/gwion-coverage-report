@@ -269,18 +269,18 @@
             <td class="headerValue">src/vm/vm_code.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">93</td>
-            <td class="headerTableEntry">93</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
+            <td class="headerTableEntry">94</td>
+            <td class="headerTableEntry">107</td>
+            <td class="headerTableEntry" style="background-color:#FFFF55">87.9 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-01-20 21:49:53</td>
+            <td class="headerValue">2021-01-21 22:07:48</td>
             <td></td>
             <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">51</td>
             <td class="headerTableEntry">52</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">98.1 %</td>
+            <td class="headerTableEntry">60</td>
+            <td class="headerTableEntry" style="background-color:#FFFF55">86.7 %</td>
           </tr>
         </table>
       </td>
@@ -659,572 +659,698 @@
     <tr>
     <td align="right" class="lineno"><pre>52</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>796</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static m_bit* tobytecode(MemPool p, const VM_Code code) {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>INSTR(Unroll2);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>53</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>796</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Vector v = code->instr;</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static m_bit* tobytecode(MemPool p, const VM_Code code) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>54</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>796</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const m_uint sz = vector_size(v);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Vector v = code->instr;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>55</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>796</pre></td>
-    <td align="left" class="src coveredLine"><pre>  m_bit *ptr = _mp_malloc(p, sz * BYTECODE_SZ);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const m_uint sz = vector_size(v);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>56</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>796</pre></td>
+    <td align="left" class="src coveredLine"><pre>  m_bit *ptr = _mp_malloc(p, sz * BYTECODE_SZ);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>57</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  struct Vector_ nop;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>57</pre></td>
+    <td align="right" class="lineno"><pre>58</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>796</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_init(&amp;nop);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>58</pre></td>
+    <td align="right" class="lineno"><pre>59</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 17748 times">&check;</span><span class="takenBranch" title="Branch 1 taken 796 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>18544</pre></td>
     <td align="left" class="src coveredLine"><pre>  for(m_uint i= 0; i &lt; sz; ++i) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>59</pre></td>
+    <td align="right" class="lineno"><pre>60</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>17748</pre></td>
     <td align="left" class="src coveredLine"><pre>    m_bit *const data = ptr + i*BYTECODE_SZ;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>60</pre></td>
+    <td align="right" class="lineno"><pre>61</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>17748</pre></td>
     <td align="left" class="src coveredLine"><pre>    const Instr instr = (Instr)vector_at(v, i);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>61</pre></td>
+    <td align="right" class="lineno"><pre>62</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 17510 times">&check;</span><span class="takenBranch" title="Branch 1 taken 238 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>17748</pre></td>
     <td align="left" class="src coveredLine"><pre>    if(instr->opcode &lt; eOP_MAX) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>62</pre></td>
+    <td align="right" class="lineno"><pre>63</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2257 times">&check;</span><span class="takenBranch" title="Branch 1 taken 15253 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>17510</pre></td>
     <td align="left" class="src coveredLine"><pre>      if(instr->opcode == eRegMove) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>63</pre></td>
+    <td align="right" class="lineno"><pre>64</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2257</pre></td>
     <td align="left" class="src coveredLine"><pre>        m_int move = (m_int)instr->m_val;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>64</pre></td>
+    <td align="right" class="lineno"><pre>65</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2257</pre></td>
     <td align="left" class="src coveredLine"><pre>        m_uint j = 0;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>65</pre></td>
+    <td align="right" class="lineno"><pre>66</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>        Instr next;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>66</pre></td>
+    <td align="right" class="lineno"><pre>67</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 2296 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 39 times">&check;</span><span class="takenBranch" title="Branch 4 taken 2257 times">&check;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>4553</pre></td>
     <td align="left" class="src coveredLine"><pre>        while((next = (Instr)vector_at(v, i + j +1)) &amp;&amp; next->opcode == eRegMove) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>67</pre></td>
+    <td align="right" class="lineno"><pre>68</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>39</pre></td>
     <td align="left" class="src coveredLine"><pre>          ++j; vector_add(&amp;nop, i+j);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>68</pre></td>
+    <td align="right" class="lineno"><pre>69</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>39</pre></td>
     <td align="left" class="src coveredLine"><pre>          move += (m_int)next->m_val;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>69</pre></td>
+    <td align="right" class="lineno"><pre>70</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>39</pre></td>
     <td align="left" class="src coveredLine"><pre>          next->opcode = eNoOp;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>70</pre></td>
+    <td align="right" class="lineno"><pre>71</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>        }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>71</pre></td>
+    <td align="right" class="lineno"><pre>72</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2228 times">&check;</span><span class="takenBranch" title="Branch 1 taken 29 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>2257</pre></td>
     <td align="left" class="src coveredLine"><pre>        if((instr->m_val = move)) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>72</pre></td>
+    <td align="right" class="lineno"><pre>73</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2228</pre></td>
     <td align="left" class="src coveredLine"><pre>          memcpy(data, instr, BYTECODE_SZ);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>73</pre></td>
+    <td align="right" class="lineno"><pre>74</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2228</pre></td>
     <td align="left" class="src coveredLine"><pre>          setpc(data, i);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>74</pre></td>
+    <td align="right" class="lineno"><pre>75</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>        } else {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>75</pre></td>
+    <td align="right" class="lineno"><pre>76</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>29</pre></td>
     <td align="left" class="src coveredLine"><pre>          vector_add(&amp;nop, i);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>76</pre></td>
+    <td align="right" class="lineno"><pre>77</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>29</pre></td>
     <td align="left" class="src coveredLine"><pre>          instr->opcode = eNoOp;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>77</pre></td>
+    <td align="right" class="lineno"><pre>78</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>        }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>78</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2257</pre></td>
-    <td align="left" class="src coveredLine"><pre>        i += j;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>79</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2257</pre></td>
-    <td align="left" class="src coveredLine"><pre>        continue;</pre></td>
+    <td align="left" class="src coveredLine"><pre>        i += j;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>80</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2257</pre></td>
+    <td align="left" class="src coveredLine"><pre>        continue;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>81</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>      }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>81</pre></td>
+    <td align="right" class="lineno"><pre>82</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 14912 times">&check;</span><span class="takenBranch" title="Branch 1 taken 341 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>15253</pre></td>
     <td align="left" class="src coveredLine"><pre>      if(instr->opcode != eNoOp)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>82</pre></td>
+    <td align="right" class="lineno"><pre>83</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>14912</pre></td>
     <td align="left" class="src coveredLine"><pre>        memcpy(data, instr, BYTECODE_SZ);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>83</pre></td>
+    <td align="right" class="lineno"><pre>84</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>      else</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>84</pre></td>
+    <td align="right" class="lineno"><pre>85</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>341</pre></td>
     <td align="left" class="src coveredLine"><pre>        vector_add(&amp;nop, i);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>85</pre></td>
+    <td align="right" class="lineno"><pre>86</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    } else {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>86</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>238</pre></td>
-    <td align="left" class="src coveredLine"><pre>      *(m_bit*)(data) = instr->opcode;</pre></td>
-    </tr>
-
-    <tr>
     <td align="right" class="lineno"><pre>87</pre></td>
-    <td align="right" class="linebranch"></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 238 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>238</pre></td>
-    <td align="left" class="src coveredLine"><pre>      *(Instr*)(data + SZ_INT) = instr;</pre></td>
+    <td align="left" class="src coveredLine"><pre>      if(instr->execute == Unroll2) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>88</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>238</pre></td>
-    <td align="left" class="src coveredLine"><pre>      *(f_instr*)(data + SZ_INT*2) = instr->execute;</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        const Instr unroll = (Instr)instr->m_val;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>89</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        const m_uint pc = vector_find(v, unroll);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>90</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>15491</pre></td>
-    <td align="left" class="src coveredLine"><pre>    setpc(data, i);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        m_uint reduce = 0;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>91</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        for(m_uint j = 0; j &lt; vector_size(&amp;nop); ++j) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>92</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 485 times">&check;</span><span class="takenBranch" title="Branch 2 taken 311 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>796</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(!vector_size(&amp;nop)) {</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>          const m_uint at = vector_at(&amp;nop, j);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>93</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>485</pre></td>
-    <td align="left" class="src coveredLine"><pre>    vector_release(&amp;nop);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>          if(at >= pc) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>94</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>485</pre></td>
-    <td align="left" class="src coveredLine"><pre>    return ptr;</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>            if(at >= (pc + unroll->m_val2))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>95</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>              break;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>96</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>311</pre></td>
-    <td align="left" class="src coveredLine"><pre>  m_bit *const final = _mp_malloc(p, sz * BYTECODE_SZ); // could use smaller size</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>            ++reduce;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>97</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6996 times">&check;</span><span class="takenBranch" title="Branch 1 taken 311 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>7307</pre></td>
-    <td align="left" class="src coveredLine"><pre>  for(m_uint i= 0, j = 0; i &lt; sz; ++i) {</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>          }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>98</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6996</pre></td>
-    <td align="left" class="src coveredLine"><pre>    const Instr instr = (Instr)vector_at(v, i);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>99</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6996</pre></td>
-    <td align="left" class="src coveredLine"><pre>    unsigned opcode = instr->opcode;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>100</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6587 times">&check;</span><span class="takenBranch" title="Branch 1 taken 409 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>6996</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if(opcode != eNoOp) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>101</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6587</pre></td>
-    <td align="left" class="src coveredLine"><pre>      m_bit *const base = ptr   + i*BYTECODE_SZ,</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>102</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6587</pre></td>
-    <td align="left" class="src coveredLine"><pre>            *const data = final + j*BYTECODE_SZ;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>103</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6587</pre></td>
-    <td align="left" class="src coveredLine"><pre>      memcpy(data, base, BYTECODE_SZ);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>104</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 505 times">&check;</span><span class="takenBranch" title="Branch 2 taken 6082 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>6587</pre></td>
-    <td align="left" class="src coveredLine"><pre>      if(isgoto(opcode)) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>105</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>505</pre></td>
-    <td align="left" class="src coveredLine"><pre>        m_bit pc = 0;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>106</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 798 times">&check;</span><span class="takenBranch" title="Branch 2 taken 397 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1195</pre></td>
-    <td align="left" class="src coveredLine"><pre>        for(pc = 0; pc &lt; vector_size(&amp;nop); ++pc) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>107</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 108 times">&check;</span><span class="takenBranch" title="Branch 2 taken 690 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>798</pre></td>
-    <td align="left" class="src coveredLine"><pre>          if(instr->m_val &lt;= vector_at(&amp;nop, pc))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>108</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>108</pre></td>
-    <td align="left" class="src coveredLine"><pre>            break;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>109</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>        }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>110</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 495 times">&check;</span><span class="takenBranch" title="Branch 1 taken 10 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>505</pre></td>
-    <td align="left" class="src coveredLine"><pre>        *(m_uint*)(data + SZ_INT) = instr->m_val > pc ? instr->m_val - pc : 0;</pre></td>
+    <td align="right" class="lineno"><pre>99</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        unroll->m_val2 -= reduce;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>111</pre></td>
+    <td align="right" class="lineno"><pre>100</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        instr->opcode = eNoOp;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>101</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        vector_add(&amp;nop, i);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>102</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        continue;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>103</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>      }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>112</pre></td>
+    <td align="right" class="lineno"><pre>104</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6587</pre></td>
-    <td align="left" class="src coveredLine"><pre>      setpc(data, j);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>238</pre></td>
+    <td align="left" class="src coveredLine"><pre>      *(m_bit*)(data) = instr->opcode;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>113</pre></td>
+    <td align="right" class="lineno"><pre>105</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6587</pre></td>
-    <td align="left" class="src coveredLine"><pre>      ++j;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>238</pre></td>
+    <td align="left" class="src coveredLine"><pre>      *(Instr*)(data + SZ_INT) = instr;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>114</pre></td>
+    <td align="right" class="lineno"><pre>106</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>238</pre></td>
+    <td align="left" class="src coveredLine"><pre>      *(f_instr*)(data + SZ_INT*2) = instr->execute;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>107</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>115</pre></td>
+    <td align="right" class="lineno"><pre>108</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>15491</pre></td>
+    <td align="left" class="src coveredLine"><pre>    setpc(data, i);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>109</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
+    <td align="right" class="lineno"><pre>110</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 485 times">&check;</span><span class="takenBranch" title="Branch 2 taken 311 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>796</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(!vector_size(&amp;nop)) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>111</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>485</pre></td>
+    <td align="left" class="src coveredLine"><pre>    vector_release(&amp;nop);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>112</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>485</pre></td>
+    <td align="left" class="src coveredLine"><pre>    return ptr;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>113</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>114</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>311</pre></td>
+    <td align="left" class="src coveredLine"><pre>  m_bit *const final = _mp_malloc(p, sz * BYTECODE_SZ); // could use smaller size</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>115</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6996 times">&check;</span><span class="takenBranch" title="Branch 1 taken 311 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>7307</pre></td>
+    <td align="left" class="src coveredLine"><pre>  for(m_uint i= 0, j = 0; i &lt; sz; ++i) {</pre></td>
+    </tr>
+
+    <tr>
     <td align="right" class="lineno"><pre>116</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>6996</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const Instr instr = (Instr)vector_at(v, i);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>117</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>6996</pre></td>
+    <td align="left" class="src coveredLine"><pre>    unsigned opcode = instr->opcode;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>118</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6587 times">&check;</span><span class="takenBranch" title="Branch 1 taken 409 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>6996</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if(opcode != eNoOp) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>119</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>6587</pre></td>
+    <td align="left" class="src coveredLine"><pre>      m_bit *const base = ptr   + i*BYTECODE_SZ,</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>120</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>6587</pre></td>
+    <td align="left" class="src coveredLine"><pre>            *const data = final + j*BYTECODE_SZ;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>121</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>6587</pre></td>
+    <td align="left" class="src coveredLine"><pre>      memcpy(data, base, BYTECODE_SZ);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>122</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 505 times">&check;</span><span class="takenBranch" title="Branch 2 taken 6082 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>6587</pre></td>
+    <td align="left" class="src coveredLine"><pre>      if(isgoto(opcode)) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>123</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>505</pre></td>
+    <td align="left" class="src coveredLine"><pre>        m_bit pc = 0;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>124</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 798 times">&check;</span><span class="takenBranch" title="Branch 2 taken 397 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1195</pre></td>
+    <td align="left" class="src coveredLine"><pre>        for(pc = 0; pc &lt; vector_size(&amp;nop); ++pc) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>125</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 108 times">&check;</span><span class="takenBranch" title="Branch 2 taken 690 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>798</pre></td>
+    <td align="left" class="src coveredLine"><pre>          if(instr->m_val &lt;= vector_at(&amp;nop, pc))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>126</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>108</pre></td>
+    <td align="left" class="src coveredLine"><pre>            break;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>127</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>        }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>128</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 495 times">&check;</span><span class="takenBranch" title="Branch 1 taken 10 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>505</pre></td>
+    <td align="left" class="src coveredLine"><pre>        *(m_uint*)(data + SZ_INT) = instr->m_val > pc ? instr->m_val - pc : 0;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>129</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>130</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>6587</pre></td>
+    <td align="left" class="src coveredLine"><pre>      setpc(data, j);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>131</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>6587</pre></td>
+    <td align="left" class="src coveredLine"><pre>      ++j;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>132</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>133</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>134</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>311</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_release(&amp;nop);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>117</pre></td>
+    <td align="right" class="lineno"><pre>135</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>311</pre></td>
     <td align="left" class="src coveredLine"><pre>  mp_free2(p, sz*BYTECODE_SZ, ptr);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>118</pre></td>
+    <td align="right" class="lineno"><pre>136</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>311</pre></td>
     <td align="left" class="src coveredLine"><pre>  return final;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>119</pre></td>
+    <td align="right" class="lineno"><pre>137</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>120</pre></td>
+    <td align="right" class="lineno"><pre>138</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>121</pre></td>
+    <td align="right" class="lineno"><pre>139</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>69535</pre></td>
     <td align="left" class="src coveredLine"><pre>VM_Code new_vmcode(MemPool p, const Vector instr, const m_uint stack_depth,</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>122</pre></td>
+    <td align="right" class="lineno"><pre>140</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>      const int builtin, const m_str name) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>123</pre></td>
+    <td align="right" class="lineno"><pre>141</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>69535</pre></td>
     <td align="left" class="src coveredLine"><pre>  VM_Code code           = mp_calloc(p, VM_Code);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>124</pre></td>
+    <td align="right" class="lineno"><pre>142</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>69535</pre></td>
     <td align="left" class="src coveredLine"><pre>  code->name             = mstrdup(p, name);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>125</pre></td>
+    <td align="right" class="lineno"><pre>143</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 796 times">&check;</span><span class="takenBranch" title="Branch 1 taken 68739 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>69535</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(instr) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>126</pre></td>
+    <td align="right" class="lineno"><pre>144</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>796</pre></td>
     <td align="left" class="src coveredLine"><pre>    code->instr            = vector_copy(p, instr);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>127</pre></td>
+    <td align="right" class="lineno"><pre>145</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>796</pre></td>
     <td align="left" class="src coveredLine"><pre>    code->bytecode = tobytecode(p, code);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>128</pre></td>
+    <td align="right" class="lineno"><pre>146</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>129</pre></td>
+    <td align="right" class="lineno"><pre>147</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>69535</pre></td>
     <td align="left" class="src coveredLine"><pre>  code->stack_depth      = stack_depth;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>130</pre></td>
+    <td align="right" class="lineno"><pre>148</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>69535</pre></td>
     <td align="left" class="src coveredLine"><pre>  code->builtin = builtin;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>131</pre></td>
+    <td align="right" class="lineno"><pre>149</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>69535</pre></td>
     <td align="left" class="src coveredLine"><pre>  code->ref = 1;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>132</pre></td>
+    <td align="right" class="lineno"><pre>150</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>69535</pre></td>
     <td align="left" class="src coveredLine"><pre>  return code;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>133</pre></td>
+    <td align="right" class="lineno"><pre>151</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
