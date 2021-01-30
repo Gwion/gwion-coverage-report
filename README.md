@@ -70,7 +70,7 @@ src/parse/template.c                          95      88    92%   23,32,62,70,85
 src/parse/traverse.c                          43      42    97%   67
 src/parse/type_decl.c                         22      21    95%   25
 src/pass.c                                    35      35   100%   
-src/plug.c                                   123     123   100%   
+src/plug.c                                   129     128    99%   164
 src/soundinfo.c                               11      11   100%   
 src/vm/closure.c                              13      12    92%   24
 src/vm/driver.c                               32      32   100%   
@@ -81,8 +81,8 @@ src/vm/vm_code.c                             114      97    85%   81-91,94-99
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             33      33   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      10675    9883    92%
+TOTAL                                      10681    9888    92%
 ------------------------------------------------------------------------------
-lines: 92.6% (9883 out of 10675)
-branches: 76.3% (4376 out of 5733)
+lines: 92.6% (9888 out of 10681)
+branches: 76.3% (4381 out of 5741)
 ```
