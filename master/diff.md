@@ -67,7 +67,7 @@ TOTAL 92% :+1:
 ## lines coverage
 
 TOTAL -4404% :-1:
-TOTAL 74% :+1:
+TOTAL 73% :+1:
 
 <details>
 |file|diff|status|
