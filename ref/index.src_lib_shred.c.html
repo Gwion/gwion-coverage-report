@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-03-14 17:30:35</td>
+            <td class="headerValue">2021-03-14 17:38:34</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">52</td>
@@ -1555,21 +1555,21 @@
     <tr>
     <td align="right" class="lineno"><pre>180</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>10</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
     <td align="left" class="src coveredLine"><pre>static inline void join(const M_Object o) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>181</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>10</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 7 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(FORK_THREAD(o)) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>182</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
     <td align="left" class="src coveredLine"><pre>    THREAD_JOIN(FORK_THREAD(o));</pre></td>
     </tr>
 
@@ -2010,35 +2010,35 @@
     <tr>
     <td align="right" class="lineno"><pre>245</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2932029</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2886216</pre></td>
     <td align="left" class="src coveredLine"><pre>static inline int fork_running(VM *vm, const M_Object o) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>246</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2932029</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2886216</pre></td>
     <td align="left" class="src coveredLine"><pre>  MUTEX_LOCK(vm->shreduler->mutex);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>247</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2932022 times">&check;</span><span class="takenBranch" title="Branch 1 taken 7 times">&check;</span><span class="takenBranch" title="Branch 2 taken 2932022 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>2932029</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2886209 times">&check;</span><span class="takenBranch" title="Branch 1 taken 7 times">&check;</span><span class="takenBranch" title="Branch 2 taken 2886209 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>2886216</pre></td>
     <td align="left" class="src coveredLine"><pre>  const int ret = vm->bbq->is_running &amp;&amp; !*(m_int*)(o->data + o_shred_cancel);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>248</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2932029</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2886216</pre></td>
     <td align="left" class="src coveredLine"><pre>  MUTEX_UNLOCK(vm->shreduler->mutex);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>249</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2932029</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2886093</pre></td>
     <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
     </tr>
 
@@ -2121,22 +2121,22 @@
 
     <tr>
     <td align="right" class="lineno"><pre>261</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 2932022 times">&check;</span><span class="takenBranch" title="Branch 2 taken 7 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>2932029</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 2886209 times">&check;</span><span class="takenBranch" title="Branch 2 taken 7 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>2886216</pre></td>
     <td align="left" class="src coveredLine"><pre>  while(fork_running(vm, me)) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>262</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2932022</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2886209</pre></td>
     <td align="left" class="src coveredLine"><pre>    vm_run(vm);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>263</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2932022</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2886209</pre></td>
     <td align="left" class="src coveredLine"><pre>    ++vm->bbq->pos;</pre></td>
     </tr>
 
@@ -2324,7 +2324,7 @@
 
     <tr>
     <td align="right" class="lineno"><pre>290</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 7 times">&check;</span><span class="takenBranch" title="Branch 2 taken 6 times">&check;</span></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 7 times">&check;</span><span class="takenBranch" title="Branch 2 taken 7 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>14</pre></td>
     <td align="left" class="src coveredLine"><pre>  for(m_uint i = 0; i &lt; vector_size(v); ++i) {</pre></td>
     </tr>
@@ -2366,22 +2366,22 @@
 
     <tr>
     <td align="right" class="lineno"><pre>296</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 6 times">&check;</span><span class="takenBranch" title="Branch 2 taken 7 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>13</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 7 times">&check;</span><span class="takenBranch" title="Branch 2 taken 7 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>14</pre></td>
     <td align="left" class="src coveredLine"><pre>  for(m_uint i = 0; i &lt; vector_size(v); ++i) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>297</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
     <td align="left" class="src coveredLine"><pre>    const M_Object o = (M_Object)vector_at(v, i);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>298</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 6 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 7 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
     <td align="left" class="src coveredLine"><pre>    if(!o)</pre></td>
     </tr>
 
@@ -2395,7 +2395,7 @@
     <tr>
     <td align="right" class="lineno"><pre>300</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
     <td align="left" class="src coveredLine"><pre>    join(o);</pre></td>
     </tr>
 
