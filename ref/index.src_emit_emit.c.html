@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-04-02 13:07:53</td>
+            <td class="headerValue">2021-04-02 23:48:39</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">709</td>
@@ -603,49 +603,49 @@
     <tr>
     <td align="right" class="lineno"><pre>44</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>ANEW static Frame* new_frame(MemPool p) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>45</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  Frame* frame = mp_calloc(p, Frame);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>46</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_init(&amp;frame->stack);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>47</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_add(&amp;frame->stack, (vtype)NULL);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>48</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_init(&amp;frame->defer);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>49</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_add(&amp;frame->defer, (vtype)NULL);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>50</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  return frame;</pre></td>
     </tr>
 
@@ -666,7 +666,7 @@
     <tr>
     <td align="right" class="lineno"><pre>53</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static void free_frame(MemPool p, Frame* a) {</pre></td>
     </tr>
 
@@ -679,50 +679,50 @@
 
     <tr>
     <td align="right" class="lineno"><pre>55</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 885 times">&check;</span><span class="takenBranch" title="Branch 2 taken 712 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1597</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 895 times">&check;</span><span class="takenBranch" title="Branch 2 taken 718 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1613</pre></td>
     <td align="left" class="src coveredLine"><pre>  for(vtype i = vector_size(&amp;a->stack) + 1; --i;)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>56</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 173 times">&check;</span><span class="takenBranch" title="Branch 2 taken 712 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>885</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 177 times">&check;</span><span class="takenBranch" title="Branch 2 taken 718 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>895</pre></td>
     <td align="left" class="src coveredLine"><pre>    if(vector_at(&amp;a->stack, i - 1))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>57</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>173</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>177</pre></td>
     <td align="left" class="src coveredLine"><pre>      mp_free(p, Local, (Local*)vector_at(&amp;a->stack, i - 1));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>58</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_release(&amp;a->stack);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>59</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_release(&amp;a->defer);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>60</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  mp_free(p, Frame, a);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>61</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -736,28 +736,28 @@
     <tr>
     <td align="right" class="lineno"><pre>63</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>857</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>863</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static Local* new_local(MemPool p, const Type type) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>64</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>857</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>863</pre></td>
     <td align="left" class="src coveredLine"><pre>  Local* local  = mp_calloc(p, Local);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>65</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>857</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>863</pre></td>
     <td align="left" class="src coveredLine"><pre>  local->type   = type;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>66</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>857</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>863</pre></td>
     <td align="left" class="src coveredLine"><pre>  return local;</pre></td>
     </tr>
 
@@ -778,49 +778,49 @@
     <tr>
     <td align="right" class="lineno"><pre>69</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>857</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>863</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static m_uint frame_local(MemPool p, Frame* frame, const Type t, const uint skip) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>70</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>857</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>863</pre></td>
     <td align="left" class="src coveredLine"><pre>  Local* local = new_local(p, t);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>71</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>857</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>863</pre></td>
     <td align="left" class="src coveredLine"><pre>  local->offset = frame->curr_offset;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>72</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>857</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>863</pre></td>
     <td align="left" class="src coveredLine"><pre>  local->skip = skip;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>73</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>857</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>863</pre></td>
     <td align="left" class="src coveredLine"><pre>  frame->curr_offset += t->size;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>74</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>857</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>863</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_add(&amp;frame->stack, (vtype)local);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>75</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>857</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>863</pre></td>
     <td align="left" class="src coveredLine"><pre>  return local->offset;</pre></td>
     </tr>
 
@@ -841,28 +841,28 @@
     <tr>
     <td align="right" class="lineno"><pre>78</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>972</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>976</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static inline void frame_push(Frame* frame) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>79</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>972</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>976</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_add(&amp;frame->stack, (vtype)NULL);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>80</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>972</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>976</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_add(&amp;frame->defer, (vtype)NULL);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>81</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>972</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>976</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -1436,14 +1436,14 @@
     <tr>
     <td align="right" class="lineno"><pre>163</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1694</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1702</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static m_bool emit_defers(const Emitter emit) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>164</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 163 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1531 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1694</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 163 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1539 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1702</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(!vector_size(&amp;emit->code->frame->defer))</pre></td>
     </tr>
 
@@ -1463,8 +1463,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>167</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 1531 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1531</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 1539 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1539</pre></td>
     <td align="left" class="src coveredLine"><pre>  while((stmt = (Stmt)vector_pop(&amp;emit->code->frame->defer)))</pre></td>
     </tr>
 
@@ -1478,7 +1478,7 @@
     <tr>
     <td align="right" class="lineno"><pre>169</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1531</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1539</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
@@ -1569,42 +1569,42 @@
     <tr>
     <td align="right" class="lineno"><pre>182</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1656</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1662</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static m_int _frame_pop(const Emitter emit) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>183</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1656</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1662</pre></td>
     <td align="left" class="src coveredLine"><pre>  Frame *frame = emit->code->frame;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>184</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 972 times">&check;</span><span class="takenBranch" title="Branch 2 taken 684 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1656</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 976 times">&check;</span><span class="takenBranch" title="Branch 2 taken 686 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1662</pre></td>
     <td align="left" class="src coveredLine"><pre>  DECL_OB(const Local*, l, = (Local*)vector_pop(&amp;frame->stack))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>185</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>684</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>686</pre></td>
     <td align="left" class="src coveredLine"><pre>  frame->curr_offset -= l->type->size;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>186</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 133 times">&check;</span><span class="takenBranch" title="Branch 1 taken 551 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>684</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 135 times">&check;</span><span class="takenBranch" title="Branch 1 taken 551 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>686</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(l->skip)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>187</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>133</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>135</pre></td>
     <td align="left" class="src coveredLine"><pre>    return _frame_pop(emit);</pre></td>
     </tr>
 
@@ -1660,21 +1660,21 @@
     <tr>
     <td align="right" class="lineno"><pre>195</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1135</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1139</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static m_int frame_pop(const Emitter emit) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>196</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1135</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1139</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit_defers(emit);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>197</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1135</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1139</pre></td>
     <td align="left" class="src coveredLine"><pre>  return _frame_pop(emit);</pre></td>
     </tr>
 
@@ -1737,63 +1737,63 @@
     <tr>
     <td align="right" class="lineno"><pre>206</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>ANEW static Code* new_code(const Emitter emit, const m_str name) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>207</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  Code* code = mp_calloc(emit->gwion->mp, Code);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>208</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  code->name = code_name_set(emit->gwion->mp, name, emit->env->name);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>209</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_init(&amp;code->instr);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>210</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_init(&amp;code->stack_break);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>211</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_init(&amp;code->stack_cont);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>212</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_init(&amp;code->stack_return);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>213</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  code->frame = new_frame(emit->gwion->mp);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>214</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  return code;</pre></td>
     </tr>
 
@@ -1814,63 +1814,63 @@
     <tr>
     <td align="right" class="lineno"><pre>217</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static void free_code(MemPool p, Code* code) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>218</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_release(&amp;code->instr);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>219</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_release(&amp;code->stack_break);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>220</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_release(&amp;code->stack_cont);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>221</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_release(&amp;code->stack_return);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>222</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  free_frame(p, code->frame);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>223</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  free_mstr(p, code->name);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>224</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>  mp_free(p, Code, code);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>225</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>712</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>718</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -1884,7 +1884,7 @@
     <tr>
     <td align="right" class="lineno"><pre>227</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>972</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>976</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static void emit_pop_scope(const Emitter emit) {</pre></td>
     </tr>
 
@@ -1897,8 +1897,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>229</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 163 times">&check;</span><span class="takenBranch" title="Branch 2 taken 972 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1135</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 163 times">&check;</span><span class="takenBranch" title="Branch 2 taken 976 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1139</pre></td>
     <td align="left" class="src coveredLine"><pre>  while((offset = frame_pop(emit)) > -1) {</pre></td>
     </tr>
 
@@ -1926,14 +1926,14 @@
     <tr>
     <td align="right" class="lineno"><pre>233</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>972</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>976</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_pop(&amp;emit->info->pure);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>234</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>972</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>976</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -1947,28 +1947,28 @@
     <tr>
     <td align="right" class="lineno"><pre>236</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>343</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>347</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static inline void emit_push_code(const Emitter emit, const m_str name) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>237</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>343</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>347</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_add(&amp;emit->stack, (vtype)emit->code);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>238</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>343</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>347</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit->code = new_code(emit, name);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>239</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>343</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>347</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -2010,28 +2010,28 @@
     <tr>
     <td align="right" class="lineno"><pre>245</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>972</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>976</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static inline void emit_push_scope(const Emitter emit) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>246</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>972</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>976</pre></td>
     <td align="left" class="src coveredLine"><pre>  frame_push(emit->code->frame);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>247</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>972</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>976</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_add(&amp;emit->info->pure, 0);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>248</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>972</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>976</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -2045,14 +2045,14 @@
     <tr>
     <td align="right" class="lineno"><pre>250</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>500</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>502</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static inline m_uint emit_code_size(const Emitter emit) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>251</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>500</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>502</pre></td>
     <td align="left" class="src coveredLine"><pre>  return vector_size(&amp;emit->code->instr);</pre></td>
     </tr>
 
@@ -2101,14 +2101,14 @@
     <tr>
     <td align="right" class="lineno"><pre>258</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>724</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN m_uint emit_local(const Emitter emit, const Type t) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>259</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>724</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>728</pre></td>
     <td align="left" class="src coveredLine"><pre>  return frame_local(emit->gwion->mp, emit->code->frame, t, 0);</pre></td>
     </tr>
 
@@ -2129,14 +2129,14 @@
     <tr>
     <td align="right" class="lineno"><pre>262</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>133</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>135</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN m_uint emit_localn(const Emitter emit, const Type t) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>263</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>133</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>135</pre></td>
     <td align="left" class="src coveredLine"><pre>  return frame_local(emit->gwion->mp, emit->code->frame, t, 1);</pre></td>
     </tr>
 
@@ -3585,42 +3585,42 @@
     <tr>
     <td align="right" class="lineno"><pre>470</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>708</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static VM_Code finalyze(const Emitter emit, const f_instr exec) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>471</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>708</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit_add_instr(emit, exec);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>472</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>708</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
     <td align="left" class="src coveredLine"><pre>  const VM_Code code = emit->info->emit_code(emit);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>473</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>708</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
     <td align="left" class="src coveredLine"><pre>  free_code(emit->gwion->mp, emit->code);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>474</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>708</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit->code = (Code*)vector_pop(&amp;emit->stack);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>475</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>708</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>714</pre></td>
     <td align="left" class="src coveredLine"><pre>  return code;</pre></td>
     </tr>
 
@@ -9080,28 +9080,28 @@
     <tr>
     <td align="right" class="lineno"><pre>1255</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>185</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>189</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static inline void stack_alloc(const Emitter emit) { // maybe vararg could use t_vararg instead</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1256</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>185</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>189</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit_local(emit, emit->gwion->type[et_int]); // hiding the fact it is an object</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1257</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>185</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>189</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit->code->stack_depth += SZ_INT;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1258</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>185</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>189</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -15030,42 +15030,42 @@
     <tr>
     <td align="right" class="lineno"><pre>2105</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static void emit_func_def_init(const Emitter emit, const Func func) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2106</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Type t = emit->env->class_def;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2107</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 80 times">&check;</span><span class="takenBranch" title="Branch 1 taken 112 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 82 times">&check;</span><span class="takenBranch" title="Branch 1 taken 112 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  char c[(t ? strlen(t->name) + 1 : 0) + strlen(func->name) + 6];</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2108</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 80 times">&check;</span><span class="takenBranch" title="Branch 1 taken 112 times">&check;</span><span class="takenBranch" title="Branch 2 taken 80 times">&check;</span><span class="takenBranch" title="Branch 3 taken 112 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 82 times">&check;</span><span class="takenBranch" title="Branch 1 taken 112 times">&check;</span><span class="takenBranch" title="Branch 2 taken 82 times">&check;</span><span class="takenBranch" title="Branch 3 taken 112 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  sprintf(c, "%s%s%s(...)", t ? t->name : "", t ? "." : "", func->name);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2109</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit_push_code(emit, c);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2110</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -15079,7 +15079,7 @@
     <tr>
     <td align="right" class="lineno"><pre>2112</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>133</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>135</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static void emit_func_def_args(const Emitter emit, Arg_List a) {</pre></td>
     </tr>
 
@@ -15093,35 +15093,35 @@
     <tr>
     <td align="right" class="lineno"><pre>2114</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>133</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>135</pre></td>
     <td align="left" class="src coveredLine"><pre>    const Type type = a->var_decl->value->type;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2115</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>133</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>135</pre></td>
     <td align="left" class="src coveredLine"><pre>    emit->code->stack_depth += type->size;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2116</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>133</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>135</pre></td>
     <td align="left" class="src coveredLine"><pre>    a->var_decl->value->from->offset = emit_localn(emit, type);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2117</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 30 times">&check;</span><span class="takenBranch" title="Branch 1 taken 103 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>133</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 30 times">&check;</span><span class="takenBranch" title="Branch 1 taken 105 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>135</pre></td>
     <td align="left" class="src coveredLine"><pre>  } while((a = a->next));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2118</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>103</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>105</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -15135,21 +15135,21 @@
     <tr>
     <td align="right" class="lineno"><pre>2120</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static void emit_func_def_ensure(const Emitter emit, const Func_Def fdef) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2121</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  const m_uint size = fdef->base->ret_type->size;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2122</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 39 times">&check;</span><span class="takenBranch" title="Branch 1 taken 153 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 39 times">&check;</span><span class="takenBranch" title="Branch 1 taken 155 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(size) {</pre></td>
     </tr>
 
@@ -15177,14 +15177,14 @@
     <tr>
     <td align="right" class="lineno"><pre>2126</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_add(&amp;emit->code->stack_return, (vtype)emit_add_instr(emit, Goto));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2127</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -15198,21 +15198,21 @@
     <tr>
     <td align="right" class="lineno"><pre>2129</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static m_bool emit_func_def_return(const Emitter emit) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2130</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  const m_uint val = emit_code_size(emit);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2131</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 192 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 194 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  CHECK_BB(emit_defers(emit))</pre></td>
     </tr>
 
@@ -15225,22 +15225,22 @@
 
     <tr>
     <td align="right" class="lineno"><pre>2133</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 233 times">&check;</span><span class="takenBranch" title="Branch 2 taken 192 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>425</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 235 times">&check;</span><span class="takenBranch" title="Branch 2 taken 194 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>429</pre></td>
     <td align="left" class="src coveredLine"><pre>  for(m_uint i = vector_size(&amp;emit->code->stack_return) + 1; --i; ) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2134</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>233</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>235</pre></td>
     <td align="left" class="src coveredLine"><pre>    const Instr instr = (Instr)vector_at(&amp;emit->code->stack_return, i-1);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2135</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>233</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>235</pre></td>
     <td align="left" class="src coveredLine"><pre>    instr->m_val = val;</pre></td>
     </tr>
 
@@ -15254,14 +15254,14 @@
     <tr>
     <td align="right" class="lineno"><pre>2137</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_clear(&amp;emit->code->stack_return);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2138</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 192 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 194 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(emit->info->memoize &amp;&amp; fflag(emit->env->func, fflag_pure)) {</pre></td>
     </tr>
 
@@ -15289,7 +15289,7 @@
     <tr>
     <td align="right" class="lineno"><pre>2142</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
@@ -15415,14 +15415,14 @@
     <tr>
     <td align="right" class="lineno"><pre>2160</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static VM_Code emit_func_def_code(const Emitter emit, const Func func) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2161</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 6 times">&check;</span><span class="takenBranch" title="Branch 2 taken 186 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 6 times">&check;</span><span class="takenBranch" title="Branch 2 taken 188 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(fbflag(func->def->base, fbflag_internal))</pre></td>
     </tr>
 
@@ -15443,7 +15443,7 @@
     <tr>
     <td align="right" class="lineno"><pre>2164</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>186</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>188</pre></td>
     <td align="left" class="src coveredLine"><pre>    return finalyze(emit, FuncReturn);</pre></td>
     </tr>
 
@@ -15464,28 +15464,28 @@
     <tr>
     <td align="right" class="lineno"><pre>2167</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static m_bool emit_func_def_body(const Emitter emit, const Func_Def fdef) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2168</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 103 times">&check;</span><span class="takenBranch" title="Branch 1 taken 89 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 105 times">&check;</span><span class="takenBranch" title="Branch 1 taken 89 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(fdef->base->args)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2169</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>103</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>105</pre></td>
     <td align="left" class="src coveredLine"><pre>    emit_func_def_args(emit, fdef->base->args);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2170</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 12 times">&check;</span><span class="takenBranch" title="Branch 2 taken 180 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 12 times">&check;</span><span class="takenBranch" title="Branch 2 taken 182 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(fbflag(fdef->base, fbflag_variadic))</pre></td>
     </tr>
 
@@ -15498,8 +15498,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>2172</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 191 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 191 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(fdef->d.code)</pre></td>
     </tr>
 
@@ -15513,14 +15513,14 @@
     <tr>
     <td align="right" class="lineno"><pre>2174</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit_func_def_ensure(emit, fdef);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2175</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
@@ -15926,14 +15926,14 @@
     <tr>
     <td align="right" class="lineno"><pre>2233</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static m_bool emit_fdef(const Emitter emit, const Func_Def fdef) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2234</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 192 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 194 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(emit->info->memoize &amp;&amp; fflag(fdef->base->func, fflag_pure))</pre></td>
     </tr>
 
@@ -15946,22 +15946,22 @@
 
     <tr>
     <td align="right" class="lineno"><pre>2236</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 192 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 194 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  CHECK_BB(emit_func_def_body(emit, fdef))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2237</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit_func_def_return(emit);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2238</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
@@ -15982,21 +15982,21 @@
     <tr>
     <td align="right" class="lineno"><pre>2241</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>384</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>388</pre></td>
     <td align="left" class="src coveredLine"><pre>static ANN int fdef_is_file_global(const Emitter emit, const Func_Def fdef) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2242</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>384</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>388</pre></td>
     <td align="left" class="src coveredLine"><pre>  return !fbflag(fdef->base, fbflag_lambda) &amp;&amp;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2243</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 360 times">&check;</span><span class="takenBranch" title="Branch 1 taken 24 times">&check;</span><span class="takenBranch" title="Branch 2 taken 216 times">&check;</span><span class="takenBranch" title="Branch 3 taken 144 times">&check;</span><br/><span class="takenBranch" title="Branch 4 taken 214 times">&check;</span><span class="takenBranch" title="Branch 5 taken 2 times">&check;</span><span class="takenBranch" title="Branch 6 taken 156 times">&check;</span><span class="takenBranch" title="Branch 7 taken 58 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>540</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 364 times">&check;</span><span class="takenBranch" title="Branch 1 taken 24 times">&check;</span><span class="takenBranch" title="Branch 2 taken 216 times">&check;</span><span class="takenBranch" title="Branch 3 taken 148 times">&check;</span><br/><span class="takenBranch" title="Branch 4 taken 214 times">&check;</span><span class="takenBranch" title="Branch 5 taken 2 times">&check;</span><span class="takenBranch" title="Branch 6 taken 156 times">&check;</span><span class="takenBranch" title="Branch 7 taken 58 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>544</pre></td>
     <td align="left" class="src coveredLine"><pre>    !emit->env->class_def &amp;&amp; !GET_FLAG(fdef->base, global) &amp;&amp; !fdef->base->tmpl &amp;&amp;</pre></td>
     </tr>
 
@@ -16024,28 +16024,28 @@
     <tr>
     <td align="right" class="lineno"><pre>2247</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static void emit_fdef_finish(const Emitter emit, const Func_Def fdef) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2248</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Func func = fdef->base->func;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2249</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  func->code = emit_func_def_code(emit, func);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2250</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 77 times">&check;</span><span class="takenBranch" title="Branch 2 taken 115 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 77 times">&check;</span><span class="takenBranch" title="Branch 2 taken 117 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(fdef_is_file_global(emit, fdef))</pre></td>
     </tr>
 
@@ -16058,8 +16058,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>2252</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 192 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 194 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(emit->info->memoize &amp;&amp; fflag(func, fflag_pure))</pre></td>
     </tr>
 
@@ -16073,7 +16073,7 @@
     <tr>
     <td align="right" class="lineno"><pre>2254</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -16087,35 +16087,35 @@
     <tr>
     <td align="right" class="lineno"><pre>2256</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>227</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>229</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static m_bool emit_func_def(const Emitter emit, const Func_Def f) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2257</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>227</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>229</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Func func = f->base->func;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2258</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>227</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>229</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Func_Def fdef = func->def;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2259</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>227</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>229</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Func former = emit->env->func;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2260</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 226 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 3 taken 34 times">&check;</span><span class="takenBranch" title="Branch 4 taken 192 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>227</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 228 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 3 taken 34 times">&check;</span><span class="takenBranch" title="Branch 4 taken 194 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>229</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(func->code || tmpl_base(fdef->base->tmpl))</pre></td>
     </tr>
 
@@ -16128,8 +16128,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>2262</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 192 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 194 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(vflag(func->value_ref, vflag_builtin) &amp;&amp; safe_tflag(emit->env->class_def, tflag_tmpl))</pre></td>
     </tr>
 
@@ -16142,8 +16142,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>2264</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 77 times">&check;</span><span class="takenBranch" title="Branch 2 taken 115 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 77 times">&check;</span><span class="takenBranch" title="Branch 2 taken 117 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(fdef_is_file_global(emit, fdef))</pre></td>
     </tr>
 
@@ -16157,56 +16157,56 @@
     <tr>
     <td align="right" class="lineno"><pre>2266</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  const uint global = GET_FLAG(f->base, global);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2267</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 191 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 193 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  const m_uint scope = !global ? emit->env->scope->depth : env_push_global(emit->env);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2268</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit_func_def_init(emit, func);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2269</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 67 times">&check;</span><span class="takenBranch" title="Branch 2 taken 125 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 69 times">&check;</span><span class="takenBranch" title="Branch 2 taken 125 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(vflag(func->value_ref, vflag_member))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2270</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>67</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>69</pre></td>
     <td align="left" class="src coveredLine"><pre>    stack_alloc(emit);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2271</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit->env->func = func;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2272</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit_push_scope(emit);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2273</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 191 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 193 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(!strcmp(s_name(fdef->base->xid), "@gack")) {</pre></td>
     </tr>
 
@@ -16241,35 +16241,35 @@
     <tr>
     <td align="right" class="lineno"><pre>2278</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  const m_bool ret = scanx_fdef(emit->env, emit, fdef, (_exp_func)emit_fdef);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2279</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit_pop_scope(emit);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2280</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit->env->func = former;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2281</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 192 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 194 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(ret > 0)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2282</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>    emit_fdef_finish(emit, fdef);</pre></td>
     </tr>
 
@@ -16289,8 +16289,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>2285</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 191 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 193 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(global)</pre></td>
     </tr>
 
@@ -16304,7 +16304,7 @@
     <tr>
     <td align="right" class="lineno"><pre>2287</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>192</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>194</pre></td>
     <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
     </tr>
 
@@ -16339,7 +16339,7 @@
     <tr>
     <td align="right" class="lineno"><pre>2292</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>795</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>800</pre></td>
     <td align="left" class="src coveredLine"><pre>HANDLE_SECTION_FUNC(emit, m_bool, Emitter)</pre></td>
     </tr>
 
@@ -16353,28 +16353,28 @@
     <tr>
     <td align="right" class="lineno"><pre>2294</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>602</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>605</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static inline m_bool emit_ast_inner(const Emitter emit, Ast ast) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2295</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span><span class="takenBranch" title="Branch 2 taken 598 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>602</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span><span class="takenBranch" title="Branch 2 taken 601 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>605</pre></td>
     <td align="left" class="src coveredLine"><pre>  do CHECK_BB(emit_section(emit, ast->section))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2296</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 231 times">&check;</span><span class="takenBranch" title="Branch 1 taken 367 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>598</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 232 times">&check;</span><span class="takenBranch" title="Branch 1 taken 369 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>601</pre></td>
     <td align="left" class="src coveredLine"><pre>  while((ast = ast->next));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2297</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>367</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>369</pre></td>
     <td align="left" class="src coveredLine"><pre>  return emit_defers(emit);</pre></td>
     </tr>
 
@@ -16444,49 +16444,49 @@
     <tr>
     <td align="right" class="lineno"><pre>2307</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>104</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>106</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN Code* emit_class_code(const Emitter emit, const m_str name) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2308</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>104</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>106</pre></td>
     <td align="left" class="src coveredLine"><pre>  const m_uint len = strlen(name) + 7;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2309</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>104</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>106</pre></td>
     <td align="left" class="src coveredLine"><pre>  char c[len];</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2310</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>104</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>106</pre></td>
     <td align="left" class="src coveredLine"><pre>  snprintf(c, len, "class %s", name);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2311</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>104</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>106</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit_push_code(emit, c);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2312</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>104</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>106</pre></td>
     <td align="left" class="src coveredLine"><pre>  stack_alloc(emit);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2313</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>104</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>106</pre></td>
     <td align="left" class="src coveredLine"><pre>  return emit->code;</pre></td>
     </tr>
 
@@ -16640,14 +16640,14 @@
     <tr>
     <td align="right" class="lineno"><pre>2335</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>132</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>135</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static m_bool emit_class_def(const Emitter emit, const Class_Def cdef) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2336</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 8 times">&check;</span><span class="takenBranch" title="Branch 2 taken 124 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>132</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 8 times">&check;</span><span class="takenBranch" title="Branch 2 taken 127 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>135</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(tmpl_base(cdef->base.tmpl))</pre></td>
     </tr>
 
@@ -16661,14 +16661,14 @@
     <tr>
     <td align="right" class="lineno"><pre>2338</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>124</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>127</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Type t = cdef->base.type;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2339</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 124 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>124</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 127 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>127</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(tflag(t, tflag_emit))</pre></td>
     </tr>
 
@@ -16682,14 +16682,14 @@
     <tr>
     <td align="right" class="lineno"><pre>2341</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>124</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>127</pre></td>
     <td align="left" class="src coveredLine"><pre>  set_tflag(t, tflag_emit);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2342</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4 times">&check;</span><span class="takenBranch" title="Branch 1 taken 120 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>124</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4 times">&check;</span><span class="takenBranch" title="Branch 1 taken 123 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>127</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(t->info->owner_class)</pre></td>
     </tr>
 
@@ -16702,8 +16702,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>2344</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 17 times">&check;</span><span class="takenBranch" title="Branch 1 taken 107 times">&check;</span><span class="takenBranch" title="Branch 2 taken 17 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><span class="takenBranch" title="Branch 6 taken 16 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>124</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 18 times">&check;</span><span class="takenBranch" title="Branch 1 taken 109 times">&check;</span><span class="takenBranch" title="Branch 2 taken 18 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><span class="takenBranch" title="Branch 6 taken 17 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>127</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(cdef->base.ext &amp;&amp; t->info->parent->info->cdef &amp;&amp; !tflag(t->info->parent, tflag_emit)) // ?????</pre></td>
     </tr>
 
@@ -16717,35 +16717,35 @@
     <tr>
     <td align="right" class="lineno"><pre>2346</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>124</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>127</pre></td>
     <td align="left" class="src coveredLine"><pre>  nspc_allocdata(emit->gwion->mp, t->nspc);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2347</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 104 times">&check;</span><span class="takenBranch" title="Branch 1 taken 20 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>124</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 106 times">&check;</span><span class="takenBranch" title="Branch 1 taken 21 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>127</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(cdef->body) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2348</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>104</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>106</pre></td>
     <td align="left" class="src coveredLine"><pre>    emit_class_code(emit, t->name);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2349</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 104 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>104</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 106 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>106</pre></td>
     <td align="left" class="src coveredLine"><pre>    if(scanx_body(emit->env, cdef, (_exp_func)emit_section, emit) > 0)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2350</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>104</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>106</pre></td>
     <td align="left" class="src coveredLine"><pre>      t->nspc->pre_ctor = finalyze(emit, FuncReturn);</pre></td>
     </tr>
 
@@ -16794,7 +16794,7 @@
     <tr>
     <td align="right" class="lineno"><pre>2357</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>124</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>127</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
@@ -16927,63 +16927,63 @@
     <tr>
     <td align="right" class="lineno"><pre>2376</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>369</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>371</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN m_bool emit_ast(const Env env, Ast ast) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2377</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>369</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>371</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Emitter emit = env->gwion->emit;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2378</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>369</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>371</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit->info->memoize = 0;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2379</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>369</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>371</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit->code = new_code(emit, emit->env->name);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2380</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>369</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>371</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit_push_scope(emit);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2381</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>369</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>371</pre></td>
     <td align="left" class="src coveredLine"><pre>  const m_bool ret = emit_ast_inner(emit, ast);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2382</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>369</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>371</pre></td>
     <td align="left" class="src coveredLine"><pre>  emit_pop_scope(emit);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2383</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 365 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>369</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 367 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>371</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(ret > 0)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2384</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>365</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>367</pre></td>
     <td align="left" class="src coveredLine"><pre>    emit->info->code = finalyze(emit, EOC);</pre></td>
     </tr>
 
@@ -17004,7 +17004,7 @@
     <tr>
     <td align="right" class="lineno"><pre>2387</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>369</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>371</pre></td>
     <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
     </tr>
 
