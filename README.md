@@ -31,7 +31,7 @@ src/import/import_enum.c                      51      43    84%   79,96-102
 src/import/import_fdef.c                     107     106    99%   94
 src/import/import_internals.c                 23      23   100%   
 src/import/import_item.c                      35      35   100%   
-src/import/import_oper.c                      44      44   100%   
+src/import/import_oper.c                      46      46   100%   
 src/import/import_special.c                   28      28   100%   
 src/import/import_tdef.c                      26      25    96%   32
 src/import/import_type.c                      23      23   100%   
@@ -61,7 +61,7 @@ src/parse/compat_func.c                       11      11   100%
 src/parse/did_you_mean.c                      36      36   100%   
 src/parse/func_operator.c                     13      13   100%   
 src/parse/func_resolve_tmpl.c                121     119    98%   48,72
-src/parse/operator.c                         157     155    98%   33,56
+src/parse/operator.c                         161     160    99%   56
 src/parse/scan0.c                            314     291    92%   73-74,78,117,156-157,169,171,195-196,201,209,219,254-255,258,269,292-294,308,328-329
 src/parse/scan1.c                            476     454    95%   54,108-109,162,289,300,302,405-406,417,434,437,480-481,497-500,551,586,625,657
 src/parse/scan2.c                            401     395    98%   206,272-273,296,364,574
@@ -81,8 +81,8 @@ src/vm/vm_code.c                             129     101    78%   32,84-94,97-10
 src/vm/vm_name.c                               8       8   100%   
 src/vm/vm_shred.c                             35      35   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      11685   10458    89%
+TOTAL                                      11691   10465    89%
 ------------------------------------------------------------------------------
-lines: 89.5% (10458 out of 11685)
-branches: 71.9% (4634 out of 6445)
+lines: 89.5% (10465 out of 11691)
+branches: 71.9% (4638 out of 6451)
 ```
