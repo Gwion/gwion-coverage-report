@@ -269,17 +269,17 @@
             <td class="headerValue">src/import/import_oper.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">39</td>
-            <td class="headerTableEntry">39</td>
+            <td class="headerTableEntry">44</td>
+            <td class="headerTableEntry">44</td>
             <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-04-23 17:00:51</td>
+            <td class="headerValue">2021-04-23 17:04:37</td>
             <td></td>
             <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">4</td>
-            <td class="headerTableEntry">4</td>
+            <td class="headerTableEntry">6</td>
+            <td class="headerTableEntry">6</td>
             <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
           </tr>
         </table>
@@ -562,7 +562,7 @@
     <td align="right" class="lineno"><pre>38</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>137563</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const struct Op_Func opfunc = { .ck=op->ck, .em=op->em };</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const struct Op_Func opfunc = { .ck=op->ck, .em=op->em, .effect = { .ptr=op->effect.ptr } };</pre></td>
     </tr>
 
     <tr>
@@ -736,103 +736,145 @@
     <tr>
     <td align="right" class="lineno"><pre>63</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>137563</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN m_int gwi_oper_end(const Gwi gwi, const m_str op, const f_instr f) {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4767</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN void gwi_oper_eff(const Gwi gwi, const m_str effect) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>64</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>137563</pre></td>
-    <td align="left" class="src coveredLine"><pre>  gwi->oper->sym = insert_symbol(gwi->gwion->st, op);</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 681 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4086 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>4767</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(!gwi->oper->effect.ptr)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>65</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>137563</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const m_bool ret = import_op(gwi, gwi->oper, f);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>681</pre></td>
+    <td align="left" class="src coveredLine"><pre>    vector_init(&amp;gwi->oper->effect);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>66</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>137563</pre></td>
-    <td align="left" class="src coveredLine"><pre>  gwi->oper->ck = NULL;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4767</pre></td>
+    <td align="left" class="src coveredLine"><pre>  vector_add(&amp;gwi->oper->effect, (m_uint)insert_symbol(gwi->gwion->st, effect));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>67</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>137563</pre></td>
-    <td align="left" class="src coveredLine"><pre>  gwi->oper->em = NULL;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4767</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>68</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>137563</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>69</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>70</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
+    <td align="right" class="lineno"><pre>69</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>137563</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN m_int gwi_oper_end(const Gwi gwi, const m_str op, const f_instr f) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>70</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>137563</pre></td>
+    <td align="left" class="src coveredLine"><pre>  gwi->oper->sym = insert_symbol(gwi->gwion->st, op);</pre></td>
+    </tr>
+
+    <tr>
     <td align="right" class="lineno"><pre>71</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>137563</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const m_bool ret = import_op(gwi, gwi->oper, f);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>72</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>137563</pre></td>
+    <td align="left" class="src coveredLine"><pre>  gwi->oper->ck = NULL;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>73</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>137563</pre></td>
+    <td align="left" class="src coveredLine"><pre>  gwi->oper->em = NULL;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>74</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>137563</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>75</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>76</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>77</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3405</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN m_int gwi_oper_cond(const Gwi gwi, const m_str type,</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>72</pre></td>
+    <td align="right" class="lineno"><pre>78</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  const f_instr f1, const f_instr f2) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>73</pre></td>
+    <td align="right" class="lineno"><pre>79</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3405</pre></td>
     <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, NULL, type, "bool"))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>74</pre></td>
+    <td align="right" class="lineno"><pre>80</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3405</pre></td>
     <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@conditionnal", f1))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>75</pre></td>
+    <td align="right" class="lineno"><pre>81</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3405</pre></td>
     <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@unconditionnal", f2))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>76</pre></td>
+    <td align="right" class="lineno"><pre>82</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3405</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>77</pre></td>
+    <td align="right" class="lineno"><pre>83</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
