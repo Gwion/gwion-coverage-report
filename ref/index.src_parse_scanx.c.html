@@ -269,13 +269,13 @@
             <td class="headerValue">src/parse/scanx.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">34</td>
-            <td class="headerTableEntry">34</td>
+            <td class="headerTableEntry">41</td>
+            <td class="headerTableEntry">41</td>
             <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-04-25 16:33:31</td>
+            <td class="headerValue">2021-04-27 15:16:35</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">28</td>
@@ -604,14 +604,14 @@
     <td align="right" class="lineno"><pre>44</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1581</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN m_bool scanx_cdef(const Env env, void* opt, const Type t,</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static m_bool _scanx_cdef(const Env env, void* opt, const Type t,</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>45</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    const _exp_func f_cdef, const _exp_func f_union) {</pre></td>
+    <td align="left" class="src "><pre>    const _exp_func f_cdef, const _exp_func f_udef) {</pre></td>
     </tr>
 
     <tr>
@@ -632,7 +632,7 @@
     <td align="right" class="lineno"><pre>48</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>23</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const m_bool ret = f_union(opt, t->info->udef);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const m_bool ret = f_udef(opt, t->info->udef);</pre></td>
     </tr>
 
     <tr>
@@ -659,61 +659,131 @@
     <tr>
     <td align="right" class="lineno"><pre>52</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>156992</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN m_bool scanx_fdef(const Env env, void *data,</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1581</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN m_bool scanx_cdef(const Env env, void* opt, const Type t,</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>53</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    const Func_Def fdef, const _exp_func func) {</pre></td>
+    <td align="left" class="src "><pre>    const _exp_func f_cdef, const _exp_func f_udef) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>54</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6226 times">&check;</span><span class="takenBranch" title="Branch 1 taken 150766 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>156992</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(fdef->base->tmpl)</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1581</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const bool in_try = env->scope->in_try;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>55</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1581</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const m_bool ret = _scanx_cdef(env, opt, t, f_cdef, f_udef);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>56</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1581</pre></td>
+    <td align="left" class="src coveredLine"><pre>  env->scope->in_try = in_try;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>57</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1581</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>58</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>59</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>60</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>156995</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN m_bool scanx_fdef(const Env env, void *data,</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>61</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    const Func_Def fdef, const _exp_func func) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>62</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6226 times">&check;</span><span class="takenBranch" title="Branch 1 taken 150769 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>156995</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(fdef->base->tmpl)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>63</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 3 times">&check;</span><span class="takenBranch" title="Branch 2 taken 6223 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>6226</pre></td>
     <td align="left" class="src coveredLine"><pre>    CHECK_BB(template_push_types(env, fdef->base->tmpl))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>56</pre></td>
+    <td align="right" class="lineno"><pre>64</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>156989</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>156992</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const bool in_try = env->scope->in_try;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>65</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>156992</pre></td>
     <td align="left" class="src coveredLine"><pre>  const m_bool ret = func(data, fdef);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>57</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6223 times">&check;</span><span class="takenBranch" title="Branch 1 taken 150766 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>156989</pre></td>
+    <td align="right" class="lineno"><pre>66</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6223 times">&check;</span><span class="takenBranch" title="Branch 1 taken 150769 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>156992</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(fdef->base->tmpl)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>58</pre></td>
+    <td align="right" class="lineno"><pre>67</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>6223</pre></td>
     <td align="left" class="src coveredLine"><pre>    nspc_pop_type(env->gwion->mp, env->curr);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>59</pre></td>
+    <td align="right" class="lineno"><pre>68</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>156989</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>156992</pre></td>
+    <td align="left" class="src coveredLine"><pre>  env->scope->in_try = in_try;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>69</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>156992</pre></td>
     <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>60</pre></td>
+    <td align="right" class="lineno"><pre>70</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
