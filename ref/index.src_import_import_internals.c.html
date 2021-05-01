@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-04-29 20:03:19</td>
+            <td class="headerValue">2021-05-01 22:42:15</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">6</td>
@@ -520,60 +520,102 @@
     <td align="right" class="lineno"><pre>32</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>747</pre></td>
-    <td align="left" class="src coveredLine"><pre>   const m_str name = gwion->env->name;</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const m_str name = gwion->env->name;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>33</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>747</pre></td>
-    <td align="left" class="src coveredLine"><pre>   OperCK oper = {};</pre></td>
+    <td align="left" class="src coveredLine"><pre>  OperCK oper = {};</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>34</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>747</pre></td>
-    <td align="left" class="src coveredLine"><pre>   struct Gwi_ gwi = { .gwion=gwion, .oper=&amp;oper };</pre></td>
+    <td align="left" class="src coveredLine"><pre>  struct Gwi_ gwi = { .gwion=gwion, .oper=&amp;oper };</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>35</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>747</pre></td>
-    <td align="left" class="src coveredLine"><pre>   const m_bool ret = f(&amp;gwi);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#ifdef GWION_DOC</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>36</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 30 times">&check;</span><span class="takenBranch" title="Branch 1 taken 717 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>747</pre></td>
-    <td align="left" class="src coveredLine"><pre>   if(ret &lt; 0)</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  struct LintState ls = { .builtin=true };</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>37</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
-    <td align="left" class="src coveredLine"><pre>     gwi_reset(&amp;gwi);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  Lint linter = { .mp=gwion->mp, .ls=&amp;ls };</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>38</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>747</pre></td>
-    <td align="left" class="src coveredLine"><pre>   gwion->env->name = name;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  lint(&amp;linter, "{-}#!+ %s{0}\n", name);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>39</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>747</pre></td>
-    <td align="left" class="src coveredLine"><pre>   return ret;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  gwi.lint = &amp;linter;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>40</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>41</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>747</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const m_bool ret = f(&amp;gwi);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>42</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 30 times">&check;</span><span class="takenBranch" title="Branch 1 taken 717 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>747</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(ret &lt; 0)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>43</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
+    <td align="left" class="src coveredLine"><pre>    gwi_reset(&amp;gwi);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>44</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>747</pre></td>
+    <td align="left" class="src coveredLine"><pre>  gwion->env->name = name;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>45</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>747</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>46</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>

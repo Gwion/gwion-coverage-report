@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-04-29 20:03:19</td>
+            <td class="headerValue">2021-05-01 22:42:15</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">23</td>
@@ -680,194 +680,222 @@
     <tr>
     <td align="right" class="lineno"><pre>55</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return udef->type;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#ifdef GWION_DOC</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>56</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="left" class="src "><pre>  lint_indent(gwi->lint);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>57</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>  lint_union_def(gwi->lint, udef);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>58</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>688</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN Type gwi_union_end(const Gwi gwi, const ae_flag flag) {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>59</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 688 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>688</pre></td>
-    <td align="left" class="src coveredLine"><pre>  CHECK_BO(ck_ok(gwi, ck_udef));</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return udef->type;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>60</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 687 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>688</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(!gwi->ck->list)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>61</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>    GWI_ERR_O(_("union is empty"));</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>62</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Union_Def udef = new_union_def(gwi->gwion->mp, gwi->ck->list, gwi->loc);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>63</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
-    <td align="left" class="src coveredLine"><pre>  gwi->ck->list = NULL;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>64</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
-    <td align="left" class="src coveredLine"><pre>  udef->flag = flag;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>65</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
-    <td align="left" class="src coveredLine"><pre>  udef->xid = gwi->ck->sym;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>66</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 684 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(gwi->ck->tmpl) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>67</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>684</pre></td>
-    <td align="left" class="src coveredLine"><pre>    udef->tmpl = gwi_tmpl(gwi);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>68</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>684</pre></td>
-    <td align="left" class="src coveredLine"><pre>    gwi->ck->tmpl = NULL;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>69</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>70</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Type t = union_type(gwi, udef);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>71</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 3 times">&check;</span><span class="takenBranch" title="Branch 2 taken 684 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(!safe_tflag(t, tflag_tmpl))</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>72</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>    free_union_def(gwi->gwion->mp, udef);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>73</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
-    <td align="left" class="src coveredLine"><pre>  ck_end(gwi);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>74</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return t;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>75</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>76</pre></td>
+    <td align="right" class="lineno"><pre>61</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
+    <td align="right" class="lineno"><pre>62</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>688</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN Type gwi_union_end(const Gwi gwi, const ae_flag flag) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>63</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 688 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>688</pre></td>
+    <td align="left" class="src coveredLine"><pre>  CHECK_BO(ck_ok(gwi, ck_udef));</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>64</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 687 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>688</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(!gwi->ck->list)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>65</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>    GWI_ERR_O(_("union is empty"));</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>66</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Union_Def udef = new_union_def(gwi->gwion->mp, gwi->ck->list, gwi->loc);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>67</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
+    <td align="left" class="src coveredLine"><pre>  gwi->ck->list = NULL;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>68</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
+    <td align="left" class="src coveredLine"><pre>  udef->flag = flag;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>69</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
+    <td align="left" class="src coveredLine"><pre>  udef->xid = gwi->ck->sym;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>70</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 684 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(gwi->ck->tmpl) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>71</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>684</pre></td>
+    <td align="left" class="src coveredLine"><pre>    udef->tmpl = gwi_tmpl(gwi);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>72</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>684</pre></td>
+    <td align="left" class="src coveredLine"><pre>    gwi->ck->tmpl = NULL;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>73</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>74</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Type t = union_type(gwi, udef);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>75</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 3 times">&check;</span><span class="takenBranch" title="Branch 2 taken 684 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(!safe_tflag(t, tflag_tmpl))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>76</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="left" class="src coveredLine"><pre>    free_union_def(gwi->gwion->mp, udef);</pre></td>
+    </tr>
+
+    <tr>
     <td align="right" class="lineno"><pre>77</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ck_end(gwi);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>78</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>687</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return t;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>79</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>80</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>81</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN void ck_clean_udef(MemPool mp, ImportCK* ck) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>78</pre></td>
+    <td align="right" class="lineno"><pre>82</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(ck->list)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>79</pre></td>
+    <td align="right" class="lineno"><pre>83</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    free_union_list(mp, ck->list);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>80</pre></td>
+    <td align="right" class="lineno"><pre>84</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(ck->tmpl)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>81</pre></td>
+    <td align="right" class="lineno"><pre>85</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    free_id_list(mp, ck->tmpl);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>82</pre></td>
+    <td align="right" class="lineno"><pre>86</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
