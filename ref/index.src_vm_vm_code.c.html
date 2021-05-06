@@ -269,13 +269,13 @@
             <td class="headerValue">src/vm/vm_code.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">101</td>
-            <td class="headerTableEntry">129</td>
-            <td class="headerTableEntry" style="background-color:#FFFF55">78.3 %</td>
+            <td class="headerTableEntry">102</td>
+            <td class="headerTableEntry">130</td>
+            <td class="headerTableEntry" style="background-color:#FFFF55">78.5 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-05-06 19:31:11</td>
+            <td class="headerValue">2021-05-06 22:34:12</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">65</td>
@@ -478,7 +478,7 @@
     <td align="right" class="lineno"><pre>26</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>773</pre></td>
-    <td align="left" class="src coveredLine"><pre>    _mp_free(gwion->mp, vector_size(a->instr) * BYTECODE_SZ, a->bytecode);</pre></td>
+    <td align="left" class="src coveredLine"><pre>    _mp_free(gwion->mp, vector_size(&amp;a->instr) * BYTECODE_SZ, a->bytecode);</pre></td>
     </tr>
 
     <tr>
@@ -534,7 +534,7 @@
     <td align="right" class="lineno"><pre>34</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>773</pre></td>
-    <td align="left" class="src coveredLine"><pre>      free_code_instr(a->instr, gwion);</pre></td>
+    <td align="left" class="src coveredLine"><pre>      free_code_instr(&amp;a->instr, gwion);</pre></td>
     </tr>
 
     <tr>
@@ -562,7 +562,7 @@
     <td align="right" class="lineno"><pre>38</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>773</pre></td>
-    <td align="left" class="src coveredLine"><pre>    free_vector(gwion->mp, a->instr);</pre></td>
+    <td align="left" class="src coveredLine"><pre>    vector_release(&amp;a->instr);</pre></td>
     </tr>
 
     <tr>
@@ -688,7 +688,7 @@
     <td align="right" class="lineno"><pre>56</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>776</pre></td>
-    <td align="left" class="src coveredLine"><pre>   const Vector v = code->instr;</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Vector v = &amp;code->instr;</pre></td>
     </tr>
 
     <tr>
@@ -1401,152 +1401,166 @@
     <tr>
     <td align="right" class="lineno"><pre>158</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>776</pre></td>
-    <td align="left" class="src coveredLine"><pre>    code->instr            = vector_copy(p, instr);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>//    code->instr            = vector_copy(p, instr);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>159</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>776</pre></td>
-    <td align="left" class="src coveredLine"><pre>    code->bytecode = tobytecode(p, code);</pre></td>
+    <td align="left" class="src coveredLine"><pre>    vector_init(&amp;code->instr);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>160</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>776</pre></td>
+    <td align="left" class="src coveredLine"><pre>    vector_copy2(instr, &amp;code->instr);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>161</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>776</pre></td>
+    <td align="left" class="src coveredLine"><pre>    code->bytecode = tobytecode(p, code);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>162</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>161</pre></td>
+    <td align="right" class="lineno"><pre>163</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>85956</pre></td>
     <td align="left" class="src coveredLine"><pre>  code->stack_depth      = stack_depth;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>162</pre></td>
+    <td align="right" class="lineno"><pre>164</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>85956</pre></td>
     <td align="left" class="src coveredLine"><pre>  code->builtin = builtin;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>163</pre></td>
+    <td align="right" class="lineno"><pre>165</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>85956</pre></td>
     <td align="left" class="src coveredLine"><pre>  code->ref = 1;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>164</pre></td>
+    <td align="right" class="lineno"><pre>166</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>85956</pre></td>
     <td align="left" class="src coveredLine"><pre>  return code;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>165</pre></td>
+    <td align="right" class="lineno"><pre>167</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>166</pre></td>
+    <td align="right" class="lineno"><pre>168</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>167</pre></td>
+    <td align="right" class="lineno"><pre>169</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>// TODO: handle native code</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>168</pre></td>
+    <td align="right" class="lineno"><pre>170</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>// TODO: do not re-create if code exists</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>169</pre></td>
+    <td align="right" class="lineno"><pre>171</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>VM_Code vmcode_callback(MemPool mp, VM_Code base) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>170</pre></td>
+    <td align="right" class="lineno"><pre>172</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>  char name[strlen(base->name) + 11];</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>171</pre></td>
+    <td align="right" class="lineno"><pre>173</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>  sprintf(name, "%s(callback)", base->name);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>172</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  const Instr instr = (Instr)vector_back(base->instr);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>173</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  instr->opcode = eEOC;</pre></td>
-    </tr>
-
-    <tr>
     <td align="right" class="lineno"><pre>174</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  VM_Code code = new_vmcode(mp, base->instr, base->stack_depth, base->builtin, name);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  const Instr instr = (Instr)vector_back(&amp;base->instr);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>175</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  code->closure = base->closure;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  instr->opcode = eEOC;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>176</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  code->callback = 1;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  VM_Code code = new_vmcode(mp, &amp;base->instr, base->stack_depth, base->builtin, name);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>177</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  instr->opcode = eFuncReturn;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  code->closure = base->closure;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>178</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  return code;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  code->callback = 1;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>179</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  instr->opcode = eFuncReturn;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>180</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  return code;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>181</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>

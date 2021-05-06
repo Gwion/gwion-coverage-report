@@ -269,18 +269,18 @@
             <td class="headerValue">src/vm/vm_shred.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
+            <td class="headerTableEntry">34</td>
             <td class="headerTableEntry">35</td>
-            <td class="headerTableEntry">35</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
+            <td class="headerTableEntry" style="background-color:LightGreen">97.1 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-05-06 19:31:11</td>
+            <td class="headerValue">2021-05-06 22:34:12</td>
             <td></td>
             <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">8</td>
-            <td class="headerTableEntry">8</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
+            <td class="headerTableEntry">9</td>
+            <td class="headerTableEntry">10</td>
+            <td class="headerTableEntry" style="background-color:LightGreen">90.0 %</td>
           </tr>
         </table>
       </td>
@@ -393,35 +393,35 @@
     <tr>
     <td align="right" class="lineno"><pre>14</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1147</pre></td>
-    <td align="left" class="src coveredLine"><pre>static inline struct ShredInfo_ *new_shredinfo(MemPool p, const m_str name) {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1146</pre></td>
+    <td align="left" class="src coveredLine"><pre>static inline struct ShredInfo_ *new_shredinfo(MemPool p, const VM_Code c) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>15</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1147</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1146</pre></td>
     <td align="left" class="src coveredLine"><pre>  struct ShredInfo_ *info = mp_calloc(p, ShredInfo);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>16</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1147</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1146</pre></td>
     <td align="left" class="src coveredLine"><pre>  info->mp = p;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>17</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1147</pre></td>
-    <td align="left" class="src coveredLine"><pre>  info->name = mstrdup(p, name);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1146</pre></td>
+    <td align="left" class="src coveredLine"><pre>  info->orig = c;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>18</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1147</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1146</pre></td>
     <td align="left" class="src coveredLine"><pre>  return info;</pre></td>
     </tr>
 
@@ -448,141 +448,141 @@
 
     <tr>
     <td align="right" class="lineno"><pre>22</pre></td>
-    <td align="right" class="linebranch"></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1142 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>1143</pre></td>
-    <td align="left" class="src coveredLine"><pre>  free_mstr(mp, info->name);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(info->args) { // could be a struct</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>23</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1142 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1143</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(info->args) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    const Vector v = info->args;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>25</pre></td>
+    <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    LOOP_OPTIM</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>26</pre></td>
+    <td align="right" class="lineno"><pre>25</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>    for(m_uint i = vector_size(v) + 1; --i;)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>27</pre></td>
+    <td align="right" class="lineno"><pre>26</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>      xfree((void*)vector_at(v, i - 1));</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>28</pre></td>
+    <td align="right" class="lineno"><pre>27</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    free_vector(mp, v);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>29</pre></td>
+    <td align="right" class="lineno"><pre>28</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
+    <td align="right" class="lineno"><pre>29</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 1143 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1143</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(info->line.ptr)</pre></td>
+    </tr>
+
+    <tr>
     <td align="right" class="lineno"><pre>30</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1143</pre></td>
-    <td align="left" class="src coveredLine"><pre>  mp_free(mp, ShredInfo, info);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    vector_release(&amp;info->line);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>31</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1143</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="left" class="src coveredLine"><pre>  mp_free(mp, ShredInfo, info);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>32</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1143</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>33</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>33</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1147</pre></td>
-    <td align="left" class="src coveredLine"><pre>VM_Shred new_vm_shred(MemPool p, VM_Code c) {</pre></td>
-    </tr>
-
-    <tr>
     <td align="right" class="lineno"><pre>34</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1147</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const VM_Shred shred = mp_calloc(p, Stack);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1146</pre></td>
+    <td align="left" class="src coveredLine"><pre>VM_Shred new_vm_shred(MemPool p, VM_Code c) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>35</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1147</pre></td>
-    <td align="left" class="src coveredLine"><pre>  shred->code = c;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1146</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const VM_Shred shred = mp_calloc(p, Stack);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>36</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1147</pre></td>
-    <td align="left" class="src coveredLine"><pre>  shred->reg  = (m_bit*)shred + sizeof(struct VM_Shred_);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1146</pre></td>
+    <td align="left" class="src coveredLine"><pre>  shred->code = c;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>37</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1147</pre></td>
-    <td align="left" class="src coveredLine"><pre>  shred->base = shred->mem = shred->reg + SIZEOF_REG;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1146</pre></td>
+    <td align="left" class="src coveredLine"><pre>  shred->reg  = (m_bit*)shred + sizeof(struct VM_Shred_);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>38</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1147</pre></td>
-    <td align="left" class="src coveredLine"><pre>  shred->info = new_shredinfo(p, c->name);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1146</pre></td>
+    <td align="left" class="src coveredLine"><pre>  shred->base = shred->mem = shred->reg + SIZEOF_REG;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>39</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1147</pre></td>
-    <td align="left" class="src coveredLine"><pre>  shred->info->orig = c;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1146</pre></td>
+    <td align="left" class="src coveredLine"><pre>  shred->info = new_shredinfo(p, c);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>40</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1147</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1146</pre></td>
     <td align="left" class="src coveredLine"><pre>  vector_init(&amp;shred->gc);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>41</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1147</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1146</pre></td>
     <td align="left" class="src coveredLine"><pre>  return shred;</pre></td>
     </tr>
 
