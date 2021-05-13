@@ -4,7 +4,7 @@ Summary of coverage changes
 
 ## lines coverage
 
-TOTAL -9747% :-1:
+TOTAL -9748% :-1:
 TOTAL 88% :+1:
 
 <details>
@@ -64,7 +64,7 @@ TOTAL 88% :+1:
 |[src/vm/driver.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_driver.c.html)|100%|:+1:|
 |[src/vm/gack.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_gack.c.html)|-7%|:+1:|
 |[src/vm/shreduler.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_shreduler.c.html)|100%|:+1:|
-|[src/vm/vm_code.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_vm_code.c.html)|-16%|:-1:|
+|[src/vm/vm_code.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_vm_code.c.html)|-17%|:-1:|
 |[src/vm/vm_shred.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_vm_shred.c.html)|97%|:+1:|
 </details>
 
@@ -137,6 +137,6 @@ TOTAL 71% :+1:
 |[src/vm/gack.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_gack.c.html)|3%|:+1:|
 |[src/vm/shreduler.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_shreduler.c.html)|100%|:+1:|
 |[src/vm/vm_code.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_vm_code.c.html)|3%|:+1:|
-|[src/vm/vm_shred.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_vm_shred.c.html)|90%|:+1:|
+|[src/vm/vm_shred.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_vm_shred.c.html)|91%|:+1:|
 </details>
 
