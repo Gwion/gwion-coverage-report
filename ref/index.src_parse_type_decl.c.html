@@ -269,18 +269,18 @@
             <td class="headerValue">src/parse/type_decl.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">34</td>
-            <td class="headerTableEntry">35</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">97.1 %</td>
+            <td class="headerTableEntry">37</td>
+            <td class="headerTableEntry">38</td>
+            <td class="headerTableEntry" style="background-color:LightGreen">97.4 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-05-13 21:23:16</td>
+            <td class="headerValue">2021-05-13 21:47:43</td>
             <td></td>
             <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">18</td>
-            <td class="headerTableEntry">20</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">90.0 %</td>
+            <td class="headerTableEntry">19</td>
+            <td class="headerTableEntry">22</td>
+            <td class="headerTableEntry" style="background-color:#FFFF55">86.4 %</td>
           </tr>
         </table>
       </td>
@@ -352,7 +352,7 @@
     <td align="right" class="lineno"><pre>8</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static Type _option(const Env env, Type_Decl* td, const m_uint n) {</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static Type _option(const Env env, Type_Decl* td, const uint8_t n) {</pre></td>
     </tr>
 
     <tr>
@@ -366,14 +366,14 @@
     <td align="right" class="lineno"><pre>10</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>  Type_Decl option_td = { .xid=insert_symbol("Option"), .types=&amp;tl, .pos=td->pos };</pre></td>
+    <td align="left" class="src coveredLine"><pre>  Type_Decl tmp = { .xid=insert_symbol("Option"), .types=&amp;tl, .pos=td->pos };</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>11</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 8 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return !(n-1) ? known_type(env, &amp;option_td) : _option(env, &amp;option_td, n-1);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return !(n-1) ? known_type(env, &amp;tmp) : _option(env, &amp;tmp, n-1);</pre></td>
     </tr>
 
     <tr>
@@ -401,7 +401,7 @@
     <td align="right" class="lineno"><pre>15</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const m_uint option = td->option;</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const uint8_t option = td->option;</pre></td>
     </tr>
 
     <tr>
@@ -415,7 +415,7 @@
     <td align="right" class="lineno"><pre>17</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Type ret = _option(env, td, option);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Type t = _option(env, td, option);</pre></td>
     </tr>
 
     <tr>
@@ -429,7 +429,7 @@
     <td align="right" class="lineno"><pre>19</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>8</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return t;</pre></td>
     </tr>
 
     <tr>
@@ -450,7 +450,7 @@
     <td align="right" class="lineno"><pre>22</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static inline Type ref(const Env env, Type_Decl* td) {</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static Type _ref(const Env env, Type_Decl* td, const uint8_t n) {</pre></td>
     </tr>
 
     <tr>
@@ -464,175 +464,175 @@
     <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  td->ref = 0;</pre></td>
+    <td align="left" class="src coveredLine"><pre>  Type_Decl tmp = { .xid=insert_symbol("Ref"), .types=&amp;tl, .pos=td->pos };</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>25</pre></td>
-    <td align="right" class="linebranch"></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  Type_Decl option_td = { .xid=insert_symbol("Ref"), .types=&amp;tl, .pos=td->pos };</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return !(n-1) ? known_type(env, &amp;tmp) : _ref(env, &amp;tmp, n-1);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>26</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Type t = known_type(env, &amp;option_td);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>27</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  td->ref = 1;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>28</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return t;</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static inline Type ref(const Env env, Type_Decl* td) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>29</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const uint8_t ref = td->ref;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>30</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  td->ref = 0;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>31</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Type t = _ref(env, td, ref);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>32</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  td->ref = ref;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>33</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return t;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>34</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>30</pre></td>
+    <td align="right" class="lineno"><pre>35</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>31</pre></td>
+    <td align="right" class="lineno"><pre>36</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>546012</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static Type resolve(const Env env, Type_Decl* td) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>32</pre></td>
+    <td align="right" class="lineno"><pre>37</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>546012</pre></td>
     <td align="left" class="src coveredLine"><pre>  Type_Decl *last = td;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>33</pre></td>
+    <td align="right" class="lineno"><pre>38</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 22 times">&check;</span><span class="takenBranch" title="Branch 1 taken 546012 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>546034</pre></td>
     <td align="left" class="src coveredLine"><pre>  while(last->next)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>34</pre></td>
+    <td align="right" class="lineno"><pre>39</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>22</pre></td>
     <td align="left" class="src coveredLine"><pre>    last = last->next;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>35</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>546012</pre></td>
-    <td align="left" class="src coveredLine"><pre>  Array_Sub array = last->array;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>36</pre></td>
+    <td align="right" class="lineno"><pre>40</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 24 times">&check;</span><span class="takenBranch" title="Branch 2 taken 545988 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>546012</pre></td>
     <td align="left" class="src coveredLine"><pre>  DECL_OO(const Type, base, = find_type(env, td));</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>37</pre></td>
+    <td align="right" class="lineno"><pre>41</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>545988</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Context ctx = base->info->value->from->ctx;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>38</pre></td>
+    <td align="right" class="lineno"><pre>42</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 522 times">&check;</span><span class="takenBranch" title="Branch 1 taken 545466 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 522 times">&check;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>545988</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(ctx &amp;&amp; ctx->error)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>39</pre></td>
+    <td align="right" class="lineno"><pre>43</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>    ERR_O(td->pos, _("type '%s' is invalid"), base->name)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>40</pre></td>
+    <td align="right" class="lineno"><pre>44</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 5 times">&check;</span><span class="takenBranch" title="Branch 2 taken 545983 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>545988</pre></td>
     <td align="left" class="src coveredLine"><pre>  DECL_OO(const Type, type, = scan_type(env, base, td));</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>41</pre></td>
+    <td align="right" class="lineno"><pre>45</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 545982 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>545983</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Type t = !td->ref ? type : ref(env, td);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>42</pre></td>
+    <td align="right" class="lineno"><pre>46</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 8 times">&check;</span><span class="takenBranch" title="Branch 1 taken 545975 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>545983</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Type ret = !td->option ? t : option(env, td);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>43</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 23976 times">&check;</span><span class="takenBranch" title="Branch 1 taken 522007 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>545983</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return !array ? ret: array_type(env, ret, array->depth);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>44</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>45</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>46</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>29</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static inline void* type_unknown(const Env env, const Type_Decl* td) {</pre></td>
-    </tr>
-
-    <tr>
     <td align="right" class="lineno"><pre>47</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>29</pre></td>
-    <td align="left" class="src coveredLine"><pre>  env_err(env, td->pos, _("unknown type '%s'"), s_name(td->xid));</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>545983</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Array_Sub array = last->array;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>48</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>29</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return NULL;</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 23976 times">&check;</span><span class="takenBranch" title="Branch 1 taken 522007 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>545983</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return !array ? ret: array_type(env, ret, array->depth);</pre></td>
     </tr>
 
     <tr>
@@ -652,19 +652,54 @@
     <tr>
     <td align="right" class="lineno"><pre>51</pre></td>
     <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>29</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static inline void* type_unknown(const Env env, const Type_Decl* td) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>52</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>29</pre></td>
+    <td align="left" class="src coveredLine"><pre>  env_err(env, td->pos, _("unknown type '%s'"), s_name(td->xid));</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>53</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>29</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return NULL;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>54</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>55</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>56</pre></td>
+    <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>546012</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN Type known_type(const Env env, Type_Decl* td) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>52</pre></td>
+    <td align="right" class="lineno"><pre>57</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 545983 times">&check;</span><span class="takenBranch" title="Branch 2 taken 29 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>546012</pre></td>
     <td align="left" class="src coveredLine"><pre>  return resolve(env, td) ?:type_unknown(env, td);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>53</pre></td>
+    <td align="right" class="lineno"><pre>58</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
