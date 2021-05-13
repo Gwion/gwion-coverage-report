@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-05-13 12:37:48</td>
+            <td class="headerValue">2021-05-13 15:00:13</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">81</td>
@@ -660,7 +660,7 @@
     <td align="right" class="lineno"><pre>52</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>7</pre></td>
-    <td align="left" class="src coveredLine"><pre>  STRING(o) = _mp_calloc(shred->info->vm->gwion->mp, 1);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  STRING(o) = _mp_calloc(shred->info->mp, 1);</pre></td>
     </tr>
 
     <tr>
@@ -688,7 +688,7 @@
     <td align="right" class="lineno"><pre>56</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>75</pre></td>
-    <td align="left" class="src coveredLine"><pre>  free_mstr(shred->info->vm->gwion->mp, STRING(o));</pre></td>
+    <td align="left" class="src coveredLine"><pre>  free_mstr(shred->info->mp, STRING(o));</pre></td>
     </tr>
 
     <tr>
@@ -764,28 +764,28 @@
     <tr>
     <td align="right" class="lineno"><pre>67</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>578</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>579</pre></td>
     <td align="left" class="src coveredLine"><pre>static GACK(gack_string) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>68</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>578</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>579</pre></td>
     <td align="left" class="src coveredLine"><pre>  const M_Object obj = *(M_Object*)VALUE;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>69</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 575 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>578</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 576 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>579</pre></td>
     <td align="left" class="src coveredLine"><pre>  INTERP_PRINTF("%s", obj ? STRING(obj) : "(null string)");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>70</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>578</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>579</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -968,7 +968,7 @@
     <td align="right" class="lineno"><pre>96</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>  *(M_Object*)REG(-SZ_INT) = new_string(shred->info->vm->gwion->mp, shred, c);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  *(M_Object*)REG(-SZ_INT) = new_string(shred->info->mp, shred, c);</pre></td>
     </tr>
 
     <tr>
@@ -1059,7 +1059,7 @@
     <td align="right" class="lineno"><pre>109</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  *(M_Object*)RETURN = new_string(shred->info->vm->gwion->mp, shred, c);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  *(M_Object*)RETURN = new_string(shred->info->mp, shred, c);</pre></td>
     </tr>
 
     <tr>
@@ -1122,7 +1122,7 @@
     <td align="right" class="lineno"><pre>118</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  *(M_Object*)RETURN = new_string(shred->info->vm->gwion->mp, shred, c);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  *(M_Object*)RETURN = new_string(shred->info->mp, shred, c);</pre></td>
     </tr>
 
     <tr>
@@ -1192,7 +1192,7 @@
     <td align="right" class="lineno"><pre>128</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>  *(M_Object*)RETURN = new_string(shred->info->vm->gwion->mp, shred, c);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  *(M_Object*)RETURN = new_string(shred->info->mp, shred, c);</pre></td>
     </tr>
 
     <tr>
@@ -1283,7 +1283,7 @@
     <td align="right" class="lineno"><pre>141</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>    *(M_Object*)RETURN = new_string(shred->info->vm->gwion->mp, shred, c);</pre></td>
+    <td align="left" class="src coveredLine"><pre>    *(M_Object*)RETURN = new_string(shred->info->mp, shred, c);</pre></td>
     </tr>
 
     <tr>
@@ -1493,7 +1493,7 @@
     <td align="right" class="lineno"><pre>171</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  *(M_Object*)RETURN = new_string(shred->info->vm->gwion->mp, shred, c);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  *(M_Object*)RETURN = new_string(shred->info->mp, shred, c);</pre></td>
     </tr>
 
     <tr>
@@ -1836,7 +1836,7 @@
     <td align="right" class="lineno"><pre>220</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  *(M_Object*)RETURN = new_string(shred->info->vm->gwion->mp, shred, c);;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  *(M_Object*)RETURN = new_string(shred->info->mp, shred, c);;</pre></td>
     </tr>
 
     <tr>
@@ -2018,7 +2018,7 @@
     <td align="right" class="lineno"><pre>246</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  *(M_Object*)RETURN = new_string(shred->info->vm->gwion->mp, shred, c);;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  *(M_Object*)RETURN = new_string(shred->info->mp, shred, c);;</pre></td>
     </tr>
 
     <tr>
@@ -2221,7 +2221,7 @@
     <td align="right" class="lineno"><pre>275</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  *(M_Object*)RETURN = new_string(shred->info->vm->gwion->mp, shred, c);;</pre></td>
+    <td align="left" class="src coveredLine"><pre>  *(M_Object*)RETURN = new_string(shred->info->mp, shred, c);;</pre></td>
     </tr>
 
     <tr>
