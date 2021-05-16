@@ -269,13 +269,13 @@
             <td class="headerValue">src/parse/operator.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">163</td>
-            <td class="headerTableEntry">217</td>
-            <td class="headerTableEntry" style="background-color:#FFFF55">75.1 %</td>
+            <td class="headerTableEntry">165</td>
+            <td class="headerTableEntry">219</td>
+            <td class="headerTableEntry" style="background-color:#FFFF55">75.3 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-05-16 18:35:54</td>
+            <td class="headerValue">2021-05-16 21:20:24</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">129</td>
@@ -1052,7 +1052,7 @@
     <td align="right" class="lineno"><pre>108</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>140829</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN static Vector op_vector(MemPool p, const struct OpChecker *ock) {</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN static Vector op_vector(const struct OpChecker *ock) {</pre></td>
     </tr>
 
     <tr>
@@ -1276,7 +1276,7 @@
     <td align="right" class="lineno"><pre>140</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>140829</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Vector v = op_vector(gwion->mp, &amp;ock);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Vector v = op_vector(&amp;ock);</pre></td>
     </tr>
 
     <tr>
@@ -1400,1189 +1400,1203 @@
 
     <tr>
     <td align="right" class="lineno"><pre>158</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 15383 times">&check;</span><span class="takenBranch" title="Branch 1 taken 13732 times">&check;</span><span class="takenBranch" title="Branch 2 taken 12282 times">&check;</span><span class="takenBranch" title="Branch 3 taken 3101 times">&check;</span><br/><span class="takenBranch" title="Branch 6 taken 4495 times">&check;</span><span class="takenBranch" title="Branch 7 taken 10888 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>29115</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if(idx > -1 &amp;&amp; (mo = !i ? operator_find2(&amp;VVAL(ock->map, idx), ock->opi->lhs, r) : operator_find(&amp;VVAL(ock->map, idx), ock->opi->lhs, r))) {</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 15383 times">&check;</span><span class="takenBranch" title="Branch 1 taken 13732 times">&check;</span><span class="takenBranch" title="Branch 2 taken 12282 times">&check;</span><span class="takenBranch" title="Branch 3 taken 3101 times">&check;</span><br/><span class="takenBranch" title="Branch 4 taken 4495 times">&check;</span><span class="takenBranch" title="Branch 5 taken 10888 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>44498</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if(idx > -1 &amp;&amp; (mo = !i ?</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>159</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>12282</pre></td>
+    <td align="left" class="src coveredLine"><pre>          operator_find2((Vector)&amp;VVAL(ock->map, idx), ock->opi->lhs, r) :</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>160</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3101</pre></td>
+    <td align="left" class="src coveredLine"><pre>          operator_find( (Vector)&amp;VVAL(ock->map, idx), ock->opi->lhs, r))) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>161</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4347 times">&check;</span><span class="takenBranch" title="Branch 1 taken 148 times">&check;</span><span class="takenBranch" title="Branch 3 taken 4343 times">&check;</span><span class="takenBranch" title="Branch 4 taken 4 times">&check;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>4495</pre></td>
     <td align="left" class="src coveredLine"><pre>      if((mo->ck &amp;&amp; (t = mo->ck(ock->env, (void*)ock->opi->data)))) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>160</pre></td>
+    <td align="right" class="lineno"><pre>162</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>4343</pre></td>
     <td align="left" class="src coveredLine"><pre>        ock->effect.ptr = mo->effect.ptr;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>161</pre></td>
+    <td align="right" class="lineno"><pre>163</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>4343</pre></td>
     <td align="left" class="src coveredLine"><pre>        return t;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>162</pre></td>
+    <td align="right" class="lineno"><pre>164</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>      } else</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>163</pre></td>
+    <td align="right" class="lineno"><pre>165</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>152</pre></td>
     <td align="left" class="src coveredLine"><pre>        return mo->ret;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>164</pre></td>
+    <td align="right" class="lineno"><pre>166</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>165</pre></td>
+    <td align="right" class="lineno"><pre>167</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3892 times">&check;</span><span class="takenBranch" title="Branch 1 taken 20728 times">&check;</span><span class="takenBranch" title="Branch 3 taken 2394 times">&check;</span><span class="takenBranch" title="Branch 4 taken 1498 times">&check;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>24620</pre></td>
     <td align="left" class="src coveredLine"><pre>  } while(r &amp;&amp; (r = op_parent(env, r)));</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>166</pre></td>
+    <td align="right" class="lineno"><pre>168</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>22226</pre></td>
     <td align="left" class="src coveredLine"><pre>  return NULL;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>167</pre></td>
+    <td align="right" class="lineno"><pre>169</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>168</pre></td>
+    <td align="right" class="lineno"><pre>170</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>169</pre></td>
+    <td align="right" class="lineno"><pre>171</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>6672</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN Type op_check(const Env env, struct Op_Import* opi) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>170</pre></td>
+    <td align="right" class="lineno"><pre>172</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 9545 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2195 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>11740</pre></td>
     <td align="left" class="src coveredLine"><pre>for(int i = 0; i &lt; 2; ++i) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>171</pre></td>
+    <td align="right" class="lineno"><pre>173</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>9545</pre></td>
     <td align="left" class="src coveredLine"><pre>  Nspc nspc = env->curr;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>172</pre></td>
+    <td align="right" class="lineno"><pre>174</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  do {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>173</pre></td>
+    <td align="right" class="lineno"><pre>175</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 10108 times">&check;</span><span class="takenBranch" title="Branch 1 taken 9705 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>19813</pre></td>
     <td align="left" class="src coveredLine"><pre>    if(!nspc->info->op_map.ptr)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>174</pre></td>
+    <td align="right" class="lineno"><pre>176</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>10108</pre></td>
     <td align="left" class="src coveredLine"><pre>      continue;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>175</pre></td>
+    <td align="right" class="lineno"><pre>177</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>9705</pre></td>
     <td align="left" class="src coveredLine"><pre>    Type l = opi->lhs;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>176</pre></td>
+    <td align="right" class="lineno"><pre>178</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    do {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>177</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26721</pre></td>
-    <td align="left" class="src coveredLine"><pre>      struct Op_Import opi2 = { .op=opi->op, .lhs=l, .rhs=opi->rhs, .data=opi->data };</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>178</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26721</pre></td>
-    <td align="left" class="src coveredLine"><pre>      struct OpChecker ock = { .env=env, .map=&amp;nspc->info->op_map, .opi=&amp;opi2 };</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>179</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>26721</pre></td>
-    <td align="left" class="src coveredLine"><pre>      const Type ret = op_check_inner(env, &amp;ock, i);</pre></td>
+    <td align="left" class="src coveredLine"><pre>      struct Op_Import opi2 = { .op=opi->op, .lhs=l, .rhs=opi->rhs, .data=opi->data };</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>180</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>26721</pre></td>
+    <td align="left" class="src coveredLine"><pre>      struct OpChecker ock = { .env=env, .map=&amp;nspc->info->op_map, .opi=&amp;opi2 };</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>181</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>26721</pre></td>
+    <td align="left" class="src coveredLine"><pre>      const Type ret = op_check_inner(env, &amp;ock, i);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>182</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4477 times">&check;</span><span class="takenBranch" title="Branch 1 taken 22244 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>26721</pre></td>
     <td align="left" class="src coveredLine"><pre>      if(ret) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>181</pre></td>
+    <td align="right" class="lineno"><pre>183</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 67 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4410 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>4477</pre></td>
     <td align="left" class="src coveredLine"><pre>        if(ret == env->gwion->type[et_error])</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>182</pre></td>
+    <td align="right" class="lineno"><pre>184</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>4477</pre></td>
     <td align="left" class="src coveredLine"><pre>          return NULL;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>183</pre></td>
+    <td align="right" class="lineno"><pre>185</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4404 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>4410</pre></td>
     <td align="left" class="src coveredLine"><pre>        if(ock.effect.ptr) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>184</pre></td>
+    <td align="right" class="lineno"><pre>186</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>6</pre></td>
     <td align="left" class="src coveredLine"><pre>          const Vector base = &amp;ock.effect;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>185</pre></td>
+    <td align="right" class="lineno"><pre>187</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 6 times">&check;</span><span class="takenBranch" title="Branch 2 taken 6 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>12</pre></td>
     <td align="left" class="src coveredLine"><pre>          for(m_uint i = 0; i &lt; vector_size(base); i++)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>186</pre></td>
+    <td align="right" class="lineno"><pre>188</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>6</pre></td>
     <td align="left" class="src coveredLine"><pre>            env_add_effect(env, (Symbol)vector_at(base, i), opi->pos);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>187</pre></td>
+    <td align="right" class="lineno"><pre>189</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>        }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>188</pre></td>
+    <td align="right" class="lineno"><pre>190</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>4410</pre></td>
     <td align="left" class="src coveredLine"><pre>        opi->nspc = nspc;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>189</pre></td>
+    <td align="right" class="lineno"><pre>191</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>4410</pre></td>
     <td align="left" class="src coveredLine"><pre>        return ret;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>190</pre></td>
+    <td align="right" class="lineno"><pre>192</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>      }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>191</pre></td>
+    <td align="right" class="lineno"><pre>193</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 21199 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1045 times">&check;</span><span class="takenBranch" title="Branch 3 taken 17016 times">&check;</span><span class="takenBranch" title="Branch 4 taken 4183 times">&check;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>22244</pre></td>
     <td align="left" class="src coveredLine"><pre>    } while(l &amp;&amp; (l = op_parent(env, l)));</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>192</pre></td>
+    <td align="right" class="lineno"><pre>194</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 10268 times">&check;</span><span class="takenBranch" title="Branch 1 taken 5068 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>15336</pre></td>
     <td align="left" class="src coveredLine"><pre>  } while((nspc = nspc->parent));</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>193</pre></td>
+    <td align="right" class="lineno"><pre>195</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>194</pre></td>
+    <td align="right" class="lineno"><pre>196</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  // this should be an any case</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>195</pre></td>
+    <td align="right" class="lineno"><pre>197</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2192 times">&check;</span><span class="takenBranch" title="Branch 2 taken 2 times">&check;</span><span class="takenBranch" title="Branch 3 taken 1 times">&check;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>2195</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(opi->op == insert_symbol(env->gwion->st, "$") &amp;&amp; opi->rhs == opi->lhs)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>196</pre></td>
+    <td align="right" class="lineno"><pre>198</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>    return opi->rhs;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>197</pre></td>
+    <td align="right" class="lineno"><pre>199</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 463 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1730 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>2193</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(opi->op == insert_symbol(env->gwion->st, "@func_check"))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>198</pre></td>
+    <td align="right" class="lineno"><pre>200</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>463</pre></td>
     <td align="left" class="src coveredLine"><pre>    return NULL;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>199</pre></td>
+    <td align="right" class="lineno"><pre>201</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1693 times">&check;</span><span class="takenBranch" title="Branch 1 taken 37 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>1730</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(opi->op == insert_symbol(env->gwion->st, "@class_check"))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>200</pre></td>
+    <td align="right" class="lineno"><pre>202</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1693</pre></td>
     <td align="left" class="src coveredLine"><pre>    return env->gwion->type[et_error];</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>201</pre></td>
+    <td align="right" class="lineno"><pre>203</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 14 times">&check;</span><span class="takenBranch" title="Branch 1 taken 23 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>37</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(opi->op != insert_symbol(env->gwion->st, "@implicit"))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>202</pre></td>
+    <td align="right" class="lineno"><pre>204</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>14</pre></td>
     <td align="left" class="src coveredLine"><pre>    env_err(env, opi->pos, _("%s %s %s: no match found for operator"),</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>203</pre></td>
+    <td align="right" class="lineno"><pre>205</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    type_name(opi->lhs), s_name(opi->op), type_name(opi->rhs));</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>204</pre></td>
+    <td align="right" class="lineno"><pre>206</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>37</pre></td>
     <td align="left" class="src coveredLine"><pre>  return NULL;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>205</pre></td>
+    <td align="right" class="lineno"><pre>207</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>206</pre></td>
+    <td align="right" class="lineno"><pre>208</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>207</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
-    <td align="left" class="src coveredLine"><pre>ANN m_bool operator_set_func(const struct Op_Import* opi) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>208</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Nspc nspc = ((Func)opi->data)->value_ref->from->owner;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>209</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>26</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const m_int idx = map_index(&amp;nspc->info->op_map, (vtype)opi->op);</pre></td>
+    <td align="left" class="src coveredLine"><pre>ANN m_bool operator_set_func(const struct Op_Import* opi) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>210</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>26</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Vector v = (Vector)&amp;VVAL(&amp;nspc->info->op_map, idx);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Nspc nspc = ((Func)opi->data)->value_ref->from->owner;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>211</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 26 times">&check;</span></td>
+    <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>26</pre></td>
-    <td align="left" class="src coveredLine"><pre>  DECL_OB(M_Operator*, mo, = operator_find(v, opi->lhs, opi->rhs));</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const m_int idx = map_index(&amp;nspc->info->op_map, (vtype)opi->op);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>212</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>26</pre></td>
-    <td align="left" class="src coveredLine"><pre>  mo->func = (Func)opi->data;</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Vector v = (Vector)&amp;VVAL(&amp;nspc->info->op_map, idx);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>213</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 26 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
+    <td align="left" class="src coveredLine"><pre>  DECL_OB(M_Operator*, mo, = operator_find(v, opi->lhs, opi->rhs));</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>214</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
+    <td align="left" class="src coveredLine"><pre>  mo->func = (Func)opi->data;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>215</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>26</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>214</pre></td>
+    <td align="right" class="lineno"><pre>216</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>215</pre></td>
+    <td align="right" class="lineno"><pre>217</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>216</pre></td>
+    <td align="right" class="lineno"><pre>218</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>547</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static m_bool handle_instr(const Emitter emit, const M_Operator* mo) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>217</pre></td>
+    <td align="right" class="lineno"><pre>219</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 13 times">&check;</span><span class="takenBranch" title="Branch 1 taken 534 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>547</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(mo->func) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>218</pre></td>
+    <td align="right" class="lineno"><pre>220</pre></td>
     <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 13 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>13</pre></td>
     <td align="left" class="src coveredLine"><pre>    const Instr push = emit_add_instr(emit, mo->func->code ? RegPushImm : SetFunc);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>219</pre></td>
+    <td align="right" class="lineno"><pre>221</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 13 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>13</pre></td>
     <td align="left" class="src coveredLine"><pre>    push->m_val = ((m_uint)mo->func->code ?:(m_uint)mo->func);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>220</pre></td>
+    <td align="right" class="lineno"><pre>222</pre></td>
     <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 13 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>13</pre></td>
     <td align="left" class="src coveredLine"><pre>    CHECK_BB(emit_exp_call1(emit, mo->func));</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>221</pre></td>
+    <td align="right" class="lineno"><pre>223</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 12 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>13</pre></td>
     <td align="left" class="src coveredLine"><pre>    if(mo->func->def->base->xid == insert_symbol(emit->gwion->st, "@conditional"))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>222</pre></td>
+    <td align="right" class="lineno"><pre>224</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>      emit_add_instr(emit, BranchEqInt);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>223</pre></td>
+    <td align="right" class="lineno"><pre>225</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 11 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>12</pre></td>
     <td align="left" class="src coveredLine"><pre>    else if(mo->func->def->base->xid == insert_symbol(emit->gwion->st, "@unconditional"))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>224</pre></td>
+    <td align="right" class="lineno"><pre>226</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>      emit_add_instr(emit, BranchNeqInt);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>225</pre></td>
+    <td align="right" class="lineno"><pre>227</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>13</pre></td>
     <td align="left" class="src coveredLine"><pre>    return GW_OK;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>226</pre></td>
+    <td align="right" class="lineno"><pre>228</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>227</pre></td>
+    <td align="right" class="lineno"><pre>229</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>534</pre></td>
     <td align="left" class="src coveredLine"><pre>  (void)emit_add_instr(emit, mo->instr);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>228</pre></td>
+    <td align="right" class="lineno"><pre>230</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>534</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>229</pre></td>
+    <td align="right" class="lineno"><pre>231</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>230</pre></td>
+    <td align="right" class="lineno"><pre>232</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>231</pre></td>
+    <td align="right" class="lineno"><pre>233</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1229</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN m_bool op_emit(const Emitter emit, const struct Op_Import* opi) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>232</pre></td>
+    <td align="right" class="lineno"><pre>234</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1784 times">&check;</span><span class="takenBranch" title="Branch 1 taken 6 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>1790</pre></td>
     <td align="left" class="src coveredLine"><pre>  for(int i = 0; i &lt; 2; ++i) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>233</pre></td>
+    <td align="right" class="lineno"><pre>235</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1784</pre></td>
     <td align="left" class="src coveredLine"><pre>  Nspc nspc = emit->env->curr;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>234</pre></td>
+    <td align="right" class="lineno"><pre>236</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  do {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>235</pre></td>
+    <td align="right" class="lineno"><pre>237</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3863 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1862 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>5725</pre></td>
     <td align="left" class="src coveredLine"><pre>    if(!nspc->info->op_map.ptr)continue;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>236</pre></td>
+    <td align="right" class="lineno"><pre>238</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1862</pre></td>
     <td align="left" class="src coveredLine"><pre>    Type l = opi->lhs;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>237</pre></td>
+    <td align="right" class="lineno"><pre>239</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    do {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>238</pre></td>
+    <td align="right" class="lineno"><pre>240</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>4027</pre></td>
     <td align="left" class="src coveredLine"><pre>      Type r = opi->rhs;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>239</pre></td>
+    <td align="right" class="lineno"><pre>241</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>      do {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>240</pre></td>
+    <td align="right" class="lineno"><pre>242</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>7064</pre></td>
     <td align="left" class="src coveredLine"><pre>        const m_int idx = map_index(&amp;nspc->info->op_map, (vtype)opi->op);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>241</pre></td>
+    <td align="right" class="lineno"><pre>243</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 273 times">&check;</span><span class="takenBranch" title="Branch 1 taken 6791 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>7064</pre></td>
     <td align="left" class="src coveredLine"><pre>        if(idx == -1)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>242</pre></td>
+    <td align="right" class="lineno"><pre>244</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>273</pre></td>
     <td align="left" class="src coveredLine"><pre>          continue;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>243</pre></td>
+    <td align="right" class="lineno"><pre>245</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>6791</pre></td>
     <td align="left" class="src coveredLine"><pre>        const Vector v = (Vector)&amp;VVAL(&amp;nspc->info->op_map, idx);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>244</pre></td>
+    <td align="right" class="lineno"><pre>246</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4300 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2491 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>6791</pre></td>
     <td align="left" class="src coveredLine"><pre>        const M_Operator* mo = !i ? operator_find2(v, l, r) :operator_find(v, l, r);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>245</pre></td>
+    <td align="right" class="lineno"><pre>247</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1246 times">&check;</span><span class="takenBranch" title="Branch 1 taken 5545 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>6791</pre></td>
     <td align="left" class="src coveredLine"><pre>        if(mo) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>246</pre></td>
+    <td align="right" class="lineno"><pre>248</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 676 times">&check;</span><span class="takenBranch" title="Branch 1 taken 570 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>1246</pre></td>
     <td align="left" class="src coveredLine"><pre>          if(mo->em) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>247</pre></td>
+    <td align="right" class="lineno"><pre>249</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>676</pre></td>
     <td align="left" class="src coveredLine"><pre>            const m_bool ret = mo->em(emit, (void*)opi->data);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>248</pre></td>
+    <td align="right" class="lineno"><pre>250</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 676 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>676</pre></td>
     <td align="left" class="src coveredLine"><pre>            if(ret)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>249</pre></td>
+    <td align="right" class="lineno"><pre>251</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>676</pre></td>
     <td align="left" class="src coveredLine"><pre>              return ret;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>250</pre></td>
+    <td align="right" class="lineno"><pre>252</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 557 times">&check;</span><span class="takenBranch" title="Branch 1 taken 13 times">&check;</span><span class="takenBranch" title="Branch 2 taken 534 times">&check;</span><span class="takenBranch" title="Branch 3 taken 23 times">&check;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>570</pre></td>
     <td align="left" class="src coveredLine"><pre>          } else if(mo->func || mo->instr)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>251</pre></td>
+    <td align="right" class="lineno"><pre>253</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>547</pre></td>
     <td align="left" class="src coveredLine"><pre>            return handle_instr(emit, mo);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>252</pre></td>
+    <td align="right" class="lineno"><pre>254</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>        }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>253</pre></td>
+    <td align="right" class="lineno"><pre>255</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 5779 times">&check;</span><span class="takenBranch" title="Branch 1 taken 62 times">&check;</span><span class="takenBranch" title="Branch 3 taken 3037 times">&check;</span><span class="takenBranch" title="Branch 4 taken 2742 times">&check;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>5841</pre></td>
     <td align="left" class="src coveredLine"><pre>      } while(r &amp;&amp; (r = op_parent(emit->env, r)));</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>254</pre></td>
+    <td align="right" class="lineno"><pre>256</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2739 times">&check;</span><span class="takenBranch" title="Branch 1 taken 65 times">&check;</span><span class="takenBranch" title="Branch 3 taken 2165 times">&check;</span><span class="takenBranch" title="Branch 4 taken 574 times">&check;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>2804</pre></td>
     <td align="left" class="src coveredLine"><pre>    } while(l &amp;&amp; (l = op_parent(emit->env, l)));</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>255</pre></td>
+    <td align="right" class="lineno"><pre>257</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3941 times">&check;</span><span class="takenBranch" title="Branch 1 taken 561 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>4502</pre></td>
     <td align="left" class="src coveredLine"><pre>  } while((nspc = nspc->parent));</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>256</pre></td>
+    <td align="right" class="lineno"><pre>258</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>257</pre></td>
+    <td align="right" class="lineno"><pre>259</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>6</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_ERROR;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>258</pre></td>
+    <td align="right" class="lineno"><pre>260</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>259</pre></td>
+    <td align="right" class="lineno"><pre>261</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>260</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#define CONVERT(t) t != from ? t : to</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>261</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>ANN static M_Operator* cpy_mo(MemPool p, M_Operator *const base,</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>262</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>      const Type from, const Type to) {</pre></td>
+    <td align="left" class="src "><pre>#define CONVERT(t) t != from ? t : to</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>263</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  M_Operator* mo = mp_calloc(p, M_Operator);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>ANN static M_Operator* cpy_mo(MemPool p, M_Operator *const base,</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>264</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  mo->lhs   = CONVERT(base->lhs);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      const Type from, const Type to) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>265</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  mo->rhs   = CONVERT(base->rhs);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  M_Operator* mo = mp_calloc(p, M_Operator);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>266</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  mo->ret   = CONVERT(base->ret);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  mo->lhs   = CONVERT(base->lhs);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>267</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  mo->instr = base->instr;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  mo->rhs   = CONVERT(base->rhs);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>268</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  mo->func  = base->func;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  mo->ret   = CONVERT(base->ret);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>269</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  mo->ck    = base->ck;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  mo->instr = base->instr;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>270</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  mo->em    = base->em;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  mo->func  = base->func;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>271</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  if(base->effect.ptr) {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  mo->ck    = base->ck;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>272</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    vector_init(&amp;mo->effect);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  mo->em    = base->em;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>273</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    vector_copy2(&amp;base->effect, &amp;mo->effect);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  if(base->effect.ptr) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>274</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    vector_init(&amp;mo->effect);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>275</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  return mo;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    vector_copy2(&amp;base->effect, &amp;mo->effect);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>276</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>277</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#undef CONVERT</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  return mo;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>278</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>279</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>ANN static inline Map ensure_map(const Nspc nspc) {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#undef CONVERT</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>280</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  const Map map = &amp;nspc->info->op_map;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>281</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  if(!map->ptr)</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>ANN static inline Map ensure_map(const Nspc nspc) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>282</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    map_init(map);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  const Map map = &amp;nspc->info->op_map;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>283</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  return map;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  if(!map->ptr)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>284</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    map_init(map);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>285</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  return map;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>286</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>285</pre></td>
+    <td align="right" class="lineno"><pre>287</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>286</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>ANN static inline Vector ensure_vec(const MemPool mp, const Map map, const m_uint key) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>287</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  const m_int idx = (Vector)map_index(map, key);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>288</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  if(idx > -1)</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>ANN static inline Vector ensure_vec(const Map map, const m_uint key) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>289</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    return (Vector)&amp;VVAL(map, idx);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  const m_int idx = map_index(map, key);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>290</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  map_set(map, key, 0);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  if(idx > -1)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>291</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  const Vector v = (Vector)&amp;VVAL(map, VLEN(map) - 1);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    return (Vector)&amp;VVAL(map, idx);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>292</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  vector_init(v);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  map_set(map, key, 0);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>293</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  return v;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  const Vector v = (Vector)&amp;VVAL(map, VLEN(map) - 1);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>294</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  vector_init(v);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>295</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  return v;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>296</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>295</pre></td>
+    <td align="right" class="lineno"><pre>297</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>296</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>ANN static void op_visit(const MemPool mp, const Nspc nspc, const struct Op_Import* opi, const Vector visited) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>297</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  if(vector_find(visited, (m_uint)nspc) != -1)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>298</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    return;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>ANN static void op_visit(const MemPool mp, const Nspc nspc, const struct Op_Import* opi, const Vector visited) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>299</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  vector_add(visited, (m_uint)nspc);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  if(vector_find(visited, (m_uint)nspc) != -1)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>300</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  if(nspc->info->op_map.ptr) {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    return;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>301</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    const Map map = &amp;nspc->info->op_map;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  vector_add(visited, (m_uint)nspc);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>302</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    const Map base_map = ensure_map(opi->rhs->info->value->from->owner);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  if(nspc->info->op_map.ptr) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>303</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    for(m_uint i = 0; i &lt; map_size(map); i++) {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    const Map map = &amp;nspc->info->op_map;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>304</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>      const Vector v = (Vector)&amp;VVAL(map, i);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    const Map base_map = ensure_map(opi->rhs->info->value->from->owner);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>305</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>      const m_uint sz = vector_size(v);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    for(m_uint i = 0; i &lt; map_size(map); i++) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>306</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>      for(m_uint j = 0; j &lt; sz; j++) {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>      const Vector v = (Vector)&amp;VVAL(map, i);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>307</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>        M_Operator *const mo = (M_Operator*)vector_at(v, j);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>      const m_uint sz = vector_size(v);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>308</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>        if(opi->lhs == mo->lhs || opi->lhs == mo->rhs || opi->lhs == mo->ret) {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>      for(m_uint j = 0; j &lt; sz; j++) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>309</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>          const M_Operator* tmp = cpy_mo(mp, mo, opi->lhs, opi->rhs);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        M_Operator *const mo = (M_Operator*)vector_at(v, j);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>310</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>          const Vector target = ensure_vec(mp, base_map, VKEY(map, i));</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        if(opi->lhs == mo->lhs || opi->lhs == mo->rhs || opi->lhs == mo->ret) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>311</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>          vector_add(target, (vtype)tmp);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>          const M_Operator* tmp = cpy_mo(mp, mo, opi->lhs, opi->rhs);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>312</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        }</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>          const Vector target = ensure_vec(base_map, VKEY(map, i));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>313</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>      }</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>          vector_add(target, (vtype)tmp);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>314</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
+    <td align="left" class="src "><pre>        }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>315</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="left" class="src "><pre>      }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>316</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>317</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>318</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>  if(nspc->parent)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>317</pre></td>
+    <td align="right" class="lineno"><pre>319</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>    op_visit(mp, nspc->parent, opi, visited);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>318</pre></td>
+    <td align="right" class="lineno"><pre>320</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>319</pre></td>
+    <td align="right" class="lineno"><pre>321</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>320</pre></td>
+    <td align="right" class="lineno"><pre>322</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>ANN void op_cpy(const Env env, const struct Op_Import* opi) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>321</pre></td>
+    <td align="right" class="lineno"><pre>323</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  struct Vector_ visited;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>322</pre></td>
+    <td align="right" class="lineno"><pre>324</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>  vector_init(&amp;visited);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>323</pre></td>
+    <td align="right" class="lineno"><pre>325</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>  op_visit(env->gwion->mp, opi->rhs->info->value->from->owner, opi, &amp;visited);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>324</pre></td>
+    <td align="right" class="lineno"><pre>326</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>  op_visit(env->gwion->mp, opi->lhs->info->value->from->owner, opi, &amp;visited);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>325</pre></td>
+    <td align="right" class="lineno"><pre>327</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>  op_visit(env->gwion->mp, env->curr, opi, &amp;visited);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>326</pre></td>
+    <td align="right" class="lineno"><pre>328</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>  vector_release(&amp;visited);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>327</pre></td>
+    <td align="right" class="lineno"><pre>329</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
