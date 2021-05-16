@@ -72,7 +72,7 @@ TOTAL 89% :+1:
 ## lines coverage
 
 TOTAL -4404% :-1:
-TOTAL 70% :+1:
+TOTAL 71% :+1:
 
 <details>
 |file|diff|status|
@@ -129,7 +129,6 @@ TOTAL 70% :+1:
 |[src/parse/operator.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_operator.c.html)|-7%|:-1:|
 |[src/parse/scan0.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_scan0.c.html)|-23%|:+1:|
 |[src/parse/scan1.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_scan1.c.html)|2%|:+1:|
-|[src/parse/scan2.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_scan2.c.html)|-1%|:-1:|
 |[src/parse/scanx.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_scanx.c.html)|-11%|:-1:|
 |[src/parse/template.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_template.c.html)|-26%|:+1:|
 |[src/parse/traverse.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_traverse.c.html)|-37%|:-1:|
