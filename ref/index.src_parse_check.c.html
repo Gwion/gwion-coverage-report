@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-05-18 19:43:13</td>
+            <td class="headerValue">2021-05-18 20:55:33</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">799</td>
@@ -4839,7 +4839,7 @@
     <td align="right" class="lineno"><pre>649</pre></td>
     <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 9 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>9</pre></td>
-    <td align="left" class="src coveredLine"><pre>    CHECK_BO(envset_push(&amp;es, v->from->owner_class, v->from->owner));</pre></td>
+    <td align="left" class="src coveredLine"><pre>    CHECK_BO(envset_pushv(&amp;es, v));</pre></td>
     </tr>
 
     <tr>
@@ -5819,7 +5819,7 @@
     <td align="right" class="lineno"><pre>789</pre></td>
     <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 3 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>      CHECK_BO(envset_push(&amp;es, func->value_ref->from->owner_class, func->value_ref->from->owner));</pre></td>
+    <td align="left" class="src coveredLine"><pre>      CHECK_BO(envset_pushv(&amp;es, func->value_ref));</pre></td>
     </tr>
 
     <tr>
@@ -9563,28 +9563,28 @@
     <tr>
     <td align="right" class="lineno"><pre>1324</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>17</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static m_bool check_stmt_pp(const Env env, const Stmt_PP stmt) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1325</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3 times">&check;</span><span class="takenBranch" title="Branch 1 taken 15 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="takenBranch" title="Branch 1 taken 15 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>17</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(stmt->pp_type == ae_pp_include)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1326</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>    env->name = stmt->data;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1327</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>17</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
@@ -9654,14 +9654,14 @@
     <tr>
     <td align="right" class="lineno"><pre>1337</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>5421</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5420</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN m_bool check_stmt(const Env env, const Stmt stmt) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1338</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>5421</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5420</pre></td>
     <td align="left" class="src coveredLine"><pre>  return check_stmt_func[stmt->stmt_type](env, &amp;stmt->d);</pre></td>
     </tr>
 
@@ -9682,28 +9682,28 @@
     <tr>
     <td align="right" class="lineno"><pre>1341</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>5271</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5270</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static m_bool check_stmt_list(const Env env, Stmt_List l) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1342</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 133 times">&check;</span><span class="takenBranch" title="Branch 2 taken 5138 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>5271</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 133 times">&check;</span><span class="takenBranch" title="Branch 2 taken 5137 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5270</pre></td>
     <td align="left" class="src coveredLine"><pre>  do CHECK_BB(check_stmt(env, l->stmt));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1343</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1249 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3889 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>5138</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1249 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3888 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5137</pre></td>
     <td align="left" class="src coveredLine"><pre>  while((l = l->next));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1344</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3889</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>3888</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
@@ -10977,7 +10977,7 @@
     <tr>
     <td align="right" class="lineno"><pre>1526</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>28005</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>28004</pre></td>
     <td align="left" class="src coveredLine"><pre>HANDLE_SECTION_FUNC(check, m_bool, Env)</pre></td>
     </tr>
 
@@ -12062,35 +12062,35 @@
     <tr>
     <td align="right" class="lineno"><pre>1681</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>376</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>375</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN static inline void check_unhandled(const Env env) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1682</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>376</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>375</pre></td>
     <td align="left" class="src coveredLine"><pre>  const Vector v = &amp;env->scope->effects;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1683</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>376</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>375</pre></td>
     <td align="left" class="src coveredLine"><pre>  const m_uint _w = vector_back(v);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1684</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 372 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>376</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 371 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>375</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(!_w)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1685</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>372</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>371</pre></td>
     <td align="left" class="src coveredLine"><pre>    return;</pre></td>
     </tr>
 
@@ -12174,35 +12174,35 @@
     <tr>
     <td align="right" class="lineno"><pre>1697</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>884</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>883</pre></td>
     <td align="left" class="src coveredLine"><pre>ANN m_bool check_ast(const Env env, Ast ast) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1698</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 149 times">&check;</span><span class="takenBranch" title="Branch 2 taken 735 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>884</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 149 times">&check;</span><span class="takenBranch" title="Branch 2 taken 734 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>883</pre></td>
     <td align="left" class="src coveredLine"><pre>  do CHECK_BB(check_section(env, ast->section));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1699</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 359 times">&check;</span><span class="takenBranch" title="Branch 1 taken 376 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>735</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 359 times">&check;</span><span class="takenBranch" title="Branch 1 taken 375 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>734</pre></td>
     <td align="left" class="src coveredLine"><pre>  while((ast = ast->next));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1700</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>376</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>375</pre></td>
     <td align="left" class="src coveredLine"><pre>  check_unhandled(env);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>1701</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>376</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>375</pre></td>
     <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
     </tr>
 
