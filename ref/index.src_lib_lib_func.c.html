@@ -269,13 +269,13 @@
             <td class="headerValue">src/lib/lib_func.c</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">388</td>
-            <td class="headerTableEntry">443</td>
+            <td class="headerTableEntry">389</td>
+            <td class="headerTableEntry">444</td>
             <td class="headerTableEntry" style="background-color:#FFFF55">87.6 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-05-19 18:00:19</td>
+            <td class="headerValue">2021-05-22 22:48:51</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">163</td>
@@ -1073,7 +1073,7 @@
     <td align="right" class="lineno"><pre>111</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    puts("too many effects");</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    gwerr_secondary("too many effects", env->name, info->pos);</pre></td>
     </tr>
 
     <tr>
@@ -3719,7 +3719,7 @@
     <td align="right" class="lineno"><pre>489</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Instr instr = emit_add_instr(emit, RegPushImm);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Instr instr = emit_add_instr(emit, RegSetImm);</pre></td>
     </tr>
 
     <tr>
@@ -3733,718 +3733,725 @@
     <td align="right" class="lineno"><pre>491</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
+    <td align="left" class="src coveredLine"><pre>  instr->m_val2 = -SZ_INT;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>492</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return ret;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>493</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>494</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>ANN Type check_exp_unary_spork(const Env env, const Stmt code);</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>495</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>ANN Type check_exp_unary_spork(const Env env, const Stmt code);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>496</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>ANN static void fork_exp(const Env env, const Exp_Unary* unary) {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>497</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  const Stmt stmt = new_stmt_exp(env->gwion->mp, ae_stmt_exp, unary->exp, unary->exp->pos);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>ANN static void fork_exp(const Env env, const Exp_Unary* unary) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>498</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  const Stmt_List list = new_stmt_list(env->gwion->mp, stmt, NULL);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  const Stmt stmt = new_stmt_exp(env->gwion->mp, ae_stmt_exp, unary->exp, unary->exp->pos);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>499</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  const Stmt code = new_stmt_code(env->gwion->mp, list, unary->exp->pos);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  const Stmt_List list = new_stmt_list(env->gwion->mp, stmt, NULL);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>500</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  ((Exp_Unary*)unary)->exp = NULL;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  const Stmt code = new_stmt_code(env->gwion->mp, list, unary->exp->pos);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>501</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  ((Exp_Unary*)unary)->code = code;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  ((Exp_Unary*)unary)->exp = NULL;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>502</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  ((Exp_Unary*)unary)->unary_type = unary_code;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  ((Exp_Unary*)unary)->code = code;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>503</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  ((Exp_Unary*)unary)->unary_type = unary_code;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>504</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>505</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>ANN static Type fork_type(const Env env, const Exp_Unary* unary) {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>506</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  const Type t = unary->exp->type;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>ANN static Type fork_type(const Env env, const Exp_Unary* unary) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>507</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  fork_exp(env, unary);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  const Type t = unary->exp->type;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>508</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  if(t == env->gwion->type[et_void])</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  fork_exp(env, unary);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>509</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    return env->gwion->type[et_fork];</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  if(t == env->gwion->type[et_void])</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>510</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  char c[21 + strlen(t->name)];</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    return env->gwion->type[et_fork];</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>511</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  sprintf(c, "TypedFork:[%s]", t->name);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  char c[21 + strlen(t->name)];</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>512</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  const Type fork = env->gwion->type[et_fork];</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  sprintf(c, "TypedFork:[%s]", t->name);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>513</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  UNSET_FLAG(fork, final);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  const Type fork = env->gwion->type[et_fork];</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>514</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  const Type typed = str2type(env->gwion, "TypedFork", exp_self(unary)->pos);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  UNSET_FLAG(fork, final);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>515</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  const Type typed = str2type(env->gwion, "TypedFork", exp_self(unary)->pos);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>516</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  // ensure room for retval</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>516</pre></td>
+    <td align="right" class="lineno"><pre>517</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>  if(typed->nspc->info->offset == fork->nspc->info->offset)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>517</pre></td>
+    <td align="right" class="lineno"><pre>518</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>    typed->nspc->info->offset += t->size;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>518</pre></td>
+    <td align="right" class="lineno"><pre>519</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>  UNSET_FLAG(typed, final);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>519</pre></td>
+    <td align="right" class="lineno"><pre>520</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>  const Type ret = str2type(env->gwion, c, exp_self(unary)->pos);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>520</pre></td>
+    <td align="right" class="lineno"><pre>521</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>  SET_FLAG(typed, final);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>521</pre></td>
+    <td align="right" class="lineno"><pre>522</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>  SET_FLAG(fork, final);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>522</pre></td>
+    <td align="right" class="lineno"><pre>523</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>  return ret;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>523</pre></td>
+    <td align="right" class="lineno"><pre>524</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>524</pre></td>
+    <td align="right" class="lineno"><pre>525</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>525</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>51</pre></td>
-    <td align="left" class="src coveredLine"><pre>static OP_CHECK(opck_spork) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>526</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>51</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Exp_Unary* unary = (Exp_Unary*)data;</pre></td>
+    <td align="left" class="src coveredLine"><pre>static OP_CHECK(opck_spork) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>527</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>51</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Exp_Unary* unary = (Exp_Unary*)data;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>528</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 27 times">&check;</span><span class="takenBranch" title="Branch 1 taken 24 times">&check;</span><span class="takenBranch" title="Branch 2 taken 26 times">&check;</span><span class="takenBranch" title="Branch 3 taken 1 times">&check;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>51</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(unary->unary_type == unary_exp &amp;&amp; unary->exp->exp_type == ae_exp_call) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>528</pre></td>
+    <td align="right" class="lineno"><pre>529</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>26</pre></td>
     <td align="left" class="src coveredLine"><pre>    const m_bool is_spork = unary->op == insert_symbol("spork");</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>529</pre></td>
+    <td align="right" class="lineno"><pre>530</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 26 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>26</pre></td>
     <td align="left" class="src coveredLine"><pre>    return is_spork ? env->gwion->type[et_shred] : fork_type(env, unary);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>530</pre></td>
+    <td align="right" class="lineno"><pre>531</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>531</pre></td>
+    <td align="right" class="lineno"><pre>532</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 24 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>25</pre></td>
     <td align="left" class="src coveredLine"><pre>  if(unary->unary_type == unary_code) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>532</pre></td>
+    <td align="right" class="lineno"><pre>533</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>24</pre></td>
     <td align="left" class="src coveredLine"><pre>    ++env->scope->depth;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>533</pre></td>
+    <td align="right" class="lineno"><pre>534</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>24</pre></td>
     <td align="left" class="src coveredLine"><pre>    nspc_push_value(env->gwion->mp, env->curr);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>534</pre></td>
+    <td align="right" class="lineno"><pre>535</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>24</pre></td>
     <td align="left" class="src coveredLine"><pre>    const m_bool ret = check_stmt(env, unary->code);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>535</pre></td>
+    <td align="right" class="lineno"><pre>536</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>24</pre></td>
     <td align="left" class="src coveredLine"><pre>    nspc_pop_value(env->gwion->mp, env->curr);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>536</pre></td>
+    <td align="right" class="lineno"><pre>537</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>24</pre></td>
     <td align="left" class="src coveredLine"><pre>    --env->scope->depth;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>537</pre></td>
+    <td align="right" class="lineno"><pre>538</pre></td>
     <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 24 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>24</pre></td>
     <td align="left" class="src coveredLine"><pre>    CHECK_BN(ret);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>538</pre></td>
+    <td align="right" class="lineno"><pre>539</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 17 times">&check;</span><span class="takenBranch" title="Branch 1 taken 7 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>24</pre></td>
     <td align="left" class="src coveredLine"><pre>    return env->gwion->type[unary->op == insert_symbol("spork") ? et_shred : et_fork];</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>539</pre></td>
+    <td align="right" class="lineno"><pre>540</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>540</pre></td>
+    <td align="right" class="lineno"><pre>541</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>  ERR_O(exp_self(unary)->pos, _("only function calls can be sporked..."))</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>541</pre></td>
+    <td align="right" class="lineno"><pre>542</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>542</pre></td>
+    <td align="right" class="lineno"><pre>543</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>543</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>47</pre></td>
-    <td align="left" class="src coveredLine"><pre>static OP_EMIT(opem_spork) {</pre></td>
-    </tr>
-
-    <tr>
     <td align="right" class="lineno"><pre>544</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>47</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const Exp_Unary* unary = (Exp_Unary*)data;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
+    <td align="left" class="src coveredLine"><pre>static OP_EMIT(opem_spork) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>545</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>47</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return emit_exp_spork(emit, unary);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
+    <td align="left" class="src coveredLine"><pre>  const Exp_Unary* unary = (Exp_Unary*)data;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>546</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>48</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return emit_exp_spork(emit, unary);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>547</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>548</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>40</pre></td>
-    <td align="left" class="src coveredLine"><pre>static FREEARG(freearg_xork) {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>549</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>40</pre></td>
-    <td align="left" class="src coveredLine"><pre>  vmcode_remref((VM_Code)instr->m_val, gwion);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>41</pre></td>
+    <td align="left" class="src coveredLine"><pre>static FREEARG(freearg_xork) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>550</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>40</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>41</pre></td>
+    <td align="left" class="src coveredLine"><pre>  vmcode_remref((VM_Code)instr->m_val, gwion);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>551</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount coveredLine"><pre>41</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>552</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
-    <td align="left" class="src coveredLine"><pre>static FREEARG(freearg_dottmpl) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>553</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
-    <td align="left" class="src coveredLine"><pre>  struct dottmpl_ *dt = (struct dottmpl_*)instr->m_val;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>554</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 30 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(dt->tl)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>555</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
-    <td align="left" class="src coveredLine"><pre>    free_type_list(((Gwion)gwion)->mp, dt->tl);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>556</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
-    <td align="left" class="src coveredLine"><pre>  mp_free(((Gwion)gwion)->mp, dottmpl, dt);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>557</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>558</pre></td>
-    <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
+    <td align="right" class="lineno"><pre>553</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
+    <td align="left" class="src coveredLine"><pre>static FREEARG(freearg_dottmpl) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>554</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
+    <td align="left" class="src coveredLine"><pre>  struct dottmpl_ *dt = (struct dottmpl_*)instr->m_val;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>555</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 19 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
+    <td align="left" class="src coveredLine"><pre>  if(dt->tl)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>556</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
+    <td align="left" class="src coveredLine"><pre>    free_type_list(((Gwion)gwion)->mp, dt->tl);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>557</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
+    <td align="left" class="src coveredLine"><pre>  mp_free(((Gwion)gwion)->mp, dottmpl, dt);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>558</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    </tr>
+
+    <tr>
     <td align="right" class="lineno"><pre>559</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>GWION_IMPORT(func) {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>560</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_cond(gwi, "@func_ptr", BranchEqInt, BranchNeqInt))</pre></td>
+    <td align="left" class="src coveredLine"><pre>GWION_IMPORT(func) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>561</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, (m_str)OP_ANY_TYPE, "@function", NULL))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_cond(gwi, "@func_ptr", BranchEqInt, BranchNeqInt))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>562</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_func_call))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, (m_str)OP_ANY_TYPE, "@function", NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>563</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "=>", NULL))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_func_call))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>564</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, NULL, "@func_ptr", "bool"))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "=>", NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>565</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "!", IntNot))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, NULL, "@func_ptr", "bool"))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>566</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "@function", "@func_ptr", NULL))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "!", IntNot))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>567</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_fptr_at))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "@function", "@func_ptr", NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>568</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_func_assign))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_fptr_at))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>569</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@=>", NULL))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_func_assign))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>570</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_fptr_cast))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@=>", NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>571</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_fptr_cast))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_fptr_cast))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>572</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "$", NULL))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_fptr_cast))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>573</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_fptr_impl))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "$", NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>574</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_fptr_impl))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_fptr_impl))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>575</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@implicit", NULL))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_fptr_impl))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>576</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "@op", "@func_ptr", NULL))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@implicit", NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>577</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_op_impl))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "@op", "@func_ptr", NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>578</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_op_impl))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_op_impl))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>579</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@implicit", NULL))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_op_impl))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>580</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, NULL, (m_str)OP_ANY_TYPE, NULL))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@implicit", NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>581</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_spork))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, NULL, (m_str)OP_ANY_TYPE, NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>582</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_spork))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_spork))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>583</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "spork", NULL))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_spork))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>584</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_spork))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "spork", NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>585</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_spork))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_spork))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>586</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "fork", NULL))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_emi(gwi, opem_spork))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>587</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "@function", "@function", NULL))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "fork", NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>588</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_auto_fptr))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_ini(gwi, "@function", "@function", NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>589</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@=>", NULL))</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_add(gwi, opck_auto_fptr))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>590</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  gwi_register_freearg(gwi, SporkIni, freearg_xork);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  GWI_BB(gwi_oper_end(gwi, "@=>", NULL))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>591</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  gwi_register_freearg(gwi, DotTmpl, freearg_dottmpl);</pre></td>
+    <td align="left" class="src coveredLine"><pre>  gwi_register_freearg(gwi, SporkIni, freearg_xork);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>592</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>691</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
+    <td align="left" class="src coveredLine"><pre>  gwi_register_freearg(gwi, DotTmpl, freearg_dottmpl);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>593</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>691</pre></td>
+    <td align="left" class="src coveredLine"><pre>  return GW_OK;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>594</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
