@@ -26,7 +26,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2021-06-16 17:29:37</td>
+      <td>2021-06-19 20:33:12</td>
     </tr>
   </table>
 </div>
@@ -223,7 +223,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="k">static</span> <span class="kt">void</span> <span class="nf">afl_run</span><span class="p">(</span><span class="k">const</span> <span class="n">Gwion</span> <span class="n">gwion</span><span class="p">)</span> <span class="p">{</span></td>
+      <td class="src "><span class="cp">#include</span> <span class="cpf">&quot;compile.h&quot;</span><span class="cp"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -231,7 +231,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">  <span class="n">gw_seed</span><span class="p">(</span><span class="n">gwion</span><span class="o">-&gt;</span><span class="n">vm</span><span class="o">-&gt;</span><span class="n">rand</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span></td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
@@ -239,7 +239,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">  <span class="n">__AFL_INIT</span><span class="p">();</span></td>
+      <td class="src "><span class="k">static</span> <span class="kt">void</span> <span class="nf">afl_run</span><span class="p">(</span><span class="k">const</span> <span class="n">Gwion</span> <span class="n">gwion</span><span class="p">)</span> <span class="p">{</span></td>
     </tr>
 
     <tr class="source-line">
@@ -247,7 +247,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">  <span class="k">while</span> <span class="p">(</span><span class="n">__AFL_LOOP</span><span class="p">(</span><span class="mi">256</span><span class="p">))</span> <span class="p">{</span></td>
+      <td class="src ">  <span class="n">gw_seed</span><span class="p">(</span><span class="n">gwion</span><span class="o">-&gt;</span><span class="n">vm</span><span class="o">-&gt;</span><span class="n">rand</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span></td>
     </tr>
 
     <tr class="source-line">
@@ -255,7 +255,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">    <span class="kt">FILE</span> <span class="o">*</span><span class="n">f</span> <span class="o">=</span> <span class="n">fdopen</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span></td>
+      <td class="src ">  <span class="n">__AFL_INIT</span><span class="p">();</span></td>
     </tr>
 
     <tr class="source-line">
@@ -263,7 +263,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">    <span class="n">push_global</span><span class="p">(</span><span class="n">gwion</span><span class="p">,</span> <span class="s">&quot;[afl]&quot;</span><span class="p">);</span></td>
+      <td class="src ">  <span class="k">while</span> <span class="p">(</span><span class="n">__AFL_LOOP</span><span class="p">(</span><span class="mi">256</span><span class="p">))</span> <span class="p">{</span></td>
     </tr>
 
     <tr class="source-line">
@@ -271,7 +271,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">    <span class="k">if</span> <span class="p">(</span><span class="n">compile_file</span><span class="p">(</span><span class="n">gwion</span><span class="p">,</span> <span class="s">&quot;afl&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">))</span> <span class="n">gwion_run</span><span class="p">(</span><span class="n">gwion</span><span class="p">);</span></td>
+      <td class="src ">    <span class="kt">FILE</span> <span class="o">*</span><span class="n">f</span> <span class="o">=</span> <span class="n">fdopen</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span></td>
     </tr>
 
     <tr class="source-line">
@@ -279,7 +279,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">    <span class="n">pop_global</span><span class="p">(</span><span class="n">gwion</span><span class="p">);</span></td>
+      <td class="src ">    <span class="n">push_global</span><span class="p">(</span><span class="n">gwion</span><span class="p">,</span> <span class="s">&quot;[afl]&quot;</span><span class="p">);</span></td>
     </tr>
 
     <tr class="source-line">
@@ -287,7 +287,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src ">  <span class="p">}</span></td>
+      <td class="src ">    <span class="k">if</span> <span class="p">(</span><span class="n">compile_file</span><span class="p">(</span><span class="n">gwion</span><span class="p">,</span> <span class="s">&quot;afl&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">))</span> <span class="n">gwion_run</span><span class="p">(</span><span class="n">gwion</span><span class="p">);</span></td>
     </tr>
 
     <tr class="source-line">
@@ -295,7 +295,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="p">}</span></td>
+      <td class="src ">    <span class="n">pop_global</span><span class="p">(</span><span class="n">gwion</span><span class="p">);</span></td>
     </tr>
 
     <tr class="source-line">
@@ -303,7 +303,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src ">  <span class="p">}</span></td>
     </tr>
 
     <tr class="source-line">
@@ -311,7 +311,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#define gwion_run(a)                                                           \</span></td>
+      <td class="src "><span class="p">}</span></td>
     </tr>
 
     <tr class="source-line">
@@ -319,7 +319,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">  {                                                                            \</span></td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
@@ -327,7 +327,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">    afl_run(a);                                                                \</span></td>
+      <td class="src "><span class="cp">#define gwion_run(a)                                                           \</span></td>
     </tr>
 
     <tr class="source-line">
@@ -335,7 +335,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">    return 0;                                                                  \</span></td>
+      <td class="src "><span class="cp">  {                                                                            \</span></td>
     </tr>
 
     <tr class="source-line">
@@ -343,7 +343,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">  }</span></td>
+      <td class="src "><span class="cp">    afl_run(a);                                                                \</span></td>
     </tr>
 
     <tr class="source-line">
@@ -351,7 +351,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#endif</span></td>
+      <td class="src "><span class="cp">    return 0;                                                                  \</span></td>
     </tr>
 
     <tr class="source-line">
@@ -359,23 +359,23 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cp">  }</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l38" href="#l38">38</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">695</td>
-      <td class="src coveredLine"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#endif</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l39" href="#l39">39</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">695</td>
-      <td class="src coveredLine">  <span class="n">Arg</span> <span class="n">arg</span> <span class="o">=</span> <span class="p">{.</span><span class="n">arg</span> <span class="o">=</span> <span class="p">{.</span><span class="n">argc</span> <span class="o">=</span> <span class="n">argc</span><span class="p">,</span> <span class="p">.</span><span class="n">argv</span> <span class="o">=</span> <span class="n">argv</span><span class="p">},</span> <span class="p">.</span><span class="n">loop</span> <span class="o">=</span> <span class="nb">false</span><span class="p">};</span></td>
+      <td class="linecount "></td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
@@ -383,7 +383,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">695</td>
-      <td class="src coveredLine">  <span class="n">signal</span><span class="p">(</span><span class="n">SIGINT</span><span class="p">,</span> <span class="n">sig</span><span class="p">);</span></td>
+      <td class="src coveredLine"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span></td>
     </tr>
 
     <tr class="source-line">
@@ -391,7 +391,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">695</td>
-      <td class="src coveredLine">  <span class="n">signal</span><span class="p">(</span><span class="n">SIGTERM</span><span class="p">,</span> <span class="n">sig</span><span class="p">);</span></td>
+      <td class="src coveredLine">  <span class="n">Arg</span> <span class="n">arg</span> <span class="o">=</span> <span class="p">{.</span><span class="n">arg</span> <span class="o">=</span> <span class="p">{.</span><span class="n">argc</span> <span class="o">=</span> <span class="n">argc</span><span class="p">,</span> <span class="p">.</span><span class="n">argv</span> <span class="o">=</span> <span class="n">argv</span><span class="p">},</span> <span class="p">.</span><span class="n">loop</span> <span class="o">=</span> <span class="nb">false</span><span class="p">};</span></td>
     </tr>
 
     <tr class="source-line">
@@ -399,7 +399,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">695</td>
-      <td class="src coveredLine">  <span class="k">struct</span> <span class="nc">Gwion_</span> <span class="n">gwion</span> <span class="o">=</span> <span class="p">{};</span></td>
+      <td class="src coveredLine">  <span class="n">signal</span><span class="p">(</span><span class="n">SIGINT</span><span class="p">,</span> <span class="n">sig</span><span class="p">);</span></td>
     </tr>
 
     <tr class="source-line">
@@ -407,7 +407,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">695</td>
-      <td class="src coveredLine">  <span class="k">const</span> <span class="n">m_bool</span>  <span class="n">ini</span>   <span class="o">=</span> <span class="n">gwion_ini</span><span class="p">(</span><span class="o">&amp;</span><span class="n">gwion</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">arg</span><span class="p">);</span></td>
+      <td class="src coveredLine">  <span class="n">signal</span><span class="p">(</span><span class="n">SIGTERM</span><span class="p">,</span> <span class="n">sig</span><span class="p">);</span></td>
     </tr>
 
     <tr class="source-line">
@@ -415,11 +415,27 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">695</td>
-      <td class="src coveredLine">  <span class="n">arg_release</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arg</span><span class="p">);</span></td>
+      <td class="src coveredLine">  <span class="k">struct</span> <span class="nc">Gwion_</span> <span class="n">gwion</span> <span class="o">=</span> <span class="p">{};</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l45" href="#l45">45</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">695</td>
+      <td class="src coveredLine">  <span class="k">const</span> <span class="n">m_bool</span>  <span class="n">ini</span>   <span class="o">=</span> <span class="n">gwion_ini</span><span class="p">(</span><span class="o">&amp;</span><span class="n">gwion</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">arg</span><span class="p">);</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l46" href="#l46">46</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">695</td>
+      <td class="src coveredLine">  <span class="n">arg_release</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arg</span><span class="p">);</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l47" href="#l47">47</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -434,7 +450,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l46" href="#l46">46</a></td>
+      <td class="lineno"><a id="l48" href="#l48">48</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">694</td>
@@ -442,7 +458,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l47" href="#l47">47</a></td>
+      <td class="lineno"><a id="l49" href="#l49">49</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -450,7 +466,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l48" href="#l48">48</a></td>
+      <td class="lineno"><a id="l50" href="#l50">50</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">694</td>
@@ -458,7 +474,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l49" href="#l49">49</a></td>
+      <td class="lineno"><a id="l51" href="#l51">51</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -466,7 +482,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l50" href="#l50">50</a></td>
+      <td class="lineno"><a id="l52" href="#l52">52</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -474,7 +490,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l51" href="#l51">51</a></td>
+      <td class="lineno"><a id="l53" href="#l53">53</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -482,7 +498,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l52" href="#l52">52</a></td>
+      <td class="lineno"><a id="l54" href="#l54">54</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
