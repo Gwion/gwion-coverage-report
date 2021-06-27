@@ -18,7 +18,7 @@ src/env/context.c                             23      23   100%
 src/env/env.c                                 87      87   100%   
 src/env/env_utils.c                           72      72   100%   
 src/env/envset.c                              56      52    92%   16,24,28,62
-src/env/func.c                                28      28   100%   
+src/env/func.c                                29      29   100%   
 src/env/nspc.c                                70      69    98%   42
 src/env/trait.c                                8       0     0%   5-8,11-14
 src/env/tupleform.c                           37      37   100%   
@@ -84,8 +84,8 @@ src/vm/vm_code.c                             134     108    80%   86-94,97-102,1
 src/vm/vm_name.c                               8       5    62%   11-13
 src/vm/vm_shred.c                             34      34   100%   
 ------------------------------------------------------------------------------
-TOTAL                                      12467   11033    88%
+TOTAL                                      12468   11034    88%
 ------------------------------------------------------------------------------
-lines: 88.5% (11033 out of 12467)
+lines: 88.5% (11034 out of 12468)
 branches: 70.6% (5089 out of 7204)
 ```
