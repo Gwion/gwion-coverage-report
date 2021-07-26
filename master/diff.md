@@ -48,7 +48,7 @@ TOTAL 88% :+1:
 |[src/lib/modules.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_modules.c.html)|-26%|:-1:|
 |[src/lib/object.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_object.c.html)|8%|:+1:|
 |[src/lib/object_op.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_object_op.c.html)|-7%|:-1:|
-|[src/lib/opfunc.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_opfunc.c.html)|-13%|:+1:|
+|[src/lib/opfunc.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_opfunc.c.html)|-14%|:+1:|
 |[src/lib/prim.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_prim.c.html)|4%|:+1:|
 |[src/lib/prim_values.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_prim_values.c.html)|18%|:-1:|
 |[src/lib/ptr.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_ptr.c.html)|45%|:+1:|
@@ -137,7 +137,7 @@ TOTAL 70% :+1:
 |[src/lib/union.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_union.c.html)|-17%|:-1:|
 |[src/lib/vararg.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_vararg.c.html)|-19%|:+1:|
 |[src/main.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_main.c.html)|-41%|:-1:|
-|[src/parse/check.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_check.c.html)|-5%|:-1:|
+|[src/parse/check.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_check.c.html)|-6%|:-1:|
 |[src/parse/check_traits.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_check_traits.c.html)|-85%|:-1:|
 |[src/parse/compat_func.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_compat_func.c.html)|75%|:-1:|
 |[src/parse/did_you_mean.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_did_you_mean.c.html)|3%|:+1:|
