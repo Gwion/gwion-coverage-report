@@ -5,7 +5,7 @@ Summary of coverage changes
 ## lines coverage
 
 TOTAL -9730% :-1:
-TOTAL 88% :+1:
+TOTAL 89% :+1:
 
 <details>
 |file|diff|status|
@@ -29,7 +29,7 @@ TOTAL 88% :+1:
 |[src/gwion.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_gwion.c.html)|-10%|:+1:|
 |[src/gwiondata.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_gwiondata.c.html)|66%|:-1:|
 |[src/import/cleaner.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_cleaner.c.html)|-1%|:-1:|
-|[src/import/import_cdef.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_import_cdef.c.html)|-11%|:+1:|
+|[src/import/import_cdef.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_import_cdef.c.html)|-10%|:+1:|
 |[src/import/import_checker.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_import_checker.c.html)|-10%|:+1:|
 |[src/import/import_enum.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_import_enum.c.html)|-5%|:+1:|
 |[src/import/import_fdef.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_import_fdef.c.html)|-7%|:+1:|
@@ -53,7 +53,7 @@ TOTAL 88% :+1:
 |[src/lib/prim_values.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_prim_values.c.html)|18%|:-1:|
 |[src/lib/ptr.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_ptr.c.html)|45%|:+1:|
 |[src/lib/ref.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_ref.c.html)|-9%|:+1:|
-|[src/lib/shred.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_shred.c.html)|-11%|:-1:|
+|[src/lib/shred.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_shred.c.html)|-9%|:-1:|
 |[src/lib/string.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_string.c.html)|-24%|:+1:|
 |[src/lib/ugen.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_ugen.c.html)|-10%|:+1:|
 |[src/lib/union.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_union.c.html)|-8%|:-1:|
@@ -110,7 +110,7 @@ TOTAL 70% :+1:
 |[src/env/value.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_env_value.c.html)|68%|:-1:|
 |[src/gwion.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_gwion.c.html)|-25%|:+1:|
 |[src/import/cleaner.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_cleaner.c.html)|9%|:+1:|
-|[src/import/import_cdef.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_import_cdef.c.html)|-1%|:-1:|
+|[src/import/import_cdef.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_import_cdef.c.html)|1%|:+1:|
 |[src/import/import_checker.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_import_checker.c.html)|-11%|:-1:|
 |[src/import/import_enum.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_import_enum.c.html)|-24%|:+1:|
 |[src/import/import_fdef.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_import_fdef.c.html)|-9%|:-1:|
@@ -130,7 +130,7 @@ TOTAL 70% :+1:
 |[src/lib/prim.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_prim.c.html)|-36%|:-1:|
 |[src/lib/ptr.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_ptr.c.html)|41%|:+1:|
 |[src/lib/ref.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_ref.c.html)|-37%|:-1:|
-|[src/lib/shred.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_shred.c.html)|-28%|:-1:|
+|[src/lib/shred.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_shred.c.html)|-25%|:-1:|
 |[src/lib/string.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_string.c.html)|-39%|:+1:|
 |[src/lib/tmpl_info.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_tmpl_info.c.html)|-2%|:-1:|
 |[src/lib/ugen.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_lib_ugen.c.html)|-63%|:+1:|
