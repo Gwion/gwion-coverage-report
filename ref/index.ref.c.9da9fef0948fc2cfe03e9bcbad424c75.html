@@ -26,7 +26,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2021-09-10 11:29:45</td>
+      <td>2021-09-13 10:24:19</td>
     </tr>
   </table>
 </div>
@@ -40,15 +40,15 @@
     </tr>
     <tr>
       <th scope="row">Lines:</th>
-      <td>57</td>
-      <td>62</td>
-      <td class="coverage-high">91.9%</td>
+      <td>73</td>
+      <td>84</td>
+      <td class="coverage-medium">86.9%</td>
     </tr>
     <tr>
       <th scope="row">Branches:</th>
       <td>11</td>
-      <td>20</td>
-      <td class="coverage-low">55.0%</td>
+      <td>22</td>
+      <td class="coverage-low">50.0%</td>
     </tr>
   </table>
 </div>
@@ -349,7 +349,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="k">static</span><span class="w"> </span><span class="n">OP_CHECK</span><span class="p">(</span><span class="n">opck_cast_similar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+      <td class="src uncoveredLine"><span class="k">static</span><span class="w"> </span><span class="n">OP_CHECK</span><span class="p">(</span><span class="n">opck_implicit_ref</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -357,7 +357,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Exp_Cast</span><span class="w"> </span><span class="o">*</span><span class="n">cast</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Exp_Cast</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">data</span><span class="p">;</span><span class="w"></span></td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Implicit</span><span class="w"> </span><span class="o">*</span><span class="n">imp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">struct</span> <span class="nc">Implicit</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">data</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -365,11 +365,35 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">exp_self</span><span class="p">(</span><span class="n">cast</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">type</span><span class="p">;</span><span class="w"></span></td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="n">CHECK_BN</span><span class="p">(</span><span class="n">ref_access</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">imp</span><span class="o">-&gt;</span><span class="n">e</span><span class="p">));</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l37" href="#l37">37</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="n">exp_setvar</span><span class="p">(</span><span class="n">imp</span><span class="o">-&gt;</span><span class="n">e</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l38" href="#l38">38</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="n">imp</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">cast_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">imp</span><span class="o">-&gt;</span><span class="n">t</span><span class="p">;</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l39" href="#l39">39</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">imp</span><span class="o">-&gt;</span><span class="n">t</span><span class="p">;</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l40" href="#l40">40</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -377,7 +401,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l38" href="#l38">38</a></td>
+      <td class="lineno"><a id="l41" href="#l41">41</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -385,51 +409,27 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l39" href="#l39">39</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">13</td>
-      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">base2ref</span><span class="p">(</span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l40" href="#l40">40</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">13</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">struct</span> <span class="nc">Op_Func</span><span class="w">   </span><span class="n">opfunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{.</span><span class="n">ck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">opck_cast_similar</span><span class="p">};</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l41" href="#l41">41</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">13</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">struct</span> <span class="nc">Op_Import</span><span class="w"> </span><span class="n">opi</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{.</span><span class="n">op</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">insert_symbol</span><span class="p">(</span><span class="s">&quot;$&quot;</span><span class="p">),</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
       <td class="lineno"><a id="l42" href="#l42">42</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">lhs</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"></span></td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="k">static</span><span class="w"> </span><span class="n">OP_CHECK</span><span class="p">(</span><span class="n">opck_cast_similar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l43" href="#l43">43</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">ret</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"></span></td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Exp_Cast</span><span class="w"> </span><span class="o">*</span><span class="n">cast</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Exp_Cast</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">data</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l44" href="#l44">44</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">rhs</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"></span></td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">exp_self</span><span class="p">(</span><span class="n">cast</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">type</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -437,7 +437,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">opfunc</span><span class="p">,</span><span class="w"></span></td>
+      <td class="src "><span class="p">}</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -445,7 +445,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eNoOp</span><span class="p">};</span><span class="w"></span></td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
@@ -453,7 +453,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">13</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">add_op</span><span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">gwion</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">opi</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">base2ref</span><span class="p">(</span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -461,7 +461,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">13</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">opfunc</span><span class="p">.</span><span class="n">ck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">opck_implicit_similar</span><span class="p">;</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">struct</span> <span class="nc">Op_Func</span><span class="w">   </span><span class="n">opfunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{.</span><span class="n">ck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">opck_cast_similar</span><span class="p">};</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -469,23 +469,23 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">13</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">opi</span><span class="p">.</span><span class="n">op</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">insert_symbol</span><span class="p">(</span><span class="s">&quot;@implicit&quot;</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">struct</span> <span class="nc">Op_Import</span><span class="w"> </span><span class="n">opi</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{.</span><span class="n">op</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">insert_symbol</span><span class="p">(</span><span class="s">&quot;$&quot;</span><span class="p">),</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l50" href="#l50">50</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">13</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">add_op</span><span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">gwion</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">opi</span><span class="p">);</span><span class="w"></span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">lhs</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l51" href="#l51">51</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">13</td>
-      <td class="src coveredLine"><span class="p">}</span><span class="w"></span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">ret</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -493,55 +493,55 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">rhs</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l53" href="#l53">53</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">13</td>
-      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">ref2base</span><span class="p">(</span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">opfunc</span><span class="p">,</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l54" href="#l54">54</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">13</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">struct</span> <span class="nc">Op_Import</span><span class="w"> </span><span class="n">opi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{.</span><span class="n">op</span><span class="w">                      </span><span class="o">=</span><span class="w"> </span><span class="n">insert_symbol</span><span class="p">(</span><span class="s">&quot;$&quot;</span><span class="p">),</span><span class="w"></span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eNoOp</span><span class="p">};</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l55" href="#l55">55</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">lhs</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"></span></td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">add_op</span><span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">gwion</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">opi</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l56" href="#l56">56</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">ret</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"></span></td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">opfunc</span><span class="p">.</span><span class="n">ck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">opck_implicit_similar</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l57" href="#l57">57</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">rhs</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"></span></td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">opi</span><span class="p">.</span><span class="n">op</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">insert_symbol</span><span class="p">(</span><span class="s">&quot;@implicit&quot;</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l58" href="#l58">58</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">                          </span><span class="cm">/*.func=&amp;opfunc,*/</span><span class="w"> </span><span class="p">.</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eNoOp</span><span class="p">};</span><span class="w"></span></td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">add_op</span><span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">gwion</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">opi</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -549,35 +549,11 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">13</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">add_op</span><span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">gwion</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">opi</span><span class="p">);</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l60" href="#l60">60</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">13</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">opi</span><span class="p">.</span><span class="n">op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert_symbol</span><span class="p">(</span><span class="s">&quot;@implicit&quot;</span><span class="p">);</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l61" href="#l61">61</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">13</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">add_op</span><span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">gwion</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">opi</span><span class="p">);</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l62" href="#l62">62</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">13</td>
       <td class="src coveredLine"><span class="p">}</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l63" href="#l63">63</a></td>
+      <td class="lineno"><a id="l60" href="#l60">60</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -585,7 +561,191 @@
     </tr>
 
     <tr class="source-line">
+      <td class="lineno"><a id="l61" href="#l61">61</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">ref2base</span><span class="p">(</span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l62" href="#l62">62</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">struct</span> <span class="nc">Op_Import</span><span class="w"> </span><span class="n">opi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{.</span><span class="n">op</span><span class="w">                      </span><span class="o">=</span><span class="w"> </span><span class="n">insert_symbol</span><span class="p">(</span><span class="s">&quot;$&quot;</span><span class="p">),</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l63" href="#l63">63</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">lhs</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
       <td class="lineno"><a id="l64" href="#l64">64</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">ret</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l65" href="#l65">65</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">rhs</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l66" href="#l66">66</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">                          </span><span class="cm">/*.func=&amp;opfunc,*/</span><span class="w"> </span><span class="p">.</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eNoOp</span><span class="p">};</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l67" href="#l67">67</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">add_op</span><span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">gwion</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">opi</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l68" href="#l68">68</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">opi</span><span class="p">.</span><span class="n">op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert_symbol</span><span class="p">(</span><span class="s">&quot;@implicit&quot;</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l69" href="#l69">69</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">add_op</span><span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">gwion</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">opi</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l70" href="#l70">70</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="p">}</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l71" href="#l71">71</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l72" href="#l72">72</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">ref2ref</span><span class="p">(</span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l73" href="#l73">73</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">struct</span> <span class="nc">Op_Func</span><span class="w">   </span><span class="n">opfunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{.</span><span class="n">ck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">opck_implicit_ref</span><span class="w"> </span><span class="p">};</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l74" href="#l74">74</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">struct</span> <span class="nc">Op_Import</span><span class="w"> </span><span class="n">opi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{.</span><span class="n">op</span><span class="w">                      </span><span class="o">=</span><span class="w"> </span><span class="n">insert_symbol</span><span class="p">(</span><span class="s">&quot;$&quot;</span><span class="p">),</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l75" href="#l75">75</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">lhs</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l76" href="#l76">76</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">ret</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l77" href="#l77">77</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">rhs</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l78" href="#l78">78</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">                          </span><span class="p">.</span><span class="n">func</span><span class="o">=&amp;</span><span class="n">opfunc</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eNoOp</span><span class="p">};</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l79" href="#l79">79</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">add_op</span><span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">gwion</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">opi</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l80" href="#l80">80</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">opi</span><span class="p">.</span><span class="n">op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert_symbol</span><span class="p">(</span><span class="s">&quot;@implicit&quot;</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l81" href="#l81">81</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">add_op</span><span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">gwion</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">opi</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l82" href="#l82">82</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="p">}</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l83" href="#l83">83</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l84" href="#l84">84</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">15</td>
@@ -593,7 +753,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l65" href="#l65">65</a></td>
+      <td class="lineno"><a id="l85" href="#l85">85</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">15</td>
@@ -601,7 +761,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l66" href="#l66">66</a></td>
+      <td class="lineno"><a id="l86" href="#l86">86</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">15</td>
@@ -609,7 +769,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l67" href="#l67">67</a></td>
+      <td class="lineno"><a id="l87" href="#l87">87</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">15</td>
@@ -617,7 +777,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l68" href="#l68">68</a></td>
+      <td class="lineno"><a id="l88" href="#l88">88</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">15</td>
@@ -625,7 +785,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l69" href="#l69">69</a></td>
+      <td class="lineno"><a id="l89" href="#l89">89</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/4</summary>
@@ -642,7 +802,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l70" href="#l70">70</a></td>
+      <td class="lineno"><a id="l90" href="#l90">90</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">13</td>
@@ -650,7 +810,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l71" href="#l71">71</a></td>
+      <td class="lineno"><a id="l91" href="#l91">91</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">13</td>
@@ -658,7 +818,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l72" href="#l72">72</a></td>
+      <td class="lineno"><a id="l92" href="#l92">92</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">13</td>
@@ -666,7 +826,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l73" href="#l73">73</a></td>
+      <td class="lineno"><a id="l93" href="#l93">93</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">13</td>
@@ -674,7 +834,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l74" href="#l74">74</a></td>
+      <td class="lineno"><a id="l94" href="#l94">94</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">13</td>
@@ -682,7 +842,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l75" href="#l75">75</a></td>
+      <td class="lineno"><a id="l95" href="#l95">95</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">13</td>
@@ -690,7 +850,47 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l76" href="#l76">76</a></td>
+      <td class="lineno"><a id="l96" href="#l96">96</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">set_tflag</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">tflag_scan0</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l97" href="#l97">97</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">set_tflag</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">tflag_scan1</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l98" href="#l98">98</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">set_tflag</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">tflag_scan2</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l99" href="#l99">99</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">set_tflag</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">tflag_check</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l100" href="#l100">100</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">set_tflag</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">tflag_emit</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l101" href="#l101">101</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">13</td>
@@ -698,7 +898,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l77" href="#l77">77</a></td>
+      <td class="lineno"><a id="l102" href="#l102">102</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">13</td>
@@ -706,7 +906,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l78" href="#l78">78</a></td>
+      <td class="lineno"><a id="l103" href="#l103">103</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">13</td>
@@ -714,7 +914,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l79" href="#l79">79</a></td>
+      <td class="lineno"><a id="l104" href="#l104">104</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">13</td>
@@ -722,7 +922,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l80" href="#l80">80</a></td>
+      <td class="lineno"><a id="l105" href="#l105">105</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">13</td>
@@ -730,7 +930,15 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l81" href="#l81">81</a></td>
+      <td class="lineno"><a id="l106" href="#l106">106</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">ref2ref</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l107" href="#l107">107</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">13</td>
@@ -738,7 +946,31 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l82" href="#l82">82</a></td>
+      <td class="lineno"><a id="l108" href="#l108">108</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">info</span><span class="o">-&gt;</span><span class="n">tuple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_tupleform</span><span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">gwion</span><span class="o">-&gt;</span><span class="n">mp</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l109" href="#l109">109</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">type_addref</span><span class="p">(</span><span class="n">base</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l110" href="#l110">110</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">13</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">vector_add</span><span class="p">(</span><span class="o">&amp;</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">info</span><span class="o">-&gt;</span><span class="n">tuple</span><span class="o">-&gt;</span><span class="n">contains</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">vtype</span><span class="p">)</span><span class="n">base</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l111" href="#l111">111</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">13</td>
@@ -746,7 +978,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l83" href="#l83">83</a></td>
+      <td class="lineno"><a id="l112" href="#l112">112</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">13</td>
@@ -754,7 +986,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l84" href="#l84">84</a></td>
+      <td class="lineno"><a id="l113" href="#l113">113</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -762,7 +994,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l85" href="#l85">85</a></td>
+      <td class="lineno"><a id="l114" href="#l114">114</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -770,7 +1002,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l86" href="#l86">86</a></td>
+      <td class="lineno"><a id="l115" href="#l115">115</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">707</td>
@@ -778,7 +1010,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l87" href="#l87">87</a></td>
+      <td class="lineno"><a id="l116" href="#l116">116</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -793,7 +1025,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l88" href="#l88">88</a></td>
+      <td class="lineno"><a id="l117" href="#l117">117</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -808,7 +1040,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l89" href="#l89">89</a></td>
+      <td class="lineno"><a id="l118" href="#l118">118</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -823,7 +1055,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l90" href="#l90">90</a></td>
+      <td class="lineno"><a id="l119" href="#l119">119</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -838,7 +1070,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l91" href="#l91">91</a></td>
+      <td class="lineno"><a id="l120" href="#l120">120</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">707</td>
@@ -846,7 +1078,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l92" href="#l92">92</a></td>
+      <td class="lineno"><a id="l121" href="#l121">121</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">707</td>
@@ -854,7 +1086,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l93" href="#l93">93</a></td>
+      <td class="lineno"><a id="l122" href="#l122">122</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -862,7 +1094,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l94" href="#l94">94</a></td>
+      <td class="lineno"><a id="l123" href="#l123">123</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -877,7 +1109,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l95" href="#l95">95</a></td>
+      <td class="lineno"><a id="l124" href="#l124">124</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">707</td>
@@ -885,7 +1117,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l96" href="#l96">96</a></td>
+      <td class="lineno"><a id="l125" href="#l125">125</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -893,7 +1125,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l97" href="#l97">97</a></td>
+      <td class="lineno"><a id="l126" href="#l126">126</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">707</td>
@@ -901,7 +1133,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l98" href="#l98">98</a></td>
+      <td class="lineno"><a id="l127" href="#l127">127</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -909,7 +1141,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l99" href="#l99">99</a></td>
+      <td class="lineno"><a id="l128" href="#l128">128</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -924,7 +1156,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l100" href="#l100">100</a></td>
+      <td class="lineno"><a id="l129" href="#l129">129</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">707</td>
@@ -932,7 +1164,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l101" href="#l101">101</a></td>
+      <td class="lineno"><a id="l130" href="#l130">130</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">707</td>
@@ -940,7 +1172,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l102" href="#l102">102</a></td>
+      <td class="lineno"><a id="l131" href="#l131">131</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">707</td>
@@ -948,7 +1180,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l103" href="#l103">103</a></td>
+      <td class="lineno"><a id="l132" href="#l132">132</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">707</td>
@@ -956,7 +1188,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l104" href="#l104">104</a></td>
+      <td class="lineno"><a id="l133" href="#l133">133</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -964,7 +1196,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l105" href="#l105">105</a></td>
+      <td class="lineno"><a id="l134" href="#l134">134</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
