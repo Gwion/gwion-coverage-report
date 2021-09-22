@@ -150,7 +150,7 @@ TOTAL 69% :+1:
 |[src/parse/scan0.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_scan0.c.html)|-27%|:+1:|
 |[src/parse/scan1.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_scan1.c.html)|-18%|:-1:|
 |[src/parse/scanx.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_scanx.c.html)|-18%|:+1:|
-|[src/parse/template.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_template.c.html)|-6%|:-1:|
+|[src/parse/template.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_template.c.html)|-7%|:-1:|
 |[src/parse/traverse.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_traverse.c.html)|-29%|:+1:|
 |[src/parse/type_decl.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_parse_type_decl.c.html)|-5%|:-1:|
 |[src/pass.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_pass.c.html)|100%|:+1:|
