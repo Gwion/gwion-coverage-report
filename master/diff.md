@@ -105,7 +105,7 @@ TOTAL 69% :+1:
 |[src/env/env_utils.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_env_env_utils.c.html)|23%|:+1:|
 |[src/env/envset.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_env_envset.c.html)|-28%|:-1:|
 |[src/env/func.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_env_func.c.html)|15%|:+1:|
-|[src/env/nspc.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_env_nspc.c.html)|-14%|:-1:|
+|[src/env/nspc.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_env_nspc.c.html)|-8%|:-1:|
 |[src/env/trait.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_env_trait.c.html)|-78%|:-1:|
 |[src/env/tupleform.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_env_tupleform.c.html)|-13%|:+1:|
 |[src/env/type.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_env_type.c.html)|-15%|:+1:|
