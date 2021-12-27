@@ -26,7 +26,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2021-12-16 14:27:43</td>
+      <td>2021-12-27 12:35:43</td>
     </tr>
   </table>
 </div>
@@ -40,9 +40,9 @@
     </tr>
     <tr>
       <th scope="row">Lines:</th>
-      <td>79</td>
-      <td>94</td>
-      <td class="coverage-medium">84.0%</td>
+      <td>84</td>
+      <td>97</td>
+      <td class="coverage-medium">86.6%</td>
     </tr>
     <tr>
       <th scope="row">Branches:</th>
@@ -1198,7 +1198,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">  m_bit *byte    = shred-&gt;code-&gt;bytecode + (shred-&gt;pc - 1) * SZ_INT * 3;       \</span></td>
+      <td class="src "><span class="cp">  m_bit *byte    = shred-&gt;code-&gt;bytecode + (shred-&gt;pc - 1) * BYTECODE_SZ;       \</span></td>
     </tr>
 
     <tr class="source-line">
@@ -1206,7 +1206,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">  *(m_bit *)byte = a;</span></td>
+      <td class="src "><span class="cp">  *(m_uint *)byte = a;</span></td>
     </tr>
 
     <tr class="source-line">
@@ -1229,8 +1229,8 @@
       <td class="lineno"><a id="l129" href="#l129">129</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">11</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">BYTE</span><span class="p">(</span><span class="n">eRegPushImm</span><span class="p">)</span><span class="w"></span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c1">//  BYTE(eRegPushImm)</span></td>
     </tr>
 
     <tr class="source-line">
@@ -1238,7 +1238,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">11</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Func</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Func</span><span class="p">)</span><span class="n">instr</span><span class="o">-&gt;</span><span class="n">m_val</span><span class="p">;</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">m_bit</span><span class="w"> </span><span class="o">*</span><span class="n">byte</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">shred</span><span class="o">-&gt;</span><span class="n">code</span><span class="o">-&gt;</span><span class="n">bytecode</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">shred</span><span class="o">-&gt;</span><span class="n">pc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">BYTECODE_SZ</span><span class="p">;</span><span class="w">       </span>\</td>
     </tr>
 
     <tr class="source-line">
@@ -1246,7 +1246,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">11</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">VAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">m_uint</span><span class="w"> </span><span class="o">*</span><span class="p">)(</span><span class="n">shred</span><span class="o">-&gt;</span><span class="n">reg</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">m_uint</span><span class="p">)</span><span class="n">f</span><span class="o">-&gt;</span><span class="n">code</span><span class="p">;</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="o">*</span><span class="p">(</span><span class="n">m_uint</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">byte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">instr</span><span class="o">-&gt;</span><span class="n">opcode</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -1254,7 +1254,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">11</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">shred</span><span class="o">-&gt;</span><span class="n">reg</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">SZ_INT</span><span class="p">;</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">instr</span><span class="o">-&gt;</span><span class="n">opcode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eRegPushImm</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -1262,39 +1262,39 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">11</td>
-      <td class="src coveredLine"><span class="p">}</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Func</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Func</span><span class="p">)</span><span class="n">instr</span><span class="o">-&gt;</span><span class="n">m_val</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l134" href="#l134">134</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount coveredLine">11</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">VAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">m_uint</span><span class="w"> </span><span class="o">*</span><span class="p">)(</span><span class="n">shred</span><span class="o">-&gt;</span><span class="n">reg</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">m_uint</span><span class="p">)</span><span class="n">f</span><span class="o">-&gt;</span><span class="n">code</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l135" href="#l135">135</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="n">INSTR</span><span class="p">(</span><span class="n">SetRecurs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+      <td class="linecount coveredLine">11</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">shred</span><span class="o">-&gt;</span><span class="n">reg</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">SZ_INT</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l136" href="#l136">136</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">  </span><span class="n">BYTE</span><span class="p">(</span><span class="n">eRegPushImm</span><span class="p">)</span><span class="w"></span></td>
+      <td class="linecount coveredLine">11</td>
+      <td class="src coveredLine"><span class="p">}</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l137" href="#l137">137</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">  </span><span class="n">VAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">m_uint</span><span class="w"> </span><span class="o">*</span><span class="p">)(</span><span class="n">shred</span><span class="o">-&gt;</span><span class="n">reg</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">m_uint</span><span class="p">)</span><span class="n">shred</span><span class="o">-&gt;</span><span class="n">code</span><span class="p">;</span><span class="w"></span></td>
+      <td class="linecount "></td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
@@ -1302,15 +1302,15 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">  </span><span class="n">shred</span><span class="o">-&gt;</span><span class="n">reg</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">SZ_INT</span><span class="p">;</span><span class="w"></span></td>
+      <td class="src uncoveredLine"><span class="n">INSTR</span><span class="p">(</span><span class="n">SetRecurs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l139" href="#l139">139</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="p">}</span><span class="w"></span></td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="n">exit</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -1318,51 +1318,27 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="w">  </span><span class="n">BYTE</span><span class="p">(</span><span class="n">eRegPushImm</span><span class="p">)</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l141" href="#l141">141</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="n">INSTR</span><span class="p">(</span><span class="n">SetCtor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">  </span><span class="n">VAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">m_uint</span><span class="w"> </span><span class="o">*</span><span class="p">)(</span><span class="n">shred</span><span class="o">-&gt;</span><span class="n">reg</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">m_uint</span><span class="p">)</span><span class="n">shred</span><span class="o">-&gt;</span><span class="n">code</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l142" href="#l142">142</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">  </span><span class="n">BYTE</span><span class="p">(</span><span class="n">eRegSetImm</span><span class="p">)</span><span class="w"></span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">  </span><span class="n">shred</span><span class="o">-&gt;</span><span class="n">reg</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">SZ_INT</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l143" href="#l143">143</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Type</span><span class="p">)</span><span class="n">instr</span><span class="o">-&gt;</span><span class="n">m_val</span><span class="p">;</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l144" href="#l144">144</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">  </span><span class="n">VAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">m_uint</span><span class="w"> </span><span class="o">*</span><span class="p">)(</span><span class="n">shred</span><span class="o">-&gt;</span><span class="n">reg</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">SZ_INT</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">m_uint</span><span class="p">)</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">nspc</span><span class="o">-&gt;</span><span class="n">pre_ctor</span><span class="p">;</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l145" href="#l145">145</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">  </span><span class="n">VAL2</span><span class="w">                                   </span><span class="o">=</span><span class="w"> </span><span class="n">SZ_INT</span><span class="p">;</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l146" href="#l146">146</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1370,7 +1346,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l147" href="#l147">147</a></td>
+      <td class="lineno"><a id="l144" href="#l144">144</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1378,7 +1354,63 @@
     </tr>
 
     <tr class="source-line">
+      <td class="lineno"><a id="l145" href="#l145">145</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="n">INSTR</span><span class="p">(</span><span class="n">SetCtor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l146" href="#l146">146</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="n">BYTE</span><span class="p">(</span><span class="n">eRegSetImm</span><span class="p">)</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l147" href="#l147">147</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Type</span><span class="p">)</span><span class="n">instr</span><span class="o">-&gt;</span><span class="n">m_val</span><span class="p">;</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
       <td class="lineno"><a id="l148" href="#l148">148</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="n">VAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">m_uint</span><span class="w"> </span><span class="o">*</span><span class="p">)(</span><span class="n">shred</span><span class="o">-&gt;</span><span class="n">reg</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">SZ_INT</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">m_uint</span><span class="p">)</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">nspc</span><span class="o">-&gt;</span><span class="n">pre_ctor</span><span class="p">;</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l149" href="#l149">149</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="n">VAL2</span><span class="w">                                   </span><span class="o">=</span><span class="w"> </span><span class="n">SZ_INT</span><span class="p">;</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l150" href="#l150">150</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">}</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l151" href="#l151">151</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l152" href="#l152">152</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">62</td>
@@ -1386,7 +1418,15 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l149" href="#l149">149</a></td>
+      <td class="lineno"><a id="l153" href="#l153">153</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">62</td>
+      <td class="src coveredLine"><span class="n">puts</span><span class="p">(</span><span class="s">&quot;here!!!!!!!!!!!!!!&quot;</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l154" href="#l154">154</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -1401,15 +1441,39 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l150" href="#l150">150</a></td>
+      <td class="lineno"><a id="l155" href="#l155">155</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">50</td>
-      <td class="src coveredLine"><span class="w">    </span><span class="n">BYTE</span><span class="p">(</span><span class="n">eNoOp</span><span class="p">)</span><span class="w"></span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c1">//    BYTE(eNoOp)</span></td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l151" href="#l151">151</a></td>
+      <td class="lineno"><a id="l156" href="#l156">156</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">50</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">m_bit</span><span class="w"> </span><span class="o">*</span><span class="n">byte</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">shred</span><span class="o">-&gt;</span><span class="n">code</span><span class="o">-&gt;</span><span class="n">bytecode</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">shred</span><span class="o">-&gt;</span><span class="n">pc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">BYTECODE_SZ</span><span class="p">;</span><span class="w">       </span>\</td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l157" href="#l157">157</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">50</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="o">*</span><span class="p">(</span><span class="n">m_uint</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">byte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">instr</span><span class="o">-&gt;</span><span class="n">opcode</span><span class="p">;</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l158" href="#l158">158</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">50</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">instr</span><span class="o">-&gt;</span><span class="n">opcode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eNoOp</span><span class="p">;</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l159" href="#l159">159</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -1417,7 +1481,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l152" href="#l152">152</a></td>
+      <td class="lineno"><a id="l160" href="#l160">160</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">12</td>
@@ -1425,7 +1489,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l153" href="#l153">153</a></td>
+      <td class="lineno"><a id="l161" href="#l161">161</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">62</td>
@@ -1433,7 +1497,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l154" href="#l154">154</a></td>
+      <td class="lineno"><a id="l162" href="#l162">162</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
