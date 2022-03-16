@@ -26,7 +26,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2022-03-16 15:28:58</td>
+      <td>2022-03-16 16:14:08</td>
     </tr>
   </table>
 </div>
@@ -40,9 +40,9 @@
     </tr>
     <tr>
       <th scope="row">Lines:</th>
-      <td>40</td>
       <td>46</td>
-      <td class="coverage-medium">87.0%</td>
+      <td>52</td>
+      <td class="coverage-medium">88.5%</td>
     </tr>
     <tr>
       <th scope="row">Branches:</th>
@@ -135,7 +135,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">Type_List_</span><span class="w"> </span><span class="n">tl</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{.</span><span class="n">td</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">td</span><span class="p">};</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">Type_List</span><span class="w"> </span><span class="n">tl</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">new_mp_vector</span><span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">gwion</span><span class="o">-&gt;</span><span class="n">mp</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">Type_Decl</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -143,7 +143,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">Type_Decl</span><span class="w">         </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">mp_vector_set</span><span class="p">(</span><span class="n">tl</span><span class="p">,</span><span class="w"> </span><span class="n">Type_Decl</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -151,11 +151,19 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine"><span class="w">      </span><span class="p">.</span><span class="n">xid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert_symbol</span><span class="p">(</span><span class="s">&quot;Option&quot;</span><span class="p">),</span><span class="w"> </span><span class="p">.</span><span class="n">types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tl</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">pos</span><span class="p">};</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">Type_Decl</span><span class="w">         </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l12" href="#l12">12</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine"><span class="w">      </span><span class="p">.</span><span class="n">xid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert_symbol</span><span class="p">(</span><span class="s">&quot;Option&quot;</span><span class="p">),</span><span class="w"> </span><span class="p">.</span><span class="n">types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tl</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">pos</span><span class="p">};</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l13" href="#l13">13</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -166,23 +174,15 @@
         </details>
       </td>
       <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">known_type</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tmp</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">_option</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tmp</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l13" href="#l13">13</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="p">}</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">known_type</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tmp</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">_option</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tmp</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l14" href="#l14">14</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">free_mp_vector</span><span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">gwion</span><span class="o">-&gt;</span><span class="n">mp</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">Type_Decl</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="n">tl</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -190,23 +190,23 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">option</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">Type_Decl</span><span class="w"> </span><span class="o">*</span><span class="n">td</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l16" href="#l16">16</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">option</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">option</span><span class="p">;</span><span class="w"></span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">}</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l17" href="#l17">17</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">option</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span></td>
+      <td class="linecount "></td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
@@ -214,7 +214,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">t</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="n">_option</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">,</span><span class="w"> </span><span class="n">option</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">option</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">Type_Decl</span><span class="w"> </span><span class="o">*</span><span class="n">td</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -222,7 +222,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">option</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="n">option</span><span class="p">;</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">option</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">option</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -230,11 +230,35 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">option</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l21" href="#l21">21</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">t</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="n">_option</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">,</span><span class="w"> </span><span class="n">option</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l22" href="#l22">22</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">option</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="n">option</span><span class="p">;</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l23" href="#l23">23</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l24" href="#l24">24</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -242,35 +266,11 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l22" href="#l22">22</a></td>
+      <td class="lineno"><a id="l25" href="#l25">25</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
       <td class="src "></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l23" href="#l23">23</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">_ref</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">Type_Decl</span><span class="w"> </span><span class="o">*</span><span class="n">td</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l24" href="#l24">24</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">Type_List_</span><span class="w"> </span><span class="n">tl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{.</span><span class="n">td</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">td</span><span class="p">};</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l25" href="#l25">25</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">Type_Decl</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{.</span><span class="n">xid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert_symbol</span><span class="p">(</span><span class="s">&quot;Ref&quot;</span><span class="p">),</span><span class="w"> </span><span class="p">.</span><span class="n">types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tl</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">pos</span><span class="p">};</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -278,23 +278,23 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">known_type</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">_ref</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">Type_Decl</span><span class="w"> </span><span class="o">*</span><span class="n">td</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l27" href="#l27">27</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="p">}</span><span class="w"></span></td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">Type_List</span><span class="w"> </span><span class="n">tl</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">new_mp_vector</span><span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">gwion</span><span class="o">-&gt;</span><span class="n">mp</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">Type_Decl</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l28" href="#l28">28</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">mp_vector_set</span><span class="p">(</span><span class="n">tl</span><span class="p">,</span><span class="w"> </span><span class="n">Type_Decl</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -302,7 +302,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">ref</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">Type_Decl</span><span class="w"> </span><span class="o">*</span><span class="n">td</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">Type_Decl</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{.</span><span class="n">xid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert_symbol</span><span class="p">(</span><span class="s">&quot;Ref&quot;</span><span class="p">),</span><span class="w"> </span><span class="p">.</span><span class="n">types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tl</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">pos</span><span class="p">};</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -310,7 +310,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">ref</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">known_type</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -318,7 +318,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_ref</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">free_mp_vector</span><span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">gwion</span><span class="o">-&gt;</span><span class="n">mp</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">Type_Decl</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="n">tl</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -326,19 +326,11 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">ref</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l33" href="#l33">33</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">2</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l34" href="#l34">34</a></td>
+      <td class="lineno"><a id="l33" href="#l33">33</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -346,7 +338,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l35" href="#l35">35</a></td>
+      <td class="lineno"><a id="l34" href="#l34">34</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -354,42 +346,43 @@
     </tr>
 
     <tr class="source-line">
+      <td class="lineno"><a id="l35" href="#l35">35</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">ref</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">Type_Decl</span><span class="w"> </span><span class="o">*</span><span class="n">td</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
       <td class="lineno"><a id="l36" href="#l36">36</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">617512</td>
-      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">Type_Decl</span><span class="w"> </span><span class="o">*</span><span class="n">td</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">ref</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l37" href="#l37">37</a></td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 617512 times.</div>
-          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">617512</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">td</span><span class="o">-&gt;</span><span class="n">fptr</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">find_type</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">);</span><span class="w"></span></td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_ref</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l38" href="#l38">38</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">td</span><span class="o">-&gt;</span><span class="n">fptr</span><span class="o">-&gt;</span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="n">CHECK_BO</span><span class="p">(</span><span class="n">traverse_fptr_def</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">fptr</span><span class="p">));</span><span class="w"></span></td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">ref</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l39" href="#l39">39</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">fptr</span><span class="o">-&gt;</span><span class="n">type</span><span class="p">;</span><span class="w"></span></td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -412,8 +405,8 @@
       <td class="lineno"><a id="l42" href="#l42">42</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">617486</td>
-      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">find1</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="n">Type_Decl</span><span class="w"> </span><span class="o">*</span><span class="n">td</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+      <td class="linecount coveredLine">612399</td>
+      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">Type_Decl</span><span class="w"> </span><span class="o">*</span><span class="n">td</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -422,13 +415,13 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 617486 times.</div>
+          <div class="takenBranch">&check; Branch 0 taken 612399 times.</div>
           <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">617486</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">td</span><span class="o">-&gt;</span><span class="n">fptr</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">scan_type</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">);</span><span class="w"></span></td>
+      <td class="linecount coveredLine">612399</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">td</span><span class="o">-&gt;</span><span class="n">fptr</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">find_type</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -436,7 +429,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">td</span><span class="o">-&gt;</span><span class="n">fptr</span><span class="o">-&gt;</span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">td</span><span class="o">-&gt;</span><span class="n">fptr</span><span class="o">-&gt;</span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="n">CHECK_BO</span><span class="p">(</span><span class="n">traverse_fptr_def</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">fptr</span><span class="p">));</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -444,15 +437,15 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="n">CHECK_BO</span><span class="p">(</span><span class="n">scan0_fptr_def</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">fptr</span><span class="p">));</span><span class="w"></span></td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">fptr</span><span class="o">-&gt;</span><span class="n">type</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l46" href="#l46">46</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="n">CHECK_BO</span><span class="p">(</span><span class="n">traverse_fptr_def</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">fptr</span><span class="p">));</span><span class="w"></span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">}</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -460,11 +453,66 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="p">}</span><span class="w"></span></td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l48" href="#l48">48</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">612375</td>
+      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">find1</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="n">Type_Decl</span><span class="w"> </span><span class="o">*</span><span class="n">td</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l49" href="#l49">49</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 612375 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">612375</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">td</span><span class="o">-&gt;</span><span class="n">fptr</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">scan_type</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l50" href="#l50">50</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">td</span><span class="o">-&gt;</span><span class="n">fptr</span><span class="o">-&gt;</span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l51" href="#l51">51</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">    </span><span class="n">CHECK_BO</span><span class="p">(</span><span class="n">scan0_fptr_def</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">fptr</span><span class="p">));</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l52" href="#l52">52</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">    </span><span class="n">CHECK_BO</span><span class="p">(</span><span class="n">traverse_fptr_def</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">fptr</span><span class="p">));</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l53" href="#l53">53</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">  </span><span class="p">}</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l54" href="#l54">54</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
@@ -472,7 +520,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l49" href="#l49">49</a></td>
+      <td class="lineno"><a id="l55" href="#l55">55</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -480,7 +528,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l50" href="#l50">50</a></td>
+      <td class="lineno"><a id="l56" href="#l56">56</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -488,194 +536,146 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l51" href="#l51">51</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">617512</td>
-      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">resolve</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">Type_Decl</span><span class="w"> </span><span class="o">*</span><span class="n">td</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l52" href="#l52">52</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">617512</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">Type_Decl</span><span class="w"> </span><span class="o">*</span><span class="n">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">td</span><span class="p">;</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l53" href="#l53">53</a></td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 23 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 617512 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">617535</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">last</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span><span class="w"> </span><span class="n">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">last</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l54" href="#l54">54</a></td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 26 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 617486 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">617512</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">DECL_OO</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">));</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l55" href="#l55">55</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">617486</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base</span><span class="o">-&gt;</span><span class="n">info</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">-&gt;</span><span class="n">from</span><span class="o">-&gt;</span><span class="n">ctx</span><span class="p">;</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l56" href="#l56">56</a></td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">3/4</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 605 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 616881 times.</div>
-          <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
-          <div class="takenBranch">&check; Branch 3 taken 605 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">617486</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ctx</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">error</span><span class="p">)</span><span class="w"> </span><span class="n">ERR_O</span><span class="p">(</span><span class="n">td</span><span class="o">-&gt;</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="p">(</span><span class="s">&quot;type &#39;%s&#39; is invalid&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">base</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">)</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
       <td class="lineno"><a id="l57" href="#l57">57</a></td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 5 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 617481 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">617486</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">DECL_OO</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find1</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">));</span><span class="w"></span></td>
+      <td class="linecount coveredLine">612399</td>
+      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">resolve</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">Type_Decl</span><span class="w"> </span><span class="o">*</span><span class="n">td</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l58" href="#l58">58</a></td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">3/4</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 617479 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 2 times.</div>
-          <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
-          <div class="takenBranch">&check; Branch 4 taken 617481 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">617481</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">DECL_OO</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">td</span><span class="o">-&gt;</span><span class="n">ref</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ref</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">));</span><span class="w"></span></td>
+      <td class="linecount coveredLine">612399</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">Type_Decl</span><span class="w"> </span><span class="o">*</span><span class="n">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">td</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l59" href="#l59">59</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
-        <summary class="linebranchSummary">3/4</summary>
+        <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 8 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 617473 times.</div>
-          <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
-          <div class="takenBranch">&check; Branch 4 taken 617481 times.</div>
+          <div class="takenBranch">&check; Branch 0 taken 23 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 612399 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">617481</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">DECL_OO</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">ret</span><span class="p">,</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">td</span><span class="o">-&gt;</span><span class="n">option</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">option</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">));</span><span class="w"></span></td>
+      <td class="linecount coveredLine">612422</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">last</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span><span class="w"> </span><span class="n">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">last</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l60" href="#l60">60</a></td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 1 taken 24 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 612375 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">617481</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Array_Sub</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">last</span><span class="o">-&gt;</span><span class="n">array</span><span class="p">;</span><span class="w"></span></td>
+      <td class="linecount coveredLine">612399</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">DECL_OO</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">));</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l61" href="#l61">61</a></td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 25477 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 592004 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">617481</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="n">array</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">array_type</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="n">array</span><span class="o">-&gt;</span><span class="n">depth</span><span class="p">);</span><span class="w"></span></td>
+      <td class="linecount coveredLine">612375</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base</span><span class="o">-&gt;</span><span class="n">info</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">-&gt;</span><span class="n">from</span><span class="o">-&gt;</span><span class="n">ctx</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l62" href="#l62">62</a></td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">3/4</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 601 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 611774 times.</div>
+          <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
+          <div class="takenBranch">&check; Branch 3 taken 601 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="p">}</span><span class="w"></span></td>
+      <td class="linecount coveredLine">612375</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ctx</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">error</span><span class="p">)</span><span class="w"> </span><span class="n">ERR_O</span><span class="p">(</span><span class="n">td</span><span class="o">-&gt;</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="p">(</span><span class="s">&quot;type &#39;%s&#39; is invalid&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">base</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">)</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l63" href="#l63">63</a></td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 1 taken 4 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 612371 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount coveredLine">612375</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">DECL_OO</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find1</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">));</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l64" href="#l64">64</a></td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">3/4</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 612369 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 2 times.</div>
+          <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
+          <div class="takenBranch">&check; Branch 4 taken 612371 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">31</td>
-      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">type_unknown</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Type_Decl</span><span class="w"> </span><span class="o">*</span><span class="n">td</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+      <td class="linecount coveredLine">612371</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">DECL_OO</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">td</span><span class="o">-&gt;</span><span class="n">ref</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ref</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">));</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l65" href="#l65">65</a></td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">3/4</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 8 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 612363 times.</div>
+          <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
+          <div class="takenBranch">&check; Branch 4 taken 612371 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">31</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">env_err</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="p">(</span><span class="s">&quot;unknown type &#39;%s&#39;&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">s_name</span><span class="p">(</span><span class="n">td</span><span class="o">-&gt;</span><span class="n">xid</span><span class="p">));</span><span class="w"></span></td>
+      <td class="linecount coveredLine">612371</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">DECL_OO</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">ret</span><span class="p">,</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">td</span><span class="o">-&gt;</span><span class="n">option</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">option</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">));</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l66" href="#l66">66</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">31</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span></td>
+      <td class="linecount coveredLine">612371</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Array_Sub</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">last</span><span class="o">-&gt;</span><span class="n">array</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l67" href="#l67">67</a></td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 25273 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 587098 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="p">}</span><span class="w"></span></td>
+      <td class="linecount coveredLine">612371</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="n">array</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">array_type</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="n">array</span><span class="o">-&gt;</span><span class="n">depth</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -683,34 +683,43 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="p">}</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l69" href="#l69">69</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">617512</td>
-      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">known_type</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">Type_Decl</span><span class="w"> </span><span class="o">*</span><span class="n">td</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+      <td class="linecount "></td>
+      <td class="src "></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l70" href="#l70">70</a></td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 617481 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 31 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">617512</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">resolve</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">)</span><span class="w"> </span><span class="o">?:</span><span class="w"> </span><span class="n">type_unknown</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">);</span><span class="w"></span></td>
+      <td class="linecount coveredLine">28</td>
+      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">type_unknown</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Type_Decl</span><span class="w"> </span><span class="o">*</span><span class="n">td</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l71" href="#l71">71</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">28</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">env_err</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="o">-&gt;</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="p">(</span><span class="s">&quot;unknown type &#39;%s&#39;&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">s_name</span><span class="p">(</span><span class="n">td</span><span class="o">-&gt;</span><span class="n">xid</span><span class="p">));</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l72" href="#l72">72</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">28</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l73" href="#l73">73</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -718,7 +727,46 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l72" href="#l72">72</a></td>
+      <td class="lineno"><a id="l74" href="#l74">74</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l75" href="#l75">75</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">612399</td>
+      <td class="src coveredLine"><span class="n">ANN</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">known_type</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">Type_Decl</span><span class="w"> </span><span class="o">*</span><span class="n">td</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l76" href="#l76">76</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 1 taken 612371 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 28 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">612399</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">resolve</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">)</span><span class="w"> </span><span class="o">?:</span><span class="w"> </span><span class="n">type_unknown</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">td</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l77" href="#l77">77</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">}</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l78" href="#l78">78</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
