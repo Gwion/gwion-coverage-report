@@ -162,7 +162,7 @@ TOTAL 69% :+1:
 |[src/vm/driver.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_driver.c.html)|100%|:+1:|
 |[src/vm/gack.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_gack.c.html)|85%|:+1:|
 |[src/vm/shreduler.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_shreduler.c.html)|100%|:+1:|
-|[src/vm/vm.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_vm.c.html)|58%|:+1:|
+|[src/vm/vm.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_vm.c.html)|57%|:+1:|
 |[src/vm/vm_code.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_vm_code.c.html)|87%|:+1:|
 |[src/vm/vm_name.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_vm_name.c.html)|50%|:+1:|
 |[src/vm/vm_shred.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_vm_vm_shred.c.html)|90%|:+1:|
