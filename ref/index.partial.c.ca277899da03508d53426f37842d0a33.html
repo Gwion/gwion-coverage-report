@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2022-04-26 19:16:48</td>
+      <td>2022-04-26 19:42:28</td>
     </tr>
   </table>
 </div>
@@ -41,9 +41,9 @@
     </tr>
     <tr>
       <th scope="row">Lines:</th>
-      <td>132</td>
-      <td>144</td>
-      <td class="coverage-high">91.7%</td>
+      <td>134</td>
+      <td>146</td>
+      <td class="coverage-high">91.8%</td>
     </tr>
     <tr>
       <th scope="row">Functions:</th>
@@ -53,9 +53,9 @@
     </tr>
     <tr>
       <th scope="row">Branches:</th>
-      <td>67</td>
-      <td>96</td>
-      <td class="coverage-low">69.8%</td>
+      <td>68</td>
+      <td>98</td>
+      <td class="coverage-low">69.4%</td>
     </tr>
   </table>
 </div>
@@ -1008,7 +1008,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">5</td>
-      <td class="src coveredLine"><span class="w">          </span><span class="k">const</span><span class="w"> </span><span class="n">m_bool</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">check_exp</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">          </span><span class="k">const</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">check_exp</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -2070,11 +2070,34 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">8</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Func</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">partial_match</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">call</span><span class="o">-&gt;</span><span class="n">func</span><span class="o">-&gt;</span><span class="n">type</span><span class="o">-&gt;</span><span class="n">info</span><span class="o">-&gt;</span><span class="n">func</span><span class="p">,</span><span class="w"> </span><span class="n">call</span><span class="o">-&gt;</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="n">call</span><span class="o">-&gt;</span><span class="n">func</span><span class="o">-&gt;</span><span class="n">pos</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Func</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">call</span><span class="o">-&gt;</span><span class="n">func</span><span class="o">-&gt;</span><span class="n">type</span><span class="o">-&gt;</span><span class="n">info</span><span class="o">-&gt;</span><span class="n">func</span><span class="p">;</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l197" href="#l197">197</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="notTakenBranch">&cross; Branch 0 not taken.</div>
+          <div class="takenBranch">&check; Branch 1 taken 8 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">base</span><span class="p">)</span><span class="w"> </span><span class="n">ERR_O</span><span class="p">(</span><span class="n">call</span><span class="o">-&gt;</span><span class="n">func</span><span class="o">-&gt;</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="p">(</span><span class="s">&quot;can&#39;t partially apply call a literal lambda&quot;</span><span class="p">));</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l198" href="#l198">198</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Func</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">partial_match</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="n">call</span><span class="o">-&gt;</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="n">call</span><span class="o">-&gt;</span><span class="n">func</span><span class="o">-&gt;</span><span class="n">pos</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l199" href="#l199">199</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
@@ -2089,7 +2112,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l198" href="#l198">198</a></td>
+      <td class="lineno"><a id="l200" href="#l200">200</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">2</td>
@@ -2097,7 +2120,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l199" href="#l199">199</a></td>
+      <td class="lineno"><a id="l201" href="#l201">201</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -2112,7 +2135,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l200" href="#l200">200</a></td>
+      <td class="lineno"><a id="l202" href="#l202">202</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
@@ -2120,7 +2143,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l201" href="#l201">201</a></td>
+      <td class="lineno"><a id="l203" href="#l203">203</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
@@ -2128,7 +2151,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l202" href="#l202">202</a></td>
+      <td class="lineno"><a id="l204" href="#l204">204</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -2136,7 +2159,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l203" href="#l203">203</a></td>
+      <td class="lineno"><a id="l205" href="#l205">205</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">2</td>
@@ -2144,7 +2167,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l204" href="#l204">204</a></td>
+      <td class="lineno"><a id="l206" href="#l206">206</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -2152,27 +2175,11 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l205" href="#l205">205</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">6</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">Func_Base</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">partial_base</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="o">-&gt;</span><span class="n">def</span><span class="o">-&gt;</span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="n">call</span><span class="o">-&gt;</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="n">call</span><span class="o">-&gt;</span><span class="n">func</span><span class="o">-&gt;</span><span class="n">pos</span><span class="p">);</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
-      <td class="lineno"><a id="l206" href="#l206">206</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">6</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Stmt</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">partial_code</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">call</span><span class="o">-&gt;</span><span class="n">func</span><span class="p">,</span><span class="w"> </span><span class="n">call</span><span class="o">-&gt;</span><span class="n">args</span><span class="p">);</span><span class="w"></span></td>
-    </tr>
-
-    <tr class="source-line">
       <td class="lineno"><a id="l207" href="#l207">207</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">6</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Exp</span><span class="w"> </span><span class="n">exp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">exp_self</span><span class="p">(</span><span class="n">call</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">Func_Base</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">fbase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">partial_base</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="o">-&gt;</span><span class="n">def</span><span class="o">-&gt;</span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="n">call</span><span class="o">-&gt;</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="n">call</span><span class="o">-&gt;</span><span class="n">func</span><span class="o">-&gt;</span><span class="n">pos</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -2180,7 +2187,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">6</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">exp</span><span class="o">-&gt;</span><span class="n">d</span><span class="p">.</span><span class="n">exp_lambda</span><span class="p">.</span><span class="n">def</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_func_def</span><span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">gwion</span><span class="o">-&gt;</span><span class="n">mp</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Stmt</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">partial_code</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">call</span><span class="o">-&gt;</span><span class="n">func</span><span class="p">,</span><span class="w"> </span><span class="n">call</span><span class="o">-&gt;</span><span class="n">args</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -2188,11 +2195,27 @@
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">6</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">exp</span><span class="o">-&gt;</span><span class="n">exp_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ae_exp_lambda</span><span class="p">;</span><span class="w"></span></td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Exp</span><span class="w"> </span><span class="n">exp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">exp_self</span><span class="p">(</span><span class="n">call</span><span class="p">);</span><span class="w"></span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l210" href="#l210">210</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">6</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">exp</span><span class="o">-&gt;</span><span class="n">d</span><span class="p">.</span><span class="n">exp_lambda</span><span class="p">.</span><span class="n">def</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_func_def</span><span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">gwion</span><span class="o">-&gt;</span><span class="n">mp</span><span class="p">,</span><span class="w"> </span><span class="n">fbase</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l211" href="#l211">211</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">6</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">exp</span><span class="o">-&gt;</span><span class="n">exp_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ae_exp_lambda</span><span class="p">;</span><span class="w"></span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l212" href="#l212">212</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
@@ -2207,7 +2230,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l211" href="#l211">211</a></td>
+      <td class="lineno"><a id="l213" href="#l213">213</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">6</td>
@@ -2215,7 +2238,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l212" href="#l212">212</a></td>
+      <td class="lineno"><a id="l214" href="#l214">214</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -2223,7 +2246,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l213" href="#l213">213</a></td>
+      <td class="lineno"><a id="l215" href="#l215">215</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
