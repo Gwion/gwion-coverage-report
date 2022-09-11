@@ -33,7 +33,7 @@ TOTAL 82% :+1:
 |[src/import/import_checker.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_import_checker.c.html)|-36%|:+1:|
 |[src/import/import_enum.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_import_enum.c.html)|-6%|:+1:|
 |[src/import/import_fdef.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_import_fdef.c.html)|-24%|:+1:|
-|[src/import/import_internals.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_import_internals.c.html)|-45%|:+1:|
+|[src/import/import_internals.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_import_internals.c.html)|-47%|:+1:|
 |[src/import/import_item.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_import_item.c.html)|-21%|:+1:|
 |[src/import/import_oper.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_import_oper.c.html)|-35%|:+1:|
 |[src/import/import_special.c](https://Gwion.github.io/gwion-coverage-report/ref/index.src_import_import_special.c.html)|-26%|:+1:|
